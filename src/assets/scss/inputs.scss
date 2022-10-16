@@ -1,0 +1,162 @@
+.input{
+    @apply relative mb-2.5;
+
+    input{
+        @apply bg-inherit border-inherit;
+    }
+
+    &-icon{
+        .icon{
+            @apply absolute top-[calc(50%-8px)] right-2.5 z-[1] w-4 h-4 text-base leading-none cursor-pointer;
+        }
+    }
+
+    &.textbox{
+        label{
+            @apply absolute top-[calc(50%-12px)] left-5 pointer-events-none flex items-center min-h-fit;
+            @apply font-heading font-normal text-sm text-black-100 text-opacity-50;
+            @apply transition-all duration-100;
+        }
+        input{
+            @apply w-full h-14 flex border border-solid border-gray-100 rounded-[10px] px-5 pt-4 py-3;
+        }
+        &.input-focus{
+            label{
+                @apply text-[10px] top-[6px];
+            }   
+        }
+    }
+    &.checkbox{
+
+        input{
+            @apply w-6 h-6 absolute top-0 left-0 z-[1] opacity-0 cursor-pointer;
+        }
+        label{
+            @apply relative inline-block min-h-fit font-inter font-normal text-sm cursor-pointer pl-7;
+        
+            &::before{
+                @extend .icon-checkbox;
+                @apply absolute font-icon top-[2px] left-[5px] leading-none;
+            }
+            &::after{
+                @extend .icon-checkbox-fill-after;
+                @apply absolute top-[2px] left-[5px] leading-none font-icon transition-transform duration-75 scale-0;
+            }
+
+        }
+        input:checked + label {
+            &::before{
+                @apply opacity-0;
+            }
+
+            &::after{
+                @apply scale-100;
+            }
+        } 
+    }
+    &.radio{
+        input{
+            @apply w-6 h-6 absolute top-0 left-0 z-[1] opacity-0 cursor-pointer;
+        }
+        label{
+            @apply relative inline-block min-h-[20px] font-inter font-normal text-sm text-black-100 cursor-pointer pl-7;
+
+            &::before{
+                @extend .icon-radio;
+                @apply absolute font-icon top-[2px] left-[5px] leading-none;
+            }
+            &::after{
+                @extend .icon-radio-fill-after;
+                @apply absolute top-[2px] left-[5px] leading-none font-icon transition-transform duration-75 scale-0;
+            }
+
+        }
+        input:checked + label {
+            &::before{
+                @apply opacity-0;
+            }
+
+            &::after{
+                @apply scale-100;
+            }
+        }
+    }
+    &.select{
+        @apply w-full;
+        label{
+            @apply font-heading font-normal text-[10px] text-black-100 text-opacity-50;
+            @apply absolute top-[6px] left-5 pointer-events-none z-[1];
+        }
+        .wrp{
+            @apply relative inline-block w-full h-14;
+            &::before{
+                @extend .icon-arrow-down;
+                @apply absolute top-[calc(50%-12px)] right-2 z-[1] font-icon inline-block w-6 h-6 text-center;
+            }
+        }
+        select{
+            @apply w-full h-full bg-white border border-solid border-gray-100 rounded-[10px] px-5 pt-5 pb-3 appearance-none outline-0;
+            @apply absolute top-0 left-0 cursor-pointer z-0 font-heading font-normal text-black-100 text-sm;
+            &::-ms-expand {
+                display: none;
+            }
+        }
+    }
+    &.textarea{
+        width: 100%;
+        textarea{
+            @apply w-full bg-white border border-solid border-gray-100 rounded-[10px] px-5 py-4 appearance-none;
+            @apply relative outline-0 resize-none min-h-[120px];
+        }
+        label{
+            @apply font-heading font-normal text-sm text-black-100 text-opacity-50;
+            @apply absolute top-4 left-5 pointer-events-none z-[1];
+        }
+    }
+    
+    &-seperate{
+        @apply flex items-center justify-between mb-4;
+        &-other{
+           @apply text-center py-4; 
+        }
+        .btn{
+            @apply font-inter text-sm;
+        }
+    }
+    &-double{
+        @apply flex items-center justify-between;
+        &-social{
+            @apply mb-3;
+        }
+        .btn{
+            @apply w-[calc(50%-4px)];
+        }
+    }
+    &-membership-select{
+        @apply mb-4 justify-start;
+        .input{
+            @apply first:mr-5;
+        }
+    }
+    &-privacy-policy{
+        > span{
+            @apply font-inter text-xs;
+            a{
+                @apply underline;
+            }
+        }
+        .input.checkbox{
+            label{
+                @apply font-inter text-xs;
+            }
+        }
+    }
+    &-subscribe-text{
+        > span{
+            @apply block pt-2 font-inter text-xs;
+            strong{
+                @apply font-inter font-medium;
+            }
+        }
+    }
+}

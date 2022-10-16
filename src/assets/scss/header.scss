@@ -1,0 +1,25 @@
+.site-header{
+    &-wrapper{
+        @apply container mx-auto;
+        @apply lg:flex lg:flex-row lg:items-center lg:py-2.5;
+    }
+    &-logo{
+        @apply lg:mr-7;
+    }
+    &-nav{
+        @apply lg:flex-auto lg:mr-3;
+        ul{
+            @apply lg:flex lg:flex-row lg:gap-10;
+            li{
+                a{
+                    @apply inline-flex py-2.5 font-heading font-normal text-sm;
+                }
+            }
+        }
+    }
+    &-logoff{
+        a{
+            @apply inline-flex font-heading font-medium text-sm;
+        }
+    }
+}

@@ -1,0 +1,99 @@
+//- GLOBAL MIXINS
+
+//- Call font icon
+    +font-icon('heart')(class="mini-icon")
+mixin font-icon(iconName)
+    i(class="icon icon-" + iconName)&attributes(attributes)
+
+//- Call svg icon
+    +img-icon('url')(title="Google")
+mixin img-icon(iconUrl)
+    img(src=iconUrl + '.svg')&attributes(attributes)
+
+//- Picture
+mixin picture(src1x, src2x=false, src3x=false)
+    picture 
+        - if (src2x)
+            source(media="(max-width: 1024px)", srcset=src1x['sm'] + " 1x, " + src2x['sm'] + " 2x")
+            source(media="(min-width: 1025px)", srcset=src1x['lg'] + " 1x, " + src2x['lg'] + " 2x")
+        - else if (src3x)
+            source(media="(max-width: 768px)", srcset=src1x['sm'] + " 1x, " + src2x['sm'] + " 2x, " + src3x['sm'] + " 3x")
+            source(media="(max-width:1024px)", srcset=src1x['md'] + " 1x, " + src2x['md'] + " 2x, " + src3x['md'] + " 3x")
+            source(media="(min-width:1025px)", srcset=src1x['lg'] + " 1x, " + src2x['lg'] + " 2x, " + src3x['lg'] + " 3x")
+        - else 
+            source(media="(max-width: 1024px)" srcset=src1x['sm'])
+            source(media="(min-width: 1025px)" srcset=src1x['lg'])
+        img(src=src1x['sm'] alt=(attributes.alt) ? attributes.alt : 'alt text here')&attributes(attributes)
+
+//- inputs
+mixin inputs(type, label='', id='', icon='', disabled=false, timer='', error='')
+    .input(class=(disabled) ? 'input-disabled ' + type : type)
+        - if(type == 'checkbox' || type == 'switch')
+            input(type="checkbox" id=id)&attributes(attributes)
+            label(for=id)!=label
+            - if(error != '')
+                .form-error-msg=error
+        - else if(type == 'radio')
+            input(type="radio" id=id)&attributes(attributes)
+            label(for=id)!=label
+            - if(error != '')
+                .form-error-msg=error
+        - else if(type == 'textbox')
+            - if(timer != '')
+                span.timer=timer
+            - if(label != '')
+                label(for=id)=label
+            span.wrp(class=(icon != '') ? 'input-icon' : '')
+                - if(icon != '')
+                    +font-icon(icon)
+                input(disabled=disabled id=id)&attributes(attributes)
+                - if(error != '')
+                    .form-error-msg=error
+        - else if(type == 'textarea')
+            - if(label != '')
+                label(for=id)=label
+            textarea(id=id)&attributes(attributes)
+            - if(error != '')
+                .form-error-msg=error
+
+//- Button
+    badgy = {class: '', icon: ''}
+mixin button(text = '', type = 'primary', size = 's', badgy = false)
+    - var cls = 'btn-' + type
+
+    - if(size == 's')
+        - cls += ' btn-small'
+
+    - if(size == 'm')
+        - cls += ' btn-medium'
+    
+    - if(size == 'l')
+        - cls += ' btn-large'
+    
+    - if(badgy)
+        - cls += ' btn-badgy'
+
+    - if(attributes.href)
+        a.btn(title=text class=cls)&attributes(attributes)
+            - if(badgy['img'])
+                +img-icon(badgy['img'])
+            - else if(badgy['icon'])
+                +font-icon(badgy['icon'])
+            span=text
+    - else
+        button.btn(type=(attributes.type) ? attributes.type : 'button' title=text class=cls)&attributes(attributes)
+            - if(badgy['img'])
+                +img-icon(badgy['img'])
+            - else if(badgy['icon'])
+                +font-icon(badgy['icon'])
+            span=text
+            
+//- Select
+    options => [{value: 'S', text: 'S'}, {value: 'M', text: 'M'}, {value: 'L', text: 'L'}]
+mixin select(label='', id='')
+    .input.select
+        - if(label != '')
+            label(for=id)=label
+        span.wrp
+            select(id=id)&attributes(attributes)
+                block

@@ -1,0 +1,73 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import 'Fonts/index';
+@import 'Theme/inputs';
+@import 'Theme/buttons';
+
+@import 'Theme/header';
+@import 'Theme/footer';
+
+html{
+    @apply w-full h-full;
+}
+
+body{
+    @apply bg-white text-black-100;
+}
+
+//-----------------------------------------------------------------------
+
+.site{
+    &-header{
+        box-shadow: inset 0px -1px 1px rgba(0,0,0,0.1);
+    }
+}
+
+.page{
+    &-login{
+        .site{
+            &-header{
+                @apply py-2;
+                &-logo{
+                    img{ 
+                        @apply mx-auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.plog{
+    @apply flex flex-col items-start;
+    @apply lg:flex-row lg:items-center;
+    &-img{
+        align-self: flex-start;
+        @apply hidden;
+        @apply lg:block;
+    }
+    &-img,
+    &-enters{
+        @apply lg:w-1/2;
+    }
+    &-tabs{
+        @apply m-auto border border-solid border-gray-100 rounded-[20px] px-12 py-14;
+        @apply max-w-md;
+        .tab{
+            @apply border-b-2 border-[rgba(2,17,34,0.1)] p-2.5 transition-all ease-in first:mr-2 font-heading font-medium;
+            &.active{
+                @apply border-red-100 font-semibold;
+            }
+        }
+        .tab-panes{
+            @apply mt-9;
+        }
+        .btn{
+            &-sign-in{
+                @apply my-5;
+            }
+        }
+    }
+}
