@@ -3,6 +3,7 @@ import 'Images/google-icon.svg';
 import 'Images/facebook-icon.svg';
 
 import 'Theme/base.scss';
+import './templates/components/';
 
 import Inputs from './templates/components/web-component/inputs/index';
 
