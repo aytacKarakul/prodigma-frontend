@@ -13,6 +13,9 @@
         }
     }
     .acc-body{
-        @apply hidden;
+        @apply hidden px-6 pt-2 pb-6;
+        p, strong, ul li{
+            @apply font-inter font-normal text-base;
+        }
     }
 }

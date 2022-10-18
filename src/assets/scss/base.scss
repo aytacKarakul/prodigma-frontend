@@ -54,6 +54,9 @@ input:focus {
             &-accordion{
                 @apply mt-14;
             }
+            &-footer{
+                @apply lg:max-w-[470px] lg:mx-auto lg:mt-11;
+            }
         }
     }
     //- Login Page 
