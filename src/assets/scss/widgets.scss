@@ -1,0 +1,83 @@
+//Quadruple Banner
+
+.quadruple {
+    @apply bg-purple-100;
+    &-wrapper {
+        @apply container mx-auto;
+    }
+    &-title {
+        @apply font-heading text-2xl leading-7 pt-10 pb-6 text-center lg:text-[38px] font-medium text-white lg:leading-[50px] lg:pt-[92px] lg:pb-32;
+    }
+    &-banner {
+        @apply hidden lg:flex flex-row justify-center;
+        &-left {
+            @apply flex flex-col text-left;
+        }
+        &-img {
+           img {
+            @apply flex rounded-[50%] px-12;
+           }
+        }
+        &-right {
+            @apply flex flex-col text-right;
+            span {
+                @apply self-end;
+            }
+        }
+        ul {
+            li {
+                @apply flex flex-col;
+                p {
+                    @apply font-heading font-medium text-[34px] leading-10 text-green-200 pb-[10px];
+                    @apply max-w-[400px];
+                }
+                span {
+                    @apply font-inter font-normal text-base leading-5 text-white pb-5;
+                    @apply max-w-[303px];
+                }
+                a {
+                    @apply text-white underline font-heading font-medium text-sm;
+                }
+            }
+            li:first-child {
+                @apply pb-32 ;
+            }
+            li:last-child {
+                @apply pt-12 pb-24;
+            }
+        }
+    }
+
+    &-mBanner {
+        @apply lg:hidden flex flex-col;
+    }
+    &-img {
+        img {
+            @apply rounded-[50%] items-center justify-center pb-6;
+        }
+    }
+    &-content {
+        ul {
+            @apply flex flex-row overflow-x-auto;
+            li {
+                @apply flex flex-col pb-[38px] pr-14 pl-5;
+                @apply border-r-[1px];
+                p {
+                    @apply font-heading font-medium text-2xl leading-6 text-green-200 pb-[10px];
+                    @apply max-w-[242px];
+                }
+                span {
+                    @apply font-inter font-normal text-sm text-white pb-3;
+                    @apply max-w-[212px]
+                }
+                a {
+                    @apply font-heading font-medium text-sm leading-[17px] underline text-white;
+                }
+            }
+            li:last-child {
+                @apply border-none;
+            }
+        }
+    }
+    
+}
