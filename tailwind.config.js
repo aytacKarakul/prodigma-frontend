@@ -31,6 +31,9 @@ module.exports = {
           DEFAULT: '#3E17BC',
           '100' : '#150446',
         },
+        purple: {
+          '100' : '#82C576'
+        },
         custom: {
           '100': '#A09C8E',
           '200': '#F1F3F9',
