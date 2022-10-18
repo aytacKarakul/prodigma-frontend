@@ -6,9 +6,6 @@
 @import 'Theme/inputs';
 @import 'Theme/buttons';
 
-@import 'Theme/header';
-@import 'Theme/footer';
-
 html{
     @apply w-full h-full;
 }
@@ -17,11 +14,24 @@ body{
     @apply bg-white text-black-100;
 }
 
+input:focus {
+    outline: none;
+}
+
 //-----------------------------------------------------------------------
 
 .site{
     &-header{
         box-shadow: inset 0px -1px 1px rgba(0,0,0,0.1);
+    }
+
+    &-messages{
+        &-error{
+            @apply bg-red text-white px-2 py-3 rounded-[10px] mt-3;
+        }
+        &-success{
+            @apply bg-green-100 text-white px-2 py-3 rounded-[10px] mt-3;
+        }
     }
 }
 
