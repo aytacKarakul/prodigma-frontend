@@ -1,0 +1,18 @@
+.accordion{
+    .acc-item{
+        @apply bg-custom-200 first:mt-0 mt-2.5;
+        &.active{
+            .acc-body{
+                @apply block;
+            }
+        }
+    }
+    .acc-header{
+        button{
+            @apply w-full flex items-center text-blue-100 font-heading font-medium text-xl px-6 py-4;
+        }
+    }
+    .acc-body{
+        @apply hidden;
+    }
+}

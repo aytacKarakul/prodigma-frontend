@@ -11,7 +11,7 @@ html{
 }
 
 body{
-    @apply bg-white text-black-100;
+    @apply bg-white text-blue-100;
 }
 
 input:focus {
@@ -36,6 +36,27 @@ input:focus {
 }
 
 .page{
+    //- Home Page
+    &-home{
+        &-sss{
+            @apply lg:container lg:mx-auto;
+            &-header{
+                @apply text-center px-7;
+                @apply max-w-xl mx-auto;
+                &-title{
+                    @apply font-heading font-medium text-2xl;
+                    @apply lg:text-[44px];
+                }
+                &-desc{
+                    @apply font-inter text-base mt-5;
+                }
+            }
+            &-accordion{
+                @apply mt-14;
+            }
+        }
+    }
+    //- Login Page 
     &-login{
         .site{
             &-header{
