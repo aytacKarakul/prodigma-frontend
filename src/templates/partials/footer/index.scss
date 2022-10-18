@@ -1,5 +1,9 @@
 .site-footer{
-    @apply lg:mt-32;
+    @apply lg:mt-9;
+    
+    &-wrapper{
+        @apply lg:mt-32;
+    }
     &-copyright{
         @apply text-sm py-5 self-center;
         @apply lg:self-start lg:order-first lg:py-2;
