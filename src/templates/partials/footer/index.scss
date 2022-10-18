@@ -38,6 +38,37 @@
         &-menu{
             @apply p-5;
             @apply lg:flex lg:justify-between lg:p-0;
+            > ul{
+                > li{
+                    .site-footer-top-sub-title {
+                        @apply cursor-pointer relative py-3 border-b border-solid border-custom-100;
+                        @apply lg:pointer-events-none lg:py-0 lg:border-0;
+                        &::after{
+                            content: '+';
+                            @apply w-6 h-6 inline-flex justify-center text-2xl leading-none absolute top-[50%-12px] right-0;
+                        }
+                        @media screen and (min-width: 1024px) {
+                            &::after{
+                                @apply hidden;
+                            }
+                        }
+                    }
+                    > ul{
+                        @apply hidden;
+                        @apply lg:block;
+                    }
+                    &.open{
+                        .site-footer-top-sub-title{
+                            &::after{
+                                content: '-';
+                            }
+                        }
+                        > ul{
+                            @apply block;
+                        }
+                    }
+                }
+            }
             ul{
                 li{
                     a{
