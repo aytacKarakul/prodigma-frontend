@@ -39,7 +39,8 @@ input:focus {
     //- Home Page
     &-home{
         &-sss{
-            @apply lg:container lg:mx-auto;
+            @apply px-6 py-8;
+            @apply lg:container lg:mx-auto lg:mt-32 lg:px-0 lg:py-0;
             &-header{
                 @apply text-center px-7;
                 @apply max-w-xl mx-auto;
@@ -53,8 +54,12 @@ input:focus {
             }
             &-accordion{
                 @apply mt-14;
+                .content{
+                    @apply lg:max-w-screen-sm;
+                }
             }
             &-footer{
+                @apply mt-5;
                 @apply lg:max-w-[470px] lg:mx-auto lg:mt-11;
             }
         }
