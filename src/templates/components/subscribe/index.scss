@@ -1,0 +1,23 @@
+.site-subscribe{
+    @apply bg-contain bg-blue;
+    &-wrapper{
+        @apply w-full px-5 pt-10 pb-5;
+        @apply lg:max-w-xl lg:mx-auto lg:px-2 lg:pt-14 lg:pb-10;
+    }
+    &-header{
+        @apply text-white text-center;
+    }
+    &-title{
+        @apply font-heading font-medium text-2xl leading-none;
+        @apply lg:text-[28px];
+    }
+    &-desc{
+        @apply font-heading font-normal text-sm mt-5;
+    }
+    &-body{
+        @apply mt-6;
+        .input{
+            @apply mb-0;
+        }
+    }
+}

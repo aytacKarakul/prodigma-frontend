@@ -93,6 +93,9 @@ module.exports = {
             Theme: path.resolve(__dirname, './src/assets/scss'),
             Fonts : path.resolve(__dirname, './src/assets/fonts'),
             Images: path.resolve(__dirname, './src/assets/img'),
+            Partials : path.resolve(__dirname, './src/templates/partials'), 
+            Components: path.resolve(__dirname, './src/templates/components'),
+            Widgets: path.resolve(__dirname, './src/templates/widgets'),
         }
     },
 }

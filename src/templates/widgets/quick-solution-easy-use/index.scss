@@ -1,0 +1,38 @@
+.quick-solution-banner{
+    @apply bg-blue-100 pt-10 pl-5 pb-10 pr-5;
+    @apply lg:pt-40 lg:pl-16 lg:pb-14 lg:pr-16;
+    &-wrapper{
+        @apply container mx-auto;
+    }
+    &-header{
+        @apply text-white text-center max-w-[530px] mx-auto;
+        &-t1{
+            @apply font-heading font-medium text-2xl;
+            @apply lg:text-4xl;
+        }
+        &-t2{
+            @apply font-inter font-normal text-sm mt-3;
+            @apply lg:text-base lg:mt-5;
+        }
+    }
+    &-btns{
+        @apply flex max-w-[530px] mx-auto gap-3 py-6;
+        @apply lg:gap-5 lg:pt-5 lg:pb-10 lg:px-5;
+    }
+}
+
+.responsive-iframe-container{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    &-iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }   
+}

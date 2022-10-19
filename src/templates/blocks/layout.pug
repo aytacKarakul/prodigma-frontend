@@ -16,9 +16,9 @@ html(lang='tr')
     body(class="holding page-" + pageClass)
         #site-wrapper
             block header
-                include header
+                include ../partials/header/index.pug
             main(id="site-main")
                 block content
                     h1 Content
             block foot
-                include footer
+                include ../partials/footer/index.pug

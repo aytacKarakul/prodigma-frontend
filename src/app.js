@@ -1,14 +1,13 @@
-import 'Images/logo.svg';
-import 'Images/google-icon.svg';
-import 'Images/facebook-icon.svg';
-
 import 'Theme/base.scss';
+import './index.scss';
 
-import Inputs from './templates/components/web-component/inputs/index';
-
-import WebComponents from './templates/components/web-component/index';
+import Partials from 'Partials';
+import Components from 'Components';
 import LoginTabs from './templates/components/tab/index';
 
-new WebComponents();
+new Partials();
+new Components();
 new LoginTabs();
-new Inputs();
+
+import 'Images/google-icon.svg';
+import 'Images/facebook-icon.svg';

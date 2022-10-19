@@ -5,9 +5,6 @@
 @import 'Fonts/index';
 @import 'Theme/inputs';
 @import 'Theme/buttons';
-
-@import 'Theme/header';
-@import 'Theme/footer';
 @import 'Theme/widgets';
 
 html{
@@ -15,7 +12,11 @@ html{
 }
 
 body{
-    @apply bg-white text-black-100;
+    @apply bg-white text-blue-100;
+}
+
+input:focus {
+    outline: none;
 }
 
 //-----------------------------------------------------------------------
@@ -24,9 +25,47 @@ body{
     &-header{
         box-shadow: inset 0px -1px 1px rgba(0,0,0,0.1);
     }
+
+    &-messages{
+        &-error{
+            @apply bg-red text-white px-2 py-3 rounded-[10px] mt-3;
+        }
+        &-success{
+            @apply bg-green-100 text-white px-2 py-3 rounded-[10px] mt-3;
+        }
+    }
 }
 
 .page{
+    //- Home Page
+    &-home{
+        &-sss{
+            @apply px-6 py-8;
+            @apply lg:container lg:mx-auto lg:mt-32 lg:px-0 lg:py-0;
+            &-header{
+                @apply text-center px-7;
+                @apply max-w-xl mx-auto;
+                &-title{
+                    @apply font-heading font-medium text-2xl;
+                    @apply lg:text-[44px];
+                }
+                &-desc{
+                    @apply font-inter text-base mt-5;
+                }
+            }
+            &-accordion{
+                @apply mt-14;
+                .content{
+                    @apply lg:max-w-screen-sm;
+                }
+            }
+            &-footer{
+                @apply mt-5;
+                @apply lg:max-w-[470px] lg:mx-auto lg:mt-11;
+            }
+        }
+    }
+    //- Login Page 
     &-login{
         .site{
             &-header{

@@ -1,0 +1,28 @@
+.accordion{
+    .acc-item{
+        @apply bg-custom-200 first:mt-0 mt-2.5;
+        &.active{
+            .acc-body{
+                @apply block;
+            }
+            .acc-header{
+                button{
+                    @apply before:content-["\e912"];
+                }
+            }
+        }
+    }
+    .acc-header{
+        button{
+            @apply relative w-full flex items-center text-left text-blue-100 font-heading text-base font-medium pl-5 pr-12 py-4;
+            @apply lg:pl-6 lg:text-xl;
+            @apply before:font-icon before:content-["\e915"] before:block before:absolute before:top-[50%-20px] before:right-5 before:text-sm;
+        }
+    }
+    .acc-body{
+        @apply hidden px-6 pt-2 pb-6;
+        p, strong, ul li{
+            @apply font-inter font-normal text-base;
+        }
+    }
+}
