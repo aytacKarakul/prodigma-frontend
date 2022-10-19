@@ -10,7 +10,7 @@
     }
     &-top{
         @apply container mx-auto;
-        @apply lg:grid;
+        @apply lg:grid lg:mb-24;
         grid-template-columns: 1fr 2fr;
         grid-template-areas:
             "A B"
