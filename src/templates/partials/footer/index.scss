@@ -35,7 +35,7 @@
             &-col{
                 @apply relative pl-8 py-1 mb-2 font-inter text-sm;
                 .icon{
-                    @apply absolute top-[calc(50%-12px)] left-0 w-6 h-6 text-2xl leading-[normal] text-custom-100;
+                    @apply absolute top-[calc(50%-12px)] left-0 w-6 h-6 text-2xl leading-[normal] text-blue-100;
                 }
             }
         }
@@ -45,7 +45,7 @@
             > ul{
                 > li{
                     .site-footer-top-sub-title {
-                        @apply cursor-pointer relative py-3 border-b border-solid border-custom-100;
+                        @apply cursor-pointer relative py-3 border-b border-solid border-blue-100;
                         @apply lg:pointer-events-none lg:py-0 lg:border-0;
                         &::after{
                             content: '+';
@@ -90,7 +90,7 @@
         @apply lg:justify-start lg:pt-0 lg:pb-0;
         li{
             a{
-                @apply inline-flex items-center justify-center w-9 h-9 bg-custom-100 rounded-full;
+                @apply inline-flex items-center justify-center w-9 h-9 bg-blue-100 rounded-full;
                 .icon{
                     @apply text-white text-xl leading-none;
                 }
@@ -115,7 +115,7 @@
                     &:not(:first-child){
                         &::before{
                             content:'';
-                            @apply w-1 h-1 bg-black rounded-full mr-2;
+                            @apply w-1 h-1 bg-blue-100 rounded-full mr-2;
                         }
                     }
                     a{
