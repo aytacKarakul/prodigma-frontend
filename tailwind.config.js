@@ -40,6 +40,9 @@ module.exports = {
           '200': '#F1F3F9',
         },
       },
+      backgroundImage: {
+        'slider': "url('./src/assets/img/slider-bg.png')",
+      },
     },
   },
   variants: {
