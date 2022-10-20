@@ -1,5 +1,5 @@
 .btn{
-    @apply w-full min-h-[46px] bg-black-100 text-white flex items-center justify-center rounded-[30px];
+    @apply w-full min-h-[46px] bg-black-100 text-white text-sm font-heading font-medium flex items-center justify-center rounded-[30px];
     &-secondary{
         @apply bg-[rgba(40,41,40,0.5)];
     }
@@ -14,7 +14,7 @@
         @apply px-2 py-2.5;
     }
     &-link{
-        @apply bg-inherit text-black-100 rounded-none w-auto py-2;
+        @apply bg-inherit font-inter font-normal text-sm text-black-100 rounded-none w-auto py-2;
         span{
             @apply underline;
         }
