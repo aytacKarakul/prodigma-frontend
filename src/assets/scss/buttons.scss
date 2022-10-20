@@ -3,6 +3,13 @@
     &-secondary{
         @apply bg-[rgba(40,41,40,0.5)];
     }
+    &-primary{
+        @apply bg-blue-100 text-white border-white border-opacity-40;
+        @apply hover:bg-white hover:text-blue hover:border-opacity-100;
+    }
+    &-outlined{
+        @apply bg-inherit rounded-[10px] text-inherit border border-solid border-custom-200;
+    }
     &-medium{
         @apply px-2 py-2.5;
     }
@@ -11,9 +18,6 @@
         span{
             @apply underline;
         }
-    }
-    &-outlined{
-        @apply bg-inherit rounded-[10px] text-inherit border border-solid border-gray-100;
     }
     &.text-hidden{
         @apply py-1;
