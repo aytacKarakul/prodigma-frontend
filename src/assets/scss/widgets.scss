@@ -81,3 +81,24 @@
     }
     
 }
+
+//Supply Banner
+
+.supply-banner {
+    &-wrapper {
+        @apply container mx-auto;
+    }
+    &-content {
+        &-title {
+            @apply text-center font-heading font-medium text-[44px] leading-[50px] text-blue-100 mt-[90px];
+        }
+        &-desc {
+            @apply mx-auto text-center font-inter font-normal text-base leading-5 text-blue-100 my-4;
+            @apply max-w-[475px];
+        }
+        &-btn {
+            @apply w-1/5 mx-auto mb-[90px];
+        }
+    }
+    
+}
