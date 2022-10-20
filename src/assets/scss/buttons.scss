@@ -4,7 +4,7 @@
         @apply bg-[rgba(40,41,40,0.5)];
     }
     &-primary{
-        @apply bg-blue-100 text-white border-white border-opacity-40;
+        @apply bg-blue-100 text-white border border-solid border-white border-opacity-40;
         @apply hover:bg-white hover:text-blue hover:border-opacity-100;
     }
     &-outlined{
