@@ -21,7 +21,8 @@ module.exports = {
         },
         green: {
           DEFAULT: '#00FF00',
-          '100' : '#24BA60'
+          '100' : '#24BA60',
+          '200' : '#66C86C'
         },
         red: {
           DEFAULT : '#FF0000',
@@ -42,6 +43,7 @@ module.exports = {
       },
       backgroundImage: {
         'slider': "url('./src/assets/img/slider-bg.png')",
+        'logo': "url('./src/assets/img/logo.svg')",
       },
     },
   },
