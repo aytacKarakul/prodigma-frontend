@@ -11,20 +11,15 @@ mixin img-icon(iconUrl)
     img(src=iconUrl + '.svg')&attributes(attributes)
 
 //- Picture
-mixin picture(src1x, src2x=false, src3x=false)
+mixin picture(src1x, src2x = false)
     picture 
-        - if (src2x)
-            source(media="(max-width: 1024px)", srcset=src1x['sm'] + " 1x, " + src2x['sm'] + " 2x")
-            source(media="(min-width: 1025px)", srcset=src1x['lg'] + " 1x, " + src2x['lg'] + " 2x")
-        - else if (src3x)
-            source(media="(max-width: 768px)", srcset=src1x['sm'] + " 1x, " + src2x['sm'] + " 2x, " + src3x['sm'] + " 3x")
-            source(media="(max-width:1024px)", srcset=src1x['md'] + " 1x, " + src2x['md'] + " 2x, " + src3x['md'] + " 3x")
-            source(media="(min-width:1025px)", srcset=src1x['lg'] + " 1x, " + src2x['lg'] + " 2x, " + src3x['lg'] + " 3x")
-        - else 
+        - if(src2x)
+            source(media="(max-width: 1024px)" srcset=src1x['sm'] + " 1x, " + src2x['sm'] + " 2x")
+            source(media="(min-width: 1025px)" srcset=src1x['lg'] + " 1x, " + src2x['lg'] + " 2x")
+        - else
             source(media="(max-width: 1024px)" srcset=src1x['sm'])
             source(media="(min-width: 1025px)" srcset=src1x['lg'])
         img(src=src1x['sm'] alt=(attributes.alt) ? attributes.alt : 'alt text here')&attributes(attributes)
-
 //- inputs
 mixin inputs(type, label='', id='', icon='', disabled=false, timer='', error='')
     .input(class=(disabled) ? 'input-disabled ' + type : type)

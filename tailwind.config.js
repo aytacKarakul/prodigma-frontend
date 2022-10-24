@@ -9,6 +9,9 @@ module.exports = {
       icon: ['icomoon']
     },
     extend: {
+      screens: {
+        '2xl': '1440px',
+      },
       colors: {
         black :{
           DEFAULT: '#000000',
@@ -22,7 +25,8 @@ module.exports = {
         green: {
           DEFAULT: '#00FF00',
           '100' : '#24BA60',
-          '200' : '#66C86C'
+          '200' : '#66C86C',
+          '300' : '#82C576'
         },
         red: {
           DEFAULT : '#FF0000',
