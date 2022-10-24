@@ -1,15 +1,20 @@
 //Quadruple Banner
 
-.quadruple {
+.quadruple-banner {
     @apply bg-blue-200;
     &-wrapper {
         @apply container mx-auto;
     }
-    &-title {
-        @apply font-heading text-2xl leading-7 pt-10 pb-6 text-center lg:text-[38px] font-medium text-white lg:leading-[50px] lg:pt-[92px] lg:pb-32;
+    //- Desktop
+    &-header {
+        &-title {
+        @apply font-heading text-2xl leading-7 pt-10 pb-6 text-center font-medium text-white ;
+        @apply lg:text-[38px] lg:leading-[50px] lg:pt-[92px] lg:pb-32;
     }
-    &-banner {
-        @apply hidden lg:flex flex-row justify-center;
+    }
+    &-body {
+        @apply hidden flex-row justify-center;
+        @apply lg:flex;
         &-left {
             @apply flex flex-col text-left;
         }
@@ -28,7 +33,7 @@
             li {
                 @apply flex flex-col;
                 p {
-                    @apply font-heading font-medium text-[34px] leading-10 text-green-200 pb-[10px];
+                    @apply font-heading font-medium text-[34px] leading-10 text-purple-100 pb-[10px];
                     @apply max-w-[400px];
                 }
                 span {
@@ -47,39 +52,41 @@
             }
         }
     }
-
-    &-mBanner {
-        @apply lg:hidden flex flex-col;
-    }
-    &-img {
-        img {
-            @apply rounded-[50%] items-center justify-center pb-6;
-        }
-    }
-    &-content {
-        ul {
-            @apply flex flex-row overflow-x-auto;
-            li {
-                @apply flex flex-col pb-[38px] pr-14 pl-5;
-                @apply border-r-[1px];
-                p {
-                    @apply font-heading font-medium text-2xl leading-6 text-green-200 pb-[10px];
-                    @apply max-w-[242px];
-                }
-                span {
-                    @apply font-inter font-normal text-sm text-white pb-3;
-                    @apply max-w-[212px]
-                }
-                a {
-                    @apply font-heading font-medium text-sm leading-[17px] underline text-white;
+    //-Mobile
+    &-mobile {
+        @apply flex flex-col;
+        @apply lg:hidden;
+        &-body {
+            &-img {
+                img {
+                    @apply rounded-[50%] items-center justify-center pb-6;
                 }
             }
-            li:last-child {
-                @apply border-none;
+            &-content {
+                ul {
+                    @apply flex flex-row overflow-x-auto;
+                    li {
+                        @apply flex flex-col pb-[38px] pr-14 pl-5;
+                        @apply border-r-[1px];
+                        p {
+                            @apply font-heading font-medium text-2xl leading-6 text-purple-100 pb-[10px];
+                            @apply max-w-[242px];
+                        }
+                        span {
+                            @apply font-inter font-normal text-sm text-white pb-3;
+                            @apply max-w-[212px]
+                        }
+                        a {
+                            @apply font-heading font-medium text-sm leading-[17px] underline text-white;
+                        }
+                    }
+                    li:last-child {
+                        @apply border-none;
+                    }
+                }
             }
         }
-    }
-    
+        }
 }
 
 //Supply Banner
