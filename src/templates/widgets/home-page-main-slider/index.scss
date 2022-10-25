@@ -1,12 +1,27 @@
 @import 'swiper/scss/effect-fade';
 
+.main-slider{
+    @apply relative;
+    &-banner-wrapper{
+        @apply lg:w-screen lg:h-screen;
+    }
+}
 .swiper-main{
     @apply w-full h-full;
+    &-double-wrap{
+        @apply lg:grid lg:grid-cols-2;
+    }
+    &-text-content{
+        h1{
+            @apply w-screen h-screen opacity-0 transition-opacity duration-300;
+        }
+    }
     .swiper-slide{
         @apply bg-cover w-full h-full;
-        img{
-            display: block;
-            width: 100%;
+    }
+    .swiper-slide-active{
+        .swiper-main-text-content h1{
+            @apply opacity-100;
         }
     }
 }
