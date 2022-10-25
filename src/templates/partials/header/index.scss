@@ -39,6 +39,39 @@
             @apply lg:transition-colors lg:duration-200 lg:ease-in lg:delay-200;
         }
     }
+    &-login{
+        &-user{
+            @apply w-8 h-8 bg-blue font-heading font-medium text-white text-xs rounded-full flex items-center justify-center mr-2.5;
+            @apply lg:transition-colors lg:duration-200 lg:ease-in lg:delay-200;
+        }
+        &-hello{
+            @apply text-blue-100 font-inter font-medium text-xs text-opacity-50;
+            @apply lg:transition-colors lg:duration-200 lg:ease-in lg:delay-200;
+        }
+        &-member{
+            @apply text-blue-100 font-inter font-medium text-base truncate max-w-[4.688rem];
+            @apply lg:transition-colors lg:duration-200 lg:ease-in lg:delay-200;
+        }
+        &-success{
+            @apply flex flex-row items-center;
+            &-project{
+                @apply mr-5;
+                .btn{
+                    @apply pl-6 pr-6;
+                }
+            }
+            &-left{
+                @apply flex flex-col mr-5;
+            }
+            &-cart{
+                @apply w-5 h-5;
+                .icon{
+                    @apply text-xl leading-none text-blue;
+                    @apply lg:transition-colors lg:duration-200 lg:ease-in lg:delay-200;
+                }
+            }
+        }
+    }
 }
 
 .site-header-anim {
@@ -54,12 +87,24 @@
     }
     .site-header-logo{
         a {
-            @apply bg-white;
+            @apply lg:bg-white;
         }
     }
     .site-header-logoff {
         a {
             @apply lg:text-white;
         }
+    }
+    .site-header-login-user{
+        @apply lg:text-black-100 lg:bg-white;
+    }
+    .site-header-login-hello{
+        @apply lg:text-white lg:text-opacity-50;
+    }
+    .site-header-login-member{
+        @apply lg:text-white;
+    }
+    .site-header-login-success-cart .icon{
+        @apply lg:text-white;
     }
 }
