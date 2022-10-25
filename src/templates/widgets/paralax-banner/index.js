@@ -10,6 +10,7 @@ class SwiperParalax {
           direction: 'vertical',
           speed: 600,
           mousewheel: true,
+          
           pagination: {
             el: ".swiper-pagination",
             clickable: true,
