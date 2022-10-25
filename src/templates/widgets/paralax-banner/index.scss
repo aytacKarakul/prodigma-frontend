@@ -16,12 +16,10 @@
   .swiper{
     @apply w-full h-full;
   }
-
   .swiper-wrapper{
       @apply h-[500px];
       @apply lg:h-[770px];
   }
-
   .swiper-slide{
     @apply flex flex-col justify-center px-5 py-7;
     @apply lg:px-24 lg:py-10;

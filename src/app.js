@@ -10,8 +10,8 @@ import SwiperParalax from './templates/widgets/paralax-banner';
 new Partials();
 new Components();
 new OurSerivesSwiper();
-new LoginTabs();
 new SwiperParalax();
+new LoginTabs();
 
 import 'Images/google-icon.svg';
 import 'Images/facebook-icon.svg';
