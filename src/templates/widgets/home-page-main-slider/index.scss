@@ -1,0 +1,12 @@
+@import 'swiper/scss/effect-fade';
+
+.swiper-main{
+    @apply w-full h-full;
+    .swiper-slide{
+        @apply bg-cover w-full h-full;
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+}
