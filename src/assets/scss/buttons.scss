@@ -12,8 +12,8 @@
         @apply bg-inherit rounded-[10px] text-inherit border border-solid border-custom-200;
     }
     &-light{
-        @apply bg-white text-blue border border-transparent;
-        @apply lg:hover:bg-transparent lg:hover:text-white lg:hover:border-white lg:hover:border-opacity-40;
+        @apply bg-white text-blue border border-white border-opacity-40;
+        @apply lg:hover:bg-transparent lg:hover:border-transparent;
     }
     &-medium{
         @apply px-2 py-2.5;
