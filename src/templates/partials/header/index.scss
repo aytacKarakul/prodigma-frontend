@@ -104,6 +104,13 @@
     .site-header-login-member{
         @apply lg:text-white;
     }
+    .site-header-login-success-project{
+        .btn{
+            &-light{
+                @apply bg-white;
+            }
+        }
+    }
     .site-header-login-success-cart .icon{
         @apply lg:text-white;
     }
