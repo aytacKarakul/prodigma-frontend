@@ -8,7 +8,7 @@ import 'Images/enjeksiyon-kaliplama.png';
 
 class OurSerivesSwiper {
     constructor(){
-        const swiper = new Swiper('.swiper', {
+        const swiperOurWidget = new Swiper('.swiper-our-widget', {
             modules: [Navigation, Scrollbar],
             slidesPerView: 1.3,
             spaceBetween: 20,
@@ -37,7 +37,7 @@ class OurSerivesSwiper {
                 draggable: true,
             },
         });
-        return swiper;
+        return swiperOurWidget;
     }
 }
 
