@@ -1,0 +1,42 @@
+@import 'swiper/scss/parallax';
+@import 'swiper/scss/mousewheel';
+
+.swiper-paralax-wrapper{
+  @apply bg-custom-200 w-full max-w-screen-2xl mx-auto;
+  @apply lg:p-16;
+}
+.swiper-paralax{
+  @apply lg:rounded-[20px];
+
+  .parallax-bg {
+    @apply absolute top-0 left-0 w-full h-[130%] bg-cover;
+    background-position: center;
+  }
+
+  .swiper{
+    @apply w-full h-full;
+  }
+
+  .swiper-wrapper{
+      @apply h-[500px];
+      @apply lg:h-[770px];
+  }
+
+  .swiper-slide{
+    @apply flex flex-col justify-center px-5 py-7;
+    @apply lg:px-24 lg:py-10;
+    width: 100% !important;
+    > * {
+      color: white;
+    }
+  }
+
+  .title{
+    @apply font-heading font-medium text-2xl w-full;
+    @apply lg:text-5xl lg:max-w-lg lg:ml-auto;
+  }
+  .subtitle{
+    @apply font-inter font-normal text-sm w-full mt-2.5;
+    @apply lg:text-base lg:max-w-lg lg:ml-auto;
+  }
+}
