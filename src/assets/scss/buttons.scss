@@ -6,14 +6,14 @@
     }
     &-primary{
         @apply bg-blue-100 text-white border border-solid border-white border-opacity-40;
-        @apply hover:bg-white hover:text-blue hover:border-opacity-100;
+        @apply lg:hover:bg-white lg:hover:text-blue lg:hover:border-opacity-100;
     }
     &-outlined{
         @apply bg-inherit rounded-[10px] text-inherit border border-solid border-custom-200;
     }
     &-light{
         @apply bg-white text-blue border-transparent;
-        @apply bg-blue-100 text-white border-white border-opacity-40;
+        @apply lg:hover:bg-blue-100 lg:hover:text-white lg:hover:border-white lg:hover:border-opacity-40;
     }
     &-medium{
         @apply px-2 py-2.5;
