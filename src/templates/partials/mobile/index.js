@@ -1,5 +1,6 @@
 class MobileHeader{
     constructor(){
+        
         this.mobileHamburgerBtn = document.querySelector('.site-mobile-header-hamburger');
         this.mobileHamburgerCloseBtn = document.querySelector('.site-mobile-header-wrapper-top-close');
         
