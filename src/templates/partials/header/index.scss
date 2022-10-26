@@ -1,18 +1,15 @@
 .site-header {
-    @apply fixed top-0 left-0 z-10 w-full h-screen bg-white;
-    @apply transition-all translate-x-full duration-200 delay-200 ease-in;
-    @apply lg:h-auto lg:bg-transparent lg:translate-x-0;
+    @apply fixed top-0 left-0 z-10 w-full;
+    @apply transition-colors ease-in duration-200 delay-200;
 
     &-wrapper {
-        @apply container h-full mx-auto;
-        @apply lg:flex lg:flex-row lg:items-center lg:h-auto lg:py-2.5;
+        @apply container mx-auto flex flex-row items-center py-2;
     }
     &-logo {
-        @apply hidden;
-        @apply lg:block lg:mr-7;
+        @apply mr-7;
         a {
             @apply flex w-[130px] h-[52px] bg-blue-200;
-            @apply lg:transition-colors lg:duration-200 lg:ease-in lg:delay-200;
+            @apply transition-colors ease-in duration-200 delay-200;
 
             mask: url('../../../assets/img/logo.svg') no-repeat center / cover;
             -webkit-mask: url('../../../assets/img/logo.svg') no-repeat center / cover;
@@ -22,19 +19,16 @@
         }
     }
     &-nav {
-        @apply bg-gray-200 w-full h-[calc(100vh-13.125rem)] overflow-y-scroll px-5 py-4;
-        @apply lg:bg-transparent lg:w-auto lg:h-auto lg:overflow-y-visible lg:flex-auto lg:px-0 lg:py-0 lg:mr-3;
+        @apply flex-auto mr-3;
         ul {
-            @apply lg:flex lg:flex-row lg:gap-10;
+            @apply flex flex-row gap-10;
             li {
-                @apply border-b border-solid border-blue-100;
-                @apply lg:border-b-0;
                 a {
                     @apply flex relative py-4 font-heading font-normal text-sm;
-                    @apply lg:transition-colors lg:duration-200 lg:ease-in lg:delay-200 lg:overflow-y-hidden;
-                    @apply lg:after:content-[""] lg:after:absolute lg:after:bottom-[-3px] lg:after:left-0 lg:after:w-full lg:after:h-[3px] lg:after:bg-green-200 lg:after:transition-all lg:after:duration-200 lg:after:ease-in lg:after:delay-200;
-                    @apply lg:hover:text-green-200 #{!important};
-                    @apply lg:hover:after:bottom-0;
+                    @apply transition-colors ease-in duration-200 delay-200 overflow-y-hidden;
+                    @apply after:content-[""] after:absolute after:bottom-[-3px] after:left-0 after:w-full after:h-[3px] after:bg-green-200 after:transition-all after:ease-in after:duration-200 after:delay-200;
+                    @apply hover:text-green-200 #{!important};
+                    @apply hover:after:bottom-0;
                 }
             }
         }
@@ -42,23 +36,21 @@
     &-logoff {
         a {
             @apply inline-flex font-heading font-medium text-sm;
-            @apply lg:transition-colors lg:duration-200 lg:ease-in lg:delay-200;
+            @apply transition-colors ease-in duration-200 delay-200;
         }
     }
     &-login{
-        @apply hidden;
-        @apply lg:block;
         &-user{
             @apply w-8 h-8 bg-blue font-heading font-medium text-white text-xs rounded-full flex items-center justify-center mr-2.5;
-            @apply lg:transition-colors lg:duration-200 lg:ease-in lg:delay-200;
+            @apply transition-colors ease-in duration-200 delay-200;
         }
         &-hello{
-            @apply text-white font-inter font-medium text-xs text-opacity-50;
-            @apply lg:transition-colors lg:duration-200 lg:ease-in lg:delay-200;
+            @apply text-blue-100 font-inter font-medium text-xs text-opacity-50;
+            @apply transition-colors ease-in duration-200 delay-200;
         }
         &-member{
-            @apply text-white font-inter font-medium text-base truncate max-w-[4.688rem];
-            @apply lg:transition-colors lg:duration-200 lg:ease-in lg:delay-200;
+            @apply text-blue-100 font-inter font-medium text-base truncate max-w-[4.688rem];
+            @apply transition-colors ease-in duration-200 delay-200;
         }
         &-success{
             @apply flex flex-row items-center;
@@ -74,91 +66,52 @@
             &-cart{
                 @apply w-5 h-5;
                 .icon{
-                    @apply text-xl leading-none text-white;
-                    @apply lg:transition-colors lg:duration-200 lg:ease-in lg:delay-200;
+                    @apply text-xl leading-none text-blue;
+                    @apply transition-colors ease-in duration-200 delay-200;
                 }
-            }
-        }
-    }
-    &-social{
-        @apply block px-5 py-8 bg-white;
-        @apply lg:hidden;
-        &-title{
-            @apply mb-3.5;
-        }
-        ul{
-            @apply flex items-center gap-7;
-            li{
-                a{
-                    @apply flex;
-                    .icon{
-                        @apply flex items-center justify-center w-9 h-9 bg-blue-100 rounded-full text-white;
-                    }
-                }
-            }
-        }
-    }
-    &-menu-mobile-header{
-        @apply flex items-center gap-3 p-5;
-        @apply lg:hidden;
-        &-close{
-            @apply w-8 h-8 flex items-center justify-center;
-            .icon{
-                @apply text-base text-black-100;
-            }
-        }
-        &-title{
-            @apply flex-auto font-heading font-semibold text-base text-black-100;
-        }
-        &-member{
-            .mmbr{
-                @apply bg-custom-400 w-8 h-8 flex items-center justify-center rounded-full font-heading font-semibold text-xs;
-            }
-            .icon{
-                @apply bg-gray-200 w-8 h-8 flex items-center justify-center rounded-full text-black-100 text-base;
             }
         }
     }
 }
 
 .site-header-anim {
-    @apply lg:bg-blue-100;
+    @apply bg-blue-100;
     .site-header-nav {
         ul {
             li {
                 a {
-                    @apply lg:text-white;
+                    @apply text-white;
                 }
             }
         }
     }
     .site-header-logo{
         a {
-            @apply lg:bg-white;
+            @apply bg-white;
         }
     }
     .site-header-logoff {
         a {
-            @apply lg:text-white;
+            @apply text-white;
         }
     }
     .site-header-login-user{
-        @apply lg:text-black-100 lg:bg-white;
+        @apply text-black-100 bg-white;
     }
     .site-header-login-hello{
-        @apply lg:text-white lg:text-opacity-50;
+        @apply text-white text-opacity-50;
     }
     .site-header-login-member{
-        @apply lg:text-white;
+        @apply text-white;
     }
     .site-header-login-success-project{
         .btn{
             &-light{
-                @apply bg-white text-blue;
+                @apply bg-white;
             }
         }
     }
     .site-header-login-success-cart .icon{
-        @apply lg:text-white;
+        @apply text-white;
     }
 }
