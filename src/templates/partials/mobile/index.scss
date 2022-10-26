@@ -1,7 +1,8 @@
 .site-mobile-header{
     @apply flex items-center justify-start p-5 gap-5;
-    @apply fixed top-0 left-0 z-10 w-full h-auto;
+    @apply fixed top-0 left-0 z-10 w-full;
     @apply lg:hidden;
+
     &-hamburger{
         @apply w-8 h-8;
         .icon{
@@ -15,6 +16,64 @@
         @apply w-8 h-8;
         .icon{
             @apply text-[2rem];
+        }
+    }
+    &-wrapper{
+        @apply hidden fixed top-0 left-0 z-20 w-full h-full bg-white;
+        &-top{
+            @apply flex items-center gap-3 p-5;
+            @apply lg:hidden;
+            &-close{
+                @apply w-8 h-8 flex items-center justify-center;
+                .icon{
+                    @apply text-base text-black-100;
+                }
+            }
+            &-title{
+                @apply flex-auto font-heading font-semibold text-base text-black-100;
+            }
+            &-member{
+                .mmbr{
+                    @apply bg-custom-400 w-8 h-8 flex items-center justify-center rounded-full font-heading font-semibold text-xs;
+                }
+                .icon{
+                    @apply bg-gray-200 w-8 h-8 flex items-center justify-center rounded-full text-black-100 text-base;
+                }
+            }
+        }
+    }
+    &-nav{
+        @apply bg-gray-200 w-full h-[calc(100vh-13.125rem)] overflow-y-scroll px-5 py-4;
+        ul{
+            li{
+                @apply border-b border-solid border-blue-100;
+                > a{
+                    @apply flex relative py-4 pr-9 font-heading font-medium text-base leading-none;
+                    @apply after:content-["+"] after:w-6 after:h-6 after:flex after:items-center after:justify-center after:absolute after:top-[calc(50%-0.75rem)] after:right-0 after:bg-white after:rounded-full after:text-xl;
+                }
+            }
+        }
+    }
+    &-social{
+        @apply px-5 py-8 bg-white;
+        &-title{
+            @apply mb-3.5;
+        }
+        ul{
+            @apply flex items-center gap-7;
+            li{
+                a{
+                    @apply flex;
+                    .icon{
+                        @apply flex items-center justify-center w-9 h-9 bg-blue-100 rounded-full text-white;
+                    }
+                }
+            }
+        }
+    }
+    &-menu-open{
+        .site-mobile-header-wrapper{
+            @apply block;
         }
     }
 }
