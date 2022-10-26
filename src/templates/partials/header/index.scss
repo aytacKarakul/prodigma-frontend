@@ -46,11 +46,11 @@
             @apply lg:transition-colors lg:duration-200 lg:ease-in lg:delay-200;
         }
         &-hello{
-            @apply text-blue-100 font-inter font-medium text-xs text-opacity-50;
+            @apply text-white font-inter font-medium text-xs text-opacity-50;
             @apply lg:transition-colors lg:duration-200 lg:ease-in lg:delay-200;
         }
         &-member{
-            @apply text-blue-100 font-inter font-medium text-base truncate max-w-[4.688rem];
+            @apply text-white font-inter font-medium text-base truncate max-w-[4.688rem];
             @apply lg:transition-colors lg:duration-200 lg:ease-in lg:delay-200;
         }
         &-success{
@@ -67,7 +67,7 @@
             &-cart{
                 @apply w-5 h-5;
                 .icon{
-                    @apply text-xl leading-none text-blue;
+                    @apply text-xl leading-none text-white;
                     @apply lg:transition-colors lg:duration-200 lg:ease-in lg:delay-200;
                 }
             }
@@ -108,7 +108,7 @@
     .site-header-login-success-project{
         .btn{
             &-light{
-                @apply bg-white;
+                @apply bg-white text-blue;
             }
         }
     }
