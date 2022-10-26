@@ -1,7 +1,7 @@
 .site-header {
-    @apply fixed top-0 left-0 z-10 w-full;
+    @apply hidden fixed top-0 left-0 z-10 w-full;
     @apply transition-colors ease-in duration-200 delay-200;
-
+    @apply lg:block;
     &-wrapper {
         @apply container mx-auto flex flex-row items-center py-2;
     }
