@@ -1,27 +1,81 @@
 @import 'swiper/scss/effect-fade';
 
 .main-slider{
-    @apply relative;
-    &-banner-wrapper{
-        @apply lg:w-screen lg:h-screen;
+    &-banner{
+        @apply relative;
+        &-brands{
+            @apply px-5 py-5;
+            @apply lg:absolute lg:left-0 lg:bottom-10 lg:w-1/2 lg:px-10 lg:py-2.5 lg:z-[1];
+            &-desc{
+                @apply font-heading font-light mb-7 text-sm text-center;
+                @apply lg:text-left;
+                a{
+                    @apply ml-1 text-blue-100 font-medium underline;
+                }
+            }
+            ul{
+                @apply flex items-center justify-center flex-wrap gap-5 w-full pb-5;
+                @apply lg:justify-start lg:flex-nowrap lg:pb-0;
+                li{
+                    @apply text-center;
+                    @apply lg:pr-5 lg:text-left;
+                }
+            }
+        }
     }
 }
 .swiper-main{
-    @apply w-full h-full;
+    @apply w-full h-full bg-custom-200;
     &-double-wrap{
         @apply lg:grid lg:grid-cols-2;
     }
     &-text-content{
+        @apply flex flex-col justify-center items-start absolute top-0 px-5 py-8;
+        @apply lg:relative lg:top-[inherit] lg:px-10 lg:py-0;
+        &-text{
+            @apply lg:max-w-[23.125rem];
+        }
+        h1, p{
+            @apply opacity-0 transition-opacity duration-300 text-white;
+            @apply lg:text-blue-100;
+        }
         h1{
-            @apply w-screen h-screen opacity-0 transition-opacity duration-300;
+            @apply font-heading font-semibold text-3xl;
+            @apply lg:text-[2.75rem] lg:leading-[3rem];
+        }
+        p{
+            @apply mt-2.5 font-inter font-light text-sm;
+            @apply lg:text-base;
+        }
+    }
+    &-buttons{
+        @apply flex items-center w-full max-w-[23.125rem] mt-6;
+        .btn{
+            @apply first:mr-2.5;
         }
     }
     .swiper-slide{
         @apply bg-cover w-full h-full;
     }
     .swiper-slide-active{
-        .swiper-main-text-content h1{
-            @apply opacity-100;
+        .swiper-main-text-content{
+            h1, p{
+                @apply opacity-100;
+            }
         }
+    }
+    .swiper-button-prev,
+    .swiper-button-next{
+        @apply hidden bg-blue-100 w-[3.125rem] h-[3.125rem] rounded-full;
+        @apply lg:flex;
+        &::after{
+            @apply text-white text-xs;
+        }
+    }
+    .swiper-button-prev{
+        @apply lg:left-[calc(50%+1.875rem)];
+    }
+    .swiper-button-next{
+        @apply lg:right-[1.875rem];
     }
 }
