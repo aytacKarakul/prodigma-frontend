@@ -1,3 +1,5 @@
+- var authenticated= true
+
 header.site-header
     .site-header-wrapper
         .site-header-logo
@@ -14,5 +16,20 @@ header.site-header
                 li 
                     a(href="/hakkimizda.html") Prodigma +  
         .site-header-login
-            .site-header-logoff
-                a(href="/login.html") Giriş Yap 
+            case authenticated
+                when authenticated= false
+                    .site-header-logoff
+                        a(href="/login.html") Giriş Yap 
+                when authenticated= true
+                    .site-header-login-success
+                        .site-header-login-success-project
+                            +button('Proje Başlat','light','m',false)(href="#")
+                        .site-header-login-user
+                            span TA
+                        .site-header-login-success-left
+                            span.site-header-login-hello
+                                |Hoşgeldiniz
+                            span.site-header-login-member
+                                |Test Account
+                        .site-header-login-success-cart
+                            i.icon.icon-cart
