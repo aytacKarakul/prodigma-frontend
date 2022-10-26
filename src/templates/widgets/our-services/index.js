@@ -16,15 +16,15 @@ class OurSerivesSwiper {
 
             breakpoints: {
                 640: {
-                    slidesPerView: 2.2,
+                    slidesPerView: 2.5,
                     spaceBetween: 10,
                 },
                 768: {
-                    slidesPerView: 3.2,
+                    slidesPerView: 3.5,
                     spaceBetween: 10,
                 },
                 1024: {
-                    slidesPerView: 4.2,
+                    slidesPerView: 4.1,
                     spaceBetween: 20,
                 },
             },
