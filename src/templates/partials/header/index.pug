@@ -2,29 +2,23 @@
 
 header.site-header
     .site-header-wrapper
-        .site-header-menu-mobile-header 
-            .site-header-menu-mobile-header-close 
-                i.icon.icon-close
-            .site-header-menu-mobile-header-title MENÜ
-            .site-header-menu-mobile-header-member 
-                case authenticated
-                    when authenticated= true
-                        .mmbr TA
-                    when authenticated= false
-                        i.icon.icon-cart
         .site-header-logo
             a(href="/")
                 img(src=require('Images/logo.svg') alt="pug logo")
         .site-header-nav
             ul
                 li 
-                    a(href="/hakkimizda.html") Hakkımızda  
+                    a(href="/hakkimizda.html")
+                        |Hakkımızda  
                 li 
-                    a(href="/hakkimizda.html") Hizmetler  
+                    a(href="/hakkimizda.html")
+                        |Hizmetler  
                 li 
-                    a(href="/hakkimizda.html") Malzemeler  
+                    a(href="/hakkimizda.html")
+                        |Malzemeler  
                 li 
-                    a(href="/hakkimizda.html") Prodigma +  
+                    a(href="/hakkimizda.html")
+                        |Prodigma +  
         .site-header-login
             case authenticated
                 when authenticated= true
@@ -43,18 +37,3 @@ header.site-header
                 when authenticated= false
                     .site-header-logoff
                         a(href="/login.html") Giriş Yap
-        .site-header-social 
-            .site-header-social-title Bizi takip Edin
-            ul
-                li
-                    a(href="")
-                        i.icon.icon-facebook
-                    li 
-                        a(href="")
-                            i.icon.icon-twitter
-                    li 
-                        a(href="")
-                            i.icon.icon-instagram
-                    li 
-                        a(href="")
-                            i.icon.icon-youtube
