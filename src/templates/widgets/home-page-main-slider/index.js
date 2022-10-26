@@ -1,5 +1,10 @@
 import Swiper, { Navigation, Pagination, EffectFade } from 'swiper';
 
+import 'Images/aselsan.png';
+import 'Images/roketsan.png';
+import 'Images/turkish-technic.png';
+import 'Images/mercedes-benz.png';
+
 class MainSwiperSlider {
     constructor(){
         const swiperMain = new Swiper('.swiper-main', {

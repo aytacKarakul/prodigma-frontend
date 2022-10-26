@@ -4,25 +4,37 @@
             .swiper-wrapper 
                 .swiper-slide
                     .swiper-main-double-wrap
-                        .swiper-main-text-content 
-                            h1 İçerik 1
-                        img(src="https://swiperjs.com/demos/images/nature-1.jpg", alt="Test Img")
+                        .swiper-main-text-content
+                            .swiper-main-text-content-text 
+                                h1 Özel parça tedarik etmenin en kolay yolu
+                                p Yüzlerce uzman üreticiyle ortaklık kurarak karmaşık prototipler ve son kullanım parçaları için tutarlı kaliteyi garanti ediyoruz.
+                                .swiper-main-buttons 
+                                    +button('Bize Ulaşın','primary','m',false)(href="#")
+                                    +button('Proje Başlat','outlined','m',false)(href="#")
+                        img(src="https://via.placeholder.com/1080x1300/0000FF/808080?Text=Digital.com", alt="Test Img")
                 .swiper-slide
                     .swiper-main-double-wrap
                         .swiper-main-text-content
-                            h1 İçerik 2
-                        img(src="https://swiperjs.com/demos/images/nature-2.jpg", alt="Test Img")
-                .swiper-slide
-                    .swiper-main-double-wrap
-                        .swiper-main-text-content
-                            h1 İçerik 3
-                        img(src="https://swiperjs.com/demos/images/nature-3.jpg", alt="Test Img")
+                            .swiper-main-text-content-text
+                                h1 Özel parça tedarik etmenin en kolay yolu
+                                p Yüzlerce uzman üreticiyle ortaklık kurarak karmaşık prototipler ve son kullanım parçaları için tutarlı kaliteyi garanti ediyoruz.
+                                .swiper-main-buttons 
+                                    +button('Bize Ulaşın','primary','m',false)(href="#")
+                                    +button('Proje Başlat','outlined','m',false)(href="#")
+                        img(src="https://via.placeholder.com/1080x1300/FF0000/FFFFFF?Text=Down.com", alt="Test Img")
             .swiper-button-next
             .swiper-button-prev
-            .swiper-pagination
+            .swiper-pagination.hidden
     .main-slider-banner-brands
+        .main-slider-banner-brands-desc 
+            |Prodigma kullanan binlerce şirkete
+            a(href="#") katılın.
         ul 
-            li Aselsan
-            li Roketsan
-            li Turkhish Technic 
-            li Mercedes Benz
+            li
+                img(src=require('Images/aselsan.png') alt="Aselsan")
+            li
+                img(src=require('Images/roketsan.png'), alt="Roketsan")
+            li
+                img(src=require('Images/turkish-technic.png'), alt="Turkhish Technic")
+            li
+                img(src=require('Images/mercedes-benz.png'), alt="Mercedes Benz")
