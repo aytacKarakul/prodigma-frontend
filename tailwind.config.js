@@ -43,6 +43,8 @@ module.exports = {
         custom: {
           '100': '#A09C8E',
           '200': '#F1F3F9',
+          '300' : '#1E1E1E',
+          '400' : '#CAC8C1',
         },
       },
       backgroundImage: {
