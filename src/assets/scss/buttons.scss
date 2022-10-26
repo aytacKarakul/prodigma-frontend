@@ -1,14 +1,19 @@
 .btn{
     @apply w-full min-h-[46px] bg-black-100 text-white text-sm font-heading font-medium flex items-center justify-center rounded-[30px];
+    @apply lg:transition-all lg:duration-200 lg:ease-in lg:delay-200;
     &-secondary{
         @apply bg-[rgba(40,41,40,0.5)];
     }
     &-primary{
         @apply bg-blue-100 text-white border border-solid border-white border-opacity-40;
-        @apply hover:bg-white hover:text-blue hover:border-opacity-100;
+        @apply lg:hover:bg-white lg:hover:text-blue lg:hover:border-opacity-100;
     }
     &-outlined{
         @apply bg-inherit rounded-[10px] text-inherit border border-solid border-custom-200;
+    }
+    &-light{
+        @apply bg-transparent text-white border border-white;
+        @apply lg:hover:bg-white lg:hover:text-blue;
     }
     &-medium{
         @apply px-2 py-2.5;
