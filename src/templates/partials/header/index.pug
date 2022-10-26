@@ -2,6 +2,16 @@
 
 header.site-header
     .site-header-wrapper
+        .site-header-menu-mobile-header 
+            .site-header-menu-mobile-header-close 
+                i.icon.icon-close
+            .site-header-menu-mobile-header-title MENÜ
+            .site-header-menu-mobile-header-member 
+                case authenticated
+                    when authenticated= true
+                        .mmbr TA
+                    when authenticated= false
+                        i.icon.icon-cart
         .site-header-logo
             a(href="/")
                 img(src=require('Images/logo.svg') alt="pug logo")
@@ -17,9 +27,6 @@ header.site-header
                     a(href="/hakkimizda.html") Prodigma +  
         .site-header-login
             case authenticated
-                when authenticated= false
-                    .site-header-logoff
-                        a(href="/login.html") Giriş Yap 
                 when authenticated= true
                     .site-header-login-success
                         .site-header-login-success-project
@@ -33,3 +40,21 @@ header.site-header
                                 |Test Account
                         .site-header-login-success-cart
                             i.icon.icon-cart
+                when authenticated= false
+                    .site-header-logoff
+                        a(href="/login.html") Giriş Yap
+        .site-header-social 
+            .site-header-social-title Bizi takip Edin
+            ul
+                li
+                    a(href="")
+                        i.icon.icon-facebook
+                    li 
+                        a(href="")
+                            i.icon.icon-twitter
+                    li 
+                        a(href="")
+                            i.icon.icon-instagram
+                    li 
+                        a(href="")
+                            i.icon.icon-youtube
