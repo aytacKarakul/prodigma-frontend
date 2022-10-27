@@ -4,7 +4,7 @@
     @apply lg:block;
     
     &-wrapper {
-        @apply container mx-auto flex flex-row items-center py-2;
+        @apply container mx-auto flex flex-row items-center;
     }
     &-logo {
         @apply mr-7;
@@ -25,7 +25,7 @@
             @apply flex flex-row gap-10;
             li {
                 a {
-                    @apply flex relative py-4 font-heading font-normal text-sm;
+                    @apply flex relative py-[1.563rem] font-heading font-normal text-sm;
                     @apply transition-colors ease-in duration-200 delay-200 overflow-y-hidden;
                     @apply after:content-[""] after:absolute after:bottom-[-3px] after:left-0 after:w-full after:h-[3px] after:bg-green-200 after:transition-all after:ease-in after:duration-200 after:delay-200;
                     @apply hover:text-green-200 #{!important};
@@ -69,6 +69,114 @@
                 .icon{
                     @apply text-xl leading-none text-blue;
                     @apply transition-colors ease-in duration-200 delay-200;
+                }
+            }
+        }
+    }
+    &-submenu{
+        @apply bg-blue-100 absolute top-[4.375rem] left-0 w-full opacity-0 invisible pointer-events-none transition-all ease-in duration-200 delay-200;
+        &-inner{
+            @apply container flex mx-auto;
+        }
+        &-nav{
+            @apply flex-1;
+            > ul{
+                @apply flex-wrap h-full items-stretch gap-8 px-8;
+                > li{
+                    @apply w-[calc(50%-1rem)];
+                    &:nth-child(1),
+                    &:nth-child(2){
+                        @apply border-b border-solid border-white border-opacity-20;
+                    }
+                    
+                    > a{
+                        @apply flex-col py-9 text-white;
+                        @apply after:hidden;
+                        .nav-t1{
+                            @apply font-heading font-semibold text-lg;
+                        }
+                        .nav-t2{
+                            @apply font-inter font-normal text-sm mt-2.5;
+                        }
+                    }
+                }
+            }
+        }
+        &-banner{
+            @apply flex-1;
+        }
+        //-full size
+        &-full{
+            @apply container mx-auto;
+            > ul{
+                @apply flex flex-wrap gap-10;
+                > li{
+                    @apply w-[calc(25%-1.9rem)];
+                    > a{
+                        .mnwrp{
+                            @apply flex flex-wrap;
+                            .img{
+                                @apply basis-1/5;
+                            }
+                            .txt{
+                                @apply basis-4/5 pl-4;
+                                .t1{
+                                    @apply font-heading font-normal text-base;
+                                }
+                                .t2{
+                                    @apply font-inter font-normal text-sm mt-1.5;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-bottom{
+            @apply bg-blue absolute top-[140px] left-0 z-[-1] w-full opacity-0 invisible pointer-events-none transition-all ease-in duration-200 delay-200;
+            &-inner{
+                @apply container mx-auto px-8 py-8;
+                > ul{
+                    @apply flex-wrap gap-10;
+                    > li{
+                        @apply w-[calc(25%-30px)];
+                        .title{
+                            @apply font-heading font-semibold text-base text-white mb-3;
+                        }
+                        > ul {
+                            @apply flex-wrap gap-0;
+                            > li{
+                                @apply w-1/2;
+                                a{
+                                    @apply font-inter py-1 opacity-70;
+                                    @apply after:hidden;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.site-header-nav{
+    > ul{
+        > li{
+            &:hover{
+                .site-header-submenu{
+                    @apply opacity-100 visible pointer-events-auto transition-all ease-in duration-200 delay-200;
+                }
+            }
+        }
+    }
+}
+.site-header-submenu-double{
+    > ul {
+        > li{
+            &:hover{
+                .site-header-submenu-bottom{
+                    @apply opacity-100 visible pointer-events-auto transition-all ease-in duration-200 delay-200;
                 }
             }
         }
