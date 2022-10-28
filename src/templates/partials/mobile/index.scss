@@ -19,7 +19,7 @@
         }
     }
     &-wrapper{
-        @apply hidden fixed top-0 left-0 z-20 w-full h-full bg-white;
+        @apply hidden bg-white fixed top-0 left-0 z-20 w-full h-full;
         &-top{
             @apply flex items-center gap-3 p-5;
             @apply lg:hidden;
@@ -34,25 +34,109 @@
             }
             &-member{
                 .mmbr{
-                    @apply bg-custom-400 w-8 h-8 flex items-center justify-center rounded-full font-heading font-semibold text-xs;
+                    @apply bg-blue w-8 h-8 flex items-center justify-center rounded-full font-heading font-semibold text-xs text-white;
                 }
                 .icon{
-                    @apply bg-gray-200 w-8 h-8 flex items-center justify-center rounded-full text-black-100 text-base;
+                    @apply bg-blue-200 w-8 h-8 flex items-center justify-center rounded-full text-white text-base;
                 }
             }
         }
     }
     &-nav{
-        @apply bg-gray-200 w-full h-[calc(100vh-13.125rem)] overflow-y-scroll px-5 py-4;
-        ul{
-            li{
-                @apply border-b border-solid border-blue-100;
+        @apply bg-blue-100 w-full h-[calc(100vh-20rem)] overflow-y-scroll px-5 pt-4 pb-7;
+        > ul{
+            > li{
+                @apply border-b border-solid border-white border-opacity-20;
                 > a{
-                    @apply flex relative py-4 pr-9 font-heading font-medium text-base leading-none;
-                    @apply after:content-["+"] after:w-6 after:h-6 after:flex after:items-center after:justify-center after:absolute after:top-[calc(50%-0.75rem)] after:right-0 after:bg-white after:rounded-full after:text-xl;
+                    @apply flex relative py-4 pr-9 font-heading font-medium text-base text-white leading-none;
+                    @apply after:content-["+"] after:w-6 after:h-6 after:flex after:items-center after:justify-center after:absolute after:top-[calc(50%-0.75rem)] after:right-0 after:bg-white after:rounded-full after:text-xl after:text-blue-200;
+                }
+                &.opened{
+                    > a{
+                        @apply after:content-["-"];
+                    }
+                    .site-mobile-header-list{
+                        > ul{
+                            @apply block;
+                        }
+                    }
                 }
             }
         }
+    }
+    &-list{
+        > ul{
+            @apply hidden;
+            > li{
+                > a{
+                    @apply flex flex-col py-3.5;
+                    .title{
+                        @apply font-heading font-medium text-base text-white;
+                    }
+                    .desc{
+                        @apply font-inter font-normal text-sm text-white text-opacity-40 mt-2.5;
+                    }
+                }
+            }
+        }
+        &-img{
+            > ul{
+                > li{
+                    @apply border-b border-solid border-white border-opacity-20 mb-4 last:border-b-0;
+                    > a{
+                        @apply flex-row;
+                        .img{
+                            @apply w-[4.688rem] mr-2.5;
+                        }
+                        .text{
+                            @apply w-[calc(100%-5.313rem)];
+                            .desc{
+                                @apply mt-1;
+                            }
+                        }
+                    }
+                }
+            }
+            &-header{
+                @apply flex items-center bg-white font-heading font-medium text-base leading-none px-5 py-5;
+                &-history{
+                    @apply flex-auto;
+                }
+                a.back-to-history{
+                    @apply flex items-center;
+                    .icon{
+                        @apply mr-2;
+                    }
+                }
+                .icon{
+                    @apply flex items-center justify-center w-8 h-8 text-base leading-none;
+                }
+            }
+            &-submenu{
+                @apply hidden bg-blue-100 absolute top-0 left-0 z-20 w-full h-[calc(100%-8.75rem)];
+                > ul{
+                    @apply px-5 py-7;
+                    > li{
+                        @apply border-b border-solid border-white border-opacity-20;
+                        > a{
+                            @apply flex relative py-4 pr-9 font-heading font-medium text-base text-white leading-none;
+                            @apply after:content-["+"] after:w-6 after:h-6 after:flex after:items-center after:justify-center after:absolute after:top-[calc(50%-0.75rem)] after:right-0 after:bg-white after:rounded-full after:text-xl after:text-blue-200;
+                        }
+                        > ul {
+                            @apply hidden py-2.5;
+                            > li{
+                                a{
+                                    @apply flex font-inter font-normal text-base text-white py-2.5;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-start-project{
+        @apply bg-blue-100 px-5 py-[1.875rem];
     }
     &-social{
         @apply px-5 py-8 bg-white;
