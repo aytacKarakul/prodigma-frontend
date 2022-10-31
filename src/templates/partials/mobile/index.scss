@@ -19,7 +19,7 @@
         }
     }
     &-wrapper{
-        @apply hidden bg-white fixed top-0 left-0 z-20 w-full h-full;
+        @apply bg-white fixed top-0 left-0 z-20 w-full h-full invisible transition-all ease-in -translate-x-full duration-300 delay-300;
         &-top{
             @apply flex items-center gap-3 p-5;
             @apply lg:hidden;
@@ -95,6 +95,11 @@
                             }
                         }
                     }
+                    &.opened{
+                        .site-mobile-header-list-img-submenu{
+                            @apply visible translate-x-0 duration-300 delay-300;
+                        }
+                    }
                 }
             }
             &-header{
@@ -113,7 +118,7 @@
                 }
             }
             &-submenu{
-                @apply hidden bg-blue-100 absolute top-0 left-0 z-20 w-full h-[calc(100%-8.75rem)];
+                @apply bg-blue-100 absolute top-0 left-0 z-20 w-full h-[calc(100%-8.75rem)] invisible transition-all ease-in translate-x-full duration-300 delay-300;
                 > ul{
                     @apply px-5 py-7;
                     > li{
@@ -125,9 +130,17 @@
                         > ul {
                             @apply hidden py-2.5;
                             > li{
-                                a{
+                                > a{
                                     @apply flex font-inter font-normal text-base text-white py-2.5;
                                 }
+                            }
+                        }
+                        &.opened{
+                            > ul{
+                                @apply block;
+                            }
+                            > a{
+                                @apply after:content-["-"];
                             }
                         }
                     }
@@ -157,7 +170,7 @@
     }
     &-menu-open{
         .site-mobile-header-wrapper{
-            @apply block;
+            @apply visible translate-x-0 duration-300 delay-300;
         }
     }
 }
