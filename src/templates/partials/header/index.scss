@@ -216,7 +216,7 @@
     .site-header-login-success-project{
         .btn{
             &-light{
-                @apply bg-white;
+                @apply bg-white text-blue;
             }
         }
     }
