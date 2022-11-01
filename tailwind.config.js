@@ -51,6 +51,15 @@ module.exports = {
         'slider': "url('./src/assets/img/slider-bg.png')",
         'logo': "url('./src/assets/img/logo.svg')",
       },
+      keyframes:{
+        spinNew: {
+          '0%': {transform: 'rotate(0deg)'},
+          '100%': {transform: 'rotate(180deg)'}
+        }
+      },
+      animation: {
+        'spin-new': 'spinNew 30s linear infinite',
+      }
     },
   },
   variants: {
