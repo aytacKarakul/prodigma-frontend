@@ -22,6 +22,10 @@ module.exports = {
             filename: 'index.html',
             template: './src/templates/index.pug',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'create-project.html',
+            template: './src/templates/create-project.pug',
+        }),
     ],
     module: {
         rules: [

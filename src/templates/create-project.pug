@@ -1,0 +1,12 @@
+extends blocks/layout
+
+block prepend head
+    - pageTitle = "Proje Başlat"
+    - pageDesc = "Proje Başlat açıklama metni"
+    - pageClass = "create-project"
+
+block content
+    include widgets/create-project/index.pug
+
+block foot
+    block append footer
