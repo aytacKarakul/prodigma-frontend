@@ -13,12 +13,19 @@
     }
     }
     &-body {
-        @apply hidden flex-row justify-between px-8 gap-12;
+        @apply hidden flex-row items-center justify-between px-8 gap-12;
         @apply lg:flex lg:pb-24;
         &-left {
             @apply flex flex-col text-left max-w-[360px];
         }
         &-img {
+            @apply relative;
+            &::after{
+                content:'';
+                background-image: url('../img/animation-vectorel.png');
+                @apply absolute top-0 left-0 z-[1] w-full h-full bg-contain bg-center bg-no-repeat;
+                @apply animate-spin-new;
+            }
            img {
             @apply flex rounded-full;
            }
