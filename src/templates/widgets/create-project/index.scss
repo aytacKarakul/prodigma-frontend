@@ -1,0 +1,49 @@
+.create-project {
+    @apply relative px-5 py-10 w-full mt-[4.375rem];
+    @apply lg:h-[calc(100vh-4.375rem)] lg:overflow-hidden;
+    @apply bg-[url('../../../assets/img/create-project-bg.png')] bg-no-repeat bg-cover bg-center;
+    &-wrapper {
+        @apply container mx-auto;
+    }
+    &-header {
+        @apply flex flex-col mt-10;
+        @apply lg:mt-[4.938rem] lg:justify-start lg:items-start;
+        &-title {
+            @apply font-heading font-medium text-[1.625rem] max-w-[335px] text-white mb-3;
+            @apply lg:max-w-[533px] lg:font-semibold lg:text-[40px] lg:leading-[49px] lg:mb-5 ;
+    }
+        &-desc {
+            @apply font-inter font-normal text-sm leading-4 max-w-[335px] text-white mb-10;
+            @apply lg:max-w-[499px] lg:font-normal lg:text-base lg:mb-8;
+        }
+    }
+    &-body {
+    ul {
+    @apply flex flex-wrap gap-8;
+    @apply lg:flex lg:flex-row lg:items-start lg:justify-between lg:gap-4;
+
+    li {
+    @apply w-[calc(50%-1rem)] mb-10;
+    @apply lg:mb-0 lg:w-[calc(12.5%-1rem)]
+    }
+    button,img {
+    @apply w-full;
+    }
+    span {
+    @apply block text-center  text-white mt-3;
+    }
+    }
+}
+    &-footer {
+        
+        @apply lg:absolute lg:bottom-8 lg:right-8 lg:mx-auto;
+        button {
+            @apply flex bg-gray-300;
+            @apply lg:text-opacity-[50%] lg:mr-[1.875rem];
+            .icon {
+                @apply order-last ml-5; 
+                @apply lg:mx-5
+            }
+        }
+    }
+}

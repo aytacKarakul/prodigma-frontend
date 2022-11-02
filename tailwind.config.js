@@ -21,6 +21,7 @@ module.exports = {
           DEFAULT : '#EBEBEB',
           '100' : '#C3C1BB',
           '200' : '#F2F2F2',
+          '300' : '#776F8F',
         },
         green: {
           DEFAULT: '#00FF00',
@@ -50,6 +51,7 @@ module.exports = {
       backgroundImage: {
         'slider': "url('./src/assets/img/slider-bg.png')",
         'logo': "url('./src/assets/img/logo.svg')",
+        'heroBackgorund': "url('./src/assets/img/create-project-bg.png')",
       },
       keyframes:{
         spinNew: {
