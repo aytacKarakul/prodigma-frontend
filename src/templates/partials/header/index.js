@@ -8,10 +8,10 @@ class Header{
     }
 
     initHeader(){
-        this.header.addEventListener('mouseenter', (event) => {
+        this.header?.addEventListener('mouseenter', (event) => {
             event.target.classList.add('site-header-anim');
         });
-        this.header.addEventListener('mouseleave', (event) => {
+        this.header?.addEventListener('mouseleave', (event) => {
             event.target.classList.remove('site-header-anim');
         });
     }

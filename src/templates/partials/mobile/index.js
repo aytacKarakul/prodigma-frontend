@@ -47,7 +47,7 @@ class MobileHeader{
         });
 
         //Submenu Container
-        this.subMenuPrevChild.forEach((subMenuLinks) => {
+        this.subMenuPrevChild?.forEach((subMenuLinks) => {
             subMenuLinks.addEventListener('click', () => {
                 if(subMenuLinks.nextElementSibling){
                     if(subMenuLinks.parentElement.classList.contains('opened')){

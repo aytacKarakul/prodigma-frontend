@@ -1,0 +1,14 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - var pageTitle= 'Basket'
+    - var pageDesc= 'Cart page description'
+    - var pageClass= 'cart'
+
+block content
+    .basket
+        .basket-wrapper
+            .basket-left
+                include basket-list/index.pug
+            .basket-right
+                include summary/index.pug
