@@ -26,6 +26,10 @@ module.exports = {
             filename: 'create-project.html',
             template: './src/templates/create-project.pug',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'basket.html',
+            template: './src/templates/basket/basket.pug',
+        }),
     ],
     module: {
         rules: [

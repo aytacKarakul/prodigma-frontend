@@ -1,0 +1,28 @@
+.basket{
+    &-summary{
+        @apply sticky top-0;
+        &-title{
+            @apply mb-5 font-heading font-medium text-xl;
+        }
+        &-wrapper{
+            @apply bg-white p-5;
+        }
+        &-list{
+            li{
+                @apply flex items-center;
+                .lb,.vl{
+                    @apply flex-auto;
+                }
+                .lb{
+                    @apply text-left;
+                }
+                .vl{
+                    @apply text-right;
+                }
+            }
+        }
+        &-to-total{
+            @apply bg-white p-5;
+        }
+    }
+}
