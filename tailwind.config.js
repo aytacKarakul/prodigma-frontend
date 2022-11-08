@@ -9,6 +9,9 @@ module.exports = {
       icon: ['icomoon']
     },
     extend: {
+      screens: {
+        '2xl': '1440px',
+      },
       colors: {
         black :{
           DEFAULT: '#000000',
@@ -18,10 +21,13 @@ module.exports = {
           DEFAULT : '#EBEBEB',
           '100' : '#C3C1BB',
           '200' : '#F2F2F2',
+          '300' : '#776F8F',
         },
         green: {
           DEFAULT: '#00FF00',
-          '100' : '#24BA60'
+          '100' : '#24BA60',
+          '200' : '#66C86C',
+          '300' : '#82C576'
         },
         red: {
           DEFAULT : '#FF0000',
@@ -38,8 +44,24 @@ module.exports = {
         custom: {
           '100': '#A09C8E',
           '200': '#F1F3F9',
+          '300' : '#1E1E1E',
+          '400' : '#CAC8C1',
         },
       },
+      backgroundImage: {
+        'slider': "url('./src/assets/img/slider-bg.png')",
+        'logo': "url('./src/assets/img/logo.svg')",
+        'heroBackgorund': "url('./src/assets/img/create-project-bg.png')",
+      },
+      keyframes:{
+        spinNew: {
+          '0%': {transform: 'rotate(0deg)'},
+          '100%': {transform: 'rotate(180deg)'}
+        }
+      },
+      animation: {
+        'spin-new': 'spinNew 30s linear infinite',
+      }
     },
   },
   variants: {
