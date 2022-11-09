@@ -1,0 +1,33 @@
+- var deliverySuccess = false; 
+
+.basket-delivery-tab
+    .basket-delivery-tab-wrapper
+        case deliverySuccess
+            when deliverySuccess = false 
+                .basket-delivery-tab-form 
+                    .basket-delivery-tab-column
+                        +inputs('textbox','Ad', 'js-user-name')
+                        +inputs('textbox','Soyad', 'js-user-surname')
+                    .basket-delivery-tab-column
+                        +inputs('textbox','Doğum Tarihi', '')
+                        +inputs('textbox','TC Kimlik No', 'js-user-phone')
+                    .basket-delivery-tab-column    
+                        +inputs('textbox','Cep Telefonu', 'js-user-phone')
+                        +inputs('textbox','E-Posta Adresi', 'js-user-email')(type="email")
+                    .basket-delivery-tab-desc 
+                        +inputs('checkbox')
+                        |İletişim izni kapsamında Prodigma A.Ş. tarafından
+                        |pazarlama amaçlı e-posta ve SMS yoluyla ileti almak istiyorum.
+                    .basket-delivery-tab-btn 
+                        +button('Kaydet','secondary','m',false)
+            when deliverySuccess = true
+                .basket-delivery-tab-success
+                    .basket-delivery-tab-success-content
+                        .basket-delivery-tab-success-content-left
+                            p Deniz Zileli 
+                            span deniz.zileli@ozu.edu.tr
+                            span 0 (531) 606 32 25
+                        .basket-delivery-tab-success-content-right 
+                            a(href="#")|Düzenle 
+
+                    

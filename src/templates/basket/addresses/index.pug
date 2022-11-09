@@ -1,0 +1,69 @@
+- var addressSuccess = true;
+
+.basket-address-tab
+    .basket-address-tab-wrapper
+        case addressSuccess
+            when addressSuccess = false
+                .basket-address-tab-title
+                    |Teslimat Adreslerim
+                .basket-address-tab-form
+                    .basket-address-tab-form-row
+                        +select('Şehir','js-corporate-province')
+                        +select('İlçe','js-corporate-district')
+                    .basket-address-tab-form-column    
+                        +select('Mahalle')
+                        +inputs('textbox', 'Adres Başlığı')
+                        +inputs('textbox', 'Adres')
+                    .basket-address-tab-form-btn 
+                        +button('Kaydet','secondary','m',false)
+            when addressSuccess = true 
+                .basket-address-tab-success
+                    .basket-address-tab-success-body
+                        .basket-address-tab-success-body-left
+                            .basket-address-tab-success-body-left-title
+                                |Teslimat Adresi 
+                            .basket-address-tab-success-body-left-content
+                                p EV
+                                span Gürsoy Sk. Bahtiyar Apt. No: 3 Daire: 4, Üsküdar/İstanbul
+                        .basket-address-tab-success-body-right 
+                            a(href="#")|Düzenle     
+                    .basket-address-tab-success-footer
+                        +inputs('checkbox', 'Faturam için farklı adres kullan')
+        if addressSuccess = true                
+            .basket-address-tab-success-invoice
+                .basket-address-tab-success-step-selection.active(data-tab="click-address-individual")
+                    .basket-address-tab-form-row
+                        +select('Şehir')
+                            each value in [{value:'ist', text: 'İstanbul'}, {value: 'ank', text: 'Ankara'}, {value: 'izm', text: 'İzmir'}]
+                                option(value=value.value) #{value.text}
+                        +select('İlçe')
+                            each value in [{value: 'a', text: 'İlçe A'}, {value: 'b', text: 'İlçe B'}, {value: 'c', text: 'İlçe C'}]
+                                option(value=value.value) #{value.text}
+                    .basket-address-tab-form-column    
+                        +select('Mahalle')
+                            each value in [{value: 'a', text: 'Mahalle A'}, {value: 'b', text: 'Mahalle B'}, {value: 'c', text: 'Mahalle C'}]
+                                option(value=value.value) #{value.text}
+                        +inputs('textbox', 'Adres Başlığı')
+                        +inputs('textarea', 'Adres')
+                .basket-address-tab-success-step-selection.hidden(data-tab="click-address-corporate")
+                    +select('Şirket','js-address-corporate-name')
+                        each value in [{value: 'sirket', text: 'Şirket'}, {value: 'uni', text: 'Üniversite'}, {value: 'sanayi', text: 'Sanayi'}]
+                            option(value=value.value) #{value.text}
+                    +select('Müşteri Tipi','js-address-corporate-type')
+                        each value in [{value: 'a', text: 'Müşteri A'}, {value: 'b', text: 'Müşteri B'}, {value: 'c', text: 'Müşteri C'}]
+                            option(value=value.value) #{value.text}
+                    +inputs('textbox','Telefon', 'js-address-corporate-phone')
+                    +select('İl','js-corporate-province')
+                        each value in [{value: 0, text: 'İstanbul'}, {value: 1, text: 'Ankara'}, {value: 2, text: 'İzmir'}]
+                            option(value=value.value) #{value.text}
+                    +select('İlçe','js-address-corporate-district')
+                        each value in [{value: 'a', text: 'İlçe A'}, {value: 'b', text: 'İlçe B'}, {value: 'c', text: 'İlçe C'}]
+                            option(value=value.value) #{value.text}
+                    +inputs('textarea','Fatura Adresi', 'js-address-corporate-billing-address') 
+                .basket-address-tab-success-invoice-title
+                    p Fatura Tipi 
+                .basket-address-tab-success-invoice-content
+                    +inputs('radio','Bireysel Üyelik', 'js-address-individual-membership')(checked, data-tab="click-address-individual")
+                    +inputs('radio','Kurumsal Üyelik', 'js-address-corporate-membership')(data-tab="click-address-corporate")    
+            .basket-address-tab-success-invoice-btn 
+                +button('Kaydet','secondary','m',false)

@@ -1,0 +1,27 @@
+.basket-payment-tab {
+    &-wrapper {
+        @apply container mx-auto;
+    }
+    &-form {
+        @apply flex flex-col;
+        @apply lg:w-[calc(50%-0.625rem)];
+        &-column {
+            @apply lg:flex lg:flex-row;
+            @apply lg:gap-5;
+        }
+    }
+    &-success {
+        &-body {
+            @apply flex flex-row justify-between bg-custom-500 bg-opacity-[14%] p-5;   
+        }
+        &-content {
+            @apply font-heading font-normal text-sm text-black;
+        }
+        &-delete {
+            @apply flex items-center justify-center;
+        }
+        &-footer {
+            @apply font-heading font-normal text-sm underline mt-5 text-black;
+        }
+    }
+}
