@@ -22,6 +22,8 @@ module.exports = {
           '100' : '#C3C1BB',
           '200' : '#F2F2F2',
           '300' : '#776F8F',
+          '400' : '#D8DAE1',
+          '500' : '#C9CBD2'
         },
         green: {
           DEFAULT: '#00FF00',

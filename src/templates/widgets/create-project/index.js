@@ -1,38 +1,8 @@
 import 'Images/3d-baskı.png';
-class Injection{
-    constructor(dataType, name, desc, note, pattern,materials){
-        this.dataType = dataType;
-        this.name = name;
-        this.desc = desc;
-        this.note = note;
-        this.pattern = pattern;
-        this.materials = materials;
-    }
-    createToInjection(){
+import CategoriesInjection from './models/injection';
 
-        //Create Injection Wrapper
-        let injectionWrapper = document.createElement('div');
-        injectionWrapper.className = 'create-project-injection';
-        
-        injectionWrapper.innerHTML = `
-        <div class='create-project-injection-left'>
-            <div>${this.note}</div>
-        </div>
-        <div class='create-project-injection-right'>
-            <div>${this.name}</div>
-            <div>${this.desc}</div>
-            <div class='create-project-injection-nextbtn'><button class='btn btn-secondary medium' type='button' data-type='injection' disabled><span>Sonraki Adım</span><i class='icon icon-arrow-line'></i></button></div>
-        </div>
-        `;
+const cateInjection = new CategoriesInjection('injection',' Enjeksiyon Kalıplama',' Bir CAD dosyası yükleyin veya sürükleyip bırakın','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 5);
 
-        const wrapper = document.querySelector('.create-project');
-        wrapper.innerHTML = '';
-        wrapper.appendChild(injectionWrapper);
-        return wrapper;
-    }
-}
-
-const injection = new Injection("injection","Enjeksiyon Kalıplama ile Tasarımlarınızı Hayata Geçirin!","Lorem ipsum sit amet.", "Bir CAD dosyası yükleyin veya sürükleyip bırakın",false, ['Çelik','Alüminyum']);
 class CreateProjectBanner {
     
     constructor(){
@@ -42,7 +12,6 @@ class CreateProjectBanner {
 
         //first Inıtials
         this.initCreateProject();
-
     }
 
     //initial all functions
@@ -52,7 +21,6 @@ class CreateProjectBanner {
         this.nextToPageAction();
     }
     
-
     createProjectBtnRemoveHtml(){
         if(this.createProjectBtn){
             if(document.body.classList.contains('page-create-project')){
@@ -90,7 +58,7 @@ class CreateProjectBanner {
                 case 'silicone':
                     break;
                 case 'injection':
-                    injection.createToInjection();
+                    cateInjection.createTemplate();
                     break;
                 case 'metal':
                     break;
