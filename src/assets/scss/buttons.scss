@@ -11,6 +11,9 @@
     &-outlined{
         @apply bg-inherit rounded-[10px] text-inherit border border-solid border-custom-200;
     }
+    &-gray {
+        @apply bg-gray-300;
+    }
     &-green{
         @apply bg-green-300;
     }
