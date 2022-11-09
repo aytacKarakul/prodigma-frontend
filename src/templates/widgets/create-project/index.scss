@@ -47,7 +47,7 @@
         @apply lg:absolute lg:bottom-8 lg:right-8 lg:z-[5] lg:mx-auto lg:min-h-[46px];
 
         button {
-            @apply flex bg-gray-300;
+            @apply flex;
             @apply lg:min-w-[11.875rem];
 
             .icon {
@@ -56,17 +56,82 @@
             }
         }
     }
+
     &-injection{
-        @apply bg-slate-500 w-full h-full flex flex-wrap justify-center;
+        @apply w-full h-full flex flex-wrap justify-center;
         &-left, &-right{
-            @apply lg:w-1/2;
+            @apply lg:w-1/2 flex flex-col;
+        }
+        &-left{
+            @apply text-white justify-center items-center;
+            > div{
+                @apply lg:w-1/2 lg:text-center;
+            }
+            .drag-area{
+                @apply h-[300px] bg-white;
+                @apply lg:w-1/2;
+
+                img{
+                    @apply w-full h-full object-contain;
+                }
+            }
+            &-desc{
+                @apply font-heading font-medium text-[1.75rem] leading-tight mt-3;
+            }
+            &-tt1{
+                @apply font-inter text-sm mt-3;
+            }
+            &-tt2{
+                @apply font-inter text-xs mt-3;
+            }
         }
         &-right{
-            @apply bg-white;
-        }
-        &-nextbtn{
-            .icon{
-                @apply text-xl leading-none ml-2;
+            @apply bg-white justify-start;
+            &-steps{
+                @apply flex flex-row items-center border-b border-solid border-gray-400 pb-4 mb-7;
+                button{
+                    @apply flex flex-col items-center justify-center w-8 h-8 rounded-full border border-solid border-gray-400;
+                    @apply font-heading font-medium text-lg text-gray-500 first:ml-0 ml-2.5;
+                    &.active{
+                        @apply bg-blue-100 border-transparent text-white;
+                    }
+                }
+                .seperate{
+                    @apply border-b border-dashed border-gray-400 min-w-[100px] ml-2.5;
+                }
+            }
+            &-inner{
+                @apply flex flex-col relative;
+                @apply lg:w-full lg:h-full lg:p-8;
+            }
+            &-name{
+                @apply font-heading font-medium text-3xl text-blue-100;
+            }
+            &-sub-text{
+                @apply mt-5 border-b border-solid border-gray-100 pb-7 mb-7;
+            }
+            &-nextbtn{
+                @apply bg-custom-200 absolute bottom-0 right-0 flex justify-end items-center w-full min-h-[110px];
+                @apply lg:px-7;
+                .btn{
+                    @apply w-auto;
+                    @apply lg:min-w-[11.875rem];
+                }
+                .icon{
+                    @apply text-xl leading-none ml-2;
+                }
+            }
+            &-patern{
+                @apply bg-custom-200 rounded-[10px] px-5 py-4;
+                &-t1{
+                    @apply font-heading font-medium text-base;
+                }
+                &-t2{
+                    @apply font-inter text-sm;
+                }
+            }
+            &-technical{
+                @apply border border-dashed border-blue-100 p-5 mt-7 rounded-lg;
             }
         }
     }
