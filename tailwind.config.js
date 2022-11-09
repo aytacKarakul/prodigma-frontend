@@ -16,6 +16,7 @@ module.exports = {
         black :{
           DEFAULT: '#000000',
           '100' : '#282928',
+          '200' : '#696B71',
         },
         gray: {
           DEFAULT : '#EBEBEB',
@@ -44,8 +45,9 @@ module.exports = {
         custom: {
           '100': '#A09C8E',
           '200': '#F1F3F9',
-          '300' : '#1E1E1E',
-          '400' : '#CAC8C1',
+          '300': '#1E1E1E',
+          '400': '#CAC8C1',
+          '500': '#DF9B34',
         },
       },
       backgroundImage: {
