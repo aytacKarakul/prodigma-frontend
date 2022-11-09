@@ -1,0 +1,23 @@
+- var paymentSuccess = false;
+
+.basket-payment-tab 
+    .basket-payment-tab-wrapper
+        case paymentSuccess 
+            when paymentSuccess = false
+                .basket-payment-tab-form
+                    +inputs('textbox', 'Kart Numarası*')
+                    +inputs('textbox', 'Kart Üzerindeki İsim*')
+                    .basket-payment-tab-form-column
+                        +inputs('textbox', 'Son Kullanma Tarihi*')
+                        +inputs('textbox', 'Güvenlik Kodu*')
+            when paymentSuccess = true
+                .basket-payment-tab-success
+                    .basket-payment-tab-success-body
+                        .basket-payment-tab-success-content 
+                            p TEB Sanal Kart
+                            span 5453 **** **** **43
+                        .basket-payment-tab-success-delete    
+                            a(href="#")(class="cart-trash")
+                                i.icon.icon-trash
+                    .basket-payment-tab-success-footer 
+                        a(href="#")|Farklı bir kart kullan        
