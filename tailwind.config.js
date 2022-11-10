@@ -23,6 +23,7 @@ module.exports = {
           '100' : '#C3C1BB',
           '200' : '#F2F2F2',
           '300' : '#776F8F',
+          '400' : '#EAEAEA',
         },
         green: {
           DEFAULT: '#00FF00',
@@ -45,9 +46,9 @@ module.exports = {
         custom: {
           '100': '#A09C8E',
           '200': '#F1F3F9',
-          '300': '#1E1E1E',
-          '400': '#CAC8C1',
-          '500': '#DF9B34',
+          '300' : '#1E1E1E',
+          '400' : '#CAC8C1',
+          '500' : '#DF9B3424',
         },
       },
       backgroundImage: {
