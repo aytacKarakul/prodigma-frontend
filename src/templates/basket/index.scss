@@ -1,21 +1,40 @@
 @import './basket-list/index.scss';
 @import './summary/index.scss';
+@import './delivery/index.scss';
+@import './addresses/index.scss';
+@import './payment/index.scss';
 
 .page-cart{
     .site-header{
         @apply relative top-0 bg-gray-200 bg-opacity-50;
+        &-wrapper {
+            @apply justify-between;
+        }
+        &-nav {
+            @apply hidden;
+        }
+        .site-mobile-header {
+            @apply hidden;
+    
+        }
     }
 }
 
 .basket{
     @apply bg-gray-200 bg-opacity-50;
     &-wrapper{
-        @apply lg:container lg:flex lg:px-8 lg:py-12 lg:mx-auto;
+        @apply lg:container lg:flex lg:px-8 lg:py-12 lg:mx-auto lg:flex-wrap;
     }
     &-left{
         @apply lg:w-[58.125rem];
     }
     &-right{
         @apply lg:w-[27.188rem] lg:px-[1.875rem] lg:mt-8 lg:pt-5 lg:pb-5;
+    }
+    &-accordion {
+        @apply w-full pt-20;
+        >ul {
+            @apply lg:w-[58.125rem];
+        }
     }
 }

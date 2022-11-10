@@ -1,8 +1,8 @@
 .basket{
     &-summary{
-        @apply sticky top-0;
+        @apply lg:sticky lg:top-0;
         &-title{
-            @apply mb-5 font-heading font-medium text-xl;
+            @apply mb-5 font-heading font-medium text-xl text-black;
         }
         &-wrapper{
             @apply bg-white p-5;
@@ -14,15 +14,51 @@
                     @apply flex-auto;
                 }
                 .lb{
-                    @apply text-left;
+                    @apply text-left font-heading font-normal text-sm;
                 }
                 .vl{
                     @apply text-right;
                 }
             }
+            li:first-child {
+                @apply text-black
+            }
+            li:last-child {
+                @apply  border-gray-400 border-b-[1px] pb-5 text-black;
+            }
+            li:nth-child(2) {
+                @apply text-red-200 my-[0.625rem];
+            }
+        }
+        &-footer {
+            @apply flex flex-row items-center;
+            &-desc {
+                @apply font-heading font-normal text-sm mt-5 text-black;
+            }
+            a {
+                @apply underline 
+            }
+        }
+        &-invoice {
+            @apply font-heading font-normal text-xs my-[0.688rem];
         }
         &-to-total{
             @apply bg-white p-5;
+            &-prices {
+                @apply flex flex-row justify-between mt-7 mb-5;
+                .lbl {
+                    @apply font-heading font-normal text-sm text-black;
+                }
+                .val {
+                    @apply font-inter font-semibold text-xl text-black;
+                }
+            }
+            &-desc {
+                @apply font-heading font-normal text-xs text-black-200 mt-5 mb-8;
+            }
+            &-discount-code {
+                @apply font-inter font-medium text-sm text-black-200
+            }
         }
     }
 }
