@@ -10,22 +10,5 @@ block content
         .basket-wrapper
             .basket-left
                 include basket-list/index.pug
-                .basket-accordion
-                    ul(class='accordion basket-accordion', data-type='connected')
-                        li(class='acc-item', id="item_1")
-                            .acc-header
-                                button(type='button') Alıcı Bilgileri
-                            .acc-body
-                                include delivery/index.pug
-                        li(class='acc-item', id="item_2")
-                            .acc-header
-                                button(type='button') Adres Bilgileri
-                            .acc-body
-                                include addresses/index.pug
-                        li(class='acc-item', id="item_2")
-                            .acc-header
-                                button(type='button') Ödeme Bilgileri
-                            .acc-body
-                                include payment/index.pug
             .basket-right
                 include summary/index.pug
