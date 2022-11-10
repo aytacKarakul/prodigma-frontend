@@ -10,7 +10,6 @@ import SwiperParalax from './templates/widgets/paralax-banner';
 import OurSerivesSwiper from './templates/widgets/our-services';
 import HomePageBlogBanner from './templates/widgets/prodigma-plus-banner';
 import CreateProjectBanner from './templates/widgets/create-project';
-import BasketAddressInvoiceTab from './templates/basket/addresses';
 
 new Partials();
 new Components();
@@ -21,7 +20,6 @@ new OurSerivesSwiper();
 new HomePageBlogBanner();
 new LoginTabs();
 new CreateProjectBanner();
-new BasketAddressInvoiceTab();
 
 import 'Images/google-icon.svg';
 import 'Images/facebook-icon.svg';

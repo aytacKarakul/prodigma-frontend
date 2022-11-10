@@ -34,6 +34,7 @@ module.exports = {
         red: {
           DEFAULT : '#FF0000',
           '100' : '#DF3434',
+          '200' : '#E72F2F',
         },
         blue: {
           DEFAULT: '#3E17BC',
