@@ -16,19 +16,23 @@
                     .lb|Kargo
                     .vl|9.90 TL
         .basket-summary-footer
-            a(href="#")|Cayma Hakkı,
-            a(href="#")|Ön Bilgilendirme Formu
-            | ve Mesafeli Satış Sözleşmesi’ni okudum, kabul ediyorum.
+            +inputs('checkbox')
+            .basket-summary-footer-desc
+                a(href="#")|Cayma Hakkı,
+                a(href="#")|Ön Bilgilendirme Formu
+                |  ve 
+                a(href="#")|Mesafeli Satış Sözleşmesi
+                | ’ni okudum, kabul ediyorum.
     .basket-summary-invoice
         |Tarafınıza e-arşiv fatura düzenlenecektir.
-.basket-summary-to-total
-    .basket-summary-to-total-prices
-        .lbl|Toplam
-        .val|2.960 TL
-    .basket-summary-to-total-success-btn
-        +button('SEPETİ ONAYLA','secondary','m',false)
-    .basket-summary-to-total-desc
-        strong|‘Onayla ve Bitir’
-        |butonuna bastığınızda toplam tutar tarafınızdan tahsil edilecektir.
-    .basket-summary-to-total-discount-code 
-        |İndirim
+    .basket-summary-to-total
+        .basket-summary-to-total-prices
+            .lbl|Toplam
+            .val|2.960 TL
+        .basket-summary-to-total-success-btn
+            +button('SEPETİ ONAYLA','secondary','m',false)
+        .basket-summary-to-total-desc
+            strong|‘Onayla ve Bitir’
+            |butonuna bastığınızda toplam tutar tarafınızdan tahsil edilecektir.
+        .basket-summary-to-total-discount-code 
+            |İndirim kodum var
