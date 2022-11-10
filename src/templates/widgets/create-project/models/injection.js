@@ -1,6 +1,11 @@
 import Categories from "./models";
 import Viewer3D from "./viewer";
 
+import ContractManufactureModel from "./contractManufacturing";
+import PieceEnterModel from "./pieceEnter";
+import TecnicGraphModel from "./tecnicGraphUpload";
+import ScaleModel from './scaleModule';
+
 class CategoriesInjection extends Categories {
     constructor(dataType, dataName, dataDesc, DataSubText, dataPiece){
         super(dataType,dataName,dataDesc,DataSubText);
@@ -12,13 +17,6 @@ class CategoriesInjection extends Categories {
     }
 
     createTemplate(){
-
-        const trans = {
-            textFasonUretim: 'Fason Üretim istiyorum',
-            textFasonUretimAciklama: 'Kalıp üretimine ek olarak kalıptan ürün üretimi hizmeti de alabilirsiniz.',
-            textTecnicText: 'Teknik Çizim Görseli yükleyin (PDF&DWG)',
-            textTecnicText2: 'ya da görseli sürükleyip bırakın',
-        };
 
         //Create Injection Wrapper
         let injectionTemplate = document.createElement('div');
@@ -36,15 +34,6 @@ class CategoriesInjection extends Categories {
             <div class='create-project-injection-right-steps'><button class='lnk active'>1</button><span class='seperate'></span><button class='lnk'>2</button></div>
             <div class='create-project-injection-right-name'>${this.name} ile Tasarımlarınızı Hayata Geçirin!</div>
             <div class='create-project-injection-right-sub-text'>${this.subText}</div>
-            <div class='create-project-injection-right-patern'>
-            <div class='create-project-injection-right-patern-t1'>${trans.textFasonUretim}</div>
-            <div class='create-project-injection-right-patern-t2'>${trans.textFasonUretimAciklama}</div>
-            </div>
-            <div class='create-project-injection-right-technical'>
-            <div class='create-project-injection-right-technical-t1'>${trans.textTecnicText}</div>
-            <div class='create-project-injection-right-technical-t2'>${trans.textTecnicText2}</div>
-            <i class='icon icon-arrow-line'></i>
-            </div>
             <div class='create-project-injection-right-nextbtn'><button class='btn btn-secondary btn-medium' type='button' data-type='injection' disabled><span>Sonraki Adım</span><i class='icon icon-arrow-line'></i></button></div>
         </div>
         </div>`;
@@ -54,6 +43,14 @@ class CategoriesInjection extends Categories {
         createProjectWrapper.appendChild(injectionTemplate);
 
         Viewer3D();
+        
+        setTimeout(() => {
+            ContractManufactureModel();
+            PieceEnterModel();
+            TecnicGraphModel();
+            ScaleModel();    
+        }, 1500);
+
         return injectionTemplate;
     }
 }
