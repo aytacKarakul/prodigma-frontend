@@ -73,118 +73,156 @@
             }
         }
     }
-    &-injection{
+    &-sets{
         @apply w-full h-full flex flex-wrap justify-center;
-        &-left, &-right{
-            @apply lg:w-1/2 flex flex-col;
+    }
+    &-left, &-right{
+        @apply lg:w-1/2 flex flex-col;
+    }
+    &-left{
+        @apply text-white justify-center items-center;
+        > div{
+            @apply lg:w-1/2 lg:text-center;
         }
-        &-left{
-            @apply text-white justify-center items-center;
-            > div{
-                @apply lg:w-1/2 lg:text-center;
-            }
-            .drag-area{
-                @apply h-[300px] bg-white;
-                @apply lg:w-1/2;
+        .drag-area{
+            @apply w-full h-[300px] bg-white;
+            @apply lg:w-1/2;
 
-                img{
-                    @apply w-full h-full object-contain;
-                }
-            }
-            &-desc{
-                @apply font-heading font-medium text-[1.75rem] leading-tight mt-3;
-            }
-            &-tt1{
-                @apply font-inter text-sm mt-3;
-            }
-            &-tt2{
-                @apply font-inter text-xs mt-3;
+            img{
+                @apply w-full h-full object-contain;
             }
         }
-        &-right{
-            @apply bg-white justify-start;
-            &-steps{
-                @apply flex flex-row items-center border-b border-solid border-gray-400 pb-4 mb-7;
-                button{
-                    @apply flex flex-col items-center justify-center w-8 h-8 rounded-full border border-solid border-gray-400;
-                    @apply font-heading font-medium text-lg text-gray-500 first:ml-0 ml-2.5;
-                    &.active{
-                        @apply bg-blue-100 border-transparent text-white;
+        &-desc{
+            @apply font-heading font-medium text-[1.75rem] leading-tight mt-3;
+        }
+        &-tt1{
+            @apply font-inter text-sm mt-3;
+        }
+        &-tt2{
+            @apply font-inter text-xs mt-3;
+        }
+    }
+    &-right{
+        @apply relative bg-white justify-start;
+        &-steps{
+            @apply flex flex-row items-center border-b border-solid border-gray-400 px-8 py-5 mb-7;
+            button{
+                @apply flex flex-col items-center justify-center w-8 h-8 rounded-full border border-solid border-gray-400 cursor-default;
+                @apply font-heading font-medium text-lg text-gray-500 first:ml-0 ml-2.5;
+                @apply transition-colors ease-in duration-200 delay-200;
+                &.active{
+                    @apply bg-blue-100 border-transparent text-white;
+                }
+                &.passed{
+                    @apply bg-green-300 text-white;
+                    &::before{
+                        @apply font-icon text-xs leading-none transition-colors ease-in duration-200 delay-200;
+                        content: '\e919';
                     }
                 }
-                .seperate{
-                    @apply border-b border-dashed border-gray-400 min-w-[100px] ml-2.5;
-                }
             }
-            &-inner{
-                @apply flex flex-col relative;
-                @apply lg:w-full lg:h-full lg:p-8;
+            .seperate{
+                @apply border-b border-dashed border-gray-400 min-w-[100px] ml-2.5;
             }
-            &-name{
-                @apply font-heading font-medium text-3xl text-blue-100;
-            }
-            &-sub-text{
-                @apply mt-5 border-b border-solid border-gray-100 pb-7 mb-7;
-            }
-            &-piece{
-                @apply max-w-[6.875rem] relative bg-gray-200 rounded mt-5;
-                .increase,
-                .decrease{
-                    @apply flex justify-center items-center w-6 h-6 absolute top-[calc(50%-0.75rem)] z-[1] text-blue-100;
-                    .icon{
-                        @apply text-xs text-blue-100;
-                    }
-                }
-                .increase{
-                    @apply right-3;
-                }
-                .decrease{
-                    @apply left-3;
-                }
-                input{
-                    @apply w-full min-h-[3.125rem] bg-gray-200 pl-8 pr-8 text-center text-blue-100;
-                    
-                    &::-webkit-outer-spin-button,
-                    &::-webkit-inner-spin-button{
-                        -webkit-appearance: none; margin: 0;
-                    }
-                    -moz-appearance: textfield;
-                }
-            }
-            &-nextbtn{
-                @apply bg-custom-200 absolute bottom-0 right-0 flex justify-end items-center w-full min-h-[110px];
-                @apply lg:px-7;
-                .btn{
-                    @apply w-auto;
-                    @apply lg:min-w-[11.875rem];
-                }
+        }
+        &-inner{
+            @apply flex flex-col relative;
+            @apply lg:w-full lg:h-full lg:p-8;
+        }
+        &-name{
+            @apply font-heading font-medium text-3xl text-blue-100;
+        }
+        &-sub-text{
+            @apply mt-5 border-b border-solid border-gray-100 pb-7 mb-7;
+        }
+        &-piece{
+            @apply max-w-[6.875rem] relative bg-gray-200 rounded mt-5;
+            .increase,
+            .decrease{
+                @apply flex justify-center items-center w-6 h-6 absolute top-[calc(50%-0.75rem)] z-[1] text-blue-100;
                 .icon{
-                    @apply text-xl leading-none ml-2;
+                    @apply text-xs text-blue-100;
                 }
             }
-            &-patern{
-                @apply bg-custom-200 rounded-[10px] px-5 py-4;
-                &-t1{
-                    @apply font-heading font-medium text-base text-black-100;
-                }
-                &-t2{
-                    @apply font-inter text-sm pl-7 text-black-100;
-                }
+            .increase{
+                @apply right-3;
             }
-            &-technical{
-                @apply relative border border-dashed border-blue-100 p-5 pr-16 mt-7 rounded-lg;
-                &-t1{
-                    @apply font-heading font-medium text-base;
+            .decrease{
+                @apply left-3;
+            }
+            input{
+                @apply w-full min-h-[3.125rem] bg-gray-200 pl-8 pr-8 text-center text-blue-100;
+                
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button{
+                    -webkit-appearance: none; margin: 0;
                 }
-                &-t2{
-                    @apply font-inter font-normal text-xs mt-2.5;
-                }
-                .tecnical-file-upload{
-                    @apply absolute top-[calc(50%-1rem)] right-7 z-[1];
-                    @apply flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full;
-                    .icon{
-                        @apply text-white rotate-[270deg];
+                -moz-appearance: textfield;
+            }
+        }
+        &-materials{
+            @apply flex flex-wrap items-center gap-5;
+            &-title{
+                @apply w-full;
+            }
+            li{
+                @apply rounded-[0.625rem] bg-custom-200 px-2 py-5 flex-auto;
+                @apply lg:max-w-[10.313rem];
+                .input{
+                    @apply mb-0;
+                    &.radio{
+                        input{
+                            @apply right-0 mx-auto;
+                        }
+                        label{
+                            @apply pl-0 pt-6 w-full text-center text-blue-100;
+                            &:before{
+                                left: calc(50% - 7px);
+                            }
+                            &::after{
+                                left: calc(50% - 7px);
+                            }
+                        }
                     }
+                }
+            }
+        }
+        &-nextbtn{
+            @apply bg-custom-200 flex justify-end items-center w-full min-h-[110px] mt-auto;
+            @apply lg:px-7;
+            .btn{
+                @apply w-auto transition-all ease-in duration-200 delay-200;
+                @apply lg:min-w-[11.875rem];
+                &.btn-next-bid{
+                    @apply hidden;
+                }
+            }
+            .icon{
+                @apply text-xl leading-none ml-2;
+            }
+        }
+        &-patern{
+            @apply bg-custom-200 rounded-[10px] px-5 py-4;
+            &-t1{
+                @apply font-heading font-medium text-base text-black-100;
+            }
+            &-t2{
+                @apply font-inter text-sm pl-7 text-black-100;
+            }
+        }
+        &-technical{
+            @apply relative border border-dashed border-blue-100 p-5 pr-16 mt-7 rounded-lg;
+            &-t1{
+                @apply font-heading font-medium text-base;
+            }
+            &-t2{
+                @apply font-inter font-normal text-xs mt-2.5;
+            }
+            .tecnical-file-upload{
+                @apply absolute top-[calc(50%-1rem)] right-7 z-[1];
+                @apply flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full;
+                .icon{
+                    @apply text-white rotate-[270deg];
                 }
             }
         }

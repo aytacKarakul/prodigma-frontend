@@ -1,7 +1,8 @@
-export default function Viewer3D (){
+const customViewer = () => {
+    
     // Drag and Drop property
     const dragArea = document.querySelector('.drag-area');
-    const nextSelectionBtnFirst = document.querySelector('.create-project-injection-right-nextbtn .btn');
+    const nextSelectionBtnFirst = document.querySelector('.create-project-right-nextbtn .btn');
     let file;
 
     if(dragArea){
@@ -45,3 +46,4 @@ export default function Viewer3D (){
         });
     }
 }
+export default customViewer;

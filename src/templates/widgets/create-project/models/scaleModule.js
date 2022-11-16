@@ -1,5 +1,5 @@
 export default function ScaleModel(){
-    let createProjctLeft = document.querySelector('.create-project-injection-left');
+    let createProjctLeft = document.querySelector('.create-project-left');
     
     let scaleProperties = document.createElement('div');
     scaleProperties.className = 'create-project-scales';

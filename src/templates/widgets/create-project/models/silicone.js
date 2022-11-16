@@ -1,28 +1,26 @@
 import Categories from "./models";
 
-import ContractManufactureModel from "./contractManufacturing";
 import PieceEnterModel from "./pieceEnter";
 import TecnicGraphModel from "./tecnicGraphUpload";
 import ScaleModel from './scaleModule';
 
 import modalPopup from "../../../components/web-component/modal";
-class CategoriesInjection extends Categories {
+
+class CategorySilicone extends Categories{
     constructor(dataType, dataName, dataDesc, DataSubText, materials){
         super(dataType,dataName,dataDesc,DataSubText);
         this.material = materials;
     }
-    
-    initInjection(){
+
+    initSiliconePatern(){
         return this.init() + this.material;
     }
 
     createTemplate(type){
+        let siliconeTemplate = document.createElement('div');
+        siliconeTemplate.className = `create-project-sets create-project-${type}`;
 
-        //Create Injection Wrapper
-        let injectionTemplate = document.createElement('div');
-        injectionTemplate.className = `create-project-sets create-project-${type}`;
-
-        injectionTemplate.innerHTML = `
+        siliconeTemplate.innerHTML = `
         <div class='create-project-left'>
             <div class='drag-area'><i class='icon icon-upload'></i></div>
             <div class='create-project-left-desc'>${this.desc}</div>
@@ -60,18 +58,19 @@ class CategoriesInjection extends Categories {
         <div class="modal" id="modal-one">
             <div class="modal-bg modal-exit"></div>
             <div class="modal-container">
-            <button class="modal-close modal-exit">X</button>    
-                <h1>Enjeksiyon Kalıplama Fiyat Teklifi</h1>
+                <button class="modal-close modal-exit"><i class="icon icon-close"></i></button>    
+                <h1>Silikon Kalıplama Fiyat Teklifi</h1>
                 <h2>Fiyat teklifi talebiniz alınmıştır. Mümkün olan en kısa sürede projenizi inceleyip <strong>deniz.zileli@ozu.edu.tr</strong> e-posta adresine dönüş yapacağız.</h2>
                 <button class="btn btn-medium btn-green modal-exit">Tamam</button>
             </div>
         </div>`;
+        
+        //--
+        let createSiliconeProjectWrapper = document.querySelector('.create-project');
+        createSiliconeProjectWrapper.innerHTML = '';
+        createSiliconeProjectWrapper.appendChild(siliconeTemplate);
 
-        let createProjectWrapper = document.querySelector('.create-project');
-        createProjectWrapper.innerHTML = '';
-        createProjectWrapper.appendChild(injectionTemplate);
-
-        return injectionTemplate;
+        return siliconeTemplate;
     }
 
     //viewer
@@ -123,7 +122,6 @@ class CategoriesInjection extends Categories {
                     }
                     fileReader.readAsDataURL(file);
 
-                    ContractManufactureModel();
                     PieceEnterModel();
                     TecnicGraphModel();
                     ScaleModel();
@@ -181,10 +179,11 @@ class CategoriesInjection extends Categories {
             });
         }
     }
+    // modal
     modalOpened = () => {
         modalPopup();
     };
 
 }
 
-export default CategoriesInjection;
+export default CategorySilicone;
