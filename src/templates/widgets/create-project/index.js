@@ -1,7 +1,11 @@
 import 'Images/3d-baskı.png';
+
+import CategorySilicone from './models/silicone';
 import CategoriesInjection from './models/injection';
 
-const cateInjection = new CategoriesInjection('injection',' Enjeksiyon Kalıplama',' Bir CAD dosyası yükleyin veya sürükleyip bırakın','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 5);
+const siliconeInjection = new CategorySilicone('silicone',' Silikon Kalıplama',' Bir CAD dosyası yükleyin veya sürükleyip bırakın','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', ['ABS Like', 'Elastomer Like', 'Akrilik Like']);
+
+const cateInjection = new CategoriesInjection('injection',' Enjeksiyon Kalıplama',' Bir CAD dosyası yükleyin veya sürükleyip bırakın','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', ['Çelik', 'Alüminyum']);
 
 class CreateProjectBanner {
     
@@ -56,9 +60,14 @@ class CreateProjectBanner {
                 case 'cnc':
                     break;
                 case 'silicone':
+                    siliconeInjection.createTemplate('silicone');
+                    siliconeInjection.customViewer();
+                    siliconeInjection.modalOpened();
                     break;
                 case 'injection':
-                    cateInjection.createTemplate();
+                    cateInjection.createTemplate('injection');
+                    cateInjection.customViewer();
+                    cateInjection.modalOpened();
                     break;
                 case 'metal':
                     break;

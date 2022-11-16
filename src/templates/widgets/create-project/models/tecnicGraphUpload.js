@@ -1,5 +1,5 @@
 export default function TecnicGraphModel(){
-    let createProjectRight = document.querySelector('.create-project-injection-right-inner');
+    let createProjectRight = document.querySelector('.create-project-right-inner');
 
     const trans = {
         textTecnicText: 'Teknik Çizim Görseli yükleyin (PDF&DWG)',
@@ -7,10 +7,10 @@ export default function TecnicGraphModel(){
     };
     
     let tecnicGraphWrap = document.createElement('div');
-    tecnicGraphWrap.className = 'create-project-injection-right-technical';
+    tecnicGraphWrap.className = 'create-project-right-technical';
 
-    tecnicGraphWrap.innerHTML = `<div class="create-project-injection-right-technical-t1">${trans.textTecnicText}</div>
-    <div class="create-project-injection-right-technical-t2">${trans.textTecnicText2}</div>
+    tecnicGraphWrap.innerHTML = `<div class="create-project-right-technical-t1">${trans.textTecnicText}</div>
+    <div class="create-project-right-technical-t2">${trans.textTecnicText2}</div>
     <a href="#" class="tecnical-file-upload"><i class="icon icon-arrow-line"></i></a>`;
 
     createProjectRight.appendChild(tecnicGraphWrap);

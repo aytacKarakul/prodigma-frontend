@@ -1,0 +1,30 @@
+.modal {
+    @apply fixed w-screen h-screen opacity-0 invisible top-0 left-0 z-50 flex items-center justify-center transition-all ease-in;
+    &.open {
+      @apply visible opacity-100;
+    }
+    &-bg {
+      @apply absolute w-full h-full backdrop-blur-md;
+      background: rgba(21, 4, 70, 0.8);
+    }
+    &-container {
+      @apply relative bg-white rounded-[20px] p-5 max-w-[90%];
+      @apply lg:p-12 lg:max-w-[31.25rem];
+      h1{
+        @apply font-heading font-medium text-lg text-blue-100;
+      }
+      h2{
+        @apply font-inter font-normal text-base text-blue-100 mt-7;
+        strong{
+          @apply font-bold;
+        }
+      }
+      .btn{
+        @apply mt-7;
+      }
+    }
+    &-close {
+      @apply absolute top-10 right-10 bg-transparent text-blue-100 cursor-pointer outline-none appearance-none;
+      @apply w-6 h-6 text-center;
+    }
+  }
