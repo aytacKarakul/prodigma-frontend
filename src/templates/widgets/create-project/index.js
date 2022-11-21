@@ -1,11 +1,24 @@
 import 'Images/3d-baskı.png';
+import 'Images/create-project-bg.png'
 
 import CategorySilicone from './models/silicone';
 import CategoriesInjection from './models/injection';
+import CategoriesCncMachining from './models/cncMachining';
+import ReverseMaching from "./models/reverse-engineering/reverseMaching";
+import Industrial from './models/industrial/industrial';
+import Metal from './models/metal-working/metalWorking';
 
 const siliconeInjection = new CategorySilicone('silicone',' Silikon Kalıplama',' Bir CAD dosyası yükleyin veya sürükleyip bırakın','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', ['ABS Like', 'Elastomer Like', 'Akrilik Like']);
 
-const cateInjection = new CategoriesInjection('injection',' Enjeksiyon Kalıplama',' Bir CAD dosyası yükleyin veya sürükleyip bırakın','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', ['Çelik', 'Alüminyum']);
+const cateInjection = new CategoriesInjection('injection',' Enjeksiyon Kalıplama','Bir CAD dosyası yükleyin veya sürükleyip bırakın','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', ['Çelik', 'Alüminyum']);
+
+const cncMachining = new CategoriesCncMachining("cnc", "CNC İşleme", "Siz tasarlayın, Prodigma CNC işlesin!" ,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", ['ABS Like', 'Elastomer Like', 'Akrilik Like', 'ABS Like', 'Elastomer Like', 'Akrilik Like']);
+
+const reverseMaching = new ReverseMaching();
+
+const industrial = new Industrial();
+
+const metal = new Metal('metal',' Sac Metal İşleme',' Sac Metal İşleme ile Tasarımlarınızı Hayata Geçirin!','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', ['Alüminyum', 'Paslanmaz Çelik', 'Dkp Sac', 'Siyah Sac', 'Galvanizli Sac', 'Hrp Sac']);
 
 class CreateProjectBanner {
     
@@ -56,24 +69,25 @@ class CreateProjectBanner {
                 case null:
                     break;
                 case 'printing':
+                    //printing.init();
                     break;
                 case 'cnc':
+                    cncMachining.init();
                     break;
                 case 'silicone':
-                    siliconeInjection.createTemplate('silicone');
-                    siliconeInjection.customViewer();
-                    siliconeInjection.modalOpened();
+                    siliconeInjection.init('silicone');
                     break;
                 case 'injection':
-                    cateInjection.createTemplate('injection');
-                    cateInjection.customViewer();
-                    cateInjection.modalOpened();
+                    cateInjection.init('injection');
                     break;
                 case 'metal':
+                    metal.init();
                     break;
                 case 'industrial':
+                    industrial.init();
                     break;
                 case 'reverse':
+                    reverseMaching.init();
                     break;
                 case 'post':
                     break;

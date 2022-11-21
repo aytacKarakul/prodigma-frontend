@@ -1,14 +1,32 @@
+.page-create-project{
+    .site-mobile-header{
+        @apply sticky bg-white;
+    }
+    .site-header{
+        @apply sticky;
+        &-wrapper{
+            @apply min-h-[4.375rem];
+        }
+        &-nav{
+            @apply hidden;
+        }
+        &-login{
+            @apply lg:ml-auto;
+        }
+    }
+}
+
 .create-project {
-    @apply relative w-full mt-[4.375rem];
+    @apply relative w-full;
     @apply lg:h-[calc(100vh-4.375rem)] lg:overflow-hidden;
-    @apply bg-[url('../../../assets/img/create-project-bg.png')] bg-no-repeat bg-cover bg-center;
+    @apply bg-[url(../../../assets/img/create-project-bg.png)] bg-no-repeat bg-cover bg-center;
 
     &-wrapper {
-        @apply container mx-auto;
+        @apply container mx-auto px-5 py-10;
     }
 
     &-header {
-        @apply flex flex-col mt-10;
+        @apply flex flex-col;
         @apply lg:mt-[4.938rem] lg:justify-start lg:items-start;
 
         &-title {
@@ -36,7 +54,6 @@
                     @apply w-full;
                 }
             }
-
             span {
                 @apply block text-center text-white mt-3;
             }
@@ -59,7 +76,8 @@
     &-scales{
         @apply mt-10;
         &-inner{
-            @apply flex items-center justify-center gap-9;
+            @apply flex items-center justify-center flex-wrap gap-9;
+            @apply lg:flex-nowrap;
         }
         &-lft,&-rgh{
             @apply flex items-center gap-4;
@@ -77,16 +95,17 @@
         @apply w-full h-full flex flex-wrap justify-center;
     }
     &-left, &-right{
-        @apply lg:w-1/2 flex flex-col;
+        @apply w-full flex flex-col;
+        @apply lg:w-1/2 lg:h-full;
     }
     &-left{
-        @apply text-white justify-center items-center;
+        @apply text-white justify-center items-center mt-[3.438rem];
         > div{
             @apply lg:w-1/2 lg:text-center;
         }
         .drag-area{
-            @apply w-full h-[300px] bg-white;
-            @apply lg:w-1/2;
+            @apply w-full h-[400px] bg-white;
+            @apply lg:w-3/5;
 
             img{
                 @apply w-full h-full object-contain;
@@ -103,9 +122,13 @@
         }
     }
     &-right{
-        @apply relative bg-white justify-start;
+        @apply bg-white justify-start;
+        @apply lg:relative;
+
         &-steps{
-            @apply flex flex-row items-center border-b border-solid border-gray-400 px-8 py-5 mb-7;
+            @apply flex flex-row items-center bg-white border-b border-solid border-gray-400 px-5 pt-2.5 pb-3;
+            @apply absolute top-0 left-0 w-full;
+            @apply lg:relative lg:top-[inherit] lg:left-[inherit] lg:px-8 lg:py-5 lg:mb-7;
             button{
                 @apply flex flex-col items-center justify-center w-8 h-8 rounded-full border border-solid border-gray-400 cursor-default;
                 @apply font-heading font-medium text-lg text-gray-500 first:ml-0 ml-2.5;
@@ -130,13 +153,17 @@
             @apply lg:w-full lg:h-full lg:p-8;
         }
         &-name{
-            @apply font-heading font-medium text-3xl text-blue-100;
+            @apply font-heading font-medium text-xl text-blue-100 pl-5 pt-5 pr-5;
+            @apply lg:pl-0 lg:pt-0 lg:pr-0 lg:text-3xl;
         }
         &-sub-text{
-            @apply mt-5 border-b border-solid border-gray-100 pb-7 mb-7;
+            @apply font-inter font-normal text-base text-blue-100 pl-5 pt-2.5 pr-5;
+            @apply lg:pl-0 lg:pt-5 lg:pr-0;
         }
         &-piece{
-            @apply max-w-[6.875rem] relative bg-gray-200 rounded mt-5;
+            @apply max-w-[6.875rem] relative bg-gray-200 rounded ml-5 mt-5;
+            @apply lg:ml-0;
+
             .increase,
             .decrease{
                 @apply flex justify-center items-center w-6 h-6 absolute top-[calc(50%-0.75rem)] z-[1] text-blue-100;
@@ -166,8 +193,8 @@
                 @apply w-full;
             }
             li{
-                @apply rounded-[0.625rem] bg-custom-200 px-2 py-5 flex-auto;
-                @apply lg:max-w-[10.313rem];
+                @apply w-[calc(50%-0.625rem)] rounded-[0.625rem] bg-custom-200 flex-initial px-3 py-3;
+                @apply lg:w-[calc(32.9%-0.625rem)] lg:px-2 lg:py-5;
                 .input{
                     @apply mb-0;
                     &.radio{
@@ -188,8 +215,8 @@
             }
         }
         &-nextbtn{
-            @apply bg-custom-200 flex justify-end items-center w-full min-h-[110px] mt-auto;
-            @apply lg:px-7;
+            @apply bg-custom-200 flex justify-end items-center w-full min-h-[110px] mt-10;
+            @apply lg:px-7 lg:mt-auto;
             .btn{
                 @apply w-auto transition-all ease-in duration-200 delay-200;
                 @apply lg:min-w-[11.875rem];
@@ -202,7 +229,8 @@
             }
         }
         &-patern{
-            @apply bg-custom-200 rounded-[10px] px-5 py-4;
+            @apply bg-custom-200 px-5 py-4 mt-5;
+            @apply lg:rounded-[10px];
             &-t1{
                 @apply font-heading font-medium text-base text-black-100;
             }
@@ -211,7 +239,8 @@
             }
         }
         &-technical{
-            @apply relative border border-dashed border-blue-100 p-5 pr-16 mt-7 rounded-lg;
+            @apply relative border border-dashed border-blue-100 p-5 pr-16 ml-5 mt-7 mr-5 rounded-lg;
+            @apply lg:ml-0 lg:mr-0;
             &-t1{
                 @apply font-heading font-medium text-base;
             }
@@ -225,6 +254,89 @@
                     @apply text-white rotate-[270deg];
                 }
             }
+        }
+        &-priting-date{
+            @apply px-5;
+            @apply lg:px-0;
+
+            &-title{
+                @apply font-heading font-medium text-base text-blue-100 mb-5;
+            }
+            &-select{
+                @apply flex flex-col items-center justify-between gap-y-2.5;
+                @apply lg:flex-row lg:gap-y-0 lg:gap-x-7;
+                .input{
+                    @apply mb-0 w-full;
+                }
+            }
+        }
+        &-priting-desc{
+            @apply px-5;
+            @apply lg:px-0;
+            .input{
+                @apply mb-4;
+            }
+        }
+        &-priting-case{
+            @apply px-5 mt-3 mb-3;
+            @apply lg:mt-0;
+            &-title{
+                @apply font-heading font-medium text-blue-100 py-2.5;
+            }
+            ul{
+                li{
+                    @apply py-3;
+                    .input{
+                        @apply mb-0;
+                    }
+                }
+            }
+        }
+        &-priting-footer{
+            @apply flex items-center justify-between bg-gray-200 px-5 py-4 mt-5;
+            @apply lg:px-[1.875rem] lg:py-[1.875rem] lg:mt-auto;
+            &-left{
+                @apply bg-white p-5 rounded flex items-center;
+                .icon{
+                    @apply bg-blue text-white w-6 h-6 inline-flex items-center justify-center rounded-full mr-2;
+                }
+                span{
+                    @apply font-inter text-xs text-blue-100;
+                }
+            }
+            &-btn{
+                .btn{
+                    @apply px-8;
+                }
+            }
+        }
+        &-cnc-process{
+            @apply mt-5;
+            &-title{
+                @apply font-heading font-semibold text-base mb-2;
+            }
+            ul{
+                li{
+                    @apply py-2;
+                    .input{
+                        @apply mb-0;
+                    }
+                }
+            }
+        }
+        &-cnc-other-note{
+            @apply px-8;
+            &-tt1{
+                @apply font-heading font-semibold text-base mb-2;
+            }
+            &-tt2{
+                @apply font-inter font-normal text-sm mb-5;
+            }
+        }
+    }
+    &-printing{
+        .create-project-left{
+            @apply mt-0;
         }
     }
 }
