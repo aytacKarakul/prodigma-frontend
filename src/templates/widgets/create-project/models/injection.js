@@ -1,10 +1,5 @@
 import Categories from "./models";
-
-import ContractManufactureModel from "./contractManufacturing";
-import PieceEnterModel from "./pieceEnter";
-import TecnicGraphModel from "./tecnicGraphUpload";
-import ScaleModel from './scaleModule';
-
+import customViewer from "./viewer";
 import modalPopup from "../../../components/web-component/modal";
 class CategoriesInjection extends Categories {
     constructor(dataType, dataName, dataDesc, DataSubText, materials){
@@ -12,17 +7,16 @@ class CategoriesInjection extends Categories {
         this.material = materials;
     }
     
-    initInjection(){
-        return this.init() + this.material;
+    initComponent(){
+        this.init() + this.material;
     }
 
-    createTemplate(type){
+    init(type){
 
-        //Create Injection Wrapper
-        let injectionTemplate = document.createElement('div');
-        injectionTemplate.className = `create-project-sets create-project-${type}`;
+        let template = document.createElement('div');
+        template.className = `create-project-sets create-project-${type}`;
 
-        injectionTemplate.innerHTML = `
+        template.innerHTML = `
         <div class='create-project-left'>
             <div class='drag-area'><i class='icon icon-upload'></i></div>
             <div class='create-project-left-desc'>${this.desc}</div>
@@ -54,137 +48,39 @@ class CategoriesInjection extends Categories {
         </div>
         <div class='create-project-right-nextbtn'>
         <button class='btn btn-secondary btn-medium btn-next-to-bid' type='button' data-type=${this.type} disabled><span>Sonraki Adım</span><i class='icon icon-arrow-line'></i></button>
-        <button class='btn btn-secondary btn-medium btn-next-bid' type='button' disabled data-modal="modal-one"><span>Fiyat Teklifi Al</span><i class='icon icon-arrow-line'></i></button>
+        <button class='btn btn-secondary btn-medium btn-next-bid' type='button' disabled data-modal="modal-injection"><span>Fiyat Teklifi Al</span><i class='icon icon-arrow-line'></i></button>
         </div>
-        </div>
-        <div class="modal" id="modal-one">
-            <div class="modal-bg modal-exit"></div>
-            <div class="modal-container">
-            <button class="modal-close modal-exit">X</button>    
-                <h1>Enjeksiyon Kalıplama Fiyat Teklifi</h1>
-                <h2>Fiyat teklifi talebiniz alınmıştır. Mümkün olan en kısa sürede projenizi inceleyip <strong>deniz.zileli@ozu.edu.tr</strong> e-posta adresine dönüş yapacağız.</h2>
-                <button class="btn btn-medium btn-green modal-exit">Tamam</button>
-            </div>
         </div>`;
 
-        let createProjectWrapper = document.querySelector('.create-project');
-        createProjectWrapper.innerHTML = '';
-        createProjectWrapper.appendChild(injectionTemplate);
+        let createNewWrapper = document.querySelector('.create-project');
+        createNewWrapper.innerHTML = '';
+        createNewWrapper.appendChild(template);
+        
+        customViewer('injection');
+        modalFunction();
 
-        return injectionTemplate;
     }
+}
 
-    //viewer
-    customViewer = () => {
-        // Drag and Drop property
-        const dragArea = document.querySelector(".drag-area");
-        const stepBtns = document.querySelectorAll(".create-project-right-steps > .lnk");
-        const nextSelectionBtnFirst = document.querySelector(".create-project-right-nextbtn .btn-next-to-bid");
-        const nextSelectionBtnLast = document.querySelector(".create-project-right-nextbtn .btn-next-bid");
-        const wrapperProperties = document.querySelector(".create-project-right > [data-selection='properties']");
-        const wrapperMaterials = document.querySelector(".create-project-right > [data-selection='materials']");
-        const materialsContainerElement = document.querySelectorAll('.create-project-right-materials li input');
+const modalFunction = () => {
+    console.log('Modal Success');
 
-        let file;
+    let modalTemplate = document.createElement("div");
+    modalTemplate.setAttribute("id", "modal-injection");
+    modalTemplate.className = "modal";
+
+    modalTemplate.innerHTML = `
+    <div class="modal-bg modal-exit"></div>
+    <div class="modal-container">
+        <button class="modal-close modal-exit"><i class="icon icon-close"></i></button>    
+        <h1>Enjeksiyon Kalıplama Fiyat Teklifi</h1>
+        <h2>Fiyat teklifi talebiniz alınmıştır. Mümkün olan en kısa sürede projenizi inceleyip <strong>deniz.zileli@ozu.edu.tr</strong> e-posta adresine dönüş yapacağız.</h2>
+        <button class="btn btn-medium btn-green modal-exit">Tamam</button>
+    </div>
+    `;
     
-        if(dragArea){
-
-            dragArea.addEventListener('dragover', (event) => {
-                event.preventDefault();
-                dragArea.classList.add('active');
-                nextSelectionBtnFirst.removeAttribute('disabled');
-                nextSelectionBtnFirst.classList.add('btn-green');
-                console.log('File is inside the drag area');
-            });
-            dragArea.addEventListener('dragleave', () => {
-                console.log('File left the drag area');
-                dragArea.classList.remove('active');
-                nextSelectionBtnFirst.setAttribute('disabled');
-                nextSelectionBtnFirst.classList.remove('btn-green');
-            });
-
-            dragArea.addEventListener('drop', (event) => {
-                event.preventDefault();
-
-                file = event.dataTransfer.files[0];
-                let fileType = file.type;
-                //console.log(fileType);
-    
-                let validExtensions = ['image/jpeg','image/jpg','image/png'];
-    
-                if(validExtensions.includes(fileType)){
-                    let fileReader = new FileReader();
-    
-                    fileReader.onload = () => {
-                        let fileUrl = fileReader.result;
-    
-                        let imgTag = `<img src="${fileUrl}" alt="" />`;
-                        dragArea.innerHTML = imgTag;
-                    }
-                    fileReader.readAsDataURL(file);
-
-                    ContractManufactureModel();
-                    PieceEnterModel();
-                    TecnicGraphModel();
-                    ScaleModel();
-
-                }else{
-                    alert('This file is not an Image');
-                    dragArea.classList.remove('active');
-                }
-                console.log(file);
-            });
-            
-            //-
-            nextSelectionBtnFirst.addEventListener('click', function(){
-                stepBtns.forEach((btn) => {
-                    if(btn.classList.contains('active')){
-                        btn.classList.remove('active');
-                        btn.innerHTML = '';
-                        btn.classList.add('passed');
-                    }
-                    else{
-                        const selectedBtn = document.querySelectorAll('.create-project-right-steps > .lnk.active');
-                        selectedBtn.forEach((selected) => {
-                            selected.classList.remove('active');;
-                        });
-                        btn.classList.add('active');
-                    }
-                });
-                this.remove();
-                wrapperProperties.classList.add('hidden');
-                wrapperMaterials.removeAttribute('hidden');
-                nextSelectionBtnLast.style.display = 'flex';
-            });
-
-            //-
-            materialsContainerElement.forEach((el) => {
-                el.addEventListener('click', function(){
-                    if(el.parentElement.parentElement.classList.contains('active')){
-                        el.checked = false;
-                        el.parentElement.parentElement.classList.remove('active');
-                    }else{
-                        const selectedInputItems = document.querySelectorAll('.create-project-right-materials li.active');
-                        const selectedInputItemsInput = document.querySelectorAll('.create-project-right-materials li.active input');
-                        selectedInputItems.forEach((items) => {
-                            items.classList.remove('active');
-                        });
-                        selectedInputItemsInput.forEach((event) => {
-                            event.checked = false;
-                        });
-                        el.checked = true;
-                        el.parentElement.parentElement.classList.add('active');
-                    }
-                    nextSelectionBtnLast.removeAttribute('disabled');
-                    nextSelectionBtnLast.classList.add('btn-green');
-                });
-            });
-        }
-    }
-    modalOpened = () => {
-        modalPopup();
-    };
-
+    document.body.appendChild(modalTemplate);
+    modalPopup();
 }
 
 export default CategoriesInjection;
