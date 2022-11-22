@@ -20,10 +20,8 @@
 
 .create-project-swiper{
     .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: 380px;
-        height: auto;
+        @apply bg-center bg-cover w-[250px] h-auto;
+        @apply lg:w-[380px];
     }
 }
 
