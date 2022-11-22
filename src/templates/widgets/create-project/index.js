@@ -1,6 +1,8 @@
 import 'Images/3d-baskı.png';
 import 'Images/create-project-bg.png'
 
+import Swiper,{ EffectCoverflow, Pagination } from 'swiper';
+
 import CategorySilicone from './models/silicone';
 import CategoriesInjection from './models/injection';
 import CategoriesCncMachining from './models/cncMachining';
@@ -24,11 +26,31 @@ class CreateProjectBanner {
     
     constructor(){
         this.createProjectBtn = document.querySelector('.site-header-login-success-project');
-        this.createProjectBodyBtn = document.querySelectorAll('.create-project-body > ul > li > button');
+        this.createProjectBodyBtn = document.querySelectorAll('.create-project-swiper .swiper-slide button');
         this.nextStepFirstBtn = document.querySelector('#js-next-to-step-first');
 
         //first Inıtials
         this.initCreateProject();
+
+        var swiperCoverFlow = new Swiper(".create-project-swiper", {
+            modules: [EffectCoverflow, Pagination],
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            loop: true,
+            coverflowEffect: {
+              rotate: 50,
+              stretch: 0,
+              depth: 160,
+              modifier: 1,
+              slideShadows: false,
+            },
+            pagination: {
+              el: ".swiper-pagination",
+            },
+        });
+        return swiperCoverFlow;
     }
 
     //initial all functions

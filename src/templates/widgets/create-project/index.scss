@@ -1,3 +1,5 @@
+@import 'swiper/css/effect-coverflow';
+
 .page-create-project{
     .site-mobile-header{
         @apply sticky bg-white;
@@ -16,13 +18,23 @@
     }
 }
 
+.create-project-swiper{
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 380px;
+        height: auto;
+    }
+}
+
 .create-project {
     @apply relative w-full;
     @apply lg:h-[calc(100vh-4.375rem)] lg:overflow-hidden;
     @apply bg-[url(../../../assets/img/create-project-bg.png)] bg-no-repeat bg-cover bg-center;
 
     &-wrapper {
-        @apply container mx-auto px-5 py-10;
+        @apply w-full mx-auto px-5 py-10;
+        @apply lg:max-w-[90%];
     }
 
     &-header {
@@ -41,21 +53,15 @@
     }
 
     &-body {
-        ul {
-            @apply flex flex-wrap gap-8;
-            @apply lg:flex lg:flex-row lg:items-start lg:justify-between lg:gap-4;
-
-            li {
-                @apply w-[calc(50%-1rem)] mb-10;
-                @apply lg:mb-0 lg:w-[calc(12.5%-1rem)];
-
+        .swiper{
+            .swiper-slide{
                 button,
                 img {
                     @apply w-full;
                 }
-            }
-            span {
-                @apply block text-center text-white mt-3;
+                span {
+                    @apply block text-center text-white mt-3;
+                }
             }
         }
     }

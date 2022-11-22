@@ -4,40 +4,41 @@
             .create-project-header-title Prodigma ile bir proje oluşturmaya hazır mısın?
             .create-project-header-desc Hemen oluşturmak istediğin proje türünü seç, adım adım özelliklere karar ver, Prodigma senin için üretsin!
         .create-project-body 
-            ul 
-                li
-                    button(data-type='printing')
-                        img(src=require('Images/3d-baskı.png'), alt='3D Baskı')
-                    span 3D Baskı
-                li 
-                    button(data-type='cnc')
-                        img(src=require('Images/3d-baskı.png'), alt='CNC İşleme')
-                    span CNC İşleme
-                li 
-                    button(data-type='silicone')
-                        img(src=require('Images/3d-baskı.png'), alt='Enjeksiyon Kalıplama')
-                    span Silikon Kalıplama
-                li 
-                    button(data-type='injection')
-                        img(src=require('Images/3d-baskı.png'), alt='Enjeksiyon Kalıplama')
-                    span Enjeksiyon Kalıplama
-                li 
-                    button(data-type='metal')
-                        img(src=require('Images/3d-baskı.png'), alt='Sac Metal İşleme')
-                    span Sac Metal İşleme
-                li 
-                    button(data-type='industrial')
-                        img(src=require('Images/3d-baskı.png'), alt='Endüstriyel Tasarım')
-                    span Endüstriyel Tasarım
-                li
-                    button(data-type='reverse')
-                        img(src=require('Images/3d-baskı.png'), alt='3D Tarama ve Tersine Mühendislik ')
-                    span 3D Tarama ve Tersine Mühendislik
-                li
-                    button(data-type='post')
-                        img(src=require('Images/3d-baskı.png'), alt='Ardıl işlemler')
-                    span Ardıl işlemler
+            .swiper.create-project-swiper
+                .swiper-wrapper
+                    .swiper-slide
+                        button(data-type='printing')
+                            img(src='https://via.placeholder.com/380x380.png', alt='3D Baskı')
+                        span 3D Baskı
+                    .swiper-slide
+                        button(data-type='cnc')
+                            img(src='https://via.placeholder.com/380x380.png', alt='3D Baskı')
+                        span CNC İşleme
+                    .swiper-slide
+                        button(data-type='silicone')
+                            img(src='https://via.placeholder.com/380x380.png', alt='3D Baskı')
+                        span Silikon Kalıplama
+                    .swiper-slide
+                        button(data-type='injection')
+                            img(src='https://via.placeholder.com/380x380.png', alt='3D Baskı')
+                        span Enjeksiyon Kalıplama
+                    .swiper-slide
+                        button(data-type='metal')
+                            img(src='https://via.placeholder.com/380x380.png', alt='3D Baskı')
+                        span Sac Metal İşleme
+                    .swiper-slide
+                        button(data-type='industrial')
+                            img(src='https://via.placeholder.com/380x380.png', alt='3D Baskı')
+                        span Endüstriyel Tasarım
+                    .swiper-slide
+                        button(data-type='reverse')
+                            img(src='https://via.placeholder.com/380x380.png', alt='3D Baskı')
+                        span 3D Tarama ve Tersine Mühendislik
+                    .swiper-slide
+                        button(data-type='post')
+                            img(src='https://via.placeholder.com/380x380.png', alt='3D Baskı')
+                        span Ardıl işlemler
+                .swiper-pagination.hidden
         .create-project-footer
             .create-project-footer-btn
                 +button('Sonraki Adım', 'gray' ,'m', badgy={icon:'arrow-line'})(id='js-next-to-step-first', disabled)
-                    
