@@ -1,5 +1,5 @@
 .benefits-banner-brands{
-    @apply bg-blue;
+    @apply bg-[url(../../../assets/img/benefits-single-cover.png)] bg-blue bg-no-repeat bg-cover bg-center;
     ul{
         @apply flex items-center justify-center flex-wrap gap-5 w-full h-56 pb-5;
         @apply lg:h-80 lg:gap-24 lg:flex-nowrap lg:pb-0;

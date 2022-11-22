@@ -1,37 +1,40 @@
 .page-home-sss
-    .page-home-sss-header
-        .page-home-sss-header-title
-            |Sık Sorulan Sorular
-        .page-home-sss-header-desc
-            |Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-    ul(class='accordion page-home-sss-accordion', data-type='connected')
-        li(class='acc-item', id="item_1")
-            .acc-header
-                button(type='button') Dosyamı 3D olarak nereden yazdırabilirim?
-            .acc-body
-                .content
-                    p
-                        |Prodigma gibi bir 3D yazdırma hizmeti kullanmak, dosyanızı 3D yazdırmak için etkili bir çözümdür. STL dosyanızı yükleyin , malzemenizi, teknolojinizi ve kaplamalarınızı seçin ve anında ücretsiz fiyat teklifi alın. 3D baskılı nesnelerinizi sadece birkaç gün içinde alacaksınız. 
-        li(class='acc-item', id="item_2")
-            .acc-header
-                button(type='button') 3D baskı hizmetinin maliyeti nedir?
-            .acc-body
-                .content
-                    p 
-                        strong Lorem Ipsum
-        li(class='acc-item', id="item_3")
-            .acc-header
-                button(type='button') 3D baskı için ne tür bir dosya formatı gereklidir?
-            .acc-body
-                .content
-                    p 
-                        strong Lorem Ipsum
-        li(class='acc-item', id="item_4")
-            .acc-header
-                button(type='button') 3D baskı için fiyatlandırmayı nasıl yapıyorsunuz?
-            .acc-body
-                .content
-                    p    
-                        strong Lorem Ipsum
-    .page-home-sss-footer 
-        +button('Daha Fazla Soru', 'primary', 'medium')
+    .page-home-sss-left
+        +picture({sm:require('Images/printing-page-cover.jpg'), lg:require('Images/printing-page-cover.jpg')})(alt='Image Tag')
+    .page-home-sss-right
+        .page-home-sss-header
+            .page-home-sss-header-title
+                |Sık Sorulan Sorular
+            .page-home-sss-header-desc.hidden
+                |Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        ul(class='accordion page-home-sss-accordion', data-type='connected')
+            li(class='acc-item', id="item_1")
+                .acc-header
+                    button(type='button') Dosyamı 3D olarak nereden yazdırabilirim?
+                .acc-body
+                    .content
+                        p
+                            |Prodigma gibi bir 3D yazdırma hizmeti kullanmak, dosyanızı 3D yazdırmak için etkili bir çözümdür. STL dosyanızı yükleyin , malzemenizi, teknolojinizi ve kaplamalarınızı seçin ve anında ücretsiz fiyat teklifi alın. 3D baskılı nesnelerinizi sadece birkaç gün içinde alacaksınız. 
+            li(class='acc-item', id="item_2")
+                .acc-header
+                    button(type='button') 3D baskı hizmetinin maliyeti nedir?
+                .acc-body
+                    .content
+                        p 
+                            strong Lorem Ipsum
+            li(class='acc-item', id="item_3")
+                .acc-header
+                    button(type='button') 3D baskı için ne tür bir dosya formatı gereklidir?
+                .acc-body
+                    .content
+                        p 
+                            strong Lorem Ipsum
+            li(class='acc-item', id="item_4")
+                .acc-header
+                    button(type='button') 3D baskı için fiyatlandırmayı nasıl yapıyorsunuz?
+                .acc-body
+                    .content
+                        p    
+                            strong Lorem Ipsum
+        .page-home-sss-footer 
+            +button('Daha Fazla Soru', 'primary', 'medium')

@@ -7,6 +7,7 @@
             @apply lg:grid lg:grid-cols-2;
         }
         &-text-content{
+            @apply bg-[url('../../../assets/img/main-slider-left-bg.svg')] bg-no-repeat bg-cover bg-center;
             @apply relative flex flex-col justify-center items-start px-5 py-8;
             @apply lg:px-10 lg:py-0;
             &-text{

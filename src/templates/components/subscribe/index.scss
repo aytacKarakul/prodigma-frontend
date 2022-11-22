@@ -1,23 +1,33 @@
 .site-subscribe{
-    @apply bg-contain bg-blue;
     &-wrapper{
-        @apply w-full px-5 pt-10 pb-5;
-        @apply lg:max-w-xl lg:mx-auto lg:px-2 lg:pt-14 lg:pb-10;
+        @apply lg:max-w-xs;
     }
     &-header{
-        @apply text-white text-center;
+        @apply text-white text-left;
     }
     &-title{
-        @apply font-heading font-medium text-2xl leading-none;
+        @apply font-heading font-medium text-2xl leading-none hidden;
         @apply lg:text-[28px];
     }
     &-desc{
-        @apply font-heading font-normal text-sm mt-5;
+        @apply font-heading font-normal text-sm;
+        >a{
+            @apply underline;
+        }
     }
     &-body{
-        @apply mt-6;
+        @apply mt-5;
         .input{
             @apply mb-0;
+            .icon{
+                @apply w-6 h-6 top-[calc(50%-0.75rem)] right-5 z-[1];
+                &::before{
+                    @apply text-2xl leading-6;
+                }
+            }
+            input{
+                @apply pr-14;
+            }
         }
     }
 }

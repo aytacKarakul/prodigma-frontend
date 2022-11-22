@@ -5,12 +5,14 @@
     .site-subscribe-wrapper 
         .site-subscribe-header 
             .site-subscribe-title
-                |Bize Katılın 
+                |Bize Katılın
             .site-subscribe-desc
-                |En son haberler ve özel teklifler hakkında güncellemeler almak için abone olun!
+                |Prodigma kullanan binlerce şirkete 
+                a(href="#")|katılın
+                |. 
         .site-subscribe-body 
             +inputs('textbox','Email', 'js-user-subscribe-email','arrow-line')
-            if errors = false
+            if errors = false 
                 .site-messages
                     .site-messages-success= messages.succes
                     .site-messages-error= messages.error

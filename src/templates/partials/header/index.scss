@@ -1,5 +1,5 @@
 .site-header {
-    @apply hidden fixed top-0 left-0 z-10 w-full;
+    @apply hidden sticky top-0 left-0 z-10 w-full bg-white;
     @apply transition-colors ease-in duration-200 delay-200;
     @apply lg:block;
     
@@ -59,6 +59,7 @@
                 @apply mr-5;
                 .btn{
                     @apply pl-6 pr-6;
+                    @apply lg:hover:bg-blue-200;
                 }
             }
             &-left{

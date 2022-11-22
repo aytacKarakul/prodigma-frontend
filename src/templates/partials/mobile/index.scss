@@ -1,21 +1,23 @@
 .site-mobile-header{
-    @apply flex items-center justify-start p-5 gap-5;
-    @apply fixed top-0 left-0 z-10 w-full;
+    @apply sticky top-0 left-0 z-10 w-full bg-white flex items-center justify-start px-5 py-2 gap-5;
     @apply lg:hidden;
 
     &-hamburger{
-        @apply w-8 h-8;
+        @apply w-8 h-8 flex items-center justify-center;
         .icon{
-            @apply text-[2rem];
+            @apply text-2xl text-blue-200;
         }
     }
     &-logo{
         @apply flex-auto;
+        img{
+            @apply mx-auto;
+        }
     }
     &-auth{
-        @apply w-8 h-8;
+        @apply w-8 h-8 flex items-center justify-center;
         .icon{
-            @apply text-[2rem];
+            @apply text-2xl text-blue-200;
         }
     }
     &-wrapper{

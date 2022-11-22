@@ -1,7 +1,7 @@
 //Quadruple Banner
 
 .quadruple-banner {
-    @apply bg-blue-200;
+    background: linear-gradient(270deg, #190049 0%, #4500C2 100%);
     &-wrapper {
         @apply container mx-auto;
     }
@@ -95,19 +95,19 @@
 //Supply Banner
 
 .supply-banner {
-    @apply px-5 py-11;
-    @apply lg:px-3 lg:py-24;
+    @apply flex flex-col justify-center bg-[url(../../assets/img/benefits-brands-cover.png)] bg-blue bg-no-repeat bg-cover bg-center min-h-[21.25rem];
     &-wrapper {
-        @apply container mx-auto;
+        @apply w-full m-auto;
+        @apply max-w-[30rem];
     }
     &-content {
         &-title {
-            @apply text-center font-heading font-medium text-[28px] leading-normal text-blue-100;
-            @apply lg:text-[44px];
+            @apply text-center font-heading font-medium text-[1.75rem] leading-normal text-white;
+            @apply lg:text-[2.75rem];
         }
         &-desc {
-            @apply mx-auto text-center font-inter font-normal text-base leading-normal text-blue-100 mt-4;
-            @apply max-w-[475px];
+            @apply mx-auto text-center font-inter font-normal text-base leading-normal text-white mt-4;
+            @apply max-w-[30rem];
         }
         &-btn {
             @apply w-60 mx-auto mt-4;
@@ -118,10 +118,10 @@
 //Create Project Banner
 
 .create-banner {
-    @apply bg-blue;
+    @apply bg-gray-500;
     &-wrapper {
         @apply container mx-auto;
-        @apply lg:py-20;
+        @apply lg:py-12;
     }
     &-body {
         @apply relative text-center;
@@ -136,16 +136,16 @@
             @apply lg:absolute lg:top-1/2 lg:left-0 lg:right-0 lg:max-w-[550px] lg:-translate-y-1/2 lg:text-center;
             @apply lg:px-0 lg:py-0;
             &-title {
-                @apply font-heading font-medium text-2xl text-white mx-auto;
-                @apply lg:text-[44px] lg:leading-none;
+                @apply font-heading font-medium text-2xl text-blue-100 mx-auto;
+                @apply lg:text-[44px] lg:leading-none lg:text-white;
             }
             &-desc {
-                @apply font-inter font-normal text-sm text-white mt-2.5;
-                @apply lg:text-base;
+                @apply font-inter font-normal text-blue-100 text-sm mt-2.5;
+                @apply lg:text-base lg:text-white;
             }
             &-btn {
                 button {
-                    @apply bg-white text-blue-100 w-40 mt-8;
+                    @apply w-40 mt-8;
                     @apply lg:mx-auto lg:mt-2.5;
                 }
             }

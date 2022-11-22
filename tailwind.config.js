@@ -24,6 +24,7 @@ module.exports = {
           '200' : '#F2F2F2',
           '300' : '#776F8F',
           '400' : '#EAEAEA',
+          '500' : '#F6F6F6',
         },
         green: {
           DEFAULT: '#00FF00',
@@ -56,6 +57,7 @@ module.exports = {
         'slider': "url('./src/assets/img/slider-bg.png')",
         'logo': "url('./src/assets/img/logo.svg')",
         'heroBackgorund': "url('./src/assets/img/create-project-bg.png')",
+        'benefitsBrandCover': "url('./src/assets/img/benefits-brands-cover.png')",
       },
       keyframes:{
         spinNew: {
