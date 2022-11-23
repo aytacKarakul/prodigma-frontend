@@ -1,5 +1,3 @@
-- var authenticated= true
-
 include ../mobile/index.pug
 
 header.site-header
@@ -205,8 +203,9 @@ header.site-header
                     a(href="/hakkimizda.html")
                         |Prodigma +  
         .site-header-login
+            - var authenticated = true
             case authenticated
-                when authenticated= true
+                when authenticated = true
                     .site-header-login-success
                         .site-header-login-success-project
                             +button('Proje Başlat','green','m',false)(href="/create-project.html")
@@ -244,6 +243,6 @@ header.site-header
                                                 i.icon.icon-arrow-line
                         .site-header-login-success-cart
                             i.icon.icon-cart
-                when authenticated= false
+                when authenticated = false
                     .site-header-logoff
                         a(href="/login.html") Giriş Yap

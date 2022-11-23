@@ -4,7 +4,7 @@
     @apply lg:block;
     
     &-wrapper {
-        @apply container mx-auto flex flex-row items-center;
+        @apply flex flex-row items-center px-5;
     }
     &-logo {
         @apply mr-7;
@@ -36,7 +36,7 @@
     }
     &-logoff {
         a {
-            @apply inline-flex font-heading font-medium text-sm;
+            @apply inline-flex font-heading font-medium text-sm text-blue-100;
             @apply transition-colors ease-in duration-200 delay-200;
         }
     }
