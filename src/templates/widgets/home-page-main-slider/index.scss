@@ -39,22 +39,24 @@
     .swiper-slide{
         @apply bg-cover w-full h-full;
         .text-content{
-            @apply absolute left-5 top-5 z-[1] font-inter font-normal text-sm text-white;
+            @apply w-11/12 absolute left-5 top-5 z-[1] font-inter font-normal text-sm text-white;
             @apply lg:left-20 lg:top-[inherit] lg:bottom-16 lg:w-80;
         }
     }
     .swiper-button-prev,
     .swiper-button-next{
-        @apply hidden bg-blue-100 w-[3.125rem] h-[3.125rem] rounded-full;
-        @apply lg:flex;
+        @apply flex bg-blue-100 w-[2.5rem] h-[2.5rem] rounded-full;
+        @apply lg:w-[3.125rem] lg:h-[3.125rem];
         &::after{
             @apply text-white text-xs;
         }
     }
     .swiper-button-prev{
+        @apply left-5;
         @apply lg:left-[1.875rem];
     }
     .swiper-button-next{
+        @apply right-5;
         @apply lg:right-[1.875rem];
     }
 }

@@ -57,13 +57,13 @@
         @apply lg:hidden;
         &-body {
             &-img {
-                @apply px-9;
+                @apply px-5 pb-10;
                 img {
                     @apply rounded-full items-center justify-center mx-auto;
                 }
             }
             &-content {
-                @apply py-8;
+                @apply py-10;
                 ul {
                     @apply overflow-x-auto whitespace-nowrap;
                     -webkit-overflow-scrolling: touch;
