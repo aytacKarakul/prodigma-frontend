@@ -20,6 +20,7 @@ mixin picture(src1x, src2x = false)
             source(media="(max-width: 1024px)" srcset=src1x['sm'])
             source(media="(min-width: 1025px)" srcset=src1x['lg'])
         img(src=src1x['sm'] alt=(attributes.alt) ? attributes.alt : 'alt text here')&attributes(attributes)
+        
 //- inputs
 mixin inputs(type, label='', id='', icon='', disabled=false, timer='', error='')
     .input(class=(disabled) ? 'input-disabled ' + type : type)

@@ -30,6 +30,10 @@ module.exports = {
             filename: 'basket.html',
             template: './src/templates/basket/basket.pug',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'siparislerim.html',
+            template: './src/templates/siparislerim.pug',
+        }),
     ],
     module: {
         rules: [

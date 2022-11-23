@@ -1,0 +1,24 @@
+include ../abstracts/variables
+include ../abstracts/site-settings
+include ../abstracts/mixins
+
+- var siteTitle = "Prodigma: 3D Çevrimiçi Baskı Hizmeti"
+
+doctype html
+html(lang='tr')
+    head
+        block head
+            meta(charset="UTF-8")
+            meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
+            meta(http-equiv="X-UA-Compatible", content="ie=edge")
+            title=pageTitle + ' | ' + siteTitle
+            meta(name="description" content=pageDesc)
+    body(class="holding page-" + pageClass)
+        #site-wrapper
+            block header
+                include ../partials/header/index.pug
+            main(id="site-main")
+                block content
+                    h1 Content
+            block foot
+                include ../partials/footer/index.pug
