@@ -54,7 +54,7 @@
             @apply transition-colors ease-in duration-200 delay-200;
         }
         &-success{
-            @apply flex flex-row items-center;
+            @apply flex flex-row items-center relative min-h-[4.375rem] pl-5 pr-5 transition-all ease-in duration-200 delay-200;
             &-project{
                 @apply mr-5;
                 .btn{
@@ -70,6 +70,40 @@
                 .icon{
                     @apply text-xl leading-none text-blue;
                     @apply transition-colors ease-in duration-200 delay-200;
+                }
+            }
+        }
+    }
+    &-member-menu{
+        @apply absolute top-[4.375rem] right-0 bg-blue w-full opacity-0 invisible pointer-events-none transition-all ease-in duration-200 delay-200;
+        &-header{
+            @apply bg-blue-100 p-5;
+            .tt1{
+                @apply font-inter font-light text-base text-white;
+            }
+            .bttm{
+                @apply flex justify-between items-center;
+                .tt2{
+                    @apply font-inter font-bold text-2xl text-white;
+                }
+                .tt3{
+                    button{
+                        @apply font-inter font-semibold text-sm text-green-300 py-1;
+                    }
+                }
+            }
+        }
+        &-content{
+            @apply py-2.5 px-5;
+            ul{
+                li{
+                    a{
+                        @apply flex items-center font-inter font-normal text-white py-2.5 transition-all ease-in duration-200 delay-200;
+                        @apply lg:hover:text-green-300;
+                        .icon{
+                            @apply w-5 h-5 text-xl leading-none ml-3;
+                        }
+                    }
                 }
             }
         }
@@ -223,5 +257,14 @@
     }
     .site-header-login-success-cart .icon{
         @apply text-white;
+    }
+}
+
+.site-header-login-success{
+    &.animate{
+        @apply bg-blue;
+        .site-header-member-menu{
+            @apply opacity-100 visible pointer-events-auto transition-all ease-in duration-200 delay-200;
+        }
     }
 }
