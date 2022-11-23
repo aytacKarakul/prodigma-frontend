@@ -9,29 +9,28 @@
     &-header {
         &-title {
         @apply font-heading text-2xl leading-7 pt-10 pb-6 text-center font-medium text-white ;
-        @apply lg:text-[38px] lg:leading-[50px] lg:pt-[92px] lg:pb-32;
+        @apply lg:text-[38px] lg:leading-[50px] lg:pt-20 lg:pb-16;
     }
     }
     &-body {
-        @apply hidden flex-row items-center justify-between px-8 gap-12;
+        @apply hidden flex-row items-center justify-between gap-12;
         @apply lg:flex lg:pb-24;
-        &-left {
-            @apply flex flex-col text-left max-w-[360px];
-        }
         &-img {
             @apply relative;
+            @apply lg:w-3/5 lg:max-w-[37.5rem];
             &::after{
                 content:'';
-                background-image: url('../img/animation-vectorel.png');
+                background-image: url('../img/animation-vectorel.svg');
                 @apply absolute top-0 left-0 z-[1] w-full h-full bg-contain bg-center bg-no-repeat;
                 @apply animate-spin-new;
             }
            img {
-            @apply flex rounded-full;
+            @apply relative flex rounded-full z-[2];
            }
         }
         &-right {
-            @apply flex flex-col text-right max-w-[360px];
+            @apply flex flex-col text-right;
+            @apply lg:w-2/5;
         }
         ul {
             li {
