@@ -1,0 +1,31 @@
+.member {
+    &-head {
+        @apply flex flex-row justify-start bg-blue-100 text-white items-center px-5 py-5;
+        &-content {
+            @apply flex flex-col ml-5 font-inter font-semibold text-xl;
+            a {
+                @apply font-inter font-medium text-sm text-green-300;
+            }
+        }
+        &-img {
+            @apply flex rounded-full bg-white h-16 w-16 justify-center items-center text-blue;
+        }
+    }
+    &-bottom {
+        &-content {
+            @apply flex flex-col;
+            ul {
+                @apply bg-white px-5;
+                li {
+                    @apply font-inter font-normal text-sm border-blue-100 border-b-[1px] border-opacity-[10%] py-4;
+                }
+                li:nth-child(1){
+                    @apply flex items-center justify-between;
+                }
+                li:nth-child(7) {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}

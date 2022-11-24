@@ -1,0 +1,31 @@
+.pmember{
+    @apply bg-gray-500;
+    &-wrapper {
+        @apply container mx-auto pt-5;
+        @apply lg:flex lg:flex-row lg:py-24 lg:gap-10;
+    }
+    &-left {
+        @apply hidden;
+        @apply lg:block lg:w-1/4;
+        &-title {
+            @apply font-heading font-semibold text-2xl mb-4;
+        }
+    }
+    &-right {
+        @apply w-full px-5;
+        @apply lg:w-3/4 lg:mt-12;
+        &-content {
+            ul {
+                @apply font-inter font-medium text-xl pb-11;
+            }
+            &-title {
+                @apply font-inter font-medium text-xl mb-3 mt-6;
+            }
+        }
+    }
+    .pmember-orders-list {
+        &-title-date {
+            @apply bg-white py-5 pl-5;
+        }
+    }
+}

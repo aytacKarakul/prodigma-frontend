@@ -6,4 +6,22 @@ block prepend head
     - pageClass = "orders"
 
 block content
-    |İçerik
+    .pmember
+        .pmember-wrapper
+            .pmember-left
+                .pmember-left-title Hesabım
+                include components/member/navigation/index.pug
+            .pmember-right
+                .pmember-right-content 
+                    .pmember-orders-list 
+                        ul
+                            li 
+                                .pmember-orders-list-title-date 2022
+                                ul 
+                                    li
+                                        .pmember-right-content-title Haziran
+                                        include widgets/order-list/index.pug
+                                    li
+                                        .pmember-right-content-title Mayıs
+                                        include widgets/order-list/index.pug
+                                        include widgets/order-list/index.pug

@@ -1,0 +1,42 @@
+.member-order-list {
+    @apply bg-white border-b-[1px];
+    &-rows {
+        @apply flex items-start;
+        &-wrapper {
+            @apply relative flex flex-wrap lg:flex-col w-[calc(100%-6.25rem)];
+        }
+        &-content{
+            @apply flex flex-row pl-5 pt-5;
+            &-left {
+                @apply flex flex-row w-1/2 ;
+                &-cols {
+                    @apply flex flex-col;
+                    .nm {
+                        @apply font-inter font-normal text-base mr-16 mb-2 max-w-[75px];
+                    }
+                    .cat {
+                        @apply font-inter font-normal text-sm;
+                    }
+                    .mn {
+                        @apply font-inter font-semibold text-base mb-2;
+                    }
+                    .tac {
+                        @apply font-inter font-normal text-sm;
+                    }
+                }
+            }
+            &-right {
+                @apply flex flex-row w-1/2 justify-around;
+                &-status {
+                    @apply font-inter font-normal text-sm;
+                }
+                &-detail {
+                    @apply font-inter font-medium text-sm;
+                }
+                i {
+                    @apply ml-3;
+                }
+            }
+        }
+    }
+}
