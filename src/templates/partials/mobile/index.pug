@@ -1,4 +1,4 @@
-- var authenticated= true
+- var authenticated = true
 
 .site-mobile-header
     .site-mobile-header-hamburger
@@ -7,18 +7,25 @@
         a(href="/")
             img(src=require('Images/logo.svg') alt="Prodigma")
     .site-mobile-header-auth
-        i.icon.icon-cart
+        case authenticated
+            when authenticated = true
+                a(href="/basket.html")
+                    i.icon.icon-cart
+            when authenticated= false
+                a(href="/login.html")
+                    i.icon.icon-member
     .site-mobile-header-wrapper
         .site-mobile-header-wrapper-top
             .site-mobile-header-wrapper-top-close 
                 i.icon.icon-close
             .site-mobile-header-wrapper-top-title MENÜ
-            .site-mobile-header-wrapper-top-member 
+            .site-mobile-header-wrapper-top-member
                 case authenticated
                     when authenticated= true
                         .mmbr TA
                     when authenticated= false
-                        i.icon.icon-cart
+                        a(href="/login.html")
+                            i.icon.icon-member
         .site-mobile-header-nav
             ul
                 li 

@@ -17,7 +17,7 @@
     &-auth{
         @apply w-8 h-8 flex items-center justify-center;
         .icon{
-            @apply text-2xl text-blue-200;
+            @apply w-8 h-8 flex items-center justify-center bg-gray-200 text-2xl text-blue-200 rounded-full;
         }
     }
     &-wrapper{
@@ -39,7 +39,7 @@
                     @apply bg-blue w-8 h-8 flex items-center justify-center rounded-full font-heading font-semibold text-xs text-white;
                 }
                 .icon{
-                    @apply bg-blue-200 w-8 h-8 flex items-center justify-center rounded-full text-white text-base;
+                    @apply w-8 h-8 flex items-center justify-center bg-gray-200 text-2xl text-blue-200 rounded-full;
                 }
             }
         }
