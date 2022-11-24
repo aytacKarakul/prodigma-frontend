@@ -2,7 +2,6 @@ import 'Images/3d-baskı.png';
 import 'Images/create-project-bg.png'
 
 import Swiper,{ EffectCoverflow, Pagination } from 'swiper';
-
 import CategorySilicone from './models/silicone';
 import CategoriesInjection from './models/injection';
 import CategoriesCncMachining from './models/cncMachining';
