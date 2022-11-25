@@ -1,15 +1,29 @@
 .order-detail-info{
-    @apply bg-white flex px-10 py-4;
+    @apply bg-white flex flex-col px-2.5 py-4 mt-5;
+    @apply lg:flex-row lg:items-center lg:mt-10 lg:px-10;
     &-cols{
-        @apply flex flex-col flex-auto;
+        @apply flex flex-col flex-auto mt-3 first:mt-0;
+        @apply lg:gap-y-3 lg:mt-0;
+
         &:nth-child(3){
             @apply flex-1;
+            @apply lg:border-l-2 lg:border-solid lg:border-blue-100 lg:border-opacity-10 lg:pl-20;
             .dtl-lnk{
-                @apply inline-flex;
+                @apply inline-flex font-inter font-normal text-sm underline py-1;
+                @apply lg:py-0.5;
             }
         }
         &-row{
-            @apply flex flex-row items-center;
+            @apply flex flex-row items-center mt-3 first:mt-0;
+            @apply lg:mt-0;
+            .vll{
+                @apply flex-grow-[1] flex-shrink-[1] basis-[50%] font-inter font-medium text-sm;
+                @apply lg:flex-grow lg:flex-shrink lg:basis-[0%];
+            }
+            .lbl{
+                @apply flex-grow-[1] flex-shrink-[1] basis-[50%] font-inter font-normal text-xs;
+                @apply lg:flex-grow-[2] lg:flex-shrink-[1] lg:basis-[0%];
+            }
         }
     }
 }

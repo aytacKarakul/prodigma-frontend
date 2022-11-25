@@ -1,0 +1,9 @@
+.pmember-back-history{
+    &-btn{
+        @apply font-heading font-semibold text-lg;
+        @apply lg:text-[1.625rem];
+        .icon{
+            @apply mr-6;
+        }
+    }
+}

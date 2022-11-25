@@ -93,3 +93,8 @@ mixin select(label='', id='')
         span.wrp
             select(id=id)&attributes(attributes)
                 block
+                
+mixin page-history-back(text='', url='')
+    a(href=url)&attributes(attributes)
+        i.icon.icon-arrow-left
+        span=text

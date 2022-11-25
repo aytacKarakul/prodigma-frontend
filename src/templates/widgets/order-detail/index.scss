@@ -5,7 +5,7 @@
 }
 .podp{
     &-wrap{
-        @apply container mx-auto;
-        @apply pt-10 pb-20;
+        @apply container mx-auto px-5 pt-5 pb-10;
+        @apply lg:px-0 lg:pt-10 lg:pb-20;
     }
 }
