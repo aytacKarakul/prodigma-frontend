@@ -1,5 +1,7 @@
 .site-mobile-header{
     @apply sticky top-0 left-0 z-10 w-full bg-white flex items-center justify-start px-5 py-2 gap-5;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
+    
     @apply lg:hidden;
 
     &-hamburger{

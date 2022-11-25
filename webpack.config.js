@@ -34,6 +34,10 @@ module.exports = {
             filename: 'siparislerim.html',
             template: './src/templates/siparislerim.pug',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'bildirimlerim.html',
+            template: './src/templates/bildirimlerim.pug',
+        }),
     ],
     module: {
         rules: [
@@ -108,6 +112,7 @@ module.exports = {
             Partials : path.resolve(__dirname, './src/templates/partials'), 
             Components: path.resolve(__dirname, './src/templates/components'),
             Widgets: path.resolve(__dirname, './src/templates/widgets'),
+            Members : path.resolve(__dirname, './src/templates/view'),
         }
     },
 }
