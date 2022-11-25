@@ -1,6 +1,17 @@
 .member {
+    @apply sticky top-0 left-0;
+    @apply lg:top-[70px];
+    &-mobile-trigger{
+        @apply flex items-center relative bg-white font-heading font-semibold text-base text-blue-100 px-5 py-[1.375rem];
+        @apply after:absolute after:top-[calc(50%-1rem)] after:right-4 after:w-8 after:h-8 after:flex after:items-center after:justify-center after:font-icon after:content-["\e900"] after:text-base after:leading-none after:text-blue-200;
+        @apply after:transition-transform after:ease-in after:duration-150 after:delay-150;
+        box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
+
+        @apply lg:hidden;
+    }
     &-head {
-        @apply flex flex-row justify-start bg-blue-100 text-white items-center px-5 py-5;
+        @apply hidden bg-blue-100 text-white items-center px-5 py-5;
+        @apply lg:flex lg:flex-row lg:justify-start;
         &-content {
             @apply flex flex-col ml-5 font-inter font-semibold text-xl;
             a {
@@ -12,20 +23,40 @@
         }
     }
     &-bottom {
+        @apply absolute top-[68px] left-0 z-[1] w-full opacity-0 invisible pointer-events-none transition-all delay-150 duration-150;
+        @apply lg:transition-none lg:opacity-100 lg:visible lg:pointer-events-auto lg:static lg:top-0;
+
         &-content {
             @apply flex flex-col;
-            ul {
-                @apply bg-white px-5;
-                li {
-                    @apply font-inter font-normal text-sm border-blue-100 border-b-[1px] border-opacity-[10%] py-4;
-                }
-                li:nth-child(1){
-                    @apply flex items-center justify-between;
-                }
-                li:nth-child(7) {
-                    border-bottom: none;
+            > ul {
+                @apply bg-white;
+                > li {
+                    @apply font-inter font-normal border-blue-100 border-solid border-b border-opacity-10;
+                    @apply last:border-0;
+                    > a{
+                      @apply flex items-center text-sm text-blue-100 text-opacity-50 px-5 py-4;
+                      @apply after:font-icon after:content-['\e902'] after:ml-auto after:text-xl after:leading-none after:opacity-0;
+                    }
+                    &.active{
+                        > a{
+                            @apply text-opacity-100 font-semibold;
+                            @apply after:opacity-100;
+                        }
+                    }
                 }
             }
         }
+    }
+    &.active{
+        .member{
+            &-mobile-trigger{
+                @apply after:rotate-180;
+            }
+            &-bottom{
+                @apply opacity-100 visible pointer-events-auto;
+                @apply lg:opacity-100;
+            }
+        }
+
     }
 }

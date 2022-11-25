@@ -1,31 +1,19 @@
 .pmember{
     @apply bg-gray-500;
     &-wrapper {
-        @apply container mx-auto pt-5;
+        @apply container mx-auto;
         @apply lg:flex lg:flex-row lg:py-24 lg:gap-10;
     }
     &-left {
-        @apply hidden;
-        @apply lg:block lg:w-1/4;
+        @apply w-full relative z-[1];
+        @apply lg:w-1/4 lg:static;
         &-title {
-            @apply font-heading font-semibold text-2xl mb-4;
+            @apply hidden;
+            @apply lg:block font-heading font-semibold text-2xl mb-4;
         }
     }
     &-right {
-        @apply w-full px-5;
-        @apply lg:w-3/4 lg:mt-12;
-        &-content {
-            ul {
-                @apply font-inter font-medium text-xl pb-11;
-            }
-            &-title {
-                @apply font-inter font-medium text-xl mb-3 mt-6;
-            }
-        }
-    }
-    .pmember-orders-list {
-        &-title-date {
-            @apply bg-white py-5 pl-5;
-        }
+        @apply w-full py-5 px-5;
+        @apply lg:w-3/4 lg:pt-12 lg:pb-0;
     }
 }
