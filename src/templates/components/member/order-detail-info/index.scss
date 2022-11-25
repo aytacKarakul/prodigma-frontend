@@ -1,0 +1,15 @@
+.order-detail-info{
+    @apply bg-white flex px-10 py-4;
+    &-cols{
+        @apply flex flex-col flex-auto;
+        &:nth-child(3){
+            @apply flex-1;
+            .dtl-lnk{
+                @apply inline-flex;
+            }
+        }
+        &-row{
+            @apply flex flex-row items-center;
+        }
+    }
+}

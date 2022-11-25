@@ -1,0 +1,11 @@
+.page-order-detail{
+    .benefits-banner-brands{
+        @apply hidden;
+    }
+}
+.podp{
+    &-wrap{
+        @apply container mx-auto;
+        @apply pt-10 pb-20;
+    }
+}
