@@ -38,6 +38,10 @@ module.exports = {
             filename: 'bildirimlerim.html',
             template: './src/templates/bildirimlerim.pug',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'siparis-detay.html',
+            template: './src/templates/siparis-detay.pug',
+        }),
     ],
     module: {
         rules: [
