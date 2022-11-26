@@ -17,6 +17,7 @@ export const MemberDropdown = () => {
             
             if(itm.pathname === locationHref){
                 itm.parentElement.classList.add('active');
+                menuTrigger.innerText = itm.innerHTML;
             }else if (itm.parentElement.classList.contains('active')){
                 const selectedItem = document.querySelectorAll('.member-bottom-content > ul > li.active');
                 selectedItem.forEach((selected) => {
