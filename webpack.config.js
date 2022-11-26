@@ -54,6 +54,10 @@ module.exports = {
             filename: 'iletisim-izinlerim.html',
             template: './src/templates/iletisim-izinlerim.pug',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'sife-degistirme.html',
+            template: './src/templates/sife-degistirme.pug',
+        }),
     ],
     module: {
         rules: [
