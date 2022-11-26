@@ -1,0 +1,17 @@
+.member-password-change-form
+    .member-password-change-form-wrapper
+        .member-password-change-form-rows
+            .member-password-change-form-rows-col
+                +inputs('textbox','Mevcut Şifre', 'js-member-name', 'eye')(type="text")
+            .member-password-change-form-rows-col
+        .member-password-change-form-rows
+            .member-password-change-form-rows-col
+                +inputs('textbox','Yeni Şifre', 'js-member-name', 'eye')(type="text")
+            .member-password-change-form-rows-col
+                +inputs('textbox','Yeni Şifre Tekrar', 'js-member-surname', 'eye')(type="text")
+        .member-password-change-form-rows.member-password-change-form-rows-warnings
+            .wrn|En az 6 karakter içermelidir
+            .wrn|Küçük harf (a-z) ve büyük harf (A-Z) içermelidir
+            .wrn|En az 1 rakam (0-9) veya sembol içermelidir
+        .member-password-change-form-rows-btn
+            +button('Keydet', 'green', 'm')

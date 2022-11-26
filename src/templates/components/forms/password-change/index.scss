@@ -1,0 +1,30 @@
+.member-password-change-form{
+    @apply bg-white p-5;
+    @apply lg:p-8;
+    &-rows{
+        @apply flex flex-col;
+        @apply lg:flex-row lg:gap-x-5;
+
+        &-col{
+            @apply flex-1;
+        }
+        .input{
+            input{
+                 @apply bg-gray-500 border-transparent;
+            }
+        }
+        &-warnings{
+            @apply flex-col mt-3;
+            .wrn{
+                @apply flex items-center mb-2.5 last:mb-0 font-light text-sm;
+                @apply before:flex before:items-center before:justify-center before:w-6 before:h-6 before:font-icon before:content-['\e919'] before:rounded-full before:bg-green-300 before:text-white before:text-xs before:mr-2;
+            }
+        }
+        &-btn{
+            .btn{
+                @apply mt-10;
+                @apply lg:max-w-xs lg:mt-14;
+            }
+        }
+    }
+}
