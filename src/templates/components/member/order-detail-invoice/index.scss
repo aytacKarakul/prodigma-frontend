@@ -1,0 +1,35 @@
+.order-detail-delivery{
+    @apply bg-white mt-8 p-5;
+    @apply lg:px-10 lg:py-5;
+    &-title{
+        @apply font-inter font-semibold text-xl mb-5;
+    }
+    &-lists{
+        @apply flex flex-col;
+        @apply lg:flex-row lg:gap-x-20;
+        > div{
+            @apply flex-1 relative;
+            @apply lg:first:after:content-[''] lg:first:after:border-r lg:first:after:border-solid lg:first:after:border-blue-100 lg:first:after:border-opacity-10 lg:first:pr-20;
+            @apply lg:first:after:absolute lg:first:after:top-0 lg:first:after:right-0 lg:first:after:h-full;
+
+            @apply last:border-t last:border-solid last:border-blue-100 last:border-opacity-10 last:pt-5 last:mt-5;
+            @apply lg:last:border-t-0 lg:last:mt-0 lg:last:pt-0;
+
+            .title{
+                @apply font-inter font-semibold text-lg mb-2.5;
+            }
+            .content{
+                @apply lg:max-w-xs;
+                .t1{
+                    @apply font-inter font-semibold text-sm mt-2;
+                }
+                .t2{
+                    @apply font-inter font-normal text-sm;
+                }
+                .pap{
+                    @apply font-inter font-normal text-sm mt-2;
+                }
+            }
+        }
+    }
+}
