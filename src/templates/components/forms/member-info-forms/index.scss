@@ -1,0 +1,28 @@
+.member-info-form{
+    @apply bg-white;
+    &-wrapper{
+        @apply p-5;
+        @apply lg:p-8;
+    }
+    &-rows{
+        @apply flex flex-col;
+        @apply lg:flex-row lg:gap-x-4;
+        
+        &-checkbox{
+            @apply mt-2;
+        }
+        .input{
+            input{
+                 @apply bg-gray-500 border-transparent;
+            }
+         }
+        &-col{
+            @apply flex-1;
+        }
+        &-btn{
+            .btn{
+                @apply lg:max-w-xs lg:mt-14;
+            }
+        }
+    }
+}

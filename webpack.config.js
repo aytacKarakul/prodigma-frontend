@@ -46,6 +46,10 @@ module.exports = {
             filename: 'adreslerim.html',
             template: './src/templates/adreslerim.pug',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'uyelik-bilgilerim.html',
+            template: './src/templates/uyelik-bilgilerim.pug',
+        }),
     ],
     module: {
         rules: [
