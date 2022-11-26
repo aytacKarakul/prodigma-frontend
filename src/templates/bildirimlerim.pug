@@ -6,4 +6,11 @@ block prepend head
     - pageClass = "notification"
 
 block content
-    include widgets/order-detail/index.pug
+    .pmember
+        .pmember-wrapper
+            .pmember-left
+                .pmember-left-title Hesabım
+                include components/member/navigation/index.pug
+            .pmember-right
+                .pmember-right-content
+                    include components/member/notifications/index.pug
