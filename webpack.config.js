@@ -50,6 +50,10 @@ module.exports = {
             filename: 'uyelik-bilgilerim.html',
             template: './src/templates/uyelik-bilgilerim.pug',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'iletisim-izinlerim.html',
+            template: './src/templates/iletisim-izinlerim.pug',
+        }),
     ],
     module: {
         rules: [
