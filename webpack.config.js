@@ -42,6 +42,10 @@ module.exports = {
             filename: 'siparis-detay.html',
             template: './src/templates/siparis-detay.pug',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'adreslerim.html',
+            template: './src/templates/adreslerim.pug',
+        }),
     ],
     module: {
         rules: [
