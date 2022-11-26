@@ -1,0 +1,16 @@
+extends blocks/member-layout.pug
+
+block prepend head
+    - pageTitle = "Üyelik Bilgilerim"
+    - pageDesc = "Üyelik bilgilerim açıklama metni"
+    - pageClass = "member-info"
+
+block content
+    .pmember
+        .pmember-wrapper
+            .pmember-left
+                .pmember-left-title Hesabım
+                include components/member/navigation/index.pug
+            .pmember-right
+                .pmember-right-content
+                    include components/forms/member-info-forms/index.pug

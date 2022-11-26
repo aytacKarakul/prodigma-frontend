@@ -1,0 +1,16 @@
+.member-info-form
+    .member-info-form-wrapper
+        .member-info-form-rows
+            .member-info-form-rows-col
+                +inputs('textbox','Ad', 'js-member-name')(type="text")
+            .member-info-form-rows-col
+                +inputs('textbox','Soyad', 'js-member-surname')(type="text")
+        .member-info-form-rows
+            .member-info-form-rows-col
+                +inputs('textbox','E-Posta', 'js-member-name')(type="email")
+            .member-info-form-rows-col
+                +inputs('textbox','Cep Telefonu', 'js-member-surname')(type="tel")
+        .member-info-form-rows.member-info-form-rows-checkbox
+            +inputs('checkbox','Eğitim Mensubu Hesap', 'js-member-account-education')
+        .member-info-form-rows-btn
+            +button('Keydet', 'green', 'm')
