@@ -1,0 +1,19 @@
+.member-permissions-forms{
+    @apply bg-white p-5;
+    @apply lg:p-8;
+    &-wrap{
+        @apply lg:max-w-sm;
+    }
+    &-title{
+        @apply font-inter font-semibold text-sm mt-5 mb-5 first:mt-0;
+    }
+    &-rows{
+        @apply ml-2.5;
+        &-type2{
+            @apply ml-7;
+        }
+        &-btn{
+            @apply mt-10;
+        }
+    }
+}
