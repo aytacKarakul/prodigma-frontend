@@ -243,7 +243,8 @@ header.site-header
                                                 |Destek
                                                 i.icon.icon-arrow-line
                         .site-header-login-success-cart
-                            i.icon.icon-cart
+                            a(href="/basket.html") 
+                                i.icon.icon-cart
                 when authenticated= false
                     .site-header-logoff
                         a(href="/login.html") Giriş Yap

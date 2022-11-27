@@ -66,7 +66,7 @@
                 @apply flex flex-col mr-5;
             }
             &-cart{
-                @apply w-5 h-5;
+                @apply flex items-center justify-center w-8 h-8 bg-gray-500 rounded-full transition-all ease-in duration-200 delay-200;
                 .icon{
                     @apply text-xl leading-none text-blue;
                     @apply transition-colors ease-in duration-200 delay-200;
@@ -255,9 +255,6 @@
             }
         }
     }
-    .site-header-login-success-cart .icon{
-        @apply text-white;
-    }
 }
 
 .site-header-login-success{
@@ -265,6 +262,12 @@
         @apply bg-blue;
         .site-header-member-menu{
             @apply opacity-100 visible pointer-events-auto transition-all ease-in duration-200 delay-200;
+        }
+        .site-header-login-success-cart {
+            @apply bg-blue-100;
+            .icon{
+                @apply text-white;
+            }
         }
     }
 }
