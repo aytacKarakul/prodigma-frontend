@@ -11,7 +11,7 @@ block content
             .basket-left
                 include basket-list/index.pug
                 .basket-accordion
-                    ul(class='accordion basket-accordion', data-type='connected')
+                    ul(class='accordion accordion-basket', data-type='connected')
                         li(class='acc-item', id="item_1")
                             .acc-header
                                 button(type='button') Alıcı Bilgileri
@@ -29,3 +29,4 @@ block content
                                 include payment/index.pug
             .basket-right
                 include summary/index.pug
+    .vail.vail-summary

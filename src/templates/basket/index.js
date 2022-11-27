@@ -1,3 +1,6 @@
+import { basketSummaryBtnClick } from "./summary";
 export default class Basket {
-    constructor(){}
+    constructor(){
+        basketSummaryBtnClick();
+    }
 }
