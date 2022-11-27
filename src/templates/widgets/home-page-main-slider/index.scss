@@ -42,6 +42,9 @@
             @apply w-11/12 absolute left-5 top-5 z-[1] font-inter font-normal text-sm text-white;
             @apply lg:left-20 lg:top-[inherit] lg:bottom-16 lg:w-80;
         }
+        img{
+            @apply object-fill w-full;
+        }
     }
     .swiper-button-prev,
     .swiper-button-next{

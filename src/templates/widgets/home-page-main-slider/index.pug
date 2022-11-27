@@ -13,11 +13,13 @@
                     .swiper-slide
                         .text-content
                             p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        img(src="https://via.placeholder.com/1080x1300/0000FF/808080?Text=Digital.com", alt="Test Img")
+                        //-img(src=require(''), alt="Test Img")
+                        +picture({sm:require('Images/slider_1x2.1.jpg'), lg:require('Images/slider_1x2.jpg')})
                     .swiper-slide
                         .text-content
                             p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        img(src="https://via.placeholder.com/1080x1300/FF0000/FFFFFF?Text=Down.com", alt="Test Img")
+                        //-img(src=require('Images/slider_2x2.jpg'), alt="Test Img")
+                        +picture({sm:require('Images/slider_2x2.1.jpg'), lg:require('Images/slider_2x2.jpg')})
                 .swiper-button-next
                 .swiper-button-prev
                 .swiper-pagination.hidden
