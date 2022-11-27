@@ -1,13 +1,13 @@
 .basket-payment-tab {
-    &-wrapper {
-        @apply container mx-auto;
-    }
     &-form {
         @apply flex flex-col;
         @apply lg:w-[calc(50%-0.625rem)];
         &-column {
             @apply lg:flex lg:flex-row;
-            @apply lg:gap-5;
+            @apply lg:gap-x-5;
+            .input{
+                @apply flex-1;
+            }
         }
     }
     &-success {

@@ -16,21 +16,25 @@
                     .lb|Kargo
                     .vl|9.90 TL
         .basket-summary-footer
-            +inputs('checkbox')
             .basket-summary-footer-desc
-                a(href="#")|Cayma Hakkı,
-                a(href="#")|Ön Bilgilendirme Formu
-                |  ve 
-                a(href="#")|Mesafeli Satış Sözleşmesi
-                | ’ni okudum, kabul ediyorum.
+                .input.checkbox
+                    input(type="checkbox", id="basket-summary-preliminary-info")
+                    label(for="basket-summary-preliminary-info")
+                        a(href="#")|Cayma Hakkı,
+                        a(href="#")|Ön Bilgilendirme Formu
+                        |  ve 
+                        a(href="#")|Mesafeli Satış Sözleşmesi
+                        | ’ni okudum, kabul ediyorum.
     .basket-summary-invoice
-        |Tarafınıza e-arşiv fatura düzenlenecektir.
+        i.icon.icon-e-invoince
+        span|Tarafınıza e-arşiv fatura düzenlenecektir.
     .basket-summary-to-total
         .basket-summary-to-total-prices
             .lbl|Toplam
             .val|2.960 TL
+            i.icon.icon-arrow-down
         .basket-summary-to-total-success-btn
-            +button('SEPETİ ONAYLA','secondary','m',false)
+            +button('SEPETİ ONAYLA','secondary','m',false)(id='js-bsket-summary-approvel-btn')
         .basket-summary-to-total-desc
             strong|‘Onayla ve Bitir’
             |butonuna bastığınızda toplam tutar tarafınızdan tahsil edilecektir.

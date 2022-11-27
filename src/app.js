@@ -3,6 +3,7 @@ import './index.scss';
 
 import Partials from 'Partials';
 import Components from 'Components';
+import Basket from './templates/basket';
 import LoginTabs from './templates/components/tab/index';
 import MainSwiperSlider from './templates/widgets/home-page-main-slider';
 import QuadrapleBanner from './templates/widgets/quadraple-banner';
@@ -14,6 +15,7 @@ import BasketAddressInvoiceTab from './templates/basket/addresses';
 
 new Partials();
 new Components();
+new Basket();
 new MainSwiperSlider();
 new QuadrapleBanner();
 new SwiperParalax();

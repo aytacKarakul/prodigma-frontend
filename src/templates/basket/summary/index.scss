@@ -2,10 +2,12 @@
     &-summary{
         @apply lg:sticky lg:top-0;
         &-title{
-            @apply mb-5 font-heading font-medium text-xl text-black;
+            @apply hidden mb-5 font-heading font-medium text-xl text-black;
+            @apply lg:block;
         }
         &-wrapper{
-            @apply bg-white p-5;
+            @apply fixed -bottom-full left-0 w-full z-[1] h-auto bg-white p-5 transition-all ease-in-out delay-300 duration-500;
+            @apply lg:static lg:bottom-0 lg:transition-none;
         }
         &-list{
             li{
@@ -36,28 +38,54 @@
                 @apply font-heading font-normal text-sm mt-5 text-black;
             }
             a {
-                @apply underline 
+                @apply underline;
             }
         }
         &-invoice {
-            @apply font-heading font-normal text-xs my-[0.688rem];
+            @apply hidden font-heading font-normal text-xs my-2.5 py-1 px-5;
+            @apply lg:flex lg:items-center;
+            .icon{
+                @apply inline-flex items-center justify-center w-5 h-5 text-base mr-2;
+            }
         }
         &-to-total{
-            @apply bg-white p-5;
+            @apply relative z-[2] flex items-center justify-between bg-white px-5 pt-7 pb-14 -mx-5 mt-14;
+            @apply lg:static lg:block lg:p-5 lg:mx-0 lg:mt-0;
+
             &-prices {
-                @apply flex flex-row justify-between mt-7 mb-5;
+                @apply relative flex flex-col flex-1 justify-between;
+                @apply lg:flex-row lg:items-center lg:mt-6 lg:mb-5;
+
                 .lbl {
-                    @apply font-heading font-normal text-sm text-black;
+                    @apply font-heading font-normal text-sm text-black mr-14;
+                    @apply lg:mr-0;
                 }
                 .val {
-                    @apply font-inter font-semibold text-xl text-black;
+                    @apply font-inter font-semibold text-xl text-black mr-14;
+                    @apply lg:mr-0;
+                }
+                .icon{
+                    @apply absolute w-6 h-6 flex items-center justify-center top-[calc(50%-12px)] right-7 rotate-180;
+                    @apply lg:hidden;
                 }
             }
             &-desc {
-                @apply font-heading font-normal text-xs text-black-200 mt-5 mb-8;
+                @apply hidden font-heading font-normal text-xs text-black-200 mt-5 mb-8;
+                @apply lg:block;
             }
             &-discount-code {
-                @apply font-inter font-medium text-sm text-black-200
+                @apply hidden font-inter font-medium text-sm text-black-200;
+                @apply lg:block;
+            }
+            &-success-btn{
+                @apply flex-1;
+            }
+        }
+        //animate
+        &.open{
+            .basket-summary-wrapper{
+                @apply bottom-[132px];
+                @apply lg:bottom-0;
             }
         }
     }
