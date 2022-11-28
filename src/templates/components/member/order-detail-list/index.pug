@@ -1,0 +1,139 @@
+- var approveProcess = true
+
+.order-detail-lists
+    case approveProcess
+        when approveProcess = false
+            .order-detail-lists-case-process.order-detail-lists-case-process-approval|Aşağıdaki 3 ürün henüz onay sürecindedir.
+        when approveProcess = true
+            .order-detail-lists-case-process-success
+                .track
+                ul.steps
+                    li.active
+                        .stp1|Siparişiniz alındı
+                        .stp2|29/06/2022
+                    li
+                        .stp1|Siparişiniz hazırlanıyor
+                        .stp2|29/06/2022
+                    li
+                        .stp1|Kargoya verildi
+                        .stp2|29/06/2022
+                    li
+                        .stp1|Teslim edildi
+                .order-detail-lists-case-process-success-delivery 
+                    ul 
+                        li 
+                            .vl|Teslimat No 
+                            .lb|4861860066
+                        li
+                            .vl|Tahmini Teslimat
+                            .lb|06/07/2022
+                        li
+                            .vl|Kargo Firması
+                            .lb|Yurtiçi Kargo
+                    .order-detail-lists-case-process-success-delivery-info
+                        .cl1
+                            i.icon.icon-date
+                            span|Kargo Takibi: 116440632413
+                        .cl2
+                            +button('Teslimat Detayları','ghost','m', badgy={icon:'arrow-down'})
+    .order-detail-lists-content 
+        .order-detail-lists-rows
+            .order-detail-lists-rows-img
+                img(src="https://via.placeholder.com/120x120.png/09f/fff", alt="img alt")
+            .order-detail-lists-rows-content
+                .order-detail-lists-rows-content-top
+                    .order-detail-lists-rows-content-name
+                        .t1|‘con_rod’ Projesi
+                        .t2|3D Baskı
+                    ul.order-detail-lists-rows-content-materials
+                        li
+                            .m1|Baskı
+                            .m2|Standart 890 TL
+                        li
+                            .m1|Materyal
+                            .m2|Plastik
+                        li
+                            .m1|Malzeme
+                            .m2|Beyaz Naylon -
+                                small|termoplastik
+                        li
+                            .m1|Ardıl İşlemler
+                            .m2|Boyama ve Kaplama 890 TL
+                .order-detail-lists-rows-content-bottom
+                    .order-detail-lists-rows-content-bottom-c1
+                        .order-detail-lists-rows-content-price
+                            |1.180 TL
+                    .order-detail-lists-rows-content-bottom-c2
+                        .order-detail-lists-button    
+                            +button('Tekrar Satın Al','ghost','m', badgy={icon:'arrow-right'})
+            if approveProcess == true
+                .order-detail-lists-case-process.order-detail-lists-case-process-cargo
+                    |Siparişiniz kargoya verilmek üzere hazırlandı.
+                    |Siparişinizi görmek için 
+                    a(href="#")|tıklayın.
+        .order-detail-lists-rows
+            .order-detail-lists-rows-img
+                img(src="https://via.placeholder.com/120x120.png/09f/fff", alt="img alt")
+            .order-detail-lists-rows-content
+                .order-detail-lists-rows-content-top
+                    .order-detail-lists-rows-content-name
+                        .t1|‘con_rod’ Projesi
+                        .t2|CNC Kesim
+                    ul.order-detail-lists-rows-content-materials
+                        li
+                            .m1|Baskı
+                            .m2|Standart 890 TL
+                        li
+                            .m1|Materyal
+                            .m2|Plastik
+                        li
+                            .m1|Malzeme
+                            .m2|Beyaz Naylon -
+                                small|termoplastik
+                        li
+                            .m1|Ardıl İşlemler
+                            .m2|Boyama ve Kaplama 890 TL
+                .order-detail-lists-rows-content-bottom
+                    .order-detail-lists-rows-content-bottom-c1
+                        .order-detail-lists-rows-content-price
+                            |1.180 TL
+                    .order-detail-lists-rows-content-bottom-c2
+                        .order-detail-lists-button    
+                            +button('Tekrar Satın Al','ghost','m', badgy={icon:'arrow-right'})
+            if approveProcess == true
+                .order-detail-lists-case-process.order-detail-lists-case-process-cargo
+                    |Siparişiniz kargoya verilmek üzere hazırlandı.
+                    |Siparişinizi görmek için 
+                    a(href="#")|tıklayın.
+        .order-detail-lists-rows
+            .order-detail-lists-rows-img
+                img(src="https://via.placeholder.com/120x120.png/09f/fff", alt="img alt")
+            .order-detail-lists-rows-content
+                .order-detail-lists-rows-content-top
+                    .order-detail-lists-rows-content-name
+                        .t1|‘con_rod’ Projesi
+                        .t2|CNC Kesim
+                    ul.order-detail-lists-rows-content-materials
+                        li
+                            .m1|Baskı
+                            .m2|Standart 890 TL
+                        li
+                            .m1|Materyal
+                            .m2|Plastik
+                        li
+                            .m1|Malzeme
+                            .m2|Beyaz Naylon -
+                                small|termoplastik
+                        li
+                            .m1|Ardıl İşlemler
+                            .m2|Boyama ve Kaplama 890 TL
+                .order-detail-lists-rows-content-bottom
+                    .order-detail-lists-rows-content-bottom-c1
+                        .order-detail-lists-rows-content-price
+                            |1.180 TL
+                    .order-detail-lists-rows-content-bottom-c2
+                        .order-detail-lists-button    
+                            +button('Tekrar Satın Al','ghost','m', badgy={icon:'arrow-right'})
+            if approveProcess == true
+                .order-detail-lists-case-process.order-detail-lists-case-process-cargo
+                    |Siparişiniz Hazırlanıyor.
