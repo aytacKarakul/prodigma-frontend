@@ -12,13 +12,13 @@ export const quadrapleBanner = () => {
     if(gsapElement){
         gsapElement.forEach((item) => {
             gsap.to(item, {
-                y:-500,
+                y:-700,
                 duration: 8,
                 scrollTrigger: {
                     trigger: item,
-                    start: "bottom 0%",
-                    end: "top 10%",
-                    scrub: 4,
+                    start: "top 0%",
+                    end: "top 50%",
+                    scrub: 1,
                     toggleActions: "restart none none none",
                     pin: true,
                     markers: {
