@@ -70,12 +70,42 @@
                 }
             }
             &-desc {
-                @apply hidden font-heading font-normal text-xs text-black-200 mt-5 mb-8;
+                @apply hidden font-heading font-normal text-xs mt-5 mb-3;
                 @apply lg:block;
             }
             &-discount-code {
-                @apply hidden font-inter font-medium text-sm text-black-200;
+                @apply hidden font-inter font-medium text-sm;
                 @apply lg:block;
+                &-trigger{
+                    @apply flex items-center justify-between cursor-pointer py-4;
+                    .icon{
+                        @apply flex items-center justify-center w-[22px] h-[22px] bg-blue-100 rounded-full;
+                        &::before{
+                            @apply text-[11px] text-white;
+                        }
+                    }
+                }
+                &-wrap{
+                    @apply hidden;
+                    .tt1{
+                        @apply font-inter font-thin;
+                    }
+                    .textbox{
+                        @apply mt-4;
+                    }
+                }
+                &.open{
+                    .basket-summary-to-total-discount-code-trigger{
+                        .icon{
+                            &::before{
+                                content: '\e912';
+                            }
+                        }
+                    }
+                    .basket-summary-to-total-discount-code-wrap{
+                        @apply block;
+                    }
+                }
             }
             &-success-btn{
                 @apply flex-1;
