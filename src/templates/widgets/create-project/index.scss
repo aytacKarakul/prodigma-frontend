@@ -65,7 +65,8 @@
     }
 
     &-footer {
-        @apply lg:absolute lg:bottom-8 lg:right-8 lg:z-[5] lg:mx-auto lg:min-h-[46px];
+        @apply mt-8;
+        @apply lg:absolute lg:bottom-8 lg:right-8 lg:z-[5] lg:mx-auto lg:min-h-[46px] lg:mt-0;
 
         button {
             @apply flex;
