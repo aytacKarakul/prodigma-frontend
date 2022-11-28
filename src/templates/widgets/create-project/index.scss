@@ -55,7 +55,7 @@
             .swiper-slide{
                 button,
                 img {
-                    @apply w-full;
+                    @apply w-full rounded-[10px];
                 }
                 span {
                     @apply block text-center text-white mt-3;
