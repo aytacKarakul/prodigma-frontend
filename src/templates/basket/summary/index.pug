@@ -38,5 +38,10 @@
         .basket-summary-to-total-desc
             strong|‘Onayla ve Bitir’
             |butonuna bastığınızda toplam tutar tarafınızdan tahsil edilecektir.
-        .basket-summary-to-total-discount-code 
-            |İndirim kodum var
+        .basket-summary-to-total-discount-code
+            span.basket-summary-to-total-discount-code-trigger
+                |İndirim kodum var
+                i.icon.icon-plus
+            .basket-summary-to-total-discount-code-wrap
+                .tt1|İndirim kodunuzu aşağıdaki alana girerek sepete uygulayabilirsiniz.
+                +inputs('textbox','İndirim Kodu','jd-ssss','arrow-right')
