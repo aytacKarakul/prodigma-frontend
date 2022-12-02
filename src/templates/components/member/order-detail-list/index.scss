@@ -144,3 +144,17 @@
         }
     }
 }
+
+.modal{
+    &-order-detail{
+        .modal-container{
+            @apply py-7 px-5 rounded-xl;
+            
+            .order-report-btn{
+                a{
+                    @apply underline;
+                }
+            }
+        }
+    }
+}
