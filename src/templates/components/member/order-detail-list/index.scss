@@ -148,11 +148,23 @@
 .modal{
     &-order-detail{
         .modal-container{
-            @apply py-7 px-5 rounded-xl;
-            
+            @apply w-full py-7 px-5 rounded-xl;
+            .order-detail-pname{
+                @apply mb-8 pb-4 border-b border-solid border-custom-700;
+            }
+            img{
+                @apply m-auto;
+            }
+            .modal-link{
+                @apply absolute z-[1] top-7 right-5 w-5 h-5 flex items-center justify-center;
+            }
             .order-report-btn{
+                @apply flex items-center;
                 a{
-                    @apply underline;
+                    @apply text-sm underline ml-3;
+                }
+                .icon{
+                    @apply flex items-center justify-center w-5 h-5 border border-blue-100 border-solid rounded-full;
                 }
             }
         }

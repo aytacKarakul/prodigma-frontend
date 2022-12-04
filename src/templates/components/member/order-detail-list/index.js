@@ -27,7 +27,7 @@ export function OrderDetail(){
                 <div class="order-detail-pname">${rowName}</div>
                 <a href="#" class="modal-link modal-exit"><i class="icon icon-close"></i></a>
                 <img src=${rowImg.src} />
-                <div class="order-report-btn"><a href="#">Sorun Bildir<a/></div>
+                <div class="order-report-btn"><i class="icon icon-info"></i><a href="#">Sorun Bildir<a/></div>
             </div>
         `;
 
