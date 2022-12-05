@@ -62,6 +62,10 @@ module.exports = {
             filename: 'sikca-sorulan-sorular.html',
             template: './src/templates/sikca-sorulan-sorular.pug',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'islem-rehberi.html',
+            template: './src/templates/islem-rehberi.pug',
+        }),
     ],
     module: {
         rules: [
