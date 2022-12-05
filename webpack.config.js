@@ -66,6 +66,10 @@ module.exports = {
             filename: 'islem-rehberi.html',
             template: './src/templates/islem-rehberi.pug',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'teslimat.html',
+            template: './src/templates/teslimat.pug',
+        }),
     ],
     module: {
         rules: [
