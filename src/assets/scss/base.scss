@@ -79,3 +79,8 @@ input:focus {
         }
     }
 }
+
+.vail{
+    @apply fixed top-0 left-0 w-full h-full bg-blue-100 bg-opacity-80 backdrop-blur-md;
+    @apply transition-all ease-in delay-300 duration-700 invisible opacity-0 pointer-events-none;
+}
