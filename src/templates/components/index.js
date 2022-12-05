@@ -2,6 +2,7 @@ import Inputs from './web-component/inputs';
 import Accordion from './accordion';
 import { MemberDropdown } from './member/navigation';
 import { OrderDetail } from './member/order-detail-list';
+import { MemberAddressPopup } from './member/address-list';
 
 class Components {
     constructor(){
@@ -9,6 +10,7 @@ class Components {
         new Accordion();
         MemberDropdown();
         OrderDetail();
+        MemberAddressPopup();
     }
 }
 
