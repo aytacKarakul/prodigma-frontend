@@ -46,6 +46,34 @@
             .address|Erenköy, Fahrettin Kerim Gökay Cd. No: 278/4, 34738 Kadıköy/İstanbul
             .date|0(525) 355 11 33
 .member-address-new-add
-    a(href="#")
+    a(href="javascript:void(0);")(id="js-member-page-new-address-add-popup")
         i.icon.icon-plus
         |Yeni Adres Ekle
+.member-address-add-popup
+    .member-address-add-popup-wrap
+        .member-address-add-popup-title
+            span|Yeni Adres Ekle
+            i.icon.icon-close
+        .member-address-add-popup-body
+            +inputs('textbox','Ad', 'js-member-addres-popup-name')(type="text")
+            +inputs('textbox','Soyad', 'js-member-addres-popup-surname')(type="text")
+            +inputs('textbox','Doğum Tarihi', 'js-member-addres-popup-date')(type="date")
+            +inputs('textbox','TC Kimlik Numarası', 'js-member-addres-popup-tc-no')(type="text")
+            +inputs('textbox','Cep Telefonu', 'js-member-addres-popup-mobile-phone')(type="text")
+            +inputs('textbox','E-Mail', 'js-member-addres-popup-email')(type="email")
+            +select('Şehir','js-member-addres-popup-city')
+                each value in [{value: '1', text: 'İl'}, {value: '2', text: 'Ankara'}, {value: '3', text: 'İzmir'}]
+                    option(value=value.value) #{value.text}
+            +select('İlçe','js-member-addres-popup-towns')
+                each value in [{value: '1', text: 'İlçe'}, {value: '2', text: 'Kadıköy'}, {value: '3', text: 'Beykoz'}, {value: '4', text: 'Beyoğlu'}]
+                    option(value=value.value) #{value.text}
+            +select('Mahalle','js-member-addres-popup-district')
+                each value in [{value: '1', text: 'Mahalle'}, {value: '2', text: 'Bereketzade Mahallesi'}, {value: '3', text: 'Erenköy Mahallesi'}]
+                    option(value=value.value) #{value.text}
+            +select('Adres Başlığı','js-member-addres-popup-addres-title')
+                each value in [{value: '1', text: 'Ev'}, {value: '2', text: 'Ofis'}, {value: '3', text: 'Annem'}]
+                    option(value=value.value) #{value.text}
+            +inputs('textarea','Adres', 'js-member-addres-popup-address')
+            +inputs('checkbox','Öncelikli adresim olarak kaydet', 'js-member-addres-popup-remember')
+            +button('Kaydet', 'green', 'm')(id='js-member-addres-popup-addres-save')
+.vail.vail-address-add

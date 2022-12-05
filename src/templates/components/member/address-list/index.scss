@@ -59,12 +59,51 @@
         }
     }
 }
+.member-address-add-popup{
+    @apply bg-white fixed -bottom-full right-0 z-50 w-full h-[calc(100%-120px)];
+
+    @apply lg:max-w-[400px] lg:h-full lg:top-0 lg:-right-full lg:bottom-[inherit];
+
+    @apply transition-all ease-in delay-300 duration-700 invisible;
+    &-title{
+        @apply flex items-center justify-between mb-2;
+        span{
+            @apply font-heading font-semibold text-lg;
+        }
+        .icon{
+            @apply w-8 h-8 flex items-center justify-center cursor-pointer;
+        }
+    }
+    &-wrap{
+        @apply px-5 py-5 overflow-y-scroll h-full;
+    }
+    &-body{
+        .input{
+            &.textarea{
+                textarea{
+                    @apply min-h-[80px];
+                }
+            }
+        }
+    }
+    &.open{
+        @apply right-0 bottom-0;
+        @apply lg:bottom-[inherit] lg:right-0 visible;
+    }
+}
 .member-address-new-add{
     @apply mt-2;
     a{
-        @apply flex items-center py-2 text-blue-100;
+        @apply inline-flex items-center py-2 text-blue-100 cursor-pointer;
         .icon{
             @apply flex items-center justify-center w-6 h-6 border border-solid border-blue-100 rounded-full mr-2 text-xs;
         }
+    }
+}
+.vail-address-add{
+    @apply z-40 top-[68px] h-[calc(100%-120px)];
+    @apply lg:top-0 lg:h-full;
+    &.open{
+        @apply visible opacity-100 pointer-events-auto;
     }
 }
