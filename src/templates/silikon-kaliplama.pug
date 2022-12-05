@@ -1,0 +1,13 @@
+extends blocks/layout
+
+block prepend head
+    - pageTitle = "Silikon Kalıplama"
+    - pageDesc = "Silikon Kalıplama açıklama metni"
+    - pageClass = "silicon"
+
+block content
+    .create-project
+        include widgets/create-project/models/silicone/index.pug
+
+block foot
+    block append footer

@@ -1,0 +1,13 @@
+extends blocks/layout
+
+block prepend head
+    - pageTitle = "3D Baskı"
+    - pageDesc = "3D Baskı açıklama metni"
+    - pageClass = "3d-printing"
+
+block content
+    .create-project
+        include widgets/create-project/models/3d-model/index.pug
+
+block foot
+    block append footer

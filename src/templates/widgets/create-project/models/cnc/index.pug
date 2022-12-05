@@ -1,0 +1,46 @@
+.create-project-sets.create-project-cnc
+    .create-project-left
+        .drag-area
+            i.icon.icon-upload
+        .create-project-left-desc|Bir CAD dosyası yükleyin veya sürükleyip bırakın
+        .create-project-left-tt1|*Maxmum dosya yükleme boyutu 150 mb’dir.
+        .create-project-left-tt2|*Şu uzantıdaki dosyaları yükleyin; 3DM, IGES, IGS, STEP, STL
+    .create-project-right
+        .create-project-right-steps
+            button(class="lnk active", data-selection="properties")|1
+            span.seperate
+            button(class="lnk", data-selection="materials")|2
+        div(data-selection="properties")
+            .create-project-right-inner
+                .create-project-right-name|Siz tasarlayın, Prodigma CNC işlesin!
+                .create-project-right-sub-text|Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        div(data-selection="materials", hidden)
+            .create-project-right-inner
+                .create-project-right-materials-title|Malzeme Seçimi
+                ul.create-project-right-materials
+                    li
+                        .input.radio
+                            input(type="radio")
+                            label(for="js-material-keys")|CNC Makina
+                    li
+                        .input.radio
+                            input(type="radio")
+                            label(for="js-material-keys")|CNC Torna
+                    li
+                        .input.radio
+                            input(type="radio")
+                            label(for="js-material-keys")|CNC Fereze
+            .create-project-right-cnc-other-note
+                .create-project-right-cnc-other-note-tt1|Diğer
+                .create-project-right-cnc-other-note-tt2|İstediğiniz malzeme yukarıda listelenmiyorsa aşağıdaki alanda belirtiniz.
+                .input.textbox
+                    label(for="js-project-right-cnc-other-note")|Malzeme
+                    span.wrp
+                        input(type="text", id="js-project-right-cnc-other-note")
+        .create-project-right-nextbtn
+            button(class='btn btn-secondary btn-medium btn-next-to-bid', type='button', data-type='cnc' disabled)
+                span|Sonraki Adım
+                i.icon.icon-arrow-line
+            button(class='btn btn-secondary btn-medium btn-next-bid', type='button', disabled data-modal="modal-cnc")
+                span|Fiyat Teklifi Al
+                i.icon.icon-arrow-line

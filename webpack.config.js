@@ -27,6 +27,42 @@ module.exports = {
             template: './src/templates/proje-baslat.pug',
         }),
         new HtmlWebpackPlugin({
+            filename: '3d-baski.html',
+            template: './src/templates/3d-baski.pug',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'endustriyel.html',
+            template: './src/templates/endustriyel.pug',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'cnc-isleme.html',
+            template: './src/templates/cnc-isleme.pug',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'silikon-kaliplama.html',
+            template: './src/templates/silikon-kaliplama.pug',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'enjeksiyon-kaliplama.html',
+            template: './src/templates/enjeksiyon-kaliplama.pug',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'enjeksiyon-kaliplama.html',
+            template: './src/templates/enjeksiyon-kaliplama.pug',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'sac-metal-isleme.html',
+            template: './src/templates/sac-metal-isleme.pug',
+        }),
+        new HtmlWebpackPlugin({
+            filename: '3d-tarama-tersine-muhendislik.html',
+            template: './src/templates/3d-tarama-tersine-muhendislik.pug',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'ardil-islemler.html',
+            template: './src/templates/ardil-islemler.pug',
+        }),
+        new HtmlWebpackPlugin({
             filename: 'basket.html',
             template: './src/templates/basket/basket.pug',
         }),

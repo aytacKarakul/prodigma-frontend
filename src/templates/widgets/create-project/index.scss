@@ -32,12 +32,12 @@
 
     &-wrapper {
         @apply w-full mx-auto px-5 py-10;
-        @apply lg:max-w-[90%];
+        @apply lg:max-w-[95%];
     }
 
     &-header {
         @apply flex flex-col;
-        @apply lg:mt-[4.938rem] lg:justify-start lg:items-start;
+        @apply lg:mt-12 lg:justify-start lg:items-start;
 
         &-title {
             @apply font-heading font-medium text-[1.625rem] max-w-[335px] text-white mb-3;
@@ -68,7 +68,7 @@
         @apply mt-8;
         @apply lg:absolute lg:bottom-8 lg:right-8 lg:z-[5] lg:mx-auto lg:min-h-[46px] lg:mt-0;
 
-        button {
+        .btn {
             @apply flex;
             @apply lg:min-w-[11.875rem];
 
@@ -97,7 +97,8 @@
         }
     }
     &-sets{
-        @apply w-full h-full flex flex-wrap justify-center;
+        @apply w-full h-full flex flex-col justify-center;
+        @apply lg:flex-row lg:gap-x-8;
     }
     &-left, &-right{
         @apply w-full flex flex-col;
@@ -105,12 +106,12 @@
     }
     &-left{
         @apply text-white justify-center items-center mt-[3.438rem];
+        @apply lg:mt-0 lg:pl-5;
         > div{
             @apply lg:w-1/2 lg:text-center;
         }
         .drag-area{
             @apply w-full h-[400px] bg-white;
-            @apply lg:w-3/5;
 
             img{
                 @apply w-full h-full object-contain;
@@ -339,7 +340,9 @@
             }
         }
     }
-    &-printing{
+    &-printing,
+    &-industrial,
+    &-successive-processes{
         .create-project-left{
             @apply mt-0;
         }

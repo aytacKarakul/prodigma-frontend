@@ -1,26 +1,8 @@
 import 'Images/3d-baskı.png';
-import 'Images/create-project-bg.png'
+import 'Images/create-project-bg.png';
+import 'Images/printing-page-cover.jpg';
 
 import Swiper,{ EffectCoverflow, Pagination } from 'swiper';
-import CategorySilicone from './models/silicone';
-import CategoriesInjection from './models/injection';
-import CategoriesCncMachining from './models/cncMachining';
-import ReverseMaching from "./models/reverse-engineering/reverseMaching";
-import Industrial from './models/industrial/industrial';
-import Metal from './models/metal-working/metalWorking';
-
-const siliconeInjection = new CategorySilicone('silicone',' Silikon Kalıplama',' Bir CAD dosyası yükleyin veya sürükleyip bırakın','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', ['ABS Like', 'Elastomer Like', 'Akrilik Like']);
-
-const cateInjection = new CategoriesInjection('injection',' Enjeksiyon Kalıplama','Bir CAD dosyası yükleyin veya sürükleyip bırakın','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', ['Çelik', 'Alüminyum']);
-
-const cncMachining = new CategoriesCncMachining("cnc", "CNC İşleme", "Siz tasarlayın, Prodigma CNC işlesin!" ,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", ['ABS Like', 'Elastomer Like', 'Akrilik Like', 'ABS Like', 'Elastomer Like', 'Akrilik Like']);
-
-const reverseMaching = new ReverseMaching();
-
-const industrial = new Industrial();
-
-const metal = new Metal('metal',' Sac Metal İşleme',' Sac Metal İşleme ile Tasarımlarınızı Hayata Geçirin!','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', ['Alüminyum', 'Paslanmaz Çelik', 'Dkp Sac', 'Siyah Sac', 'Galvanizli Sac', 'Hrp Sac']);
-
 class CreateProjectBanner {
     
     constructor(){
@@ -71,11 +53,16 @@ class CreateProjectBanner {
         if(this.createProjectBodyBtn){
             this.createProjectBodyBtn.forEach((btns) => {
                 btns.addEventListener('click', () => {
-                    const dataType = btns.getAttribute('data-type');
+                    const url_str = btns.getAttribute('data-url');
+                    
+                    //this.nextStepFirstBtn.removeAttribute('disabled');
+                    //this.nextStepFirstBtn.classList.add('btn-green');
+                    //this.nextStepFirstBtn.setAttribute('href', dataType);
+                    //this.nextStepFirstBtn.location.href.replace("", dataType);
                     
                     this.nextStepFirstBtn.removeAttribute('disabled');
                     this.nextStepFirstBtn.classList.add('btn-green');
-                    this.nextStepFirstBtn.setAttribute('data-type', dataType);
+                    this.nextStepFirstBtn.setAttribute('href', url_str);
 
                 });
             });
@@ -86,33 +73,22 @@ class CreateProjectBanner {
         //first next step
         this.nextStepFirstBtn?.addEventListener('click', () => {
 
-            switch (this.nextStepFirstBtn.getAttribute('data-type')) {
-                case null:
+            switch (this.nextStepFirstBtn.getAttribute('data-url')) {
+                case '/3d-baski.html':
                     break;
-                case 'printing':
-                    //printing.init();
+                case '/cnc-isleme.html':
                     break;
-                case 'cnc':
-                    cncMachining.init();
+                case '/silikon-kaliplama.html':
                     break;
-                case 'silicone':
-                    siliconeInjection.init('silicone');
+                case '/enjeksiyon-kaliplama.html':
                     break;
-                case 'injection':
-                    cateInjection.init('injection');
+                case '/sac-metal-isleme.html':
                     break;
-                case 'metal':
-                    metal.init();
+                case '/endustriyel.html':
                     break;
-                case 'industrial':
-                    industrial.init();
+                case '/3d-tarama-tersine-muhendislik.html':
                     break;
-                case 'reverse':
-                    reverseMaching.init();
-                    break;
-                case 'post':
-                    break;
-                default:
+                case '/ardil-islemler.html':
                     break;
             }
         });

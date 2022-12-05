@@ -7,38 +7,38 @@
             .swiper.create-project-swiper
                 .swiper-wrapper
                     .swiper-slide
-                        button(data-type='printing')
+                        button(data-url='/3d-baski.html')
                             img(src='https://via.placeholder.com/380x380.png', alt='3D Baskı')
                         span 3D Baskı
                     .swiper-slide
-                        button(data-type='cnc')
-                            img(src='https://via.placeholder.com/380x380.png', alt='3D Baskı')
+                        button(data-url='/cnc-isleme.html')
+                            img(src='https://via.placeholder.com/380x380.png', alt='CNC İşleme')
                         span CNC İşleme
                     .swiper-slide
-                        button(data-type='silicone')
-                            img(src='https://via.placeholder.com/380x380.png', alt='3D Baskı')
+                        button(data-url='/silikon-kaliplama.html')
+                            img(src='https://via.placeholder.com/380x380.png', alt='Silikon Kalıplama')
                         span Silikon Kalıplama
                     .swiper-slide
-                        button(data-type='injection')
-                            img(src='https://via.placeholder.com/380x380.png', alt='3D Baskı')
+                        button(data-url='/enjeksiyon-kaliplama.html')
+                            img(src='https://via.placeholder.com/380x380.png', alt='Enjeksiyon Kalıplama')
                         span Enjeksiyon Kalıplama
                     .swiper-slide
-                        button(data-type='metal')
-                            img(src='https://via.placeholder.com/380x380.png', alt='3D Baskı')
+                        button(data-url='/sac-metal-isleme.html')
+                            img(src='https://via.placeholder.com/380x380.png', alt='Sac Metal İşleme')
                         span Sac Metal İşleme
                     .swiper-slide
-                        button(data-type='industrial')
-                            img(src='https://via.placeholder.com/380x380.png', alt='3D Baskı')
+                        button(data-url='/endustriyel.html')
+                            img(src='https://via.placeholder.com/380x380.png', alt='Endüstriyel Tasarım')
                         span Endüstriyel Tasarım
                     .swiper-slide
-                        button(data-type='reverse')
-                            img(src='https://via.placeholder.com/380x380.png', alt='3D Baskı')
+                        button(data-url='/3d-tarama-tersine-muhendislik.html')
+                            img(src='https://via.placeholder.com/380x380.png', alt='3D Tarama ve Tersine Mühendislik')
                         span 3D Tarama ve Tersine Mühendislik
                     .swiper-slide
-                        button(data-type='post')
-                            img(src='https://via.placeholder.com/380x380.png', alt='3D Baskı')
+                        button(data-url='/ardil-islemler.html')
+                            img(src='https://via.placeholder.com/380x380.png', alt='Ardıl işlemler')
                         span Ardıl işlemler
                 .swiper-pagination.hidden
         .create-project-footer
             .create-project-footer-btn
-                +button('Sonraki Adım', 'gray' ,'m', badgy={icon:'arrow-line'})(id='js-next-to-step-first', disabled)
+                +button('Sonraki Adım', 'gray' ,'m', badgy={icon:'arrow-line'})(href="#", id='js-next-to-step-first', disabled)

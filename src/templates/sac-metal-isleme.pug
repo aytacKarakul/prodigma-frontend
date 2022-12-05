@@ -1,0 +1,13 @@
+extends blocks/layout
+
+block prepend head
+    - pageTitle = "Sac Metal İşleme"
+    - pageDesc = "Sac Metal İşleme açıklama metni"
+    - pageClass = "metal"
+
+block content
+    .create-project
+        include widgets/create-project/models/metal-working/index.pug
+
+block foot
+    block append footer

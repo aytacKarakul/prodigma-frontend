@@ -53,7 +53,14 @@ const customViewer = (typeSelection) => {
                 }
                 fileReader.readAsDataURL(file);
 
+                /*
                 switch (typeSelection) {
+                    case 'printing':
+                        ScaleModel();
+                        TecnicGraphModel();
+                        CncTypeSelectionModel();
+                        PieceEnterModel();
+                        break;
                     case 'cnc':
                         ScaleModel();
                         TecnicGraphModel();
@@ -71,13 +78,26 @@ const customViewer = (typeSelection) => {
                         TecnicGraphModel();
                         PieceEnterModel();
                         break;
-                    case 'metal':
+                    case 'metal-working':
+                        ScaleModel();
+                        TecnicGraphModel();
+                        PieceEnterModel();
+                    case 'industrial':
+                        ScaleModel();
+                        TecnicGraphModel();
+                        PieceEnterModel();
+                    case 'reverse-engineering':
+                        ScaleModel();
+                        TecnicGraphModel();
+                        PieceEnterModel();
+                    case 'successive-processes':
                         ScaleModel();
                         TecnicGraphModel();
                         PieceEnterModel();
                     default:
                         break;
                 }
+                */
 
             }else{
                 alert('This file is not an Image');
