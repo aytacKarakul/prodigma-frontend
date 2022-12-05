@@ -23,8 +23,8 @@ module.exports = {
             template: './src/templates/index.pug',
         }),
         new HtmlWebpackPlugin({
-            filename: 'create-project.html',
-            template: './src/templates/create-project.pug',
+            filename: 'proje-baslat.html',
+            template: './src/templates/proje-baslat.pug',
         }),
         new HtmlWebpackPlugin({
             filename: 'basket.html',
