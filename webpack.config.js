@@ -58,6 +58,10 @@ module.exports = {
             filename: 'sife-degistirme.html',
             template: './src/templates/sife-degistirme.pug',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'sikca-sorulan-sorular.html',
+            template: './src/templates/sikca-sorulan-sorular.pug',
+        }),
     ],
     module: {
         rules: [
@@ -133,6 +137,7 @@ module.exports = {
             Components: path.resolve(__dirname, './src/templates/components'),
             Widgets: path.resolve(__dirname, './src/templates/widgets'),
             Members : path.resolve(__dirname, './src/templates/view'),
+            FlatPages : path.resolve(__dirname, './src/templates/flatpages'),
         }
     },
 }
