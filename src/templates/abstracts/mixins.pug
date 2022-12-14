@@ -97,3 +97,25 @@ mixin page-history-back(text='', url='')
     a(href=url)&attributes(attributes)
         i.icon.icon-arrow-left
         span=text
+
+//- About
+mixin title(title='')
+  .pabout-body-content-title
+    = title  
+mixin desc(desc='')
+  .pabout-body-content-desc
+    = desc
+
+//- Hero Banner
+mixin hero-banner(title='', src1x, src2x= false, alt='')
+    .hero-banner 
+        .hero-banner-img
+            h1= title
+            picture 
+                - if(src2x)
+                    source(media="(max-width: 1024px)" srcset=src1x['sm'] + " 1x, " + src2x['sm'] + " 2x")
+                    source(media="(min-width: 1025px)" srcset=src1x['lg'] + " 1x, " + src2x['lg'] + " 2x")
+                - else
+                    source(media="(max-width: 1024px)" srcset=src1x['sm'])
+                    source(media="(min-width: 1025px)" srcset=src1x['lg'])
+                img(src=src1x['sm'] alt=(attributes.alt) ? attributes.alt : 'alt text here')&attributes(attributes)

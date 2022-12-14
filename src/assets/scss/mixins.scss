@@ -1,0 +1,26 @@
+//About
+.pabout-body {
+    &-content {
+        @apply flex flex-col gap-6 px-5;
+        @apply lg:flex-row lg:gap-36;
+        &-title {
+            @apply font-heading font-medium text-2xl;
+            @apply lg:text-4xl;
+        }
+        &-desc {
+            @apply font-inter font-normal text-xl;
+            @apply lg:max-w-[710px] lg:text-3xl;
+        }
+    }
+}
+
+//Hero Banner
+.hero-banner {
+    @apply w-full relative text-center;
+    h1 {
+        @apply absolute top-1/2 left-0 right-0 text-white font-heading font-bold text-3xl;
+    }
+    img {
+        @apply w-full;
+    }
+}

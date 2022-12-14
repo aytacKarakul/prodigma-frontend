@@ -1,0 +1,33 @@
+.pcontact-body-contact-banner {
+    @apply flex flex-col-reverse lg:flex-row;
+    @apply bg-blue-100 rounded-3xl;
+    &-left {
+        @apply text-white py-7 pl-7;
+        @apply lg:py-14 lg:pl-14 lg:w-3/5;
+        p {
+            @apply font-heading font-semibold text-lg;
+        }
+        span {
+            @apply font-inter font-normal text-sm;
+        }
+        &-call-center{
+            @apply my-7;
+            span {
+                @apply block leading-8;
+            }
+        }
+        &-fax {
+            span {
+                @apply block leading-8;
+            }
+        }
+    }
+    &-right {
+        @apply relative overflow-hidden w-full pt-[100%];
+        @apply lg:w-2/5 lg:pt-0;
+        iframe {
+            @apply absolute top-0 left-0 bottom-0 right-0 w-full h-full;
+            @apply rounded-3xl;
+        }
+    }
+}

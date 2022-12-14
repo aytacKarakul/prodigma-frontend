@@ -1,0 +1,18 @@
+.pabout-counter-banner {
+    ul {
+        @apply flex flex-col py-7;
+        @apply lg:flex-row lg:pt-24 lg:pb-20;
+        li {
+            @apply relative text-center px-10 py-10;
+            @apply before:content-[""] before:w-11 before:h-[1px] before:absolute before:left-0 before:right-0 before:mx-auto before:top-0 before:bg-black;
+            @apply lg:before:w-[1px] lg:before:h-11 lg:before:top-[calc(50%-22px)] lg:before:right-[inherit] lg:before:m-0;
+            @apply first:before:hidden;
+        }     
+        p {
+            @apply font-heading font-bold text-6xl mb-2;
+        }
+        span {
+            @apply font-inter font-normal text-base;
+        }
+    }
+}

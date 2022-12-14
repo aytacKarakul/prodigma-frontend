@@ -1,0 +1,52 @@
+.pabout-double-listed-banner {
+    background: linear-gradient(270deg, #190049 0%, #4500C2 100%);
+    @apply py-5;
+    @apply lg:py-32;
+    &-wrapper {
+        @apply mx-auto px-5;
+        @apply lg:container;
+    }
+    ul {
+        @apply flex flex-col gap-12;
+        @apply lg:gap-24; 
+        li {
+            @apply flex flex-col items-center text-white gap-6;
+            @apply lg:flex-row items-center lg:gap-36;
+        }
+        li:nth-child(odd) {
+            .pabout-double-listed-banner-img {
+                @apply lg:order-1
+            }
+            .pabout-double-listed-banner-content {
+                @apply lg:order-2
+            }
+        }
+        li:nth-child(even) {
+            .pabout-double-listed-banner-content {
+                @apply lg:order-1
+            }
+            .pabout-double-listed-banner-img {
+                @apply lg:order-2
+            }
+        }
+    }
+    &-img {
+        @apply lg:w-1/2;
+        img {
+            @apply w-full rounded-3xl;
+        }
+    }
+    &-content {
+        @apply flex flex-col items-start;
+        @apply lg:w-1/2;
+        p {
+            @apply font-heading font-medium text-4xl;
+        }
+        >span {
+            @apply font-inter font-medium text-base mt-2 mb-5;
+        }
+        .btn {
+            @apply pl-10 pr-10;
+        }
+    }
+}

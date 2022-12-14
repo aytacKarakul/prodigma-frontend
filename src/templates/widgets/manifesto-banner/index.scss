@@ -1,0 +1,19 @@
+.pmanifesto-banner {
+    background: linear-gradient(270deg, #190049 0%, #4500C2 100%);
+    @apply py-20;
+    &-wrapper {
+        @apply mx-auto px-5;
+        @apply lg:container;
+    }
+    &-img {
+        img {
+            @apply w-full rounded-3xl;
+        }
+    }
+    &-desc {
+        p{
+            @apply font-inter font-medium text-base text-white mt-10;
+        }
+        
+    }
+}

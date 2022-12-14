@@ -1,0 +1,12 @@
+extends blocks/layout
+
+block prepend head
+    - pageTitle = "Manifesto"
+    - pageDesc = "Manifesto açıklama metni"
+    - pageClass = "manifest"
+
+block content
+    .pmanifesto
+        +hero-banner('Manifesto', {sm:'https://via.placeholder.com/375', lg:'https://via.placeholder.com/1440x500'})
+        include widgets/trio-info-banner/index.pug 
+        include widgets/manifesto-banner/index.pug

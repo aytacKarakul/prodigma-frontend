@@ -1,0 +1,29 @@
+.pcareer-body-career-banner {
+    @apply pt-5 flex-1;
+    @apply lg:pt-20;
+    ul {
+        @apply flex flex-col flex-wrap gap-8;
+        @apply lg:flex-row;
+        li {
+            @apply bg-white p-6 rounded-3xl lg:w-[calc(50%-1rem)];
+            }
+        }
+        &-content {
+            @apply flex flex-col gap-2;
+            p {
+                @apply font-inter font-bold text-base;
+            }
+            &-t1 {
+                @apply font-inter font-medium text-base;
+            }
+            &-t2 {
+                @apply font-inter font-normal text-base text-opacity-80;
+            }
+            &-t3 {
+                @apply flex items-center font-inter font-medium text-sm;
+                i {
+                    @apply ml-2;
+                }
+            }
+        }
+    }

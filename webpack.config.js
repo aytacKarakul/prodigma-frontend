@@ -106,6 +106,26 @@ module.exports = {
             filename: 'teslimat.html',
             template: './src/templates/teslimat.pug',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'hakkimizda.html',
+            template: './src/templates/hakkimizda.pug',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'manifesto.html',
+            template: './src/templates/manifesto.pug',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'sürdürülebilirlik.html',
+            template: './src/templates/sürdürülebilirlik.pug',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'kariyer.html',
+            template: './src/templates/kariyer.pug',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'iletisim.html',
+            template: './src/templates/iletisim.pug',
+        }),
     ],
     module: {
         rules: [
