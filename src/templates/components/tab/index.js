@@ -20,7 +20,6 @@ class LoginTabs {
             deneme?.firstChild.classList.add('active');
             membershipIndividualSelect?.addEventListener('click', this.changeLoginTabContent);
             membershipCorporateSelect?.addEventListener('click', this.changeLoginTabContent);
-
         }
     }
 
@@ -29,28 +28,24 @@ class LoginTabs {
             e.target.checked = true;
             membershipCorporateSelect.checked = false;
 
-            e.target.parentElement.classList.add('active');
-            e.target.parentElement.nextSibling.classList.remove('active');
-
             wrap.forEach((item) => {
                 if(item.getAttribute('data-tab') == 'click-individual'){
                     item.nextElementSibling.classList.remove('active');
                     item.nextElementSibling.classList.add('hidden');
+                    item.classList.remove('hidden')
                     item.classList.add('active');
                 }
             });
 
         }else if(e.target.getAttribute('data-tab') == 'click-corporate'){
-            membershipIndividualSelect.checked = false;
             e.target.checked = true;
-            
-            e.target.parentElement.classList.add('active');
-            e.target.parentElement.previousSibling.classList.remove('active');
+            membershipIndividualSelect.checked = false;
 
             wrap.forEach((item) => {
                 if(item.getAttribute('data-tab') == 'click-corporate'){
                     item.previousSibling.classList.remove('active');
                     item.previousSibling.classList.add('hidden');
+                    item.classList.remove('hidden')
                     item.classList.add('active');
                 }
             });
