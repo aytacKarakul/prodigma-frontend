@@ -3,6 +3,7 @@
     background: linear-gradient(270deg, #190049 0%, #4500C2 100%);
     &-wrapper {
         @apply container mx-auto;
+        @apply lg:px-5;
     }
     //- Desktop
     &-header {
