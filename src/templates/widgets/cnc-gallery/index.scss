@@ -1,0 +1,20 @@
+@import 'swiper/scss';
+@import 'swiper/scss/pagination';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/controller';
+@import 'swiper/scss/scrollbar';
+
+.swiper-cnc-gallery {
+    @apply overflow-hidden pt-14 px-6;
+    @apply lg:pt-16 lg:px-5;
+
+    &-title {
+        @apply font-inter font-semibold text-2xl mb-8;
+    }
+    .swiper {
+        @apply overflow-visible;
+        &-scrollbar {
+            @apply relative top-0 bottom-0 left-0 ring-0 w-full mt-10 h-0.5 mx-auto;
+        }
+    }
+}

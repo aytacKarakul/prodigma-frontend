@@ -1,0 +1,8 @@
+.map-banner {
+    @apply relative overflow-hidden w-full pt-[100%];
+    @apply lg:w-2/5 lg:pt-0;
+    iframe {
+        @apply absolute top-0 left-0 bottom-0 right-0 w-full h-full;
+        @apply rounded-3xl;
+    }
+}

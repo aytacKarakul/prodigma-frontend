@@ -1,0 +1,71 @@
+.pwebinar {
+    &-header {
+        @apply flex flex-col;
+        @apply lg:flex-row;
+        &-img {
+            @apply lg:w-1/2;
+        }
+        &-content {
+            @apply flex flex-row py-6 px-5; 
+            @apply lg:w-1/2 lg:gap-24 gap-1 lg:pt-5 lg:pl-7 lg:pb-0;
+            &-left {
+                &-header {
+                    @apply mb-7;
+                    @apply lg:mb-24;
+                    &-tt1 {
+                        @apply font-inter font-semibold text-base;
+                    }
+                    &-tt2 {
+                        @apply font-inter font-light text-sm;
+                    }
+                }
+                &-body {
+                    &-title {
+                        @apply text-blue mb-5;
+                        &-tt1 {
+                            @apply font-inter font-bold text-xl; 
+                            @apply lg:text-4xl;
+                        }
+                        &-tt2 {
+                            @apply font-inter font-normal text-xl;
+                            @apply lg:text-4xl;
+                        }
+                    }
+                    &-speech {
+                        @apply mb-6;
+                        p {
+                            @apply font-inter font-normal text-base;
+                        }
+                        span {
+                            @apply font-inter font-bold text-base;
+                        }
+                    }
+                }
+                &-footer {
+                    @apply font-inter font-normal text-base;
+                    p {
+                        @apply flex flex-row gap-6 items-center;
+                    }
+                    a {
+                        @apply bg-blue rounded-full inline-flex items-center justify-center;
+                        .icon {
+                            @apply text-white w-9 h-9 text-xl text-center;
+                        }
+                    }
+                }
+            }
+            &-right {
+                @apply flex items-start lg:items-end text-white lg:mb-6;
+                &-timer {
+                    @apply bg-green-200 rounded-[100px] p-2;
+                    i {
+                        @apply pr-2;
+                    }
+                    span {
+                        @apply font-inter font-normal text-base;
+                    }
+                }
+            }
+        }
+    }
+}

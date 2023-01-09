@@ -16,6 +16,8 @@ import OurSerivesSwiper from './templates/widgets/our-services';
 import HomePageBlogBanner from './templates/widgets/prodigma-plus-banner';
 import CreateProjectBanner from './templates/widgets/create-project';
 import BasketAddressInvoiceTab from './templates/basket/addresses';
+import ProdigmaPlusPage from './templates/widgets/prodigma-plus-page';
+import CncGallerySwiper from './templates/widgets/cnc-gallery';
 
 new Partials();
 new Components();
@@ -29,3 +31,5 @@ new HomePageBlogBanner();
 new LoginTabs();
 new CreateProjectBanner();
 new BasketAddressInvoiceTab();
+new ProdigmaPlusPage();
+new CncGallerySwiper();

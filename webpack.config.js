@@ -126,6 +126,26 @@ module.exports = {
             filename: 'iletisim.html',
             template: './src/templates/iletisim.pug',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'malzemeler.html',
+            template: './src/templates/malzemeler.pug',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'prodigma-plus.html',
+            template: './src/templates/prodigma-plus.pug',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'hizmetler.html',
+            template: './src/templates/hizmetler.pug',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'cnc.html',
+            template: './src/templates/cnc-banner.pug',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'prodigma-plus-blog.html',
+            template: './src/templates/prodigma-plus-blog.pug',
+        }),
     ],
     module: {
         rules: [

@@ -1,0 +1,9 @@
+extends blocks/layout
+
+block prepend head
+    - pageTitle = "Prodigma Plus Blog"
+    - pageDesc = "Prodigma Plus Blog açıklama metni"
+    - pageClass = "prodigma-plus-blog"
+
+block content
+    include widgets/blog/index.pug

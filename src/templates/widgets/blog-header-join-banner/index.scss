@@ -1,0 +1,63 @@
+.pwebinar-header {
+    @apply flex flex-col;
+    @apply lg:flex-row;
+    &-left {
+        @apply lg:w-1/2;
+    }
+    &-right {
+        @apply p-5;
+        @apply lg:w-1/2;
+        &-top {
+            @apply flex flex-row gap-28 pb-8;
+            @apply lg:gap-80 lg:pb-[90px];
+            &-tt1 {
+                @apply font-inter font-semibold text-base;
+            }
+            &-tt2 {
+                @apply flex items-end font-inter font-normal text-base;
+            }
+        }
+        &-body {
+            &-title {
+                &-tt1 {
+                    @apply font-inter font-bold text-xl text-blue;
+                    @apply lg:text-4xl;
+                }
+                &-tt2 {
+                    @apply font-inter font-normal text-xl text-blue;
+                    @apply lg:text-4xl;
+                }
+            }
+            &-location {
+                @apply font-inter font-normal text-base pt-1;
+                @apply lg:pt-2;
+            }
+            &-speech {
+                @apply flex flex-row pt-4;
+                @apply lg:pt-0;
+                p {
+                    @apply font-inter font-normal text-base;
+                }
+            }
+        }
+        &-footer {
+            @apply flex flex-col-reverse items-start pt-5 gap-5; 
+            @apply lg:flex-row lg:items-center lg:gap-80 lg:pt-10;
+            &-btn {
+                @apply flex items-end;
+                .btn {
+                    @apply px-6 py-3;
+                }
+            }
+            p {
+                @apply flex flex-row gap-6 items-center;
+            }
+            a {
+                @apply bg-blue rounded-full inline-flex items-center justify-center;
+                .icon {
+                    @apply text-white w-9 h-9 text-xl text-center;
+                }
+            }
+        }
+    }
+}
