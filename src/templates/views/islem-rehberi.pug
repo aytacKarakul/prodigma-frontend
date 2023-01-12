@@ -1,0 +1,16 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "İşlem Rehberi"
+    - pageDesc = "İşlem Rehberi açıklama metni"
+    - pageClass = "operation-guide"
+
+block content
+    .pmember.pmember-flatpages
+        .pmember-wrapper
+            .pmember-left
+                .pmember-left-title Destek
+                include ../flatpages/menu/index.pug
+            .pmember-right.pmember-flatpages-bg
+                .pmember-right-content
+                    include ../flatpages/support/operation-guide/index.pug

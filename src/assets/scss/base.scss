@@ -33,51 +33,20 @@ input:focus {
     }
 }
 
-.page{
-    //- Login Page 
-    &-login{
-        .site{
-            &-header{
-                @apply py-2;
-                &-logo{
-                    img{ 
-                        @apply mx-auto;
-                    }
-                }
-            }
-        }
+.alert{
+    @apply text-xs text-blue-100 font-inter font-normal rounded-[4px] px-5 py-4 mb-5;
+    @apply empty:hidden;
+    &-success{
+        @apply bg-green-300 text-white;
     }
-}
-
-.plog{
-    @apply flex flex-col items-start;
-    @apply lg:flex-row lg:items-center;
-    &-img{
-        align-self: flex-start;
-        @apply hidden;
-        @apply lg:block;
+    &-danger{
+        @apply bg-red-200 bg-opacity-10;
     }
-    &-img,
-    &-enters{
-        @apply lg:w-1/2;
+    &-warning{
+        @apply bg-custom-600 text-white;
     }
-    &-tabs{
-        @apply m-auto border border-solid border-gray-100 rounded-[20px] px-12 py-14;
-        @apply max-w-md;
-        .tab{
-            @apply border-b-2 border-[rgba(2,17,34,0.1)] p-2.5 transition-all ease-in first:mr-2 font-heading font-medium;
-            &.active{
-                @apply border-red-100 font-semibold;
-            }
-        }
-        .tab-panes{
-            @apply mt-9;
-        }
-        .btn{
-            &-sign-in{
-                @apply my-5;
-            }
-        }
+    &-info{
+        @apply bg-custom-200 text-blue-100;
     }
 }
 

@@ -1,0 +1,16 @@
+extends ../blocks/member-layout.pug
+
+block prepend head
+    - pageTitle = "İletişim İzinlerim"
+    - pageDesc = "İletişim izinlerim açıklama metni"
+    - pageClass = "my-permissions"
+
+block content
+    .pmember
+        .pmember-wrapper
+            .pmember-left
+                .pmember-left-title Hesabım
+                include ../components/member/navigation/index.pug
+            .pmember-right
+                .pmember-right-content
+                    include ../components/forms/member-permissions/index.pug

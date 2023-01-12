@@ -1,0 +1,15 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "Login"
+    - pageDesc = "Login açıklama metni"
+    - pageClass = "login"
+
+block content
+    .plog
+        .plog-img 
+            +picture({sm:"https://via.placeholder.com/768", lg:"https://via.placeholder.com/2048"})(alt="Login page")
+        .plog-enters
+            include ../components/tab/index.pug
+block foot
+    block append footer

@@ -1,8 +1,5 @@
 import Swiper, { Navigation, Pagination, EffectFade, Autoplay } from 'swiper';
 
-import 'Images/aselsan.png';
-import 'Images/roketsan.png';
-import 'Images/turkish-technic.png';
 import 'Images/slider_1x2.1.jpg';
 import 'Images/slider_1x2.jpg';
 import 'Images/slider_2x2.1.jpg';

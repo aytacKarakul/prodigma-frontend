@@ -1,9 +1,6 @@
 import 'Theme/base.scss';
 import './index.scss';
 
-import 'Images/google-icon.svg';
-import 'Images/facebook-icon.svg';
-
 import Partials from 'Partials';
 import Components from 'Components';
 import Widgets from './templates/widgets';

@@ -10,7 +10,7 @@ class Inputs {
     onFocusInit(){
 
         this.el?.forEach((element) => {
-            element.addEventListener('keypress', () => {
+            element.addEventListener('keydown', () => {
                 element.parentElement.parentElement.classList.add('input-focus');
             });
             element.addEventListener('blur', () => {
