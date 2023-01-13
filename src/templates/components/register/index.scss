@@ -1,6 +1,6 @@
 .plog {
   @apply flex flex-col items-center;
-  @apply lg:flex-row;
+  @apply lg:flex-row lg:max-w-screen-2xl lg:mx-auto;
 
   &-img {
     align-self: flex-start;

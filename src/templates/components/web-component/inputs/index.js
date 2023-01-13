@@ -1,12 +1,16 @@
 class Inputs {
   constructor() {
     this.el = document.querySelectorAll(".input.textbox > .wrp input");
+    this.selectElement = document.querySelectorAll(
+      ".input.select > .wrp select"
+    );
     this.setClass = "valid";
     this.removeClass = "invalid";
     this.onInputFuncInit();
+    this.onSelectFunInit();
   }
 
-  onInputFuncInit() {
+  onInputFuncInit = () => {
     this.el?.forEach((element) => {
       element.addEventListener("keyup", () => {
         if (element.value == "") {
@@ -34,7 +38,14 @@ class Inputs {
         }
       });
     });
-  }
+  };
+  onSelectFunInit = () => {
+    this.selectElement?.forEach((select) => {
+      select.addEventListener("change", () => {
+        console.log(select.options[select.selectedIndex].text);
+      });
+    });
+  };
 }
 
 export default Inputs;

@@ -20,10 +20,10 @@
 .input-step-selection.hidden(data-tab="click-corporate")
     form(class="form-corporate-register" id="register-corporate-form")
         +select('Şirket','js-corporate-name')
-            each value in [{value: 'sirket', text: 'Şirket'}, {value: 'uni', text: 'Üniversite'}, {value: 'sanayi', text: 'Sanayi'}]
+            each value in [{value: '0', text: 'Şirket'}, {value: '1', text: 'Üniversite'}, {value: '2', text: 'Sanayi'}]
                 option(value=value.value) #{value.text}
         +select('Müşteri Tipi','js-corporate-type')
-            each value in [{value: 'a', text: 'Müşteri A'}, {value: 'b', text: 'Müşteri B'}, {value: 'c', text: 'Müşteri C'}]
+            each value in [{value: '0', text: 'Bireysel'}, {value: '1', text: 'Kurumsal'}, {value: '2', text: 'Eğitim'}]
                 option(value=value.value) #{value.text}
         +inputs('textbox','Telefon', 'js-register-user-normal-phone')
         +inputs('textbox','Fax', 'js-register-user-fax')
