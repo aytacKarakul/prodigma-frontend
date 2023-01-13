@@ -1,46 +1,46 @@
-.order-detail-summary{
-    @apply mt-8;
-    &-table{
-        @apply bg-white p-5;
-        @apply lg:px-10 lg:py-5;
-        &-title{
-            @apply font-inter font-semibold text-xl mb-3;
-        }
-        &-list{
-            > li{
-                @apply flex items-center mb-2.5 last:mb-0;
-                .lbl,
-                .vll{
-                    @apply flex-1 text-sm;
-                }
-                .lbl{
-                    @apply text-left;
-                }
-                .vll{
-                    @apply text-right;
-                }
-                &.discount{
-                    @apply text-red-200;
-                }
-                &.total{
-                    @apply mt-5;
-                    .lbl,
-                    .vll{
-                        @apply text-base;
-                    }
-                    .vll{
-                        @apply font-semibold;
-                    }
-                }
-            }
-        }
+.order-detail-summary {
+  @apply mt-8;
+  &-table {
+    @apply bg-white p-5;
+    @apply lg:px-10 lg:py-5;
+    &-title {
+      @apply font-inter font-semibold text-xl mb-3;
     }
-    &-agreement-link{
-        @apply bg-white mt-8 px-[5px] py-[5px];
-        @apply lg:px-[25px] lg:py-[15px];
-        > a{
-            @apply inline-block underline px-[5px] py-[5px] text-sm;
-            @apply lg:mr-5;
+    &-list {
+      > li {
+        @apply flex items-center mb-2.5 last:mb-0;
+        .lbl,
+        .vll {
+          @apply flex-1 text-sm;
         }
+        .lbl {
+          @apply text-left;
+        }
+        .vll {
+          @apply text-right;
+        }
+        &.discount {
+          @apply text-red-200;
+        }
+        &.total {
+          @apply mt-5;
+          .lbl,
+          .vll {
+            @apply text-base;
+          }
+          .vll {
+            @apply font-semibold;
+          }
+        }
+      }
     }
+  }
+  &-agreement-link {
+    @apply bg-white mt-8 px-[5px] py-[5px];
+    @apply lg:px-[25px] lg:py-[15px];
+    > a {
+      @apply inline-block underline px-[5px] py-[5px] text-sm;
+      @apply lg:mr-5;
+    }
+  }
 }

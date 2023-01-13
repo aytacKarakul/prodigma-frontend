@@ -1,27 +1,26 @@
-export function OrderDetail(){
+export function OrderDetail() {
+  const row = document.querySelectorAll(".order-detail-lists-rows-img");
 
-    const row = document.querySelectorAll('.order-detail-lists-rows-img');
+  rowList();
 
-    rowList();
+  function rowList(rowImg, rowName) {
+    row.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        const rowImg = e.target;
+        const getName = e.target.parentElement.nextSibling.childNodes;
+        const rowName = getName[0].children[0].firstChild.textContent;
+        addToUI(rowImg, rowName);
+      });
+    });
+  }
 
-    function rowList(rowImg,rowName){
-        row.forEach((item) => {
-            item.addEventListener('click', (e) => {
-                const rowImg = e.target;
-                const getName = e.target.parentElement.nextSibling.childNodes;
-                const rowName = getName[0].children[0].firstChild.textContent
-                addToUI(rowImg, rowName)
-            });
-        });
-    }
+  function addToUI(rowImg, rowName) {
+    const popupWrapper = document.createElement("div");
 
-    function addToUI(rowImg, rowName){
-        const popupWrapper = document.createElement("div");
+    popupWrapper.setAttribute("id", "modal-order-detail");
+    popupWrapper.className = "modal modal-order-detail";
 
-        popupWrapper.setAttribute("id", "modal-order-detail");
-        popupWrapper.className = "modal modal-order-detail";
-
-        popupWrapper.innerHTML = `
+    popupWrapper.innerHTML = `
             <div class="modal-bg modal-exit"></div>
             <div class="modal-container">
                 <div class="order-detail-pname">${rowName}</div>
@@ -31,19 +30,22 @@ export function OrderDetail(){
             </div>
         `;
 
-        document.body.appendChild(popupWrapper);
-        popupWrapper.classList.add('open');
+    document.body.appendChild(popupWrapper);
+    popupWrapper.classList.add("open");
 
-        const closePopup = document.querySelector('.modal-order-detail.open .modal-bg.modal-exit');
-        const closePopupLink = document.querySelector('.modal-order-detail.open .modal-link.modal-exit');
-        
-        closePopup?.addEventListener('click', () => {
-            popupWrapper.remove();
-        });
+    const closePopup = document.querySelector(
+      ".modal-order-detail.open .modal-bg.modal-exit"
+    );
+    const closePopupLink = document.querySelector(
+      ".modal-order-detail.open .modal-link.modal-exit"
+    );
 
-        closePopupLink?.addEventListener('click', () => {
-            popupWrapper.remove();
-        });
-    }
-   
+    closePopup?.addEventListener("click", () => {
+      popupWrapper.remove();
+    });
+
+    closePopupLink?.addEventListener("click", () => {
+      popupWrapper.remove();
+    });
+  }
 }

@@ -1,14 +1,14 @@
-@import './support/index.scss';
+@import "./support/index.scss";
 
-.accordion-flatpages{
-    .acc-item{
-        @apply bg-white;
+.accordion-flatpages {
+  .acc-item {
+    @apply bg-white;
+  }
+  .acc-header {
+    button {
+      &::before {
+        @apply bg-gray-500;
+      }
     }
-    .acc-header{
-        button{
-            &::before{
-                @apply bg-gray-500;
-            }
-        }
-    }
+  }
 }

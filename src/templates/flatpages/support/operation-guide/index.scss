@@ -1,11 +1,11 @@
-.pmember-flatpages-bg{
-    .pmember-right-content{
-        @apply bg-white p-5;
-        &-title{
-            @apply font-inter font-medium text-xl mb-3;
-        }
-        p{
-            @apply mb-3;
-        }
+.pmember-flatpages-bg {
+  .pmember-right-content {
+    @apply bg-white p-5;
+    &-title {
+      @apply font-inter font-medium text-xl mb-3;
     }
+    p {
+      @apply mb-3;
+    }
+  }
 }

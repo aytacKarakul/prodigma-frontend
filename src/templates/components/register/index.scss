@@ -1,0 +1,51 @@
+.plog {
+  @apply flex flex-col items-center;
+  @apply lg:flex-row;
+
+  &-img {
+    align-self: flex-start;
+    @apply hidden;
+    @apply lg:block;
+    img {
+      @apply h-screen object-cover;
+    }
+  }
+  &-img,
+  &-enters {
+    @apply lg:w-1/2;
+  }
+  &-tabs {
+    @apply m-auto px-5 py-9;
+    @apply lg:max-w-md lg:px-12 lg:py-14 lg:rounded-[20px] lg:border lg:border-solid lg:border-gray-100;
+    .tabs {
+      @apply flex justify-center;
+      @apply lg:justify-start;
+      .tab {
+        @apply border-b-2 border-[rgba(2,17,34,0.1)] p-2.5 transition-all ease-in first:mr-2 font-heading font-medium;
+        &.active {
+          @apply border-red-100 font-semibold;
+        }
+      }
+    }
+    .tab-panes {
+      @apply mt-9;
+    }
+    .input-icon {
+      .icon-eye {
+        @apply right-4;
+      }
+    }
+    .btn {
+      &-sign-in {
+        @apply my-5;
+      }
+    }
+  }
+}
+
+.tab-panes .tab-pane {
+  display: none;
+}
+.tab-panes .active {
+  display: block;
+}

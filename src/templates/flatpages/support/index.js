@@ -1,4 +1,4 @@
 class Support {
-    constructor(){}
+  constructor() {}
 }
 export default Support;

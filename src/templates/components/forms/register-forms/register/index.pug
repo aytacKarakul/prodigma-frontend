@@ -1,0 +1,43 @@
+.input-double.input-membership-select
+    +inputs('radio','Bireysel Üyelik', 'js-individual-membership')(checked, data-tab="click-individual")
+    +inputs('radio','Kurumsal Üyelik', 'js-corporate-membership')(data-tab="click-corporate")
+.input-step-selection.active(data-tab="click-individual")
+    form(class="form-register" id="register-form")
+        +inputs('textbox','Ad', 'js-register-user-name')
+        +inputs('textbox','Soyad', 'js-register-user-surname')
+        +inputs('textbox','E-Posta Adresi', 'js-register-user-email')(type="email")
+        div.warning-text.warning-same-email-address-text
+        +inputs('textbox','Şifre', 'js-register-user-passwords')(type="password")
+        div.warning-text.warning-register-pass-text
+        +inputs('textbox','Cep Telefonu', 'js-register-user-phone')
+        .input-privacy-policy 
+        +inputs('checkbox','İletişim izinleri kapsamında Prodigma A.Ş. tarafından önemli bilgilerden haberdar olmak için elektronik ileti almayı kabul ediyorum.', 'js-user-remember-privacy-individual')
+        +button('Üyelik Oluştur', 'secondary btn-sign-in', 'm')(type="submit")
+        .input-subscribe-text
+            span Kişisel verileriniz, Aydınlatma Metni kapsamında işlenmektedir.
+                strong “Onay Kodu İste”
+                |butonuna basarak Üyelik Sözleşmesi’ni, Rıza Metni’ni, İletişim İzinleri’ni okuduğunuzu ve kabul ettiğinizi onaylıyorsunuz.
+.input-step-selection.hidden(data-tab="click-corporate")
+    form(class="form-corporate-register" id="register-corporate-form")
+        +select('Şirket','js-corporate-name')
+            each value in [{value: 'sirket', text: 'Şirket'}, {value: 'uni', text: 'Üniversite'}, {value: 'sanayi', text: 'Sanayi'}]
+                option(value=value.value) #{value.text}
+        +select('Müşteri Tipi','js-corporate-type')
+            each value in [{value: 'a', text: 'Müşteri A'}, {value: 'b', text: 'Müşteri B'}, {value: 'c', text: 'Müşteri C'}]
+                option(value=value.value) #{value.text}
+        +inputs('textbox','Telefon', 'js-register-user-normal-phone')
+        +inputs('textbox','Fax', 'js-register-user-fax')
+        +select('İl','js-corporate-province')
+            each value in [{value: 0, text: 'İstanbul'}, {value: 1, text: 'Ankara'}, {value: 2, text: 'İzmir'}]
+                option(value=value.value) #{value.text}
+        +select('İlçe','js-corporate-district')
+            each value in [{value: 'a', text: 'İlçe A'}, {value: 'b', text: 'İlçe B'}, {value: 'c', text: 'İlçe C'}]
+                option(value=value.value) #{value.text}
+        +inputs('textarea','Fatura Adresi', 'js-corporate-billing-address')
+        .input-privacy-policy 
+            +inputs('checkbox','İletişim izinleri kapsamında Prodigma A.Ş. tarafından önemli bilgilerden haberdar olmak için elektronik ileti almayı kabul ediyorum.', 'js-user-remember-privacy-corporate')
+        +button('Kurumsal Üyelik Oluştur', 'secondary btn-sign-in', 'm')(type="submit")
+        .input-subscribe-text
+            span Kişisel verileriniz, Aydınlatma Metni kapsamında işlenmektedir.
+                strong “Onay Kodu İste”
+                |butonuna basarak Üyelik Sözleşmesi’ni, Rıza Metni’ni, İletişim İzinleri’ni okuduğunuzu ve kabul ettiğinizi onaylıyorsunuz.

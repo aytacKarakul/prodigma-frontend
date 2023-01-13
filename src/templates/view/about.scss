@@ -1,62 +1,62 @@
 .pabout {
-    &-body {
-        @apply mx-auto py-20;
-        @apply lg:container lg:py-44;
-    }
+  &-body {
+    @apply mx-auto py-20;
+    @apply lg:container lg:py-44;
+  }
 }
 
-.pcareer{
-    &-body {
-        @apply bg-gray-500 px-5;
-        &-wrapper {
-            @apply mx-auto py-7;
-            @apply lg:container lg:py-24;
-        }
-        &-title {
-            p{
-                @apply font-inter font-semibold text-2xl mb-3;
-                @apply lg:mb-5;
-            }
-            span {
-                @apply font-inter font-normal text-base;
-            }
-        }
+.pcareer {
+  &-body {
+    @apply bg-gray-500 px-5;
+    &-wrapper {
+      @apply mx-auto py-7;
+      @apply lg:container lg:py-24;
     }
+    &-title {
+      p {
+        @apply font-inter font-semibold text-2xl mb-3;
+        @apply lg:mb-5;
+      }
+      span {
+        @apply font-inter font-normal text-base;
+      }
+    }
+  }
 }
 
 .pcontact {
-    @apply bg-gray-500 px-5;
-    &-wrapper {
-        @apply mx-auto;
-        @apply lg:container;
-    }
-    &-body {
-        @apply py-11;
-        @apply lg:pt-14 lg:pb-24;
-        &-form {
-            @apply pt-14;
-            &-title {
-                @apply font-inter font-semibold text-2xl pb-7;
-            }
-            &-content{
-                @apply flex flex-col;
-                @apply lg:flex-row lg:gap-5;
-                &-left {
-                    @apply lg:w-1/4;
-                }
-                &-right {
-                    @apply lg:w-3/4;
-                    textarea {
-                        @apply lg:min-h-[11.75rem] #{!important};
-                    }
-                }
-            }
-            &-btn {
-                @apply flex justify-end;
-                .btn {
-                    @apply max-w-[13.125rem];
-                }
-            }
+  @apply bg-gray-500 px-5;
+  &-wrapper {
+    @apply mx-auto;
+    @apply lg:container;
+  }
+  &-body {
+    @apply py-11;
+    @apply lg:pt-14 lg:pb-24;
+    &-form {
+      @apply pt-14;
+      &-title {
+        @apply font-inter font-semibold text-2xl pb-7;
+      }
+      &-content {
+        @apply flex flex-col;
+        @apply lg:flex-row lg:gap-5;
+        &-left {
+          @apply lg:w-1/4;
         }
+        &-right {
+          @apply lg:w-3/4;
+          textarea {
+            @apply lg:min-h-[11.75rem] #{!important};
+          }
+        }
+      }
+      &-btn {
+        @apply flex justify-end;
+        .btn {
+          @apply max-w-[13.125rem];
+        }
+      }
     }
+  }
 }

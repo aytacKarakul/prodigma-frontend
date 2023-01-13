@@ -2,55 +2,66 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import 'Fonts/index';
-@import 'Theme/inputs';
-@import 'Theme/buttons';
-@import 'Theme/mixins';
-@import 'Theme/widgets';
+@import "Fonts/index";
+@import "Theme/inputs";
+@import "Theme/buttons";
+@import "Theme/mixins";
+@import "Theme/widgets";
 
-html{
-    @apply w-full h-full;
+html {
+  @apply w-full h-full;
 }
 
-body{
-    @apply bg-white text-blue-100;
+body {
+  @apply bg-white text-blue-100;
 }
 
 input:focus {
-    outline: none;
+  outline: none;
 }
 
 //-----------------------------------------------------------------------
 
-.site{
-    &-messages{
-        &-error{
-            @apply bg-red text-white px-2 py-3 rounded-[10px] mt-3;
-        }
-        &-success{
-            @apply bg-green-100 text-white px-2 py-3 rounded-[10px] mt-3;
-        }
+.site {
+  &-messages {
+    &-error {
+      @apply bg-red text-white px-2 py-3 rounded-[10px] mt-3;
     }
+    &-success {
+      @apply bg-green-100 text-white px-2 py-3 rounded-[10px] mt-3;
+    }
+  }
 }
 
-.alert{
-    @apply text-xs text-blue-100 font-inter font-normal rounded-[4px] px-5 py-4 mb-5;
-    @apply empty:hidden;
-    &-success{
-        @apply bg-green-300 text-white;
-    }
-    &-danger{
-        @apply bg-red-200 bg-opacity-10;
-    }
-    &-warning{
-        @apply bg-custom-600 text-white;
-    }
-    &-info{
-        @apply bg-custom-200 text-blue-100;
-    }
+.alert {
+  @apply text-xs text-blue-100 font-inter font-normal rounded-[4px] px-5 py-4 mb-5;
+  @apply empty:hidden;
+  &-success {
+    @apply bg-green-300 text-white;
+  }
+  &-danger {
+    @apply bg-red-200 bg-opacity-10;
+  }
+  &-warning {
+    @apply bg-custom-600 text-white;
+  }
+  &-info {
+    @apply bg-custom-200 text-blue-100;
+  }
 }
 
-.vail{
-    @apply fixed top-0 left-0 w-full h-full bg-blue-100 bg-opacity-80 backdrop-blur-md;
-    @apply transition-all ease-in delay-300 duration-700 invisible opacity-0 pointer-events-none;
+.module {
+  .title {
+    @apply font-heading font-medium text-base mb-3;
+  }
+}
+
+.warning-text {
+  @apply block text-xs text-red-100 -mt-1 mb-3;
+  @apply empty:hidden;
+}
+
+.vail {
+  @apply fixed top-0 left-0 w-full h-full bg-blue-100 bg-opacity-80 backdrop-blur-md;
+  @apply transition-all ease-in delay-300 duration-700 invisible opacity-0 pointer-events-none;
 }

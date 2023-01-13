@@ -1,4 +1,4 @@
 class FlatPages {
-    constructor(){}
+  constructor() {}
 }
 export default FlatPages;

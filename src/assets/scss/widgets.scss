@@ -1,61 +1,60 @@
-
 //Supply Banner
 
 .supply-banner {
-    @apply flex flex-col justify-center bg-[url(../../assets/img/benefits-brands-cover.png)] bg-blue bg-no-repeat bg-cover bg-center min-h-[21.25rem];
-    &-wrapper {
-        @apply w-full m-auto;
-        @apply max-w-[30rem];
+  @apply flex flex-col justify-center bg-[url(../../assets/img/benefits-brands-cover.png)] bg-blue bg-no-repeat bg-cover bg-center min-h-[21.25rem];
+  &-wrapper {
+    @apply w-full m-auto;
+    @apply max-w-[30rem];
+  }
+  &-content {
+    &-title {
+      @apply text-center font-heading font-medium text-[1.75rem] leading-normal text-white;
+      @apply lg:text-[2.75rem];
     }
-    &-content {
-        &-title {
-            @apply text-center font-heading font-medium text-[1.75rem] leading-normal text-white;
-            @apply lg:text-[2.75rem];
-        }
-        &-desc {
-            @apply mx-auto text-center font-inter font-normal text-base leading-normal text-white mt-4;
-            @apply max-w-[30rem];
-        }
-        &-btn {
-            @apply w-60 mx-auto mt-4;
-        }
+    &-desc {
+      @apply mx-auto text-center font-inter font-normal text-base leading-normal text-white mt-4;
+      @apply max-w-[30rem];
     }
+    &-btn {
+      @apply w-60 mx-auto mt-4;
+    }
+  }
 }
 
 //Create Project Banner
 
 .create-banner {
-    @apply bg-gray-500;
-    &-wrapper {
-        @apply container mx-auto;
-        @apply lg:py-12;
+  @apply bg-gray-500;
+  &-wrapper {
+    @apply container mx-auto;
+    @apply lg:py-12;
+  }
+  &-body {
+    @apply relative text-center;
+    &-gif {
+      img {
+        @apply mx-auto;
+        @apply lg:rounded-[20px];
+      }
     }
-    &-body {
-        @apply relative text-center;
-        &-gif {
-            img {
-                @apply mx-auto;
-                @apply lg:rounded-[20px];
-            }
+    &-content {
+      @apply text-left mx-auto px-5 py-8;
+      @apply lg:absolute lg:top-1/2 lg:left-0 lg:right-0 lg:max-w-[550px] lg:-translate-y-1/2 lg:text-center;
+      @apply lg:px-0 lg:py-0;
+      &-title {
+        @apply font-heading font-medium text-2xl text-blue-100 mx-auto;
+        @apply lg:text-[44px] lg:leading-none lg:text-white;
+      }
+      &-desc {
+        @apply font-inter font-normal text-blue-100 text-sm mt-2.5;
+        @apply lg:text-base lg:text-white;
+      }
+      &-btn {
+        button {
+          @apply w-40 mt-8;
+          @apply lg:mx-auto lg:mt-2.5;
         }
-        &-content {
-            @apply text-left mx-auto px-5 py-8;
-            @apply lg:absolute lg:top-1/2 lg:left-0 lg:right-0 lg:max-w-[550px] lg:-translate-y-1/2 lg:text-center;
-            @apply lg:px-0 lg:py-0;
-            &-title {
-                @apply font-heading font-medium text-2xl text-blue-100 mx-auto;
-                @apply lg:text-[44px] lg:leading-none lg:text-white;
-            }
-            &-desc {
-                @apply font-inter font-normal text-blue-100 text-sm mt-2.5;
-                @apply lg:text-base lg:text-white;
-            }
-            &-btn {
-                button {
-                    @apply w-40 mt-8;
-                    @apply lg:mx-auto lg:mt-2.5;
-                }
-            }
-        }
+      }
     }
+  }
 }

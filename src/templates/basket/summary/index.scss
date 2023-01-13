@@ -1,122 +1,123 @@
-.basket{
-    &-summary{
-        @apply lg:sticky lg:top-0;
-        &-title{
-            @apply hidden mb-5 font-heading font-medium text-xl text-black;
-            @apply lg:block;
-        }
-        &-wrapper{
-            @apply fixed -bottom-full left-0 w-full z-[1] h-auto bg-white p-5 transition-all ease-in-out delay-300 duration-500;
-            @apply lg:static lg:bottom-0 lg:transition-none;
-        }
-        &-list{
-            li{
-                @apply flex items-center;
-                .lb,.vl{
-                    @apply flex-auto;
-                }
-                .lb{
-                    @apply text-left font-heading font-normal text-sm;
-                }
-                .vl{
-                    @apply text-right;
-                }
-            }
-            li:first-child {
-                @apply text-black
-            }
-            li:last-child {
-                @apply  border-gray-400 border-b-[1px] pb-5 text-black;
-            }
-            li:nth-child(2) {
-                @apply text-red-200 my-[0.625rem];
-            }
-        }
-        &-footer {
-            @apply flex flex-row items-center;
-            &-desc {
-                @apply font-heading font-normal text-sm mt-5 text-black;
-            }
-            a {
-                @apply underline;
-            }
-        }
-        &-invoice {
-            @apply hidden font-heading font-normal text-xs my-2.5 py-1 px-5;
-            @apply lg:flex lg:items-center;
-            .icon{
-                @apply inline-flex items-center justify-center w-5 h-5 text-base mr-2;
-            }
-        }
-        &-to-total{
-            @apply relative z-[2] flex items-center justify-between bg-white px-5 pt-7 pb-14 -mx-5 mt-14;
-            @apply lg:static lg:block lg:p-5 lg:mx-0 lg:mt-0;
-
-            &-prices {
-                @apply relative flex flex-col flex-1 justify-between;
-                @apply lg:flex-row lg:items-center lg:mt-6 lg:mb-5;
-
-                .lbl {
-                    @apply font-heading font-normal text-sm text-black mr-14;
-                    @apply lg:mr-0;
-                }
-                .val {
-                    @apply font-inter font-semibold text-xl text-black mr-14;
-                    @apply lg:mr-0;
-                }
-                .icon{
-                    @apply absolute w-6 h-6 flex items-center justify-center top-[calc(50%-12px)] right-7 rotate-180;
-                    @apply lg:hidden;
-                }
-            }
-            &-desc {
-                @apply hidden font-heading font-normal text-xs mt-5 mb-3;
-                @apply lg:block;
-            }
-            &-discount-code {
-                @apply hidden font-inter font-medium text-sm;
-                @apply lg:block;
-                &-trigger{
-                    @apply flex items-center justify-between cursor-pointer py-4;
-                    .icon{
-                        @apply flex items-center justify-center w-[22px] h-[22px] bg-blue-100 rounded-full;
-                        &::before{
-                            @apply text-[11px] text-white;
-                        }
-                    }
-                }
-                &-wrap{
-                    @apply hidden;
-                    .tt1{
-                        @apply font-inter font-thin;
-                    }
-                    .textbox{
-                        @apply mt-4;
-                    }
-                }
-                &.open{
-                    .basket-summary-to-total-discount-code-trigger{
-                        .icon{
-                            &::before{
-                                content: '\e912';
-                            }
-                        }
-                    }
-                    .basket-summary-to-total-discount-code-wrap{
-                        @apply block;
-                    }
-                }
-            }
-            &-success-btn{
-                @apply flex-1;
-            }
-        }
-        //animate
-        &.open{
-            .basket-summary-wrapper{
-                @apply bottom-[132px];
-                @apply lg:bottom-0;
-            }
-        }
+.basket {
+  &-summary {
+    @apply lg:sticky lg:top-0;
+    &-title {
+      @apply hidden mb-5 font-heading font-medium text-xl text-black;
+      @apply lg:block;
     }
+    &-wrapper {
+      @apply fixed -bottom-full left-0 w-full z-[1] h-auto bg-white p-5 transition-all ease-in-out delay-300 duration-500;
+      @apply lg:static lg:bottom-0 lg:transition-none;
+    }
+    &-list {
+      li {
+        @apply flex items-center;
+        .lb,
+        .vl {
+          @apply flex-auto;
+        }
+        .lb {
+          @apply text-left font-heading font-normal text-sm;
+        }
+        .vl {
+          @apply text-right;
+        }
+      }
+      li:first-child {
+        @apply text-black;
+      }
+      li:last-child {
+        @apply border-gray-400 border-b-[1px] pb-5 text-black;
+      }
+      li:nth-child(2) {
+        @apply text-red-200 my-[0.625rem];
+      }
+    }
+    &-footer {
+      @apply flex flex-row items-center;
+      &-desc {
+        @apply font-heading font-normal text-sm mt-5 text-black;
+      }
+      a {
+        @apply underline;
+      }
+    }
+    &-invoice {
+      @apply hidden font-heading font-normal text-xs my-2.5 py-1 px-5;
+      @apply lg:flex lg:items-center;
+      .icon {
+        @apply inline-flex items-center justify-center w-5 h-5 text-base mr-2;
+      }
+    }
+    &-to-total {
+      @apply relative z-[2] flex items-center justify-between bg-white px-5 pt-7 pb-14 -mx-5 mt-14;
+      @apply lg:static lg:block lg:p-5 lg:mx-0 lg:mt-0;
+
+      &-prices {
+        @apply relative flex flex-col flex-1 justify-between;
+        @apply lg:flex-row lg:items-center lg:mt-6 lg:mb-5;
+
+        .lbl {
+          @apply font-heading font-normal text-sm text-black mr-14;
+          @apply lg:mr-0;
+        }
+        .val {
+          @apply font-inter font-semibold text-xl text-black mr-14;
+          @apply lg:mr-0;
+        }
+        .icon {
+          @apply absolute w-6 h-6 flex items-center justify-center top-[calc(50%-12px)] right-7 rotate-180;
+          @apply lg:hidden;
+        }
+      }
+      &-desc {
+        @apply hidden font-heading font-normal text-xs mt-5 mb-3;
+        @apply lg:block;
+      }
+      &-discount-code {
+        @apply hidden font-inter font-medium text-sm;
+        @apply lg:block;
+        &-trigger {
+          @apply flex items-center justify-between cursor-pointer py-4;
+          .icon {
+            @apply flex items-center justify-center w-[22px] h-[22px] bg-blue-100 rounded-full;
+            &::before {
+              @apply text-[11px] text-white;
+            }
+          }
+        }
+        &-wrap {
+          @apply hidden;
+          .tt1 {
+            @apply font-inter font-thin;
+          }
+          .textbox {
+            @apply mt-4;
+          }
+        }
+        &.open {
+          .basket-summary-to-total-discount-code-trigger {
+            .icon {
+              &::before {
+                content: "\e912";
+              }
+            }
+          }
+          .basket-summary-to-total-discount-code-wrap {
+            @apply block;
+          }
+        }
+      }
+      &-success-btn {
+        @apply flex-1;
+      }
+    }
+    //animate
+    &.open {
+      .basket-summary-wrapper {
+        @apply bottom-[132px];
+        @apply lg:bottom-0;
+      }
+    }
+  }
 }

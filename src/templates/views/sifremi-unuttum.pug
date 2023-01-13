@@ -1,9 +1,9 @@
 extends ../blocks/member-layout.pug
 
 block prepend head
-    - pageTitle = "Sıkça Sorulan Sorular"
-    - pageDesc = "Sıkça Sorulan Sorular açıklama metni"
-    - pageClass = "faq"
+    - pageTitle = "Şifremi Unuttum"
+    - pageDesc = "Şifremi Unuttum açıklama metni"
+    - pageClass = "pass-forgot"
 
 block content
-    |Test
+    include ../components/forms/password-forgot/index.pug

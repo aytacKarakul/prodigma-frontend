@@ -1,0 +1,10 @@
+.input {
+  &.textbox {
+    @apply relative;
+    @apply after:invisible after:opacity-0 after:flex after:items-center after:justify-center after:w-3 after:h-3 after:font-icon after:content-["\e908"] after:absolute after:top-[calc(50%-6px)] after:right-4 after:bg-red-100 after:text-[5px] after:text-white after:rounded-full z-[1];
+    @apply after:transition-all after:ease-in after:duration-150 after:delay-150;
+    &.invalid {
+      @apply after:visible after:opacity-100;
+    }
+  }
+}

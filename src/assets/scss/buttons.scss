@@ -1,49 +1,49 @@
-.btn{
-    @apply w-full min-h-[46px] bg-black-100 text-white text-sm font-heading font-medium flex items-center justify-center rounded-[30px];
-    @apply lg:transition-all lg:duration-200 lg:ease-in lg:delay-200;
-    &-secondary{
-        @apply bg-gray-300;
+.btn {
+  @apply w-full min-h-[46px] bg-black-100 text-white text-sm font-heading font-medium flex items-center justify-center rounded-[30px];
+  @apply lg:transition-all lg:duration-200 lg:ease-in lg:delay-200;
+  &-secondary {
+    @apply bg-gray-300;
+  }
+  &-primary {
+    @apply bg-blue-200 text-white border border-solid border-transparent border-opacity-40;
+    @apply lg:hover:bg-green-200 lg:hover:border-opacity-100;
+  }
+  &-outlined {
+    @apply bg-inherit rounded-[10px] text-inherit border border-solid border-custom-200;
+  }
+  &-gray {
+    @apply bg-gray-300;
+  }
+  &-green {
+    @apply bg-green-300;
+    @apply lg:hover:bg-blue-100;
+  }
+  &-light {
+    @apply bg-transparent text-white border border-white;
+    @apply lg:hover:bg-white lg:hover:text-blue;
+  }
+  &-ghost {
+    @apply bg-transparent text-blue-100 text-sm font-normal;
+    .icon {
+      @apply mr-1;
     }
-    &-primary{
-        @apply bg-blue-200 text-white border border-solid border-transparent border-opacity-40;
-        @apply lg:hover:bg-green-200 lg:hover:border-opacity-100;
+  }
+  &-medium {
+    @apply px-2 py-2.5;
+  }
+  &-link {
+    @apply bg-inherit font-inter font-normal text-sm text-black-100 rounded-none w-auto py-2;
+    span {
+      @apply underline;
     }
-    &-outlined{
-        @apply bg-inherit rounded-[10px] text-inherit border border-solid border-custom-200;
+  }
+  &.text-hidden {
+    @apply py-1;
+    img {
+      @apply max-w-[32px];
     }
-    &-gray {
-        @apply bg-gray-300;
+    span {
+      @apply hidden;
     }
-    &-green{
-        @apply bg-green-300;
-        @apply lg:hover:bg-blue-100;
-    }
-    &-light{
-        @apply bg-transparent text-white border border-white;
-        @apply lg:hover:bg-white lg:hover:text-blue;
-    }
-    &-ghost{
-        @apply bg-transparent text-blue-100 text-sm font-normal;
-        .icon{
-            @apply mr-1;
-        }
-    }
-    &-medium{
-        @apply px-2 py-2.5;
-    }
-    &-link{
-        @apply bg-inherit font-inter font-normal text-sm text-black-100 rounded-none w-auto py-2;
-        span{
-            @apply underline;
-        }
-    }
-    &.text-hidden{
-        @apply py-1;
-        img{
-            @apply max-w-[32px];
-        }
-        span{
-            @apply hidden;
-        } 
-    }
+  }
 }

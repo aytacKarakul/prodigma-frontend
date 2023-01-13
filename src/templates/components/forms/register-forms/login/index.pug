@@ -1,0 +1,19 @@
+form(class="form-login", id="login-form")
+    +inputs('textbox','E-posta Adresi', 'js-user-login-email')(type="email")
+    div.warning-text.warning-email-text
+    +inputs('textbox','Şifre', 'js-user-login-password', 'eye')(type="password")
+    div.warning-text.warning-password-text
+    .input-seperate 
+        +inputs('checkbox','Beni Hatırla', 'js-user-remember')
+        +button('Şifremi Unuttum', 'link', 'm')(href="/sifremi-unuttum.html")
+    +button('Giriş Yap', 'primary', 'm')(type="submit")
+    .input-seperate-other
+        span veya
+    .input-double.input-double-social 
+        +button('Google', 'outlined', 'm', badgy={img:'img/google-icon'})(class="text-hidden")
+        +button('Facebook', 'outlined', 'm', badgy={img:'img/facebook-icon'})(class="text-hidden")
+    .input-privacy-policy()
+        span 
+            |Sosyal medya hesabımla giriş yaparak hesaplarımın 
+            a(href="#") Gizlilik Politikası
+            |’na uygun şekilde bağlanmasını kabul ediyorum.
