@@ -1,3 +1,5 @@
+- var timers = false
+
 .pwebinar-header
     .pwebinar-header-img 
         +picture({sm:"https://via.placeholder.com/400x195", lg:"https://via.placeholder.com/915x400"})(alt="img alt")
@@ -14,18 +16,24 @@
                             |Webinar
                         .pwebinar-header-content-left-body-title-tt2 
                             |Uzun İsim Denemesi
+                .pwebinar-header-content-left-body-local
+                    i.icon.icon-pin
+                    span|Prodigma, İstanbul TeknoPark
                 .pwebinar-header-content-left-body-speech 
                     p Konuşmacılar: 
                     span Zeynep Aldemir, Cansu Çakmak
             .pwebinar-header-content-left-footer
-                p Paylaş
-                    a(href="#")
-                                    i.icon.icon-facebook
-                    a(href="#")
-                                    i.icon.icon-twitter
-                    a(href="#")
-                                    i.icon.icon-linkedin
-        .pwebinar-header-content-right
-            .pwebinar-header-content-right-timer 
-                i.icon.icon-timer
-                span#timer
+                .pwebinar-header-content-left-footer-one
+                    +button('Etkinliğe Kaydol', 'green', 's')
+                    p Paylaş
+                        a(href="#")
+                            i.icon.icon-facebook
+                        a(href="#")
+                            i.icon.icon-twitter
+                        a(href="#")
+                            i.icon.icon-linkdn
+                if timers == true
+                    .pwebinar-header-content-left-footer-two
+                        .pwebinar-header-content-left-footer-timer 
+                            i.icon.icon-timer
+                            span#timer 0 Dk

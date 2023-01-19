@@ -1,6 +1,12 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+//swiper js
+@import "swiper/scss";
+@import "swiper/scss/pagination";
+@import "swiper/scss/navigation";
+@import "swiper/scss/controller";
+@import "swiper/scss/scrollbar";
 
 @import "Fonts/index";
 @import "Theme/inputs";

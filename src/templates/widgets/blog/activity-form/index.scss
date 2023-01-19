@@ -1,0 +1,40 @@
+.pwebinar {
+  &-body {
+    &-form {
+      @apply pt-14;
+      &-title {
+        @apply font-inter font-semibold text-2xl pb-7;
+      }
+      &-content {
+        @apply flex flex-col;
+        &-top {
+          @apply flex flex-col;
+          @apply lg:gap-4 lg:flex-row;
+          .input {
+            @apply w-full;
+          }
+          &-left {
+            @apply flex flex-col;
+            @apply lg:w-1/2;
+          }
+          &-right {
+            @apply flex flex-col;
+            @apply lg:w-1/2;
+          }
+          .checkbox {
+            @apply flex flex-col self-start font-inter font-normal text-xs text-black mt-1;
+            @apply lg:self-start lg:max-w-[550px];
+          }
+        }
+        &-footer {
+          &-btn {
+            @apply flex justify-end;
+            .btn {
+              @apply lg:max-w-xs;
+            }
+          }
+        }
+      }
+    }
+  }
+}

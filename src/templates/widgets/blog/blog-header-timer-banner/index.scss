@@ -1,0 +1,82 @@
+.pwebinar {
+  &-header {
+    @apply flex flex-col bg-white;
+    @apply lg:flex-row;
+    &-img {
+      @apply lg:w-1/2;
+    }
+    &-content {
+      @apply w-full py-6 px-5;
+      @apply lg:w-1/2;
+      &-left {
+        @apply flex flex-col h-full;
+        @apply lg:w-[calc(100%-20px)];
+        &-header {
+          &-tt1 {
+            @apply font-inter font-semibold text-base;
+          }
+          &-tt2 {
+            @apply font-inter font-light text-sm;
+          }
+        }
+        &-body {
+          @apply mt-auto;
+          &-title {
+            @apply text-blue mb-3;
+            &-tt1 {
+              @apply font-inter font-bold text-xl;
+              @apply lg:text-4xl;
+            }
+            &-tt2 {
+              @apply font-inter font-normal text-xl;
+              @apply lg:text-4xl;
+            }
+          }
+          &-speech {
+            @apply flex mb-6;
+            p {
+              @apply font-inter font-normal text-base mr-2;
+            }
+            span {
+              @apply font-inter font-bold text-base;
+            }
+          }
+          &-local {
+            @apply mb-3;
+          }
+        }
+        &-footer {
+          @apply flex items-center;
+          &-one {
+            @apply flex lg:flex-auto;
+            .btn {
+              @apply w-auto flex-initial px-10;
+            }
+            p {
+              @apply flex flex-row gap-6 flex-auto items-center font-inter font-normal text-base;
+              @apply lg:ml-24;
+              a {
+                @apply w-9 h-9 bg-blue rounded-full inline-flex items-center justify-center;
+                .icon {
+                  @apply text-white text-xl text-center;
+                }
+              }
+            }
+          }
+          &-two {
+            @apply lg:flex-initial;
+          }
+          &-timer {
+            @apply bg-green-200 rounded-[100px] p-2 text-white;
+            i {
+              @apply pr-2;
+            }
+            span {
+              @apply font-inter font-normal text-base;
+            }
+          }
+        }
+      }
+    }
+  }
+}

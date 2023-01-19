@@ -1,54 +1,48 @@
-@import 'swiper/scss';
-@import 'swiper/scss/pagination';
-@import 'swiper/scss/navigation';
-@import 'swiper/scss/controller';
-@import 'swiper/scss/scrollbar';
+.swiper-our-services {
+  @apply bg-blue-100 px-[30px] pt-10 pb-8 overflow-hidden;
+  @apply lg:px-12 lg:pt-32 lg:pb-11;
 
-.swiper-our-services{
-    @apply bg-blue-100 px-[30px] pt-10 pb-8 overflow-hidden;
-    @apply lg:px-12 lg:pt-32 lg:pb-11;
-
-    &-header{
-        @apply text-white text-center mb-10 px-2.5;
-        @apply lg:max-w-xl lg:mx-auto lg:px-4;
+  &-header {
+    @apply text-white text-center mb-10 px-2.5;
+    @apply lg:max-w-xl lg:mx-auto lg:px-4;
+  }
+  &-tt1 {
+    @apply font-heading font-medium text-2xl;
+    @apply lg:text-[44px] lg:leading-none;
+  }
+  &-tt2 {
+    @apply mt-5 font-inter font-light text-sm;
+  }
+  .swiper {
+    @apply overflow-visible;
+    &-slide {
+      .img {
+        @apply bg-[url('../../../assets/img/slider-bg.png')] bg-no-repeat bg-cover;
+      }
+      .txt {
+        @apply font-heading font-semibold text-white text-base mt-6 text-center;
+        @apply lg:text-[1.375rem] lg:leading-[1.75rem];
+      }
     }
-    &-tt1{
-        @apply font-heading font-medium text-2xl;
-        @apply lg:text-[44px] lg:leading-none;
+    &-scrollbar {
+      @apply relative top-0 bottom-0 left-0 ring-0 w-full h-0.5 mt-16 mx-auto bg-gray-200 bg-opacity-50;
+      &-drag {
+        @apply bg-purple-100;
+      }
     }
-    &-tt2{
-        @apply mt-5 font-inter font-light text-sm;
+  }
+  .swiper-button-prev {
+    @apply -left-6;
+  }
+  .swiper-button-next {
+    @apply -right-6;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    @apply bg-white rounded-full w-[50px] h-[50px] hidden;
+    @apply lg:flex;
+    &::after {
+      @apply text-base text-blue-100;
     }
-    .swiper{
-        @apply overflow-visible;
-        &-slide{
-            .img{
-                @apply bg-[url('../../../assets/img/slider-bg.png')] bg-no-repeat bg-cover;
-            }
-            .txt{
-                @apply font-heading font-semibold text-white text-base mt-6 text-center;
-                @apply lg:text-[1.375rem] lg:leading-[1.75rem];
-            }
-        }
-        &-scrollbar{
-            @apply relative top-0 bottom-0 left-0 ring-0 w-full h-0.5 mt-16 mx-auto bg-gray-200 bg-opacity-50;
-            &-drag{
-                @apply bg-purple-100;
-            }
-        }
-    }
-    .swiper-button-prev{
-        @apply -left-6;
-    }
-    .swiper-button-next{
-        @apply -right-6;
-    }
-    .swiper-button-prev,
-    .swiper-button-next{
-        @apply bg-white rounded-full w-[50px] h-[50px] hidden;
-        @apply lg:flex;
-        &::after{
-            @apply text-base text-blue-100;
-        }
-    }
+  }
 }

@@ -1,38 +1,13 @@
-- var btnChange = 1
-
-.pwebinar#before
-    include ../blog-header-timer-banner/index.pug
+.pwebinar
+    include ./blog-header-timer-banner/index.pug
     .pwebinar-body
         .pwebinar-body-wrapper 
-            include ../blog-body/index.pug
+            include ./blog-body/index.pug
             include ../photo-banner/index.pug
-            include ../blog-other-contents/index.pug
-.pwebinar-activity#after
-    include ../blog-header-join-banner/index.pug 
-    case btnChange
-        when 0
-            .pwebinar-activity-body
-                .pwebinar-activity-body-wrapper 
-                    include ../blog-body/index.pug
-                    .pwebinar-activity-body-map
-                        .pwebinar-activity-body-map-title
-                            |Etkinlik Yeri
-                        include ../contact-banner/index.pug
-        when 1
-            .pwebinar-activity-body
-                .pwebinar-activity-body-wrapper 
-                    include ../blog-body/index.pug
-                    .pwebinar-activity-body-form
-                        .pwebinar-activity-body-form-title İletişim Formunu Doldurun
-                        .pwebinar-activity-body-form-content
-                            .pwebinar-activity-body-form-content-top
-                                .pwebinar-activity-body-form-content-top-left
-                                    +inputs('textbox','Ad Soyad')
-                                    +inputs('textbox','E-Posta Adresi')(type="email")
-                                .pwebinar-activity-body-form-content-top-right
-                                    +inputs('textbox','Cep Telefonu', 'js-user-phone')
-                                    +inputs('textbox', 'Kurum Adı')     
-                                    +inputs('checkbox','Kişisel Verilerin Korunması Kanunu (KVKK) Açık Rıza Metnini okudum ve onaylıyorum.')
-                                    +inputs('checkbox','Girdiğim kişisel bilgilerimin tarafıma iletişime geçilebilmesi için işlenmesine ve kullanımına izin veriyorum.')
-                            .pwebinar-activity-body-form-content-footer-btn
-                                +button('Etkinliğe Kaydol', 'green', 's')
+            include ./double-banner/index.pug
+            include ./blog-other-contents/index.pug
+            include ./activity-form/index.pug
+            .pwebinar-body-map
+                .pwebinar-body-map-title
+                    |Etkinlik Yeri
+                include ../contact-banner/index.pug

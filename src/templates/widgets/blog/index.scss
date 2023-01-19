@@ -1,63 +1,28 @@
+@import "./blog-body/index.scss";
+@import "./blog-other-contents/index.scss";
+@import "./activity-form/index.scss";
+@import "./blog-header-timer-banner/index.scss";
+@import "./double-banner/index.scss";
+
 .pwebinar {
-    @apply block overflow-hidden;
-    &-body {
-        @apply bg-gray-500 pt-12 pb-20 px-5;
-        &-wrapper {
-            @apply lg:mx-auto;
-            @apply lg:container;
-        }
-        
+  @apply block bg-gray-500;
+  &-header {
+    &-img {
+      img {
+        @apply w-full;
+      }
     }
-    &-activity {
-        @apply hidden;
-        &-body {
-            @apply bg-gray-500 pt-5 pb-20;
-            @apply lg:pt-12;
-            &-wrapper {
-                @apply mx-auto px-5;
-                @apply lg:container;
-            }
-            &-map {
-                &-title {
-                    @apply font-inter font-semibold text-2xl pb-5;
-                }
-            }
-            &-form {
-                @apply pt-14;
-                &-title {
-                    @apply font-inter font-semibold text-2xl pb-7;
-                }
-                &-content{
-                    @apply flex flex-col;
-                    &-top {
-                        @apply flex flex-col;
-                        @apply lg:gap-4 lg:flex-row;
-                        .input {
-                            @apply w-full;
-                        }
-                        &-left {
-                            @apply flex flex-col;
-                            @apply lg:w-1/2;
-                        }
-                        &-right {
-                            @apply flex flex-col;
-                            @apply lg:w-1/2;
-                        }
-                        .checkbox {
-                            @apply flex flex-col self-start font-inter font-normal text-xs text-black mt-1;
-                            @apply lg:self-start lg:max-w-[550px]; 
-                        }
-                    }
-                    &-footer {
-                        &-btn {
-                            @apply flex justify-end;
-                            .btn {
-                                @apply lg:max-w-xs;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+  }
+  &-body {
+    @apply w-full pt-12 pb-20 px-5;
+    &-wrapper {
+      @apply w-full px-5;
+      @apply lg:max-w-screen-2xl lg:mx-auto;
     }
+    &-map {
+      &-title {
+        @apply font-inter font-semibold text-2xl pb-5;
+      }
+    }
+  }
 }

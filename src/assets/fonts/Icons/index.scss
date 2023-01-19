@@ -25,6 +25,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-linkdn:before {
+  content: "\e920";
+}
+.icon-review:before {
+  content: "\e921";
+}
+.icon-delivery:before {
+  content: "\e922";
+}
 .icon-member:before {
   content: "\e91f";
 }

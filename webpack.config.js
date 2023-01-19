@@ -20,19 +20,19 @@ function generateHtmlPlugins(templateDir) {
   });
 }
 // Call our function on our views directory.
-const htmlPlugins = generateHtmlPlugins('./src/templates/views')
+const htmlPlugins = generateHtmlPlugins("./src/templates/views");
 
 module.exports = {
   entry: "./src/app.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "js/[name].js",
-    publicPath: "/",
+    //publicPath: "/",
     clean: true,
   },
   plugins: [
     new MiniCssExtractPlugin({
-        filename: "css/main.css",
+      filename: "css/main.css",
     }),
   ].concat(htmlPlugins),
   module: {
@@ -71,7 +71,7 @@ module.exports = {
       },
       {
         test: /\.pug$/,
-        use: 'pug-loader'
+        use: "pug-loader",
       },
       {
         test: /\.m?js$/,

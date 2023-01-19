@@ -1,0 +1,42 @@
+.pwebinar-body {
+  &-header {
+    &-tt1 {
+      @apply font-inter font-semibold text-2xl;
+    }
+    &-content {
+      p {
+        @apply font-inter font-normal text-base mt-5;
+      }
+    }
+    &-tt2 {
+      @apply font-inter font-semibold text-2xl mt-10 mb-5;
+    }
+    ul {
+      @apply flex flex-row flex-wrap gap-5 text-white pb-10;
+      li {
+        @apply flex flex-row items-center justify-center p-4 bg-blue lg:w-[calc(50%-335px)] rounded-3xl;
+      }
+    }
+    &-speech {
+      &-img {
+        @apply w-[50px] h-[50px] rounded-full text-center;
+        img {
+          @apply w-full rounded-full;
+        }
+      }
+      &-content {
+        @apply w-[calc(100%-60px)] ml-2.5;
+        p {
+          @apply font-inter font-semibold text-base mb-1;
+        }
+        span {
+          @apply font-inter font-normal text-xs;
+          @apply lg:max-w-[159px] lg:inline-block;
+        }
+      }
+    }
+  }
+  &-activity-content {
+    @apply mt-10;
+  }
+}

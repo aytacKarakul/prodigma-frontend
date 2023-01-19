@@ -4,10 +4,16 @@ class Inputs {
     this.selectElement = document.querySelectorAll(
       ".input.select > .wrp select"
     );
+    this.checkboxElement = document.querySelectorAll(
+      ".input.checkbox input[type=checkbox]"
+    );
     this.setClass = "valid";
     this.removeClass = "invalid";
+
+    //Function listener
     this.onInputFuncInit();
     this.onSelectFunInit();
+    this.onCheckBoxFunInit();
   }
 
   onInputFuncInit = () => {
@@ -43,6 +49,18 @@ class Inputs {
     this.selectElement?.forEach((select) => {
       select.addEventListener("change", () => {
         console.log(select.options[select.selectedIndex].text);
+      });
+    });
+  };
+  onCheckBoxFunInit = () => {
+    this.checkboxElement?.forEach((checkbox) => {
+      checkbox.addEventListener("change", (e) => {
+        console.log(e.target);
+        if (e.target.checked) {
+          e.target.setAttribute("checked", true);
+        } else {
+          e.target.setAttribute("checked", false);
+        }
       });
     });
   };

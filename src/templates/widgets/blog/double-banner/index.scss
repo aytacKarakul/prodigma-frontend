@@ -1,0 +1,11 @@
+.pwebinar-body-double-banner {
+  ul {
+    @apply flex gap-x-5 mt-10;
+    li {
+      @apply w-1/2;
+      img {
+        @apply w-full rounded-[20px];
+      }
+    }
+  }
+}
