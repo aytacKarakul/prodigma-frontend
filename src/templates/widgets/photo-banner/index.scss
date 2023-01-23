@@ -1,5 +1,7 @@
 .photo-banner {
-    img {
-        @apply w-full rounded-3xl;
-    }
+  @apply pt-10 pb-10;
+  @apply lg:pt-12 lg:pb-12;
+  img {
+    @apply w-full rounded-3xl;
+  }
 }

@@ -48,13 +48,15 @@
         &-footer {
           @apply flex items-center;
           &-one {
-            @apply flex lg:flex-auto;
+            @apply flex flex-col order-last mr-5;
+            @apply lg:order-first lg:flex-row lg:mr-16;
             .btn {
-              @apply w-auto flex-initial px-10;
+              @apply w-auto flex-initial px-10 mt-5;
+              @apply lg:mr-24 lg:mt-0;
             }
             p {
-              @apply flex flex-row gap-6 flex-auto items-center font-inter font-normal text-base;
-              @apply lg:ml-24;
+              @apply flex flex-row gap-6 flex-auto items-center order-first font-inter font-normal text-base;
+              @apply lg:order-last;
               a {
                 @apply w-9 h-9 bg-blue rounded-full inline-flex items-center justify-center;
                 .icon {

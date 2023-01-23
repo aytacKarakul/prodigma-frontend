@@ -1,0 +1,11 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "Page title"
+    - pageDesc = "Prodigma Plus Blog detay açıklama metni"
+    - pageClass = "blog-detail-single"
+    - var activity = false
+    - var activityStart = false
+
+block content
+    include ../widgets/blog/detail.pug

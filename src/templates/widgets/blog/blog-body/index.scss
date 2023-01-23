@@ -12,7 +12,7 @@
       @apply font-inter font-semibold text-2xl mt-10 mb-5;
     }
     ul {
-      @apply flex flex-row flex-wrap gap-5 text-white pb-10;
+      @apply flex flex-row flex-wrap gap-5 text-white;
       li {
         @apply flex flex-row items-center justify-center p-4 bg-blue lg:w-[calc(50%-335px)] rounded-3xl;
       }

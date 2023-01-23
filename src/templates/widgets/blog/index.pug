@@ -1,13 +1,16 @@
+- var activity = false 
+
 .pwebinar
     include ./blog-header-timer-banner/index.pug
     .pwebinar-body
         .pwebinar-body-wrapper 
             include ./blog-body/index.pug
             include ../photo-banner/index.pug
-            include ./double-banner/index.pug
             include ./blog-other-contents/index.pug
-            include ./activity-form/index.pug
-            .pwebinar-body-map
-                .pwebinar-body-map-title
-                    |Etkinlik Yeri
-                include ../contact-banner/index.pug
+            if activity
+                include ./activity-form/index.pug
+            if activity
+                .pwebinar-body-map
+                    .pwebinar-body-map-title
+                        |Etkinlik Yeri
+                    include ../contact-banner/index.pug

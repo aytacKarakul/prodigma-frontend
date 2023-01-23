@@ -18,6 +18,12 @@
     &-wrapper {
       @apply w-full px-5;
       @apply lg:max-w-screen-2xl lg:mx-auto;
+
+      &-html {
+        p {
+          @apply mt-6 first:mt-0;
+        }
+      }
     }
     &-map {
       &-title {

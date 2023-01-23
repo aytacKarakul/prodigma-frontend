@@ -25,6 +25,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-earth-day:before {
+  content: "\e923";
+}
+.icon-plant-based:before {
+  content: "\e924";
+}
+.icon-plastic-based:before {
+  content: "\e925";
+}
+.icon-recycle-symbol:before {
+  content: "\e926";
+}
 .icon-linkdn:before {
   content: "\e920";
 }

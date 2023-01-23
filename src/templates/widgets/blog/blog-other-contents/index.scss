@@ -1,14 +1,15 @@
 .pwebinar-body-other-content {
-    @apply pt-16 font-inter font-semibold text-2xl;
-    ul {
-        @apply mt-5 flex gap-10;
-        a {
-            li {
-                @apply flex flex-row gap-10;
-                img {
-                    @apply rounded-3xl;
-                }
-            }
+  @apply pt-6 font-inter font-semibold text-2xl;
+  @apply lg:pt-10;
+  ul {
+    @apply mt-5 flex gap-10;
+    a {
+      li {
+        @apply flex flex-row gap-10;
+        img {
+          @apply rounded-3xl;
         }
+      }
     }
+  }
 }
