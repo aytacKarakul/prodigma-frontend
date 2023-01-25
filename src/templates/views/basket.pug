@@ -9,24 +9,24 @@ block content
     .basket
         .basket-wrapper
             .basket-left
-                include basket-list/index.pug
+                include ../basket/basket-list/index.pug
                 .basket-accordion
                     ul(class='accordion accordion-basket', data-type='connected')
                         li(class='acc-item', id="item_1")
                             .acc-header
                                 button(type='button') Alıcı Bilgileri
                             .acc-body
-                                include delivery/index.pug
+                                include ../basket/delivery/index.pug
                         li(class='acc-item', id="item_2")
                             .acc-header
                                 button(type='button') Adres Bilgileri
                             .acc-body
-                                include addresses/index.pug
+                                include ../basket/addresses/index.pug
                         li(class='acc-item', id="item_2")
                             .acc-header
                                 button(type='button') Ödeme Bilgileri
                             .acc-body
-                                include payment/index.pug
+                                include ../basket/payment/index.pug
             .basket-right
-                include summary/index.pug
+                include ../basket/summary/index.pug
     .vail.vail-summary

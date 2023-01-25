@@ -1,6 +1,7 @@
 import "./index.scss";
 const tabs = require("tabs");
 import IMask from "imask";
+import displayMessage from "../../utils/displayMessages";
 
 const data = {
   id: 1,
@@ -227,7 +228,7 @@ class LoginTabs {
         } else {
           this.registerPassTextUI.style.color = "#DF3434";
           this.registerPassTextUI.innerHTML =
-            "Lütfen geçerli bir şifre giriniz!";
+            "Şifreniz en az 8 karakter olmalıdır. Bir büyük harf ve bir özel karakter içermelidir.";
         }
         if (this.registerSifre.value == "") {
           this.registerPassTextUI.innerHTML = "";
