@@ -18,7 +18,7 @@
       @apply transition-all duration-100;
     }
     input {
-      @apply w-full h-14 flex border border-solid border-gray-100 rounded-[10px] px-5 pt-4 py-3;
+      @apply w-full h-14 flex rounded-[10px] px-5 pt-4 py-3;
     }
     &.input-focus {
       label {
@@ -92,7 +92,7 @@
       }
     }
     select {
-      @apply w-full h-full bg-white border border-solid border-gray-100 rounded-[10px] px-5 pt-5 pb-3 appearance-none outline-0;
+      @apply w-full h-full bg-white rounded-[10px] px-5 pt-5 pb-3 appearance-none outline-0;
       @apply absolute top-0 left-0 cursor-pointer z-0 font-heading font-normal text-black-100 text-sm;
       &::-ms-expand {
         display: none;
@@ -102,7 +102,7 @@
   &.textarea {
     width: 100%;
     textarea {
-      @apply w-full bg-white border border-solid border-gray-100 rounded-[10px] px-5 py-4 appearance-none;
+      @apply w-full bg-white rounded-[10px] px-5 py-4 appearance-none;
       @apply relative outline-0 resize-none min-h-[120px];
     }
     label {
@@ -154,6 +154,13 @@
       strong {
         @apply font-inter font-medium;
       }
+    }
+  }
+  &.borders {
+    input,
+    textarea,
+    select {
+      @apply border border-solid border-custom-800;
     }
   }
 }

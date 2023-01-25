@@ -252,11 +252,34 @@ class LoginTabs {
             _this.loginPageErrorFunc("*Bu e-postaya ait bir üyelik mevcut!")
           );
         } else {
+          //Testing
+          this.userLoginSuccess("success");
           console.log("Üyelik Oluşturuldu...");
         }
         e.preventDefault();
       });
     }
+  };
+
+  userLoginSuccess = (type) => {
+    let temp = document.createElement("div");
+    temp.className = `user-login-${type}`;
+
+    const wrap = document.querySelector(".plog-tabs");
+    wrap.innerHTML = "";
+
+    temp.innerHTML += `
+    <i class="icon icon-success"></i>
+    <div class="t1">Aramıza hoş geldin Deniz, üyeliğin başarıyla tamamlandı.</div>
+    <div class="t2">Artık Prodigma dünyasını keşfetmeye hazırsın!</div>
+    `;
+
+    document.querySelector(".plog-enters").append(temp);
+
+    setTimeout(() => {
+      temp.remove();
+      window.location.href = "/";
+    }, 500000);
   };
 
   //Login Page Form Error Text

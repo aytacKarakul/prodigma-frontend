@@ -22,6 +22,9 @@
     @apply bg-transparent text-white border border-white;
     @apply lg:hover:bg-white lg:hover:text-blue;
   }
+  &-white {
+    @apply bg-white border-transparent;
+  }
   &-ghost {
     @apply bg-transparent text-blue-100 text-sm font-normal;
     .icon {

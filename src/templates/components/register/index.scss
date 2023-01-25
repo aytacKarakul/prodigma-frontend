@@ -1,5 +1,5 @@
 .plog {
-  @apply flex flex-col items-center;
+  @apply flex flex-col items-center bg-gray-500;
   @apply lg:flex-row lg:max-w-screen-2xl lg:mx-auto;
 
   &-img {
@@ -16,14 +16,14 @@
   }
   &-tabs {
     @apply m-auto px-5 py-9;
-    @apply lg:max-w-md lg:px-12 lg:py-14 lg:rounded-[20px] lg:border lg:border-solid lg:border-gray-100;
+    @apply lg:max-w-md lg:px-12 lg:py-14;
     .tabs {
       @apply flex justify-center;
       @apply lg:justify-start;
       .tab {
-        @apply border-b-2 border-[rgba(2,17,34,0.1)] p-2.5 transition-all ease-in first:mr-2 font-heading font-medium;
+        @apply border-b-2 border-[rgba(2,17,34,0.1)] p-2.5 transition-all ease-in font-heading font-medium;
         &.active {
-          @apply border-red-100 font-semibold;
+          @apply border-blue-100 font-semibold;
         }
       }
     }
@@ -48,4 +48,18 @@
 }
 .tab-panes .active {
   display: block;
+}
+
+.user-login-success {
+  @apply flex flex-col items-center text-center m-auto px-5 py-9;
+  @apply lg:max-w-md lg:px-12 lg:py-14;
+  .icon {
+    @apply flex justify-center items-center mx-auto bg-green-100 w-14 h-14 rounded-full font-icon text-2xl text-white;
+  }
+  .t1 {
+    @apply font-heading font-semibold text-xl mt-4;
+  }
+  .t2 {
+    @apply font-heading font-normal text-base mt-4;
+  }
 }

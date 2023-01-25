@@ -1,6 +1,7 @@
-.module.module-password-forgot 
-    h1.title Şifremi Unuttum
-    form(class="form-password-forgot", id="form-password-forgot-id")
-        +inputs('textbox','E-posta Adresi', 'js-forgot-password-email')(type="email")
-        div.warning-text.warning-password-forget-text
-        +button('Yeni Şifre Gönder', 'green', 'm')(type="submit", id="js-forgot-password-button")
+.ppforgot
+    .module.module-password-forgot 
+        h1.title Şifremi Unuttum
+        form(class="form-password-forgot", id="form-password-forgot-id")
+            +inputs('textbox','E-posta Adresi', 'js-forgot-password-email')(type="email")
+            div.warning-text.warning-password-forget-text
+            +button('Yeni Şifre Gönder', 'green', 'm')(type="submit", id="js-forgot-password-button")

@@ -6,12 +6,12 @@ form(class="form-login", id="login-form")
     .input-seperate 
         +inputs('checkbox','Beni Hatırla', 'js-user-remember')
         +button('Şifremi Unuttum', 'link', 'm')(href="/sifremi-unuttum.html")
-    +button('Giriş Yap', 'primary', 'm')(type="submit")
+    +button('Giriş Yap', 'green', 'm')(type="submit")
     .input-seperate-other
         span veya
     .input-double.input-double-social 
-        +button('Google', 'outlined', 'm', badgy={img:'img/google-icon'})(class="text-hidden")
-        +button('Facebook', 'outlined', 'm', badgy={img:'img/facebook-icon'})(class="text-hidden")
+        +button('Google', 'white', 'm', badgy={img:'img/google-icon'})(class="text-hidden")
+        +button('Facebook', 'white', 'm', badgy={img:'img/facebook-icon'})(class="text-hidden")
     .input-privacy-policy()
         span 
             |Sosyal medya hesabımla giriş yaparak hesaplarımın 
