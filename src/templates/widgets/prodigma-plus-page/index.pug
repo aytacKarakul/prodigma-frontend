@@ -1,27 +1,42 @@
 - var urlType = "?type=activity";
+- var alternative = true
 
-.pprodigma-plus 
+.pprodigma-plus
     .pprodigma-plus-wrapper 
         .pprodigma-plus-head
             .pprodigma-plus-head-title
                 img(src="img/logo.svg", alt="Prodigma")
                 span +
             .pprodigma-plus-head-desc Markalara ve insanlara dünyayı etkilemeleri için ilham veriyor.
-        .pprodigma-plus-body
-            ul
-                li
-                    .lg
-                        a(href="/blog-detay.html")
-                            +picture({sm:require=('img/pplus1.png'), lg:require=('img/pplus1.png')})
-                    .sm        
-                        a(href=`/blog-detay-activite.html${urlType}`)
-                            +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
-                        a(href=`/blog-detay-activite.html${urlType}`)
-                            +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
-                    .md        
-                        a(href="/blog-detay.html")
-                            +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
-                        a(href=`/blog-detay-activite.html${urlType}`)
-                            +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
-                        a(href="/blog-detay.html")
-                            +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
+        if alternative == false
+            .pprodigma-plus-body
+                ul
+                    li
+                        .lg
+                            a(href="/blog-detay.html")
+                                +picture({sm:require=('img/pplus1.png'), lg:require=('img/pplus1.png')})
+                        .sm        
+                            a(href=`/blog-detay-activite.html${urlType}`)
+                                +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
+                            a(href=`/blog-detay-activite.html${urlType}`)
+                                +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
+                        .md        
+                            a(href="/blog-detay.html")
+                                +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
+                            a(href=`/blog-detay-activite.html${urlType}`)
+                                +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
+                            a(href="/blog-detay.html")
+                                +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
+        else if alternative == true
+            .pprodigma-plus-body-alternative
+                ul
+                    li
+                        .lg
+                            a(href="/blog-detay.html")
+                                +picture({sm:require=('img/pplus1.png'), lg:require=('img/pplus1.png')})
+                        .sm        
+                            a(href=`/blog-detay-activite.html${urlType}`)
+                                +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
+                        .md        
+                            a(href="/blog-detay.html")
+                                +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})

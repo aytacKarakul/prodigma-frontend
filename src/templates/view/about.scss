@@ -25,9 +25,9 @@
 }
 
 .pcontact {
-  @apply bg-gray-500 px-5;
+  @apply bg-gray-500;
   &-wrapper {
-    @apply mx-auto;
+    @apply mx-auto px-5;
     @apply lg:container;
   }
   &-body {

@@ -3,6 +3,8 @@ const tabs = require("tabs");
 import IMask from "imask";
 import displayMessage from "../../utils/displayMessages";
 
+const notFound = null;
+
 const data = {
   id: 1,
   ad: "Aytaç",
@@ -247,11 +249,16 @@ class LoginTabs {
               "*Lütfen tüm alanları doldurduğunuzdan emin olunuz!"
             )
           );
-        } else if (_this.registerEposta.value === data.eposta) {
+        }
+         else if (_this.registerEposta.value === data.eposta) {
           _this.registerForm.prepend(
             _this.loginPageErrorFunc("*Bu e-postaya ait bir üyelik mevcut!")
           );
-        } else {
+        }
+        else if (notFound === null) {
+          this.userRegisterWarning("warning");
+        }
+        else {
           //Testing
           this.userLoginSuccess("success");
           console.log("Üyelik Oluşturuldu...");
@@ -281,6 +288,25 @@ class LoginTabs {
       window.location.href = "/";
     }, 500000);
   };
+
+  //DUhan
+  userRegisterWarning = (type) => {
+    let temp = document.createElement("div");
+    temp.className = `user-register-${type}`;
+
+    const wrap = document.querySelector(".plog-tabs");
+    wrap.style.display = "none";
+
+    temp.innerHTML += `
+    <i class="icon icon-close"></i>
+    <div class="t1">Üyelik işlemi oluşturulurken bir sorun oluştu.</div>
+    <div class="user-register-turn-btn">
+    <a class="btn btn-green btn-medium" title="Üyelik Adımına Dön" href="/login.html"><span>Üyelik Adımına Dön</span></a>
+    </div>
+    `;
+
+    document.querySelector(".plog-enters").append(temp);
+  }
 
   //Login Page Form Error Text
   loginPageErrorFunc = (error) => {

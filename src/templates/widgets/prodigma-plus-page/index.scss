@@ -57,5 +57,13 @@
         }
       }
     }
+    &-alternative {
+      > ul {
+        @apply lg:max-w-[1190px] lg:m-auto;
+        >li {
+          @apply grid;
+        }
+      }
+    }
   }
 }
