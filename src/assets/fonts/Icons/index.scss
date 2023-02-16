@@ -25,6 +25,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-file-empty:before {
+  content: "\e927";
+}
 .icon-earth-day:before {
   content: "\e923";
 }

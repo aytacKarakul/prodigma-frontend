@@ -1,156 +1,124 @@
 import ContractManufactureModel from "./contractManufacturing";
 import PieceEnterModel from "./pieceEnter";
 import TecnicGraphModel from "./tecnicGraphUpload";
-import ScaleModel from './scaleModule';
+import ScaleModel from "./scaleModule";
 import CncTypeSelectionModel from "./CncTypeSelectionModel";
 
 const customViewer = (typeSelection) => {
+  // Drag and Drop property
+  const dragArea = document.querySelector(".drag-area");
+  const stepBtns = document.querySelectorAll(
+    ".create-project-right-steps > .lnk"
+  );
+  const nextSelectionBtnFirst = document.querySelector(
+    ".create-project-right-nextbtn .btn-next-to-bid"
+  );
+  const nextSelectionBtnLast = document.querySelector(
+    ".create-project-right-nextbtn .btn-next-bid"
+  );
+  const wrapperProperties = document.querySelector(
+    ".create-project-right > [data-selection='properties']"
+  );
+  const wrapperMaterials = document.querySelector(
+    ".create-project-right > [data-selection='materials']"
+  );
+  const materialsContainerElement = document.querySelectorAll(
+    ".create-project-right-materials li input"
+  );
 
-    // Drag and Drop property
-    const dragArea = document.querySelector(".drag-area");
-    const stepBtns = document.querySelectorAll(".create-project-right-steps > .lnk");
-    const nextSelectionBtnFirst = document.querySelector(".create-project-right-nextbtn .btn-next-to-bid");
-    const nextSelectionBtnLast = document.querySelector(".create-project-right-nextbtn .btn-next-bid");
-    const wrapperProperties = document.querySelector(".create-project-right > [data-selection='properties']");
-    const wrapperMaterials = document.querySelector(".create-project-right > [data-selection='materials']");
-    const materialsContainerElement = document.querySelectorAll('.create-project-right-materials li input');
+  let file;
 
-    let file;
+  if (dragArea) {
+    dragArea?.addEventListener("dragover", (event) => {
+      event.preventDefault();
+      dragArea.classList.add("active");
+      nextSelectionBtnFirst?.removeAttribute("disabled");
+      nextSelectionBtnFirst?.classList.add("btn-green");
+      console.log("File is inside the drag area");
+    });
+    dragArea?.addEventListener("dragleave", () => {
+      console.log("File left the drag area");
+      dragArea.classList.remove("active");
+      nextSelectionBtnFirst?.setAttribute("disabled");
+      nextSelectionBtnFirst?.classList.remove("btn-green");
+    });
 
-    if(dragArea){
+    dragArea.addEventListener("drop", (event) => {
+      event.preventDefault();
 
-        dragArea?.addEventListener('dragover', (event) => {
-            event.preventDefault();
-            dragArea.classList.add('active');
-            nextSelectionBtnFirst?.removeAttribute('disabled');
-            nextSelectionBtnFirst?.classList.add('btn-green');
-            console.log('File is inside the drag area');
-        });
-        dragArea?.addEventListener('dragleave', () => {
-            console.log('File left the drag area');
-            dragArea.classList.remove('active');
-            nextSelectionBtnFirst?.setAttribute('disabled');
-            nextSelectionBtnFirst?.classList.remove('btn-green');
-        });
+      file = event.dataTransfer.files[0];
+      let fileType = file.type;
+      //console.log(fileType);
 
-        dragArea.addEventListener('drop', (event) => {
-            event.preventDefault();
+      let validExtensions = ["image/jpeg", "image/jpg", "image/png"];
 
-            file = event.dataTransfer.files[0];
-            let fileType = file.type;
-            //console.log(fileType);
+      if (validExtensions.includes(fileType)) {
+        let fileReader = new FileReader();
 
-            let validExtensions = ['image/jpeg','image/jpg','image/png'];
+        fileReader.onload = () => {
+          let fileUrl = fileReader.result;
 
-            if(validExtensions.includes(fileType)){
-                let fileReader = new FileReader();
+          let imgTag = `<img src="${fileUrl}" alt="" />`;
+          dragArea.innerHTML = imgTag;
+        };
+        fileReader.readAsDataURL(file);
+      } else {
+        alert("This file is not an Image");
+        dragArea.classList.remove("active");
+      }
+      console.log(file);
+    });
 
-                fileReader.onload = () => {
-                    let fileUrl = fileReader.result;
+    //-
+    nextSelectionBtnFirst?.addEventListener("click", function () {
+      stepBtns.forEach((btn) => {
+        if (btn.classList.contains("active")) {
+          btn.classList.remove("active");
+          btn.innerHTML = "";
+          btn.classList.add("passed");
+        } else {
+          const selectedBtn = document.querySelectorAll(
+            ".create-project-right-steps > .lnk.active"
+          );
+          selectedBtn.forEach((selected) => {
+            selected.classList.remove("active");
+          });
+          btn.classList.add("active");
+        }
+      });
+      this.remove();
+      wrapperProperties.classList.add("hidden");
+      wrapperMaterials.removeAttribute("hidden");
+      if (nextSelectionBtnLast) {
+        nextSelectionBtnLast.style.display = "flex";
+      }
+    });
 
-                    let imgTag = `<img src="${fileUrl}" alt="" />`;
-                    dragArea.innerHTML = imgTag;
-                }
-                fileReader.readAsDataURL(file);
-
-                /*
-                switch (typeSelection) {
-                    case 'printing':
-                        ScaleModel();
-                        TecnicGraphModel();
-                        CncTypeSelectionModel();
-                        PieceEnterModel();
-                        break;
-                    case 'cnc':
-                        ScaleModel();
-                        TecnicGraphModel();
-                        CncTypeSelectionModel();
-                        PieceEnterModel();
-                        break;
-                    case 'silicone':
-                        ScaleModel();
-                        TecnicGraphModel();
-                        PieceEnterModel();
-                        break;
-                    case 'injection':
-                        ScaleModel();
-                        ContractManufactureModel();
-                        TecnicGraphModel();
-                        PieceEnterModel();
-                        break;
-                    case 'metal-working':
-                        ScaleModel();
-                        TecnicGraphModel();
-                        PieceEnterModel();
-                    case 'industrial':
-                        ScaleModel();
-                        TecnicGraphModel();
-                        PieceEnterModel();
-                    case 'reverse-engineering':
-                        ScaleModel();
-                        TecnicGraphModel();
-                        PieceEnterModel();
-                    case 'successive-processes':
-                        ScaleModel();
-                        TecnicGraphModel();
-                        PieceEnterModel();
-                    default:
-                        break;
-                }
-                */
-
-            }else{
-                alert('This file is not an Image');
-                dragArea.classList.remove('active');
-            }
-            console.log(file);
-        });
-        
-        //-
-        nextSelectionBtnFirst?.addEventListener('click', function(){
-            stepBtns.forEach((btn) => {
-                if(btn.classList.contains('active')){
-                    btn.classList.remove('active');
-                    btn.innerHTML = '';
-                    btn.classList.add('passed');
-                }
-                else{
-                    const selectedBtn = document.querySelectorAll('.create-project-right-steps > .lnk.active');
-                    selectedBtn.forEach((selected) => {
-                        selected.classList.remove('active');;
-                    });
-                    btn.classList.add('active');
-                }
-            });
-            this.remove();
-            wrapperProperties.classList.add('hidden');
-            wrapperMaterials.removeAttribute('hidden');
-            if(nextSelectionBtnLast){
-                nextSelectionBtnLast.style.display = 'flex';
-            }
-        });
-
-        materialsContainerElement?.forEach((el) => {
-            el.addEventListener('click', function(){
-                if(el.parentElement.parentElement.classList.contains('active')){
-                    el.checked = false;
-                    el.parentElement.parentElement.classList.remove('active');
-                }else{
-                    const selectedInputItems = document.querySelectorAll('.create-project-right-materials li.active');
-                    const selectedInputItemsInput = document.querySelectorAll('.create-project-right-materials li.active input');
-                    selectedInputItems.forEach((items) => {
-                        items.classList.remove('active');
-                    });
-                    selectedInputItemsInput.forEach((event) => {
-                        event.checked = false;
-                    });
-                    el.checked = true;
-                    el.parentElement.parentElement.classList.add('active');
-                }
-                nextSelectionBtnLast?.removeAttribute('disabled');
-                nextSelectionBtnLast?.classList.add('btn-green');
-            });
-        });
-    }
-}
+    materialsContainerElement?.forEach((el) => {
+      el.addEventListener("click", function () {
+        if (el.parentElement.parentElement.classList.contains("active")) {
+          el.checked = false;
+          el.parentElement.parentElement.classList.remove("active");
+        } else {
+          const selectedInputItems = document.querySelectorAll(
+            ".create-project-right-materials li.active"
+          );
+          const selectedInputItemsInput = document.querySelectorAll(
+            ".create-project-right-materials li.active input"
+          );
+          selectedInputItems.forEach((items) => {
+            items.classList.remove("active");
+          });
+          selectedInputItemsInput.forEach((event) => {
+            event.checked = false;
+          });
+          el.checked = true;
+          el.parentElement.parentElement.classList.add("active");
+        }
+        nextSelectionBtnLast?.removeAttribute("disabled");
+        nextSelectionBtnLast?.classList.add("btn-green");
+      });
+    });
+  }
+};
 export default customViewer;

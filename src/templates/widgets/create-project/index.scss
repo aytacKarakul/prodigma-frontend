@@ -1,350 +1,358 @@
-@import 'swiper/css/effect-coverflow';
+@import "./models/cnc/index.scss";
 
-.page-create-project{
-    .site-mobile-header{
-        @apply sticky bg-white;
+@import "swiper/css/effect-coverflow";
+
+.page-create-project {
+  .site-mobile-header {
+    @apply sticky bg-white;
+  }
+  .site-header {
+    @apply sticky;
+    &-wrapper {
+      @apply min-h-[4.375rem];
     }
-    .site-header{
-        @apply sticky;
-        &-wrapper{
-            @apply min-h-[4.375rem];
-        }
-        &-nav{
-            @apply hidden;
-        }
-        &-login{
-            @apply lg:ml-auto;
-        }
+    &-nav {
+      @apply hidden;
     }
+    &-login {
+      @apply lg:ml-auto;
+    }
+  }
 }
 
-.create-project-swiper{
-    .swiper-slide {
-        @apply bg-center bg-cover w-[250px] h-auto;
-        @apply lg:w-[380px];
-    }
+.create-project-swiper {
+  .swiper-slide {
+    @apply bg-center bg-cover w-[250px] h-auto;
+    @apply lg:w-[380px];
+  }
 }
 
 .create-project {
-    @apply relative w-full;
-    @apply lg:h-[calc(100vh-4.375rem)] lg:overflow-hidden;
-    @apply bg-[url(../../../assets/img/create-project-bg.png)] bg-no-repeat bg-cover bg-center;
+  @apply relative w-full;
+  @apply lg:h-[calc(100vh-4.375rem)] lg:overflow-hidden;
+  @apply bg-[url(../../../assets/img/create-project-bg.png)] bg-no-repeat bg-cover bg-center;
 
-    &-wrapper {
-        @apply w-full mx-auto px-5 py-10;
-        @apply lg:max-w-[95%];
+  &-wrapper {
+    @apply w-full mx-auto px-5 py-10;
+    @apply lg:max-w-[95%];
+  }
+
+  &-header {
+    @apply flex flex-col;
+    @apply lg:mt-12 lg:justify-start lg:items-start;
+
+    &-title {
+      @apply font-heading font-medium text-[1.625rem] max-w-[335px] text-white mb-3;
+      @apply lg:max-w-[533px] lg:font-semibold lg:text-[40px] lg:leading-[49px] lg:mb-5;
     }
 
-    &-header {
-        @apply flex flex-col;
-        @apply lg:mt-12 lg:justify-start lg:items-start;
-
-        &-title {
-            @apply font-heading font-medium text-[1.625rem] max-w-[335px] text-white mb-3;
-            @apply lg:max-w-[533px] lg:font-semibold lg:text-[40px] lg:leading-[49px] lg:mb-5;
-        }
-
-        &-desc {
-            @apply font-inter font-normal text-sm leading-4 max-w-[335px] text-white mb-10;
-            @apply lg:max-w-[499px] lg:font-normal lg:text-base lg:mb-8;
-        }
+    &-desc {
+      @apply font-inter font-normal text-sm leading-4 max-w-[335px] text-white mb-10;
+      @apply lg:max-w-[499px] lg:font-normal lg:text-base lg:mb-8;
     }
+  }
 
-    &-body {
-        .swiper{
-            .swiper-slide{
-                button,
-                img {
-                    @apply w-full rounded-[10px];
-                }
-                span {
-                    @apply block text-center text-white mt-3;
-                }
+  &-body {
+    .swiper {
+      .swiper-slide {
+        button,
+        img {
+          @apply w-full rounded-[10px];
+        }
+        span {
+          @apply block text-center text-white mt-3;
+        }
+      }
+    }
+  }
+
+  &-footer {
+    @apply mt-8;
+    @apply lg:absolute lg:bottom-8 lg:right-8 lg:z-[5] lg:mx-auto lg:min-h-[46px] lg:mt-0;
+
+    .btn {
+      @apply flex;
+      @apply lg:min-w-[11.875rem];
+
+      .icon {
+        @apply order-last ml-5 w-5 h-5 text-xl leading-none;
+        @apply lg:ml-5;
+      }
+    }
+  }
+  &-scales {
+    @apply mt-10;
+    &-inner {
+      @apply flex items-center justify-center flex-wrap gap-9;
+      @apply lg:flex-nowrap;
+    }
+    &-lft,
+    &-rgh {
+      @apply flex items-center gap-4;
+      > div {
+        @apply min-w-[3.125rem] flex-auto rounded-[0.625rem] bg-white font-heading font-semibold text-blue-100 px-2 py-4 cursor-pointer;
+        @apply transition-colors ease-in delay-200 duration-200;
+        &:hover,
+        &.active {
+          @apply bg-green-300 text-white;
+        }
+      }
+    }
+  }
+  &-sets {
+    @apply w-full h-full flex flex-col justify-center;
+    @apply lg:flex-row lg:gap-x-8;
+  }
+  &-left,
+  &-right {
+    @apply w-full flex flex-col;
+    @apply lg:w-1/2 lg:h-full;
+  }
+  &-left {
+    @apply text-white justify-center items-center mt-[3.438rem];
+    @apply lg:mt-0 lg:pl-5;
+    > div {
+      @apply lg:w-1/2 lg:text-center;
+    }
+    .drag-area {
+      @apply w-full relative bg-white;
+
+      img {
+        @apply w-full h-full object-contain;
+      }
+      .icon-file-empty {
+        @apply absolute left-0 right-0 top-[calc(50%-40px)] text-gray-200 text-5xl;
+      }
+    }
+    &-desc {
+      @apply font-heading font-medium text-[1.75rem] leading-tight mt-3;
+    }
+    &-tt1 {
+      @apply font-inter text-sm mt-3;
+    }
+    &-tt2 {
+      @apply font-inter text-xs mt-3;
+    }
+  }
+  &-right {
+    @apply bg-white justify-start;
+    @apply lg:relative;
+
+    &-steps {
+      @apply flex flex-row items-center bg-white border-b border-solid border-gray-400 px-5 pt-2.5 pb-3;
+      @apply absolute top-0 left-0 w-full;
+      @apply lg:relative lg:top-[inherit] lg:left-[inherit] lg:px-8 lg:py-5 lg:mb-7;
+      button {
+        @apply flex flex-col items-center justify-center w-8 h-8 rounded-full border border-solid border-gray-400 cursor-default;
+        @apply font-heading font-medium text-lg text-gray-500 first:ml-0 ml-2.5;
+        @apply transition-colors ease-in duration-200 delay-200;
+        &.active {
+          @apply bg-blue-100 border-transparent text-white;
+        }
+        &.passed {
+          @apply bg-green-300 text-white;
+          &::before {
+            @apply font-icon text-xs leading-none transition-colors ease-in duration-200 delay-200;
+            content: "\e919";
+          }
+        }
+      }
+      .seperate {
+        @apply border-b border-dashed border-gray-400 min-w-[100px] ml-2.5;
+      }
+    }
+    &-inner {
+      @apply flex flex-col relative;
+      @apply lg:w-full lg:h-full lg:p-8;
+    }
+    &-name {
+      @apply font-heading font-medium text-xl text-blue-100 pl-5 pt-5 pr-5;
+      @apply lg:pl-0 lg:pt-0 lg:pr-0 lg:text-3xl;
+    }
+    &-sub-text {
+      @apply font-inter font-normal text-base text-blue-100 pl-5 pt-2.5 pr-5;
+      @apply lg:pl-0 lg:pt-5 lg:pr-0;
+    }
+    &-piece {
+      @apply max-w-[6.875rem] relative bg-gray-200 rounded ml-5 mt-5;
+      @apply lg:ml-0;
+
+      .increase,
+      .decrease {
+        @apply flex justify-center items-center w-6 h-6 absolute top-[calc(50%-0.75rem)] z-[1] text-blue-100;
+        .icon {
+          @apply text-xs text-blue-100;
+        }
+      }
+      .increase {
+        @apply right-3;
+      }
+      .decrease {
+        @apply left-3;
+      }
+      input {
+        @apply w-full min-h-[3.125rem] bg-gray-200 pl-8 pr-8 text-center text-blue-100;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        -moz-appearance: textfield;
+      }
+    }
+    &-materials {
+      @apply flex flex-wrap items-center gap-5;
+      &-title {
+        @apply w-full;
+      }
+      li {
+        @apply w-[calc(50%-0.625rem)] rounded-[0.625rem] bg-custom-200 flex-initial px-3 py-3;
+        @apply lg:w-[calc(32.9%-0.625rem)] lg:px-2 lg:py-5;
+        .input {
+          @apply mb-0;
+          &.radio {
+            input {
+              @apply right-0 mx-auto;
             }
+            label {
+              @apply pl-0 pt-6 w-full text-center text-blue-100;
+              &:before {
+                left: calc(50% - 7px);
+              }
+              &::after {
+                left: calc(50% - 7px);
+              }
+            }
+          }
         }
+      }
     }
+    &-nextbtn {
+      @apply bg-custom-200 flex justify-end items-center w-full min-h-[110px] mt-10;
+      @apply lg:px-7 lg:mt-auto;
+      .btn {
+        @apply w-auto transition-all ease-in duration-200 delay-200;
+        @apply lg:min-w-[11.875rem];
+        &.btn-next-bid {
+          @apply hidden;
+        }
+      }
+      .icon {
+        @apply text-xl leading-none ml-2;
+      }
+    }
+    &-patern {
+      @apply bg-custom-200 px-5 py-4 mt-5;
+      @apply lg:rounded-[10px];
+      &-t1 {
+        @apply font-heading font-medium text-base text-black-100;
+      }
+      &-t2 {
+        @apply font-inter text-sm pl-7 text-black-100;
+      }
+    }
+    &-technical {
+      @apply relative border border-dashed border-blue-100 p-5 pr-16 ml-5 mt-7 mr-5 rounded-lg;
+      @apply lg:ml-0 lg:mr-0;
+      &-t1 {
+        @apply font-heading font-medium text-base;
+      }
+      &-t2 {
+        @apply font-inter font-normal text-xs mt-2.5;
+      }
+      .tecnical-file-upload {
+        @apply absolute top-[calc(50%-1rem)] right-7 z-[1];
+        @apply flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full;
+        .icon {
+          @apply text-white rotate-[270deg];
+        }
+      }
+    }
+    &-priting-date {
+      @apply px-5;
+      @apply lg:px-0;
 
-    &-footer {
-        @apply mt-8;
-        @apply lg:absolute lg:bottom-8 lg:right-8 lg:z-[5] lg:mx-auto lg:min-h-[46px] lg:mt-0;
-
+      &-title {
+        @apply font-heading font-medium text-base text-blue-100 mb-5;
+      }
+      &-select {
+        @apply flex flex-col items-center justify-between gap-y-2.5;
+        @apply lg:flex-row lg:gap-y-0 lg:gap-x-7;
+        .input {
+          @apply mb-0 w-full;
+        }
+      }
+    }
+    &-priting-desc {
+      @apply px-5;
+      @apply lg:px-0;
+      .input {
+        @apply mb-4;
+      }
+    }
+    &-priting-case {
+      @apply px-5 mt-3 mb-3;
+      @apply lg:mt-0;
+      &-title {
+        @apply font-heading font-medium text-blue-100 py-2.5;
+      }
+      ul {
+        li {
+          @apply py-3;
+          .input {
+            @apply mb-0;
+          }
+        }
+      }
+    }
+    &-priting-footer {
+      @apply flex items-center justify-between bg-gray-200 px-5 py-4 mt-5;
+      @apply lg:px-[1.875rem] lg:py-[1.875rem] lg:mt-auto;
+      &-left {
+        @apply bg-white p-5 rounded flex items-center;
+        .icon {
+          @apply bg-blue text-white w-6 h-6 inline-flex items-center justify-center rounded-full mr-2;
+        }
+        span {
+          @apply font-inter text-xs text-blue-100;
+        }
+      }
+      &-btn {
         .btn {
-            @apply flex;
-            @apply lg:min-w-[11.875rem];
-
-            .icon {
-                @apply order-last ml-5 w-5 h-5 text-xl leading-none;
-                @apply lg:ml-5;
-            }
+          @apply px-8;
         }
+      }
     }
-    &-scales{
-        @apply mt-10;
-        &-inner{
-            @apply flex items-center justify-center flex-wrap gap-9;
-            @apply lg:flex-nowrap;
+    &-cnc-process {
+      @apply mt-5;
+      &-title {
+        @apply font-heading font-semibold text-base mb-2;
+      }
+      ul {
+        li {
+          @apply py-2;
+          .input {
+            @apply mb-0;
+          }
         }
-        &-lft,&-rgh{
-            @apply flex items-center gap-4;
-            > div{
-                @apply min-w-[3.125rem] flex-auto rounded-[0.625rem] bg-white font-heading font-semibold text-blue-100 px-2 py-4 cursor-pointer;
-                @apply transition-colors ease-in delay-200 duration-200;
-                &:hover,
-                &.active{
-                    @apply bg-green-300 text-white;
-                }
-            }
-        }
+      }
     }
-    &-sets{
-        @apply w-full h-full flex flex-col justify-center;
-        @apply lg:flex-row lg:gap-x-8;
+    &-cnc-other-note {
+      @apply px-8;
+      &-tt1 {
+        @apply font-heading font-semibold text-base mb-2;
+      }
+      &-tt2 {
+        @apply font-inter font-normal text-sm mb-5;
+      }
     }
-    &-left, &-right{
-        @apply w-full flex flex-col;
-        @apply lg:w-1/2 lg:h-full;
+  }
+  &-printing,
+  &-industrial,
+  &-successive-processes {
+    .create-project-left {
+      @apply mt-0;
     }
-    &-left{
-        @apply text-white justify-center items-center mt-[3.438rem];
-        @apply lg:mt-0 lg:pl-5;
-        > div{
-            @apply lg:w-1/2 lg:text-center;
-        }
-        .drag-area{
-            @apply w-full h-[400px] bg-white;
-
-            img{
-                @apply w-full h-full object-contain;
-            }
-        }
-        &-desc{
-            @apply font-heading font-medium text-[1.75rem] leading-tight mt-3;
-        }
-        &-tt1{
-            @apply font-inter text-sm mt-3;
-        }
-        &-tt2{
-            @apply font-inter text-xs mt-3;
-        }
-    }
-    &-right{
-        @apply bg-white justify-start;
-        @apply lg:relative;
-
-        &-steps{
-            @apply flex flex-row items-center bg-white border-b border-solid border-gray-400 px-5 pt-2.5 pb-3;
-            @apply absolute top-0 left-0 w-full;
-            @apply lg:relative lg:top-[inherit] lg:left-[inherit] lg:px-8 lg:py-5 lg:mb-7;
-            button{
-                @apply flex flex-col items-center justify-center w-8 h-8 rounded-full border border-solid border-gray-400 cursor-default;
-                @apply font-heading font-medium text-lg text-gray-500 first:ml-0 ml-2.5;
-                @apply transition-colors ease-in duration-200 delay-200;
-                &.active{
-                    @apply bg-blue-100 border-transparent text-white;
-                }
-                &.passed{
-                    @apply bg-green-300 text-white;
-                    &::before{
-                        @apply font-icon text-xs leading-none transition-colors ease-in duration-200 delay-200;
-                        content: '\e919';
-                    }
-                }
-            }
-            .seperate{
-                @apply border-b border-dashed border-gray-400 min-w-[100px] ml-2.5;
-            }
-        }
-        &-inner{
-            @apply flex flex-col relative;
-            @apply lg:w-full lg:h-full lg:p-8;
-        }
-        &-name{
-            @apply font-heading font-medium text-xl text-blue-100 pl-5 pt-5 pr-5;
-            @apply lg:pl-0 lg:pt-0 lg:pr-0 lg:text-3xl;
-        }
-        &-sub-text{
-            @apply font-inter font-normal text-base text-blue-100 pl-5 pt-2.5 pr-5;
-            @apply lg:pl-0 lg:pt-5 lg:pr-0;
-        }
-        &-piece{
-            @apply max-w-[6.875rem] relative bg-gray-200 rounded ml-5 mt-5;
-            @apply lg:ml-0;
-
-            .increase,
-            .decrease{
-                @apply flex justify-center items-center w-6 h-6 absolute top-[calc(50%-0.75rem)] z-[1] text-blue-100;
-                .icon{
-                    @apply text-xs text-blue-100;
-                }
-            }
-            .increase{
-                @apply right-3;
-            }
-            .decrease{
-                @apply left-3;
-            }
-            input{
-                @apply w-full min-h-[3.125rem] bg-gray-200 pl-8 pr-8 text-center text-blue-100;
-                
-                &::-webkit-outer-spin-button,
-                &::-webkit-inner-spin-button{
-                    -webkit-appearance: none; margin: 0;
-                }
-                -moz-appearance: textfield;
-            }
-        }
-        &-materials{
-            @apply flex flex-wrap items-center gap-5;
-            &-title{
-                @apply w-full;
-            }
-            li{
-                @apply w-[calc(50%-0.625rem)] rounded-[0.625rem] bg-custom-200 flex-initial px-3 py-3;
-                @apply lg:w-[calc(32.9%-0.625rem)] lg:px-2 lg:py-5;
-                .input{
-                    @apply mb-0;
-                    &.radio{
-                        input{
-                            @apply right-0 mx-auto;
-                        }
-                        label{
-                            @apply pl-0 pt-6 w-full text-center text-blue-100;
-                            &:before{
-                                left: calc(50% - 7px);
-                            }
-                            &::after{
-                                left: calc(50% - 7px);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        &-nextbtn{
-            @apply bg-custom-200 flex justify-end items-center w-full min-h-[110px] mt-10;
-            @apply lg:px-7 lg:mt-auto;
-            .btn{
-                @apply w-auto transition-all ease-in duration-200 delay-200;
-                @apply lg:min-w-[11.875rem];
-                &.btn-next-bid{
-                    @apply hidden;
-                }
-            }
-            .icon{
-                @apply text-xl leading-none ml-2;
-            }
-        }
-        &-patern{
-            @apply bg-custom-200 px-5 py-4 mt-5;
-            @apply lg:rounded-[10px];
-            &-t1{
-                @apply font-heading font-medium text-base text-black-100;
-            }
-            &-t2{
-                @apply font-inter text-sm pl-7 text-black-100;
-            }
-        }
-        &-technical{
-            @apply relative border border-dashed border-blue-100 p-5 pr-16 ml-5 mt-7 mr-5 rounded-lg;
-            @apply lg:ml-0 lg:mr-0;
-            &-t1{
-                @apply font-heading font-medium text-base;
-            }
-            &-t2{
-                @apply font-inter font-normal text-xs mt-2.5;
-            }
-            .tecnical-file-upload{
-                @apply absolute top-[calc(50%-1rem)] right-7 z-[1];
-                @apply flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full;
-                .icon{
-                    @apply text-white rotate-[270deg];
-                }
-            }
-        }
-        &-priting-date{
-            @apply px-5;
-            @apply lg:px-0;
-
-            &-title{
-                @apply font-heading font-medium text-base text-blue-100 mb-5;
-            }
-            &-select{
-                @apply flex flex-col items-center justify-between gap-y-2.5;
-                @apply lg:flex-row lg:gap-y-0 lg:gap-x-7;
-                .input{
-                    @apply mb-0 w-full;
-                }
-            }
-        }
-        &-priting-desc{
-            @apply px-5;
-            @apply lg:px-0;
-            .input{
-                @apply mb-4;
-            }
-        }
-        &-priting-case{
-            @apply px-5 mt-3 mb-3;
-            @apply lg:mt-0;
-            &-title{
-                @apply font-heading font-medium text-blue-100 py-2.5;
-            }
-            ul{
-                li{
-                    @apply py-3;
-                    .input{
-                        @apply mb-0;
-                    }
-                }
-            }
-        }
-        &-priting-footer{
-            @apply flex items-center justify-between bg-gray-200 px-5 py-4 mt-5;
-            @apply lg:px-[1.875rem] lg:py-[1.875rem] lg:mt-auto;
-            &-left{
-                @apply bg-white p-5 rounded flex items-center;
-                .icon{
-                    @apply bg-blue text-white w-6 h-6 inline-flex items-center justify-center rounded-full mr-2;
-                }
-                span{
-                    @apply font-inter text-xs text-blue-100;
-                }
-            }
-            &-btn{
-                .btn{
-                    @apply px-8;
-                }
-            }
-        }
-        &-cnc-process{
-            @apply mt-5;
-            &-title{
-                @apply font-heading font-semibold text-base mb-2;
-            }
-            ul{
-                li{
-                    @apply py-2;
-                    .input{
-                        @apply mb-0;
-                    }
-                }
-            }
-        }
-        &-cnc-other-note{
-            @apply px-8;
-            &-tt1{
-                @apply font-heading font-semibold text-base mb-2;
-            }
-            &-tt2{
-                @apply font-inter font-normal text-sm mb-5;
-            }
-        }
-    }
-    &-printing,
-    &-industrial,
-    &-successive-processes{
-        .create-project-left{
-            @apply mt-0;
-        }
-    }
+  }
 }
