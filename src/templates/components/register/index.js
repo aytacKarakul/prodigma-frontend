@@ -249,16 +249,13 @@ class LoginTabs {
               "*Lütfen tüm alanları doldurduğunuzdan emin olunuz!"
             )
           );
-        }
-         else if (_this.registerEposta.value === data.eposta) {
+        } else if (_this.registerEposta.value === data.eposta) {
           _this.registerForm.prepend(
             _this.loginPageErrorFunc("*Bu e-postaya ait bir üyelik mevcut!")
           );
-        }
-        else if (notFound === null) {
+        } else if (notFound === null) {
           this.userRegisterWarning("warning");
-        }
-        else {
+        } else {
           //Testing
           this.userLoginSuccess("success");
           console.log("Üyelik Oluşturuldu...");
@@ -306,7 +303,7 @@ class LoginTabs {
     `;
 
     document.querySelector(".plog-enters").append(temp);
-  }
+  };
 
   //Login Page Form Error Text
   loginPageErrorFunc = (error) => {

@@ -2,7 +2,7 @@ import { quadrapleBanner } from "./quadraple-banner";
 import BenefitsBrandBanner from "./benefits-brands";
 import Blog from "./blog";
 import { Thermoplastics } from "./thermoplastics";
-import getCategories from "./services-banner";
+//import getCategories from "./services-banner";
 import getMaterials from "./polimers";
 
 class Widgets {
@@ -11,8 +11,8 @@ class Widgets {
     new BenefitsBrandBanner();
     new Blog();
     Thermoplastics();
-    getCategories();
     getMaterials();
+    //getCategories();
   }
 }
 

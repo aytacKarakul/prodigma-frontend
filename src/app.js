@@ -1,6 +1,7 @@
 import "Theme/base.scss";
 import "./index.scss";
 
+import getApiToken from "./templates/auth/authentication";
 import Partials from "Partials";
 import Components from "Components";
 import Widgets from "./templates/widgets";
@@ -16,6 +17,7 @@ import BasketAddressInvoiceTab from "./templates/basket/addresses";
 import ProdigmaPlusPage from "./templates/widgets/prodigma-plus-page";
 import CncGallerySwiper from "./templates/widgets/cnc-gallery";
 
+getApiToken();
 new Partials();
 new Components();
 new Widgets();
