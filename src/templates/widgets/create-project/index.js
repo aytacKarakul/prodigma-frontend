@@ -1,8 +1,40 @@
+import axios from 'axios';
 import 'Images/3d-baskı.png';
 import 'Images/create-project-bg.png';
 import 'Images/printing-page-cover.jpg';
 
 import Swiper,{ EffectCoverflow, Pagination } from 'swiper';
+
+let token;
+let projects;
+
+async function getProjects() {
+
+    await axios.get("https://prodigma3d.rengaver.com/Api/token")
+    .then((res) => token=res.data)
+    .catch((err) => console.log(err))
+
+    await axios.get("https://prodigma3d.rengaver.com/Api/project/get", {
+        auth: {
+            username: 'prodigma3d',
+            password: `${token}`
+        }
+    })
+    .then((res) => console.log(res.data))
+    .catch((err) => console.log(err)) 
+
+    await axios.get(`https://prodigma3d.rengaver.com/Api/project/get/${43}`, {
+        auth: {
+            username: 'prodigma3d',
+            password: `${token}`
+        }
+    })
+    .then((res) => projects=res.data)
+    .catch((err) => console.log(err))
+}
+
+getProjects();
+
 class CreateProjectBanner {
     
     constructor(){
