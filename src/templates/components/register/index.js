@@ -9,7 +9,7 @@ const data = {
   id: 1,
   ad: "Aytaç",
   soyad: "Karakullukcu",
-  eposta: "aytac.karakul@gmail.com",
+  //eposta: "aytac.karakul@gmail.com",
   sifre: "a1K2!8981",
   tel_cep: "05514099769",
   kurumsal: "1",
@@ -31,7 +31,7 @@ class LoginTabs {
     //initials variables
     ad = this.ad;
     soyad = this.soyad;
-    eposta = this.eposta;
+    //eposta = this.eposta;
     sifre = this.sifre;
     phone = this.phone;
 
@@ -180,20 +180,20 @@ class LoginTabs {
         }
       });
       // Login Form Actions
-      this.loginForm.addEventListener("submit", (e) => {
-        if (this.eposta.value != data.eposta) {
-          this.loginForm.prepend(
-            this.loginPageErrorFunc("Lütfen eposta kontrol ediniz!")
-          );
-        } else if (this.sifre.value != data.sifre) {
-          this.loginForm.prepend(
-            this.loginPageErrorFunc("Lütfen şifrenizi kontrol ediniz!")
-          );
-        } else {
-          console.log("Giriş Başarılı...");
-        }
-        e.preventDefault();
-      });
+      // this.loginForm.addEventListener("submit", (e) => {
+      //   if (this.eposta.value != data.eposta) {
+      //     this.loginForm.prepend(
+      //       this.loginPageErrorFunc("Lütfen eposta kontrol ediniz!")
+      //     );
+      //   } else if (this.sifre.value != data.sifre) {
+      //     this.loginForm.prepend(
+      //       this.loginPageErrorFunc("Lütfen şifrenizi kontrol ediniz!")
+      //     );
+      //   } else {
+      //     console.log("Giriş Başarılı...");
+      //   }
+      //   e.preventDefault();
+      // });
     }
   };
   //Register Form

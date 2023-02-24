@@ -4,6 +4,7 @@ import { MemberDropdown } from "./member/navigation";
 import { OrderDetail } from "./member/order-detail-list";
 import { MemberAddressPopup } from "./member/address-list";
 import ModuleForgotPassword from "./forms/password-forgot";
+import login from "./forms/register-forms/login";
 
 class Components {
   constructor() {
@@ -13,6 +14,7 @@ class Components {
     OrderDetail();
     MemberAddressPopup();
     new ModuleForgotPassword();
+    login();
   }
 }
 
