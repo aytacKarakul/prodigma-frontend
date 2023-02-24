@@ -1,7 +1,9 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 const fs = require("fs");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Dotenv = require("dotenv-webpack");
 
 // Our function that generates our html plugins
 function generateHtmlPlugins(templateDir) {
@@ -30,11 +32,6 @@ module.exports = {
     //publicPath: "/",
     clean: true,
   },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: "css/main.css",
-    }),
-  ].concat(htmlPlugins),
   module: {
     rules: [
       {
@@ -74,14 +71,9 @@ module.exports = {
         use: "pug-loader",
       },
       {
-        test: /\.m?js$/,
+        test: /\.js$/,
+        loader: "babel-loader",
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: [["@babel/preset-env", { targets: "defaults" }]],
-          },
-        },
       },
     ],
   },
@@ -94,6 +86,13 @@ module.exports = {
   optimization: {
     runtimeChunk: "single",
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "css/main.css",
+    }),
+    new Dotenv(),
+  ].concat(htmlPlugins),
   resolve: {
     alias: {
       Theme: path.resolve(__dirname, "./src/assets/scss"),

@@ -1,17 +1,34 @@
 import axios from "axios";
 
 export default async function getMaterials() {
-  let materials;
   let apitoken = localStorage.getItem("apitoken");
-  console.log(apitoken);
+
   await axios
-    .get("https://prodigma3d.rengaver.com/Api/materials/get", {
+    .get(`${process.env.API_KEY}` + "/materials/get", {
       auth: {
         username: "prodigma3d",
         password: `${apitoken}`,
       },
     })
-    .then((res) => console.log(res.data))
+    .then((res) => {
+      let containerSelector = document.querySelector(
+        ".pmaterials-polimers-content"
+      );
+      let temp = document.createElement("li");
+      temp.className = "pmaterials-polimers-content-material";
+
+      res.data.map((items) => {
+        temp.innerHTML = `
+        <div class="pmaterials-polimers-content-material-img">
+          <img src="https://via.placeholder.com/300" alt="img alt">
+        </div>
+        <div class="pmaterials-polimers-content-material-title">${items.isim}</div>
+        <div class="pmaterials-polimers-content-material-detail"><a href="#">Malzeme Detayı<i class="icon icon-arrow-right"></i></a></div>
+        `;
+      });
+      containerSelector?.append(temp);
+      console.log(res.data.map((item) => item));
+    })
     .catch((err) => console.log(err));
 
   await axios
@@ -24,17 +41,3 @@ export default async function getMaterials() {
     .then((res) => res.data)
     .catch((err) => console.log(err));
 }
-
-function tempLitarature() {
-  let temp = document.createElement("li");
-  let container = document.querySelector(".pmaterials-thermoplastics-content");
-  temp.className = "pmaterials-thermoplastics-content-material";
-
-  temp.innerHTML += `
-  <div class="pmaterials-thermoplastics-content-material-img"><picture> <source media="(max-width: 1024px)" srcset="https://via.placeholder.com/300"><source media="(min-width: 1025px)" srcset="https://via.placeholder.com/285x285"><img src="https://via.placeholder.com/300" alt="img alt"></picture></div>
-  `;
-  container.append(temp);
-  return temp;
-}
-
-//tempLitarature();

@@ -1,10 +1,10 @@
-export default function ScaleModel(){
-    let createProjctLeft = document.querySelector('.create-project-left');
-    
-    let scaleProperties = document.createElement('div');
-    scaleProperties.className = 'create-project-scales';
+export default function ScaleModel() {
+  let createProjctLeft = document.querySelector(".create-project-left");
 
-    scaleProperties.innerHTML = `
+  let scaleProperties = document.createElement("div");
+  scaleProperties.className = "create-project-scales";
+
+  scaleProperties.innerHTML = `
         <div class='create-project-scales-inner'>
             <div class='create-project-scales-lft'>
                 <div class='active'>82,6</div>
@@ -20,6 +20,6 @@ export default function ScaleModel(){
         </div>
     `;
 
-    createProjctLeft.appendChild(scaleProperties);
-    return scaleProperties;
+  createProjctLeft.appendChild(scaleProperties);
+  return scaleProperties;
 }

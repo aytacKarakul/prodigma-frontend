@@ -1,91 +1,13 @@
-import Categories from "./models";
-import customViewer from "./viewer";
 import modalPopup from "../../../components/web-component/modal";
 
-class CategoriesCncMachining extends Categories {
-
-    constructor(type, name, desc, subText, materials){
-        super(type,name,desc,subText);
-        this.material = materials;
-    }
-
-    initComponent(){
-        this.init() + this.material;
-    }
-
-    init(type){
-
-        //Create Injection Wrapper
-        let template = document.createElement("div");
-        template.className = `create-project-sets create-project-cnc`;
-
-        template.innerHTML = `
-        <div class="create-project-left">
-            <div class="drag-area"><i class='icon icon-upload'></i></div>
-            <div class='create-project-left-desc'>Bir CAD dosyası yükleyin veya sürükleyip bırakın</div>
-            <div class='create-project-left-tt1'>*Maxmum dosya yükleme boyutu 150 mb’dir.</div>
-            <div class='create-project-left-tt2'>*Şu uzantıdaki dosyaları yükleyin; 3DM, IGES, IGS, STEP, STL</div>
-        </div>
-        <div class="create-project-right">
-            <div class="create-project-right-steps">
-                <button class="lnk active" data-selection="properties">1</button>
-                <span class="seperate"></span>
-                <button class="lnk" data-selection="materials">2</button>
-            </div>
-            <div data-selection="properties">
-                <div class="create-project-right-inner">
-                    <div class="create-project-right-name">Siz tasarlayın, Prodigma ${this.desc}</div>
-                    <div class="create-project-right-sub-text">${this.subText}</div>
-                </div>
-            </div>
-            <div data-selection="materials" hidden>
-                <div class="create-project-right-inner">
-                    <div class="create-project-right-materials-title">Malzeme Seçimi</div>
-                    <ul class="create-project-right-materials">
-                    ${Object.keys(this.material).map(key => (
-                    `<li id="${key}">
-                        <div class='input radio'>
-                            <input type='radio' />
-                            <label for='js-material-keys'>${this.material[key]}</label>
-                        </div>
-                    </li>`
-                    )).join('')}
-                    </ul>
-                </div>
-                <div class="create-project-right-cnc-other-note">
-                    <div class="create-project-right-cnc-other-note-tt1">Diğer</div>
-                    <div class="create-project-right-cnc-other-note-tt2">İstediğiniz malzeme yukarıda listelenmiyorsa aşağıdaki alanda belirtiniz.</div>
-                    <div class='input textbox'>
-                        <label for="js-project-right-cnc-other-note">Malzeme</label>
-                        <span class="wrp"><input id="js-project-right-cnc-other-note" type="text"></span>  
-                    </div>
-                </div>
-            </div>
-            <div class="create-project-right-nextbtn">
-                <button class="btn btn-secondary btn-medium btn-next-to-bid" type="button" data-type="cnc" disabled><span>Sonraki Adım</span><i class="icon icon-arrow-line"></i></button>
-                <button class='btn btn-secondary btn-medium btn-next-bid' type='button' disabled data-modal="modal-cnc"><span>Fiyat Teklifi Al</span><i class='icon icon-arrow-line'></i></button>
-            </div>
-        </div>`;
-
-        let createNewWrapper = document.querySelector('.create-project');
-        createNewWrapper.innerHTML = '';
-        createNewWrapper.appendChild(template);
-
-        customViewer('cnc');
-        modalCncFunction();
-
-    }
-
-}   
-
 const modalCncFunction = () => {
-    console.log('Modal Success');
+  console.log("Modal Success");
 
-    let modalTemplate = document.createElement("div");
-    modalTemplate.setAttribute("id", "modal-cnc");
-    modalTemplate.className = "modal";
+  let modalTemplate = document.createElement("div");
+  modalTemplate.setAttribute("id", "modal-cnc");
+  modalTemplate.className = "modal";
 
-    modalTemplate.innerHTML = `
+  modalTemplate.innerHTML = `
     <div class="modal-bg modal-exit"></div>
     <div class="modal-container">
         <button class="modal-close modal-exit"><i class="icon icon-close"></i></button>    
@@ -94,9 +16,9 @@ const modalCncFunction = () => {
         <button class="btn btn-medium btn-green modal-exit">Tamam</button>
     </div>
     `;
-    
-    document.body.appendChild(modalTemplate);
-    modalPopup();
-}
+
+  document.body.appendChild(modalTemplate);
+  modalPopup();
+};
 
 export default CategoriesCncMachining;

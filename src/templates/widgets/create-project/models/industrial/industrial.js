@@ -1,31 +1,31 @@
 import modalPopup from "../../../../components/web-component/modal";
-import 'Images/printing-page-cover.jpg';
+import "Images/printing-page-cover.jpg";
 
 class Industrial {
-    constructor(cover, title, desc, requirement, inputDesc, date, hour){
-        this.cover = cover;
-        this.title = title;
-        this.desc = desc;
-        this.requirement = requirement;
-        this.inputDesc = inputDesc;
-        this.date = date;
-        this.hour = hour;
-    }
+  constructor(cover, title, desc, requirement, inputDesc, date, hour) {
+    this.cover = cover;
+    this.title = title;
+    this.desc = desc;
+    this.requirement = requirement;
+    this.inputDesc = inputDesc;
+    this.date = date;
+    this.hour = hour;
+  }
 
-    initComponent(){
-        this.init(); 
-    }
+  initComponent() {
+    this.init();
+  }
 
-    init(){
-        let template = document.createElement('div');
-        template.className = `create-project-sets create-project-printing`;
+  init() {
+    let template = document.createElement("div");
+    template.className = `create-project-sets create-project-printing`;
 
-        template.innerHTML = `
+    template.innerHTML = `
             <div class="create-project-left">
                 <picture>
-                    <source media="(min-width:650px)" srcset="${require('Images/printing-page-cover.jpg')}">
-                    <source media="(min-width:465px)" srcset="${require('Images/printing-page-cover.jpg')}">
-                    <img src="${require('Images/printing-page-cover.jpg')}" alt="Flowers" />
+                    <source media="(min-width:650px)" srcset="${require("Images/printing-page-cover.jpg")}">
+                    <source media="(min-width:465px)" srcset="${require("Images/printing-page-cover.jpg")}">
+                    <img src="${require("Images/printing-page-cover.jpg")}" alt="Flowers" />
                 </picture>
             </div>
             <div class="create-project-right">
@@ -62,23 +62,22 @@ class Industrial {
                 </div>
             </div>`;
 
-        let createNewWrapper = document.querySelector('.create-project');
-        createNewWrapper.innerHTML = '';
-        createNewWrapper.appendChild(template);
+    let createNewWrapper = document.querySelector(".create-project");
+    createNewWrapper.innerHTML = "";
+    createNewWrapper.appendChild(template);
 
-        modalFunction();
-
-    }
+    modalFunction();
+  }
 }
 
 const modalFunction = () => {
-    console.log('Modal Success');
+  console.log("Modal Success");
 
-    let modalTemplate = document.createElement("div");
-    modalTemplate.setAttribute("id", "modal-injection");
-    modalTemplate.className = "modal";
+  let modalTemplate = document.createElement("div");
+  modalTemplate.setAttribute("id", "modal-injection");
+  modalTemplate.className = "modal";
 
-    modalTemplate.innerHTML = `
+  modalTemplate.innerHTML = `
     <div class="modal-bg modal-exit"></div>
     <div class="modal-container">
         <button class="modal-close modal-exit"><i class="icon icon-close"></i></button>    
@@ -86,9 +85,9 @@ const modalFunction = () => {
         <h2>Uzmanımızla görüşme teklifiniz alınmıştır. Mümkün olan en kısa sürede projenizi inceleyip <strong>deniz.zileli@ozu.edu.tr</strong> e-posta adresine dönüş yapacağız.</h2>
         <button class="btn btn-medium btn-green modal-exit">Tamam</button>
     </div>`;
-    
-    document.body.appendChild(modalTemplate);
-    modalPopup();
-}
+
+  document.body.appendChild(modalTemplate);
+  modalPopup();
+};
 
 export default Industrial;

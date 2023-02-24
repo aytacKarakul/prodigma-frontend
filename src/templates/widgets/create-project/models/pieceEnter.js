@@ -1,10 +1,12 @@
-export default function PieceEnterModel(){
-    let createProjectRight = document.querySelector('.create-project-right-inner');
+export default function PieceEnterModel() {
+  let createProjectRight = document.querySelector(
+    ".create-project-right-inner"
+  );
 
-    let pieceModelWrap = document.createElement('div');
-    pieceModelWrap.className = 'create-project-right-piece';
+  let pieceModelWrap = document.createElement("div");
+  pieceModelWrap.className = "create-project-right-piece";
 
-    pieceModelWrap.innerHTML = `
+  pieceModelWrap.innerHTML = `
     <div class='create-project-right-piece-wrap'>
         <a href='#' class='decrease'><i class='icon icon-minus'></i></a>
         <input type='number' min='1' max='30' />
@@ -12,6 +14,6 @@ export default function PieceEnterModel(){
     </div>
     `;
 
-    createProjectRight.appendChild(pieceModelWrap);
-    return pieceModelWrap;
+  createProjectRight.appendChild(pieceModelWrap);
+  return pieceModelWrap;
 }

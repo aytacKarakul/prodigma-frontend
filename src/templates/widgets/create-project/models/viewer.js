@@ -1,10 +1,4 @@
-import ContractManufactureModel from "./contractManufacturing";
-import PieceEnterModel from "./pieceEnter";
-import TecnicGraphModel from "./tecnicGraphUpload";
-import ScaleModel from "./scaleModule";
-import CncTypeSelectionModel from "./CncTypeSelectionModel";
-
-const customViewer = (typeSelection) => {
+const customViewer = () => {
   // Drag and Drop property
   const dragArea = document.querySelector(".drag-area");
   const stepBtns = document.querySelectorAll(
@@ -48,7 +42,7 @@ const customViewer = (typeSelection) => {
 
       file = event.dataTransfer.files[0];
       let fileType = file.type;
-      //console.log(fileType);
+      console.log(fileType);
 
       let validExtensions = ["image/jpeg", "image/jpg", "image/png"];
 

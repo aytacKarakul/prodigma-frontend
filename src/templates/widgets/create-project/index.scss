@@ -21,6 +21,7 @@
 }
 
 .create-project-swiper {
+  @apply lg:max-w-7xl lg:mx-auto;
   .swiper-slide {
     @apply bg-center bg-cover w-[250px] h-auto;
     @apply lg:w-[380px];
@@ -115,7 +116,7 @@
       @apply lg:w-1/2 lg:text-center;
     }
     .drag-area {
-      @apply w-full relative bg-white;
+      @apply w-full h-[400px] relative bg-white;
 
       img {
         @apply w-full h-full object-contain;
