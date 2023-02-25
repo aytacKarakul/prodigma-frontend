@@ -205,45 +205,44 @@ header.site-header
                     a(href="/prodigma-plus.html")
                         |Prodigma +  
         .site-header-login
-            if authenticated == true 
-                //- .site-header-login-success
-                //-     .site-header-login-success-project
-                //-         +button('Proje Başlat','green','m',false)(href="/proje-baslat.html")
-                //-     .site-header-login-user
-                //-         span TA
-                //-     .site-header-login-success-left
-                //-         span.site-header-login-hello
-                //-             |Hoşgeldiniz
-                //-         span.site-header-login-member
-                //-             |Test Account
-                //-         .site-header-member-menu
-                //-             .site-header-member-menu-header
-                //-                 .tt1|Hoş geldiniz,
-                //-                 .bttm
-                //-                     .tt2|Test Account
-                //-                     .tt3
-                //-                         button()|Çıkış Yap
-                //-             .site-header-member-menu-content
-                //-                 ul
-                //-                     li 
-                //-                         a(href="/siparislerim.html")|Siparişlerim
-                //-                     li 
-                //-                         a(href="/bildirimlerim.html")|Bildirimlerim
-                //-                     li 
-                //-                         a(href="/adreslerim.html")|Adreslerim
-                //-                     li 
-                //-                         a(href="/uyelik-bilgilerim.html")|Üyelik Bilgilerim
-                //-                     li 
-                //-                         a(href="/iletisim-izinlerim.html")|İletişim İzinlerim
-                //-                     li 
-                //-                         a(href="/sife-degistirme.html")|Şifre Değiştirme
-                //-                     li 
-                //-                         a(href="/destek.html")
-                //-                             |Destek
-                //-                             i.icon.icon-arrow-line
-                //-     .site-header-login-success-cart
-                //-         a(href="/basket.html")
-                //-             i.icon.icon-cart
-            if authenticated == false
-                .site-header-logoff
-                    a(href="/login.html") Giriş Yap
+            div(hidden)
+                .site-header-login-success
+                    .site-header-login-success-project
+                        +button('Proje Başlat','green','m',false)(href="/proje-baslat.html")
+                    .site-header-login-user
+                        span TA
+                    .site-header-login-success-left
+                        span.site-header-login-hello
+                            |Hoşgeldiniz
+                        span.site-header-login-member
+                            |Test Account
+                        .site-header-member-menu
+                            .site-header-member-menu-header
+                                .tt1|Hoş geldiniz,
+                                .bttm
+                                    .tt2|Test Account
+                                    .tt3
+                                        button()|Çıkış Yap
+                            .site-header-member-menu-content
+                                ul
+                                    li 
+                                        a(href="/siparislerim.html")|Siparişlerim
+                                    li 
+                                        a(href="/bildirimlerim.html")|Bildirimlerim
+                                    li 
+                                        a(href="/adreslerim.html")|Adreslerim
+                                    li 
+                                        a(href="/uyelik-bilgilerim.html")|Üyelik Bilgilerim
+                                    li 
+                                        a(href="/iletisim-izinlerim.html")|İletişim İzinlerim
+                                    li 
+                                        a(href="/sife-degistirme.html")|Şifre Değiştirme
+                                    li 
+                                        a(href="/destek.html")
+                                            |Destek
+                                            i.icon.icon-arrow-line
+                    .site-header-login-success-cart
+                        a(href="/basket.html")
+                            i.icon.icon-cart
+            .site-header-logoff
+                a(href="/login.html") Giriş Yap

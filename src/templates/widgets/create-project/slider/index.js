@@ -58,32 +58,13 @@ async function getAllCategories() {
   createProjectBodyBtn?.forEach((btns) => {
     btns.addEventListener("click", () => {
       const url_str = btns.getAttribute("data-url");
+      const get_id = btns.getAttribute("id");
 
       nextStepFirstBtn.removeAttribute("disabled");
       nextStepFirstBtn.classList.add("btn-green");
       nextStepFirstBtn.setAttribute("href", url_str);
+      nextStepFirstBtn.setAttribute("catgoryId", get_id);
     });
-  });
-  //first next step
-  nextStepFirstBtn?.addEventListener("click", () => {
-    switch (nextStepFirstBtn.getAttribute("data-url")) {
-      case "/3d-baski.html":
-        break;
-      case "/cnc-isleme.html":
-        break;
-      case "/silikon-kaliplama.html":
-        break;
-      case "/enjeksiyon-kaliplama.html":
-        break;
-      case "/sac-metal-isleme.html":
-        break;
-      case "/endustriyel.html":
-        break;
-      case "/3d-tarama-tersine-muhendislik.html":
-        break;
-      case "/ardil-islemler.html":
-        break;
-    }
   });
 }
 
