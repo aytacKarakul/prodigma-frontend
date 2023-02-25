@@ -39,8 +39,11 @@ const customViewer = () => {
 
     dragArea.addEventListener("drop", (event) => {
       event.preventDefault();
-
       file = event.dataTransfer.files[0];
+      displayFile();
+    });
+
+    function displayFile() {
       let fileType = file.type;
       console.log(fileType);
 
@@ -61,7 +64,7 @@ const customViewer = () => {
         dragArea.classList.remove("active");
       }
       console.log(file);
-    });
+    }
 
     //-
     nextSelectionBtnFirst?.addEventListener("click", function () {

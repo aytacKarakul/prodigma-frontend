@@ -2,21 +2,15 @@ import { quadrapleBanner } from "./quadraple-banner";
 import BenefitsBrandBanner from "./benefits-brands";
 import Blog from "./blog";
 import { Thermoplastics } from "./thermoplastics";
-import getMaterials from "./polimers";
-import customViewer from "./create-project/models/viewer";
-import getAllCategories from "./create-project/slider";
-import login from "../components/forms/register-forms/login";
+import CreateProject from "./create-project";
 
 class Widgets {
   constructor() {
-    login();
-    getAllCategories();
+    new CreateProject();
     quadrapleBanner();
     new BenefitsBrandBanner();
     new Blog();
     Thermoplastics();
-    getMaterials();
-    customViewer();
   }
 }
 

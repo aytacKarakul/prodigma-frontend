@@ -21,7 +21,6 @@
 }
 
 .create-project-swiper {
-  @apply lg:max-w-7xl lg:mx-auto;
   .swiper-slide {
     @apply bg-center bg-cover w-[250px] h-auto;
     @apply lg:w-[380px];
@@ -54,6 +53,8 @@
   }
 
   &-body {
+    @apply w-full;
+    @apply lg:max-w-screen-2xl lg:mx-auto;
     .swiper {
       .swiper-slide {
         button,
