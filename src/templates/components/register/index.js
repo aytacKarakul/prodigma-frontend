@@ -2,6 +2,7 @@ import "./index.scss";
 const tabs = require("tabs");
 import IMask from "imask";
 import displayMessage from "../../utils/displayMessages";
+import { apitoken } from "../../auth/authentication";
 
 const notFound = null;
 
@@ -81,8 +82,8 @@ class LoginTabs {
     this.registerFax = document.querySelector("#js-register-user-fax");
 
     this.emailRegexPatern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    this.passRegexPatern =
-      "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})";
+    // this.passRegexPatern =
+    //   "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})";
 
     // Login Page Tab sekmesi
     this.tabInit();
@@ -237,30 +238,79 @@ class LoginTabs {
         }
       });
       _this.registerForm.addEventListener("submit", (e) => {
-        if (
-          _this.ad.value == "" ||
-          _this.soyad.value == "" ||
-          _this.registerEposta.value == "" ||
-          _this.registerSifre.value == "" ||
-          _this.registerPhone.value == ""
-        ) {
-          _this.registerForm.prepend(
-            _this.loginPageErrorFunc(
-              "*Lütfen tüm alanları doldurduğunuzdan emin olunuz!"
-            )
-          );
-        } else if (_this.registerEposta.value === data.eposta) {
-          _this.registerForm.prepend(
-            _this.loginPageErrorFunc("*Bu e-postaya ait bir üyelik mevcut!")
-          );
-        } else if (notFound === null) {
-          this.userRegisterWarning("warning");
-        } else {
-          //Testing
-          this.userLoginSuccess("success");
-          console.log("Üyelik Oluşturuldu...");
-        }
         e.preventDefault();
+
+        let _kurumsal = 1;
+
+        // const isKurumsal = (document.querySelector(
+        //   "#js-corporate-membership"
+        // ).value = 0);
+        const iletisim = (document.querySelector(
+          "#js-user-remember-privacy-individual"
+        ).value = 1);
+
+        const ad = _this.ad.value;
+        const soyad = _this.soyad.value;
+        const eposta = _this.registerEposta.value;
+        const sifre = _this.registerSifre.value;
+        const tel_cep = _this.registerPhone.value;
+        const kurumsal = _kurumsal;
+        const iletisim_izni = iletisim;
+
+        var data = new FormData(_this.registerForm);
+        data.append("ad", ad);
+        data.append("soyad", soyad);
+        data.append("eposta", eposta);
+        data.append("sifre", sifre);
+        data.append("tel_cep", tel_cep);
+        data.append("kurumsal", kurumsal);
+        data.append("iletisim_izni", iletisim_izni);
+
+        let users;
+
+        axios
+          .post(`${process.env.API_KEY}` + "/User/create", data, {
+            auth: {
+              username: "prodigma3d",
+              password: apitoken,
+            },
+          })
+          .then((res) => {
+            axios
+              .get(`${process.env.API_KEY}` + "/User/get", {
+                auth: {
+                  username: "prodigma3d",
+                  password: apitoken,
+                },
+              })
+              .then((res) => (users = res.data))
+              .catch((err) => console.log(err));
+
+            if (
+              _this.ad.value == "" ||
+              _this.soyad.value == "" ||
+              _this.registerEposta.value == "" ||
+              _this.registerSifre.value == "" ||
+              _this.registerPhone.value == ""
+            ) {
+              _this.registerForm.prepend(
+                _this.loginPageErrorFunc(
+                  "*Lütfen tüm alanları doldurduğunuzdan emin olunuz!"
+                )
+              );
+            } else if (_this.registerEposta.value === users?.eposta) {
+              _this.registerForm.prepend(
+                _this.loginPageErrorFunc("*Bu e-postaya ait bir üyelik mevcut!")
+              );
+            } else if (res === 404) {
+              this.userRegisterWarning("warning");
+            } else {
+              //Testing
+              this.userLoginSuccess("success");
+              console.log("Üyelik Oluşturuldu...");
+            }
+          })
+          .catch((err) => console.log(err));
       });
     }
   };
@@ -274,7 +324,7 @@ class LoginTabs {
 
     temp.innerHTML += `
     <i class="icon icon-success"></i>
-    <div class="t1">Aramıza hoş geldin Deniz, üyeliğin başarıyla tamamlandı.</div>
+    <div class="t1">Aramıza hoş geldin ${this.ad.value}, üyeliğin başarıyla tamamlandı.</div>
     <div class="t2">Artık Prodigma dünyasını keşfetmeye hazırsın!</div>
     `;
 
@@ -283,7 +333,7 @@ class LoginTabs {
     setTimeout(() => {
       temp.remove();
       window.location.href = "/";
-    }, 500000);
+    }, 10000);
   };
 
   //DUhan
@@ -324,3 +374,4 @@ export default LoginTabs;
 
 import "Images/google-icon.svg";
 import "Images/facebook-icon.svg";
+import axios from "axios";

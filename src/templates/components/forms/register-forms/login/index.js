@@ -6,6 +6,7 @@ class AuthUserLogin {
   constructor() {
     this.login();
     this.userUIControl();
+    this.logout();
   }
 
   async login() {
@@ -53,6 +54,32 @@ class AuthUserLogin {
       document.querySelector(".site-header-logoff").classList.add("hidden");
     } else {
       document.querySelector(".site-header-logoff").classList.remove("hidden");
+    }
+  }
+  logout() {
+    const logOut = document.querySelector("#logout-btn");
+
+    if(logOut) {
+      logOut.addEventListener("click",function(e) {
+        e.preventDefault();
+
+        var data;
+
+        axios.post(`${process.env.API_KEY}` + "/User/logout", data, {
+          auth: {
+            username: "prodigma3d",
+            password: `${apitoken}`,
+          },
+        })
+        .then((res) => {
+          if(res.data.status === 1) {
+            localStorage.removeItem("login_hash");
+            window.location.reload();
+          }
+        })
+        .catch((err) => console.log(err));
+
+      } )
     }
   }
 }
