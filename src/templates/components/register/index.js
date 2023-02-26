@@ -4,25 +4,6 @@ import IMask from "imask";
 import displayMessage from "../../utils/displayMessages";
 import { apitoken } from "../../auth/authentication";
 
-const notFound = null;
-
-const data = {
-  id: 1,
-  ad: "Aytaç",
-  soyad: "Karakullukcu",
-  //eposta: "aytac.karakul@gmail.com",
-  sifre: "a1K2!8981",
-  tel_cep: "05514099769",
-  kurumsal: "1",
-  sirket_tipi: null,
-  musteri_tipi: null,
-  telefon: null,
-  fax: null,
-  il: null,
-  ilce: null,
-  hash: null,
-};
-
 var maskOptions = {
   mask: "+{90}(000)000-00-00",
 };
@@ -32,7 +13,7 @@ class LoginTabs {
     //initials variables
     ad = this.ad;
     soyad = this.soyad;
-    //eposta = this.eposta;
+    eposta = this.eposta;
     sifre = this.sifre;
     phone = this.phone;
 
@@ -59,9 +40,8 @@ class LoginTabs {
     this.sifreEyeBtn = document.querySelector("#login-form .icon-eye");
     // Register Form
     this.registerForm = document.querySelector("#register-form");
-    this.registerFormRadioBtnSelection = document.querySelectorAll(
-      ".input-step-selection"
-    );
+    this.registerFormFieldSelection =
+      document.querySelectorAll(".hidden.corporate");
     this.registerEmailAddressUI = document.querySelector(
       ".warning-same-email-address-text"
     );
@@ -76,10 +56,21 @@ class LoginTabs {
     this.registerEposta = document.querySelector("#js-register-user-email");
     this.registerSifre = document.querySelector("#js-register-user-passwords");
     this.registerPhone = document.querySelector("#js-register-user-phone");
+    this.registerCorporateSelect = document.querySelector("#js-corporate-name");
+    this.registerCorporateTypeSelect =
+      document.querySelector("#js-corporate-type");
     this.registerNormalPhone = document.querySelector(
       "#js-register-user-normal-phone"
     );
     this.registerFax = document.querySelector("#js-register-user-fax");
+    this.registerProvince = document.querySelector("#js-corporate-province");
+    this.registerDistrict = document.querySelector("#js-corporate-district");
+    this.registerBillingAddress = document.querySelector(
+      "#js-corporate-billing-address"
+    );
+    this.registerPrivacy = document.querySelector(
+      "#js-user-remember-privacy-individual"
+    );
 
     this.emailRegexPatern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     // this.passRegexPatern =
@@ -117,25 +108,15 @@ class LoginTabs {
       e.target.checked = true;
       this.membershipCorporateSelect.checked = false;
 
-      _this.registerFormRadioBtnSelection.forEach((item) => {
-        if (item.getAttribute("data-tab") == "click-individual") {
-          item.nextElementSibling.classList.remove("active");
-          item.nextElementSibling.classList.add("hidden");
-          item.classList.remove("hidden");
-          item.classList.add("active");
-        }
+      _this.registerFormFieldSelection.forEach((item) => {
+        item.classList.add("hidden");
       });
     } else if (e.target.getAttribute("data-tab") == "click-corporate") {
       e.target.checked = true;
       this.membershipIndividualSelect.checked = false;
 
-      _this.registerFormRadioBtnSelection.forEach((item) => {
-        if (item.getAttribute("data-tab") == "click-corporate") {
-          item.previousSibling.classList.remove("active");
-          item.previousSibling.classList.add("hidden");
-          item.classList.remove("hidden");
-          item.classList.add("active");
-        }
+      _this.registerFormFieldSelection.forEach((item) => {
+        item.classList.remove("hidden");
       });
     }
   };
@@ -240,22 +221,37 @@ class LoginTabs {
       _this.registerForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        let _kurumsal = 1;
+        let isKurumsalSelected;
+        const isKurumsal = document.querySelectorAll(
+          ".input-membership-select .radio input"
+        );
+        for (const radioBtn of isKurumsal) {
+          if (radioBtn.checked) {
+            isKurumsalSelected = radioBtn.value;
+          }
+        }
+        console.log(isKurumsalSelected);
 
-        // const isKurumsal = (document.querySelector(
-        //   "#js-corporate-membership"
-        // ).value = 0);
-        const iletisim = (document.querySelector(
-          "#js-user-remember-privacy-individual"
-        ).value = 1);
+        let isIletisimSelected;
+        if (_this.registerPrivacy.checked) {
+          isIletisimSelected = 1;
+        } else {
+          isIletisimSelected = 0;
+        }
 
         const ad = _this.ad.value;
         const soyad = _this.soyad.value;
         const eposta = _this.registerEposta.value;
         const sifre = _this.registerSifre.value;
         const tel_cep = _this.registerPhone.value;
-        const kurumsal = _kurumsal;
-        const iletisim_izni = iletisim;
+        const sirket_tipi = _this.registerCorporateSelect.selectedIndex;
+        const musteri_tipi = _this.registerCorporateTypeSelect.selectedIndex;
+        const telefon = _this.registerNormalPhone.value;
+        const fax = _this.registerFax.value;
+        const il = _this.registerProvince.value;
+        const ilce = _this.registerDistrict.value;
+        const fatura_adresi = _this.registerBillingAddress.value;
+        const iletisim_izni = isIletisimSelected;
 
         var data = new FormData(_this.registerForm);
         data.append("ad", ad);
@@ -263,7 +259,14 @@ class LoginTabs {
         data.append("eposta", eposta);
         data.append("sifre", sifre);
         data.append("tel_cep", tel_cep);
-        data.append("kurumsal", kurumsal);
+        data.append("kurumsal", isKurumsalSelected);
+        data.append("sirket_tipi", sirket_tipi);
+        data.append("musteri_tipi", musteri_tipi);
+        data.append("sirket_tel", telefon);
+        data.append("fax", fax);
+        data.append("il", il);
+        data.append("ilce", ilce);
+        data.append("fatura_adresi", fatura_adresi);
         data.append("iletisim_izni", iletisim_izni);
 
         let users;
@@ -275,42 +278,29 @@ class LoginTabs {
               password: apitoken,
             },
           })
-          .then((res) => {
-            axios
-              .get(`${process.env.API_KEY}` + "/User/get", {
-                auth: {
-                  username: "prodigma3d",
-                  password: apitoken,
-                },
-              })
-              .then((res) => (users = res.data))
-              .catch((err) => console.log(err));
-
-            if (
-              _this.ad.value == "" ||
-              _this.soyad.value == "" ||
-              _this.registerEposta.value == "" ||
-              _this.registerSifre.value == "" ||
-              _this.registerPhone.value == ""
-            ) {
-              _this.registerForm.prepend(
-                _this.loginPageErrorFunc(
-                  "*Lütfen tüm alanları doldurduğunuzdan emin olunuz!"
-                )
-              );
-            } else if (_this.registerEposta.value === users?.eposta) {
-              _this.registerForm.prepend(
-                _this.loginPageErrorFunc("*Bu e-postaya ait bir üyelik mevcut!")
-              );
-            } else if (res === 404) {
-              this.userRegisterWarning("warning");
-            } else {
-              //Testing
-              this.userLoginSuccess("success");
-              console.log("Üyelik Oluşturuldu...");
-            }
-          })
+          .then((res) => (users = console.log(res.data)))
           .catch((err) => console.log(err));
+        if (
+          _this.ad.value == "" ||
+          _this.soyad.value == "" ||
+          _this.registerEposta.value == "" ||
+          _this.registerSifre.value == "" ||
+          _this.registerPhone.value == ""
+        ) {
+          _this.registerForm.prepend(
+            _this.loginPageErrorFunc(
+              "*Lütfen tüm alanları doldurduğunuzdan emin olunuz!"
+            )
+          );
+        } else if (_this.registerEposta.value === users?.eposta) {
+          _this.registerForm.prepend(
+            _this.loginPageErrorFunc("*Bu e-postaya ait bir üyelik mevcut!")
+          );
+        } else {
+          //Testing
+          this.userLoginSuccess("success");
+          console.log("Üyelik Oluşturuldu...");
+        }
       });
     }
   };
