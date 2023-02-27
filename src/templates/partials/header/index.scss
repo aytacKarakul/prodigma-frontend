@@ -41,6 +41,7 @@
     }
   }
   &-login {
+    @apply lg:flex lg:items-center;
     &-user {
       @apply w-8 h-8 bg-blue font-heading font-medium text-white text-xs rounded-full flex items-center justify-center mr-2.5;
       @apply transition-colors ease-in duration-200 delay-200;
@@ -72,6 +73,17 @@
           @apply transition-colors ease-in duration-200 delay-200;
         }
       }
+    }
+  }
+  &-lang {
+    @apply flex items-center;
+    button {
+      @apply flex items-center px-1 text-blue-100 text-opacity-50;
+      @apply transition-colors ease-in duration-200 delay-200;
+      &.selected {
+        @apply text-blue-100 underline;
+      }
+      @apply first:after:content-[""] first:after:w-[1px] first:after:h-5 first:after:bg-[#8A81A2] first:after:flex first:after:ml-2;
     }
   }
   &-member-menu {
@@ -253,6 +265,11 @@
       &-light {
         @apply bg-white text-blue;
       }
+    }
+  }
+  .site-header-lang {
+    button {
+      @apply text-white;
     }
   }
 }
