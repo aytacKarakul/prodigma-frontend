@@ -7,13 +7,13 @@ import ModuleForgotPassword from "./forms/password-forgot";
 import AuthUserLogin from "./forms/register-forms/login";
 class Components {
   constructor() {
-    new AuthUserLogin();
     new Inputs();
+    new AuthUserLogin();
+    new ModuleForgotPassword();
     new Accordion();
     MemberDropdown();
     OrderDetail();
     MemberAddressPopup();
-    new ModuleForgotPassword();
   }
 }
 

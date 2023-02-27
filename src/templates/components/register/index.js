@@ -1,7 +1,7 @@
+import axios from "axios";
 import "./index.scss";
 const tabs = require("tabs");
 import IMask from "imask";
-import displayMessage from "../../utils/displayMessages";
 import { apitoken } from "../../auth/authentication";
 
 var maskOptions = {
@@ -230,7 +230,6 @@ class LoginTabs {
             isKurumsalSelected = radioBtn.value;
           }
         }
-        console.log(isKurumsalSelected);
 
         let isIletisimSelected;
         if (_this.registerPrivacy.checked) {
@@ -253,54 +252,54 @@ class LoginTabs {
         const fatura_adresi = _this.registerBillingAddress.value;
         const iletisim_izni = isIletisimSelected;
 
-        var data = new FormData(_this.registerForm);
-        data.append("ad", ad);
-        data.append("soyad", soyad);
-        data.append("eposta", eposta);
-        data.append("sifre", sifre);
-        data.append("tel_cep", tel_cep);
-        data.append("kurumsal", isKurumsalSelected);
-        data.append("sirket_tipi", sirket_tipi);
-        data.append("musteri_tipi", musteri_tipi);
-        data.append("sirket_tel", telefon);
-        data.append("fax", fax);
-        data.append("il", il);
-        data.append("ilce", ilce);
-        data.append("fatura_adresi", fatura_adresi);
-        data.append("iletisim_izni", iletisim_izni);
+        var formData = new FormData(_this.registerForm);
+        formData.append("ad", ad);
+        formData.append("soyad", soyad);
+        formData.append("eposta", eposta);
+        formData.append("sifre", sifre);
+        formData.append("tel_cep", tel_cep);
+        formData.append("kurumsal", isKurumsalSelected);
+        formData.append("sirket_tipi", sirket_tipi);
+        formData.append("musteri_tipi", musteri_tipi);
+        formData.append("sirket_tel", telefon);
+        formData.append("fax", fax);
+        formData.append("il", il);
+        formData.append("ilce", ilce);
+        formData.append("fatura_adresi", fatura_adresi);
+        formData.append("iletisim_izni", iletisim_izni);
 
-        let users;
-
-        axios
-          .post(`${process.env.API_KEY}` + "/User/create", data, {
-            auth: {
-              username: "prodigma3d",
-              password: apitoken,
-            },
+        axios({
+          method: "post",
+          url: `${process.env.API_KEY}` + "/User/create",
+          data: formData,
+          headers: { "Content-Type": "multipart/form-data" },
+          auth: {
+            username: "prodigma3d",
+            password: apitoken,
+          },
+        })
+          .then((response) => {
+            if (response.data.error) {
+              if (response.data.error.ad) {
+                alert("Lütfen Ad alanını kontrol ediniz!");
+              } else if (response.data.error.soyad) {
+                alert("Lütfen Soyad alanını kontrol ediniz!");
+              } else if (response.data.error.eposta) {
+                alert(
+                  "Lütfen Eposta alanını kontrol ediniz ve eksik ya da aynı eposta olmadığından emin olunuz!"
+                );
+              } else if (response.data.error.sifre) {
+                alert("Lütfen Şifre alanını kontrol ediniz!");
+              } else if (response.data.error.tel_cep) {
+                alert("Lütfen Cep Telefonu alanını kontrol ediniz!");
+              } else if (response.data.error.kurumsal) {
+                alert("Lütfen Bireysel ya da Kurumsal alanını kontrol ediniz!");
+              }
+            } else {
+              this.userLoginSuccess("success");
+            }
           })
-          .then((res) => (users = console.log(res.data)))
-          .catch((err) => console.log(err));
-        if (
-          _this.ad.value == "" ||
-          _this.soyad.value == "" ||
-          _this.registerEposta.value == "" ||
-          _this.registerSifre.value == "" ||
-          _this.registerPhone.value == ""
-        ) {
-          _this.registerForm.prepend(
-            _this.loginPageErrorFunc(
-              "*Lütfen tüm alanları doldurduğunuzdan emin olunuz!"
-            )
-          );
-        } else if (_this.registerEposta.value === users?.eposta) {
-          _this.registerForm.prepend(
-            _this.loginPageErrorFunc("*Bu e-postaya ait bir üyelik mevcut!")
-          );
-        } else {
-          //Testing
-          this.userLoginSuccess("success");
-          console.log("Üyelik Oluşturuldu...");
-        }
+          .catch((response) => response);
       });
     }
   };
@@ -317,13 +316,12 @@ class LoginTabs {
     <div class="t1">Aramıza hoş geldin ${this.ad.value}, üyeliğin başarıyla tamamlandı.</div>
     <div class="t2">Artık Prodigma dünyasını keşfetmeye hazırsın!</div>
     `;
-
     document.querySelector(".plog-enters").append(temp);
 
     setTimeout(() => {
       temp.remove();
       window.location.href = "/";
-    }, 10000);
+    }, 5000);
   };
 
   //DUhan
@@ -336,13 +334,14 @@ class LoginTabs {
 
     temp.innerHTML += `
     <i class="icon icon-close"></i>
-    <div class="t1">Üyelik işlemi oluşturulurken bir sorun oluştu.</div>
-    <div class="user-register-turn-btn">
-    <a class="btn btn-green btn-medium" title="Üyelik Adımına Dön" href="/login.html"><span>Üyelik Adımına Dön</span></a>
-    </div>
+      <div class="t1">Lütfen girmiş olduğunuz alanların eksiksiz olduğundan emin olunuz!</div>
     `;
-
     document.querySelector(".plog-enters").append(temp);
+
+    setTimeout(() => {
+      temp.remove();
+      window.location.reload();
+    }, 3000);
   };
 
   //Login Page Form Error Text
@@ -353,7 +352,7 @@ class LoginTabs {
 
     setInterval(() => {
       temp.remove();
-    }, 2300);
+    }, 2500);
     clearInterval();
 
     return temp;
@@ -364,4 +363,4 @@ export default LoginTabs;
 
 import "Images/google-icon.svg";
 import "Images/facebook-icon.svg";
-import axios from "axios";
+import "Images/loginCover.jpg";

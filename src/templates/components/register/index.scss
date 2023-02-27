@@ -7,7 +7,7 @@
     @apply hidden;
     @apply lg:block;
     img {
-      @apply h-screen object-cover;
+      @apply w-full h-screen object-cover;
     }
   }
   &-img,
@@ -50,7 +50,8 @@
   display: block;
 }
 
-.user-login-success {
+.user-login-success,
+.user-register-error {
   @apply flex flex-col items-center text-center m-auto px-5 py-9;
   @apply lg:max-w-md lg:px-12 lg:py-14;
   .icon {
