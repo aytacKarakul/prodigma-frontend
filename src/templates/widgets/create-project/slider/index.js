@@ -20,7 +20,7 @@ async function getAllCategories() {
           content.className = "swiper-slide";
 
           content.innerHTML += `
-            <button data-url="/${items.url}.html" id="${items.id}">
+            <button data-url="/${items.url}.html?cat=${items.id}" id="${items.id}">
                 <img src='https://via.placeholder.com/380x380.png', alt='3D Baskı' />
             </button>
             <span>${items.isim}</span>
@@ -54,6 +54,7 @@ async function getAllCategories() {
   const createProjectBodyBtn = document.querySelectorAll(
     ".create-project-swiper .swiper-slide button"
   );
+
   const nextStepFirstBtn = document.querySelector("#js-next-to-step-first");
   createProjectBodyBtn?.forEach((btns) => {
     btns.addEventListener("click", () => {

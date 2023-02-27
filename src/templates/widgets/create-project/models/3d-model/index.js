@@ -1,23 +1,15 @@
-import modalPopup from "../../../../components/web-component/modal";
-import tecnicGraphUpload from "../tecnicGraphUpload";
 import { apitoken } from "../../../../auth/authentication";
 import axios from "axios";
+//import ScaleModel from "../scaleModule";
 
-class Metal {
+class Silicon {
   constructor() {
-    this.sacMetalWrapper = document.querySelector(".create-project-metal");
-
-    this.sacMetalInıt();
-    this.queryParamsFunc();
-  }
-  sacMetalInıt() {
-    if (this.sacMetalWrapper) {
-      tecnicGraphUpload();
-    }
+    this.printingWrapper = document.querySelector(".create-project-printing");
+    this.queryParamsFunc3D();
   }
 
-  queryParamsFunc() {
-    if (this.sacMetalWrapper) {
+  queryParamsFunc3D() {
+    if (this.printingWrapper) {
       const locationCatParams = window.location.search;
       // Further parsing:
       const params = new URLSearchParams(locationCatParams);
@@ -32,11 +24,23 @@ class Metal {
         })
         .then(function (response) {
           console.log(response);
+          if (response.data !== null) {
+            let wrapper = document.querySelector(
+              ".create-project-right-materials"
+            );
+            let template = document.createElement("li");
+            template.innerHTML += `
+            <div class="input radio">
+            <input type="radio" kategori_id=${response.data.kategori_id} case=${response.data.durum} fiyat=${response.data.fiyat} />
+            <label for="js-material-keys">${response.data.isim}</label>
+            </div>
+          `;
+            wrapper.append(template);
+          }
         })
         .catch(function (error) {
           console.log(error);
         });
-      console.log(cat);
     }
   }
 }
@@ -62,4 +66,4 @@ const modalCncFunction = () => {
   modalPopup();
 };
 
-export default Metal;
+export default Silicon;

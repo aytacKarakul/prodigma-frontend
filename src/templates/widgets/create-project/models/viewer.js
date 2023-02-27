@@ -84,6 +84,7 @@ const customViewer = () => {
         }
       });
       this.remove();
+
       wrapperProperties.classList.add("hidden");
       wrapperMaterials.removeAttribute("hidden");
       if (nextSelectionBtnLast) {
