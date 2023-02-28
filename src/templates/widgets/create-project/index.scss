@@ -116,14 +116,18 @@
       @apply lg:w-1/2 lg:text-center;
     }
     .drag-area {
-      @apply w-full h-full relative bg-white;
-      @apply lg:w-3/5 lg:h-3/4;
+      @apply w-full relative;
+      @apply lg:w-3/5;
 
       img {
-        @apply w-full h-full object-fill;
+        @apply w-full object-fill;
       }
       .icon-file-empty {
         @apply absolute left-0 right-0 top-[calc(50%-40px)] text-gray-200 text-5xl;
+      }
+      &-contents {
+        @apply w-full;
+        @apply lg:max-w-[65%] lg:mx-auto;
       }
     }
     &-desc {
@@ -134,6 +138,11 @@
     }
     &-tt2 {
       @apply font-inter text-xs mt-3;
+    }
+  }
+  &-toleranses {
+    .input {
+      @apply mt-5;
     }
   }
   &-right {
@@ -261,7 +270,10 @@
         @apply font-heading font-medium text-base;
       }
       &-t2 {
-        @apply font-inter font-normal text-xs mt-2.5;
+        @apply font-inter font-normal text-xs mt-2;
+      }
+      input {
+        @apply mt-2;
       }
       .tecnical-file-upload {
         @apply absolute top-[calc(50%-1rem)] right-7 z-[1];

@@ -1,9 +1,10 @@
 .create-project-sets.create-project-metal
     .create-project-left
         .drag-area
-        .create-project-left-desc|Bir CAD dosyası yükleyin veya sürükleyip bırakın
-        .create-project-left-tt1|*Maxmum dosya yükleme boyutu 150 mb’dir.
-        .create-project-left-tt2|*Şu uzantıdaki dosyaları yükleyin; 3DM, IGES, IGS, STEP, STL
+            .drag-area-contents
+                .create-project-left-desc|Bir CAD dosyası yükleyin veya sürükleyip bırakın
+                .create-project-left-tt1|*Maxmum dosya yükleme boyutu 150 mb’dir.
+                .create-project-left-tt2|*Şu uzantıdaki dosyaları yükleyin; 3DM, IGES, IGS, STEP, STL
     .create-project-right
         .create-project-right-steps
             button(class='lnk active', data-selection='properties')|1
@@ -13,24 +14,18 @@
             .create-project-right-inner
                 .create-project-right-name|Sac Metal İşleme ile Tasarımlarınızı Hayata Geçirin!
                 .create-project-right-sub-text|Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+                .create-project-right-append-elements
         div(data-selection='materials', hidden)
             .create-project-right-inner
                 .create-project-right-materials-title|Malzeme Seçimi
                 ul.create-project-right-materials
-                    li
-                        .input.radio
-                            input(type="radio")
-                            label(for="js-material-keys")|Alüminyum
-                    li
-                        .input.radio
-                            input(type="radio")
-                            label(for="js-material-keys")|Paslanmaz çelik
-                    li
-                        .input.radio
-                            input(type="radio")
-                            label(for="js-material-keys")|Dkp sac
+                .create-project-toleranses.hidden
+                    .input.select.borders
+                        label(for="js-tolerans-list-name")|Tolerans seçeneği
+                        span.wrp
+                            select(name="js-tolerans-list-name", id="js-tolerans-list-name")
         .create-project-right-nextbtn
-            button(class='btn btn-secondary btn-medium', type='button', data-type='metal' disabled)(id="js-sac-metal-forward-btn")
+            button(class='btn btn-secondary btn-next-to-bid btn-medium', type='button', data-type='metal' disabled)(id="js-sac-metal-forward-btn")
                 span|Sonraki Adım
                 i.icon.icon-arrow-line
             button(class='btn btn-secondary btn-medium btn-next-bid', type='button', disabled data-modal="modal-metal")

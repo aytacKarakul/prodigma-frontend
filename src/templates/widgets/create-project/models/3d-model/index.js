@@ -1,14 +1,13 @@
-import { apitoken } from "../../../../auth/authentication";
 import axios from "axios";
-//import ScaleModel from "../scaleModule";
+import { apitoken } from "../../../../auth/authentication";
 
-class Silicon {
+class Model3D {
   constructor() {
     this.printingWrapper = document.querySelector(".create-project-printing");
-    this.queryParamsFunc3D();
+    this.getCategoriesFromId();
   }
 
-  queryParamsFunc3D() {
+  getCategoriesFromId() {
     if (this.printingWrapper) {
       const locationCatParams = window.location.search;
       // Further parsing:
@@ -16,7 +15,7 @@ class Silicon {
       const cat = parseInt(params.get("cat")); // is the number
 
       axios
-        .get(`${process.env.API_KEY}` + "/materials/get/" + `${cat}`, {
+        .get(`${process.env.API_KEY}` + "/materials/get-category/" + `${cat}`, {
           auth: {
             username: "prodigma3d",
             password: apitoken,
@@ -28,14 +27,15 @@ class Silicon {
             let wrapper = document.querySelector(
               ".create-project-right-materials"
             );
-            let template = document.createElement("li");
-            template.innerHTML += `
-            <div class="input radio">
-            <input type="radio" kategori_id=${response.data.kategori_id} case=${response.data.durum} fiyat=${response.data.fiyat} />
-            <label for="js-material-keys">${response.data.isim}</label>
-            </div>
-          `;
-            wrapper.append(template);
+            response.data.map((materials) => {
+              let template = document.createElement("li");
+              template.innerHTML += `
+              <div class="input radio">
+              <input type="radio" kategori_id=${materials.kategori_id} case=${materials.durum} fiyat=${materials.fiyat} />
+              <label for="js-material-keys">${materials.isim}</label>
+              </div>`;
+              wrapper.appendChild(template);
+            });
           }
         })
         .catch(function (error) {
@@ -66,4 +66,4 @@ const modalCncFunction = () => {
   modalPopup();
 };
 
-export default Silicon;
+export default Model3D;

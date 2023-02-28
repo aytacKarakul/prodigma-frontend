@@ -1,5 +1,5 @@
 import "Images/logo.svg";
-
+import "Images/header-menu-about-img.jpg";
 class Header {
   constructor() {
     this.header = document.querySelector(".site-header");
@@ -41,6 +41,7 @@ class Header {
 
         // html lang change
         document.documentElement.lang = btnId;
+        window.location.reload();
       });
     });
   }

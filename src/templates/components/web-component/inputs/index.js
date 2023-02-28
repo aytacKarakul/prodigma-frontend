@@ -48,7 +48,7 @@ class Inputs {
   onSelectFunInit = () => {
     this.selectElement?.forEach((select) => {
       select.addEventListener("change", () => {
-        console.log(select.options[select.selectedIndex].text);
+        select.options[select.selectedIndex].text;
       });
     });
   };

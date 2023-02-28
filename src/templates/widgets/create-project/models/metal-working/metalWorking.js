@@ -1,22 +1,32 @@
-import modalPopup from "../../../../components/web-component/modal";
-import tecnicGraphUpload from "../tecnicGraphUpload";
-import { apitoken } from "../../../../auth/authentication";
 import axios from "axios";
+import modalPopup from "../../../../components/web-component/modal";
+import { apitoken } from "../../../../auth/authentication";
+import Materials from "../materials";
+import Tolerans from "../tolerans";
+import PieceModel from "../pieceEnter";
+import TecnicGraphUpload from "../tecnicGraphUpload";
 
 class Metal {
   constructor() {
     this.sacMetalWrapper = document.querySelector(".create-project-metal");
 
-    this.sacMetalInıt();
-    this.queryParamsFunc();
+    this.init();
   }
-  sacMetalInıt() {
+  init() {
     if (this.sacMetalWrapper) {
-      tecnicGraphUpload();
+      this.getMetalCatMaterials();
+      this.getToleransFromCategory();
+      this.postPieceFunc();
+      this.postUploadFile();
     }
   }
-
-  queryParamsFunc() {
+  postPieceFunc() {
+    new PieceModel();
+  }
+  postUploadFile() {
+    new TecnicGraphUpload("file.jpg");
+  }
+  getMetalCatMaterials() {
     if (this.sacMetalWrapper) {
       const locationCatParams = window.location.search;
       // Further parsing:
@@ -24,19 +34,63 @@ class Metal {
       const cat = parseInt(params.get("cat")); // is the number
 
       axios
-        .get(`${process.env.API_KEY}` + "/materials/get/" + `${cat}`, {
+        .get(`${process.env.API_KEY}` + "/materials/get-category/" + `${cat}`, {
+          auth: {
+            username: "prodigma3d",
+            password: apitoken,
+          },
+        })
+        .then(function (res) {
+          if (res.data !== null) {
+            res.data.map((data) => {
+              new Materials(
+                data.id,
+                data.kategori_id,
+                data.isim,
+                data.fiyat,
+                data.sira,
+                data.durum
+              );
+            });
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+  }
+  getToleransFromCategory() {
+    if (this.sacMetalWrapper) {
+      const locationCatParams = window.location.search;
+      // Further parsing:
+      const params = new URLSearchParams(locationCatParams);
+      const cat = parseInt(params.get("cat")); // is the number
+
+      axios
+        .get(`${process.env.API_KEY}` + "/tolerance/get-category/" + `${cat}`, {
           auth: {
             username: "prodigma3d",
             password: apitoken,
           },
         })
         .then(function (response) {
+          if (response.data !== null) {
+            response.data.map((tolerans) => {
+              new Tolerans(
+                tolerans.id,
+                tolerans.kategori_id,
+                tolerans.isim,
+                tolerans.fiyat,
+                tolerans.sira,
+                tolerans.durum
+              );
+            });
+          }
           console.log(response);
         })
         .catch(function (error) {
           console.log(error);
         });
-      console.log(cat);
     }
   }
 }

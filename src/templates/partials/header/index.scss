@@ -78,7 +78,7 @@
   &-lang {
     @apply flex items-center;
     button {
-      @apply flex items-center px-1 text-blue-100 text-opacity-50;
+      @apply flex items-center px-1 text-sm text-blue-100 text-opacity-50;
       @apply transition-colors ease-in duration-200 delay-200;
       &.selected {
         @apply text-blue-100 underline;

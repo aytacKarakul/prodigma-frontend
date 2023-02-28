@@ -1,22 +1,72 @@
-function TecnicGraphModel() {
-  let createProjectRight = document.querySelector(
-    ".create-project-right-inner"
-  );
+import { getLanguage } from "../../../utils/localStorage";
+class TecnicGraphUpload {
+  constructor(file) {
+    this.file = file;
+    this.elementWrapper = document.querySelector(
+      ".create-project-right-append-elements"
+    );
 
-  const trans = {
-    textTecnicText: "Teknik Çizim Görseli yükleyin (PDF&DWG)",
-    textTecnicText2: "ya da görseli sürükleyip bırakın",
-  };
+    this.initFunc();
+    this.onClickHandler();
+  }
+  initFunc() {
+    if (this.elementWrapper) {
+      const lang = getLanguage();
 
-  let tecnicGraphWrap = document.createElement("div");
-  tecnicGraphWrap.className = "create-project-right-technical";
+      const trans = {
+        tr: {
+          textTecnicText: "Teknik Çizim Görseli yükleyin (PDF&DWG)",
+          textTecnicText2: "ya da görseli sürükleyip bırakın",
+        },
+        en: {
+          textTecnicText: "Upload Image (PDF DWG)",
+          textTecnicText2: "or drag and drop image",
+        },
+      };
 
-  tecnicGraphWrap.innerHTML = `<div class="create-project-right-technical-t1">${trans.textTecnicText}</div>
-    <input type="file"></input>
-    <a href="#" class="tecnical-file-upload"><i class="icon icon-arrow-line"></i></a>`;
+      let tempDiv = document.createElement("div");
+      tempDiv.className = "create-project-right-technical";
 
-  createProjectRight.appendChild(tecnicGraphWrap);
-  return tecnicGraphWrap;
+      let tempDivTitle = document.createElement("div");
+      tempDivTitle.className = "create-project-right-technical-t1";
+      if (lang == "tr") {
+        tempDivTitle.textContent = `${trans.tr.textTecnicText}`;
+      } else if (lang == "en") {
+        tempDivTitle.textContent = `${trans.en.textTecnicText2}`;
+      }
+
+      let tempDivTitle2 = document.createElement("div");
+      tempDivTitle2.className = "create-project-right-technical-t2";
+      if (lang == "tr") {
+        tempDivTitle2.textContent = `${trans.tr.textTecnicText}`;
+      } else if (lang == "en") {
+        tempDivTitle2.textContent = `${trans.en.textTecnicText2}`;
+      }
+
+      let tempDivInput = document.createElement("input");
+      tempDivInput.setAttribute("type", "file");
+      tempDivInput.setAttribute("id", "create_project_tecnic_file_upload");
+      tempDivInput.setAttribute("accept", "image/*,.pdf");
+
+      let tempDivAnchor = document.createElement("a");
+      tempDivAnchor.className = "tecnical-file-upload";
+      tempDivAnchor.setAttribute("href", "javascript:void(0);");
+
+      let tempDivAnchorIcon = document.createElement("i");
+      tempDivAnchorIcon.className = "icon icon-arrow-line";
+
+      //elements append to
+      tempDiv.append(tempDivTitle);
+      tempDiv.append(tempDivTitle2);
+      tempDiv.append(tempDivInput);
+      tempDiv.append(tempDivAnchor);
+      tempDivAnchor.append(tempDivAnchorIcon);
+
+      this.elementWrapper.append(tempDiv);
+    }
+  }
+  onClickHandler() {
+    console.log("Tecnic file module");
+  }
 }
-
-export default TecnicGraphModel;
+export default TecnicGraphUpload;

@@ -19,6 +19,7 @@ const customViewer = () => {
   const materialsContainerElement = document.querySelectorAll(
     ".create-project-right-materials li input"
   );
+  const dragAreadContent = document.querySelector(".drag-area-contents");
 
   let file;
 
@@ -26,14 +27,14 @@ const customViewer = () => {
     dragArea?.addEventListener("dragover", (event) => {
       event.preventDefault();
       dragArea.classList.add("active");
-      nextSelectionBtnFirst?.removeAttribute("disabled");
+
       nextSelectionBtnFirst?.classList.add("btn-green");
+      nextSelectionBtnFirst?.removeAttribute("disabled");
       console.log("File is inside the drag area");
     });
     dragArea?.addEventListener("dragleave", () => {
       console.log("File left the drag area");
       dragArea.classList.remove("active");
-      nextSelectionBtnFirst?.setAttribute("disabled");
       nextSelectionBtnFirst?.classList.remove("btn-green");
     });
 
@@ -57,6 +58,7 @@ const customViewer = () => {
 
           let imgTag = `<img src="${fileUrl}" alt="" />`;
           dragArea.innerHTML = imgTag;
+          dragAreadContent?.remove();
         };
         fileReader.readAsDataURL(file);
       } else {
