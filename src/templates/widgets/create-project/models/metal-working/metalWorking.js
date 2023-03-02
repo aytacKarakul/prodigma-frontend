@@ -1,5 +1,4 @@
 import axios from "axios";
-import modalPopup from "../../../../components/web-component/modal";
 import { apitoken } from "../../../../auth/authentication";
 import Materials from "../materials";
 import Tolerans from "../tolerans";
@@ -14,17 +13,20 @@ class Metal {
   constructor() {
     this.modelMetalWrapper = document.querySelector(".create-project-metal");
     this.init();
-    //new OfferModal("Sac Metal İşleme");
   }
   init() {
     if (this.modelMetalWrapper) {
+      new OfferModal("Sac Metal İşleme");
+      //firts init
       new Metrics();
-      this.createProject();
       this.initFunc();
+      this.createProject();
+
       //function detected
       Viewer();
       stepSelection();
 
+      //last init
       this.onLoadMaterials();
       this.onLoadTolerans();
     }
@@ -123,6 +125,7 @@ class Metal {
       e.preventDefault();
 
       const pieceInput = document.querySelector("#js-create_project_piece");
+      const modalPopup = document.querySelector("#modal-metal");
 
       const user_login_hash = localStorage.getItem("login_hash");
       const user_login_id = JSON.parse(user_login_hash);
@@ -139,8 +142,10 @@ class Metal {
       const user_genislik = btnPriceOffer.getAttribute("genislik");
       const user_yukseklik = btnPriceOffer.getAttribute("yukseklik");
       const user_derinlik = btnPriceOffer.getAttribute("derinlik");
+      const user_catname = btnPriceOffer.getAttribute("isim");
 
-      var createFormData = new FormData(createProjectFrom);
+      const createFormData = new FormData(createProjectFrom);
+
       createFormData.append("uye_id", user_uyeId);
       createFormData.append("kategori_id", user_kategoriId);
       createFormData.append("metrik_id", user_metricId);
@@ -162,8 +167,9 @@ class Metal {
           },
         })
         .then((res) => {
-          alert(res.data.message);
-          window.location.reload();
+          console.log(res);
+          //alert(res.data.message);
+          modalPopup.classList.add("open");
         })
         .catch((err) => console.log(err));
     });

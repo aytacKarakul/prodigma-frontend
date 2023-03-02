@@ -1,7 +1,9 @@
 class Metrics {
   constructor() {
     this.initMetricsFunc();
-    this.btnsOffer = document.querySelector("#create-project-form .btn");
+    this.btnsOffer = document.querySelector(
+      "#create-project-form .btn, #create-project-form-3d .btn"
+    );
     const clickBtn = this.btnsOffer;
   }
 
@@ -42,7 +44,9 @@ class Metrics {
     const scalesWidthInput = document.querySelector("#js-scales-input-width");
     const scalesHeightInput = document.querySelector("#js-scales-input-height");
     const scalesDepthInput = document.querySelector("#js-scales-input-depth");
-    const btnsOfferInput = document.querySelector("#create-project-form .btn");
+    const btnsOfferInput = document.querySelector(
+      "#create-project-form .btn, #create-project-form-3d .btn"
+    );
 
     scalesWidthInput.addEventListener("change", function (event) {
       const inputWidht = event.target.value;
@@ -76,7 +80,9 @@ class Metrics {
     const metricsBtns = document.querySelectorAll(
       ".create-project-scales-rgh button"
     );
-    const btnsOffer = document.querySelector("#create-project-form .btn");
+    const btnsOffer = document.querySelector(
+      "#create-project-form .btn, #create-project-form-3d .btn"
+    );
     const dragImgWrapper = document.querySelector(".drag-area");
 
     metricsBtns.forEach((btn) => {

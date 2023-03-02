@@ -28,7 +28,7 @@
 }
 
 .create-project {
-  @apply relative w-full;
+  @apply relative w-full h-screen;
   @apply bg-[url(../../../assets/img/create-project-bg.png)] bg-no-repeat bg-cover bg-center;
 
   &-wrapper {
@@ -107,13 +107,13 @@
     }
   }
   &-sets {
-    @apply w-full h-screen flex flex-col justify-center;
+    @apply w-full flex flex-col justify-center;
     @apply lg:flex-row lg:gap-x-8;
   }
   &-left,
   &-right {
     @apply w-full flex flex-col;
-    @apply lg:w-1/2 lg:h-screen;
+    @apply lg:w-1/2;
   }
   &-left {
     @apply text-white justify-center items-center mt-[3.438rem];
@@ -123,7 +123,7 @@
       @apply lg:w-3/5;
 
       img {
-        @apply w-full object-fill;
+        @apply w-auto max-w-[600px] object-fill mx-auto;
       }
       .icon-file-empty {
         @apply absolute left-0 right-0 top-[calc(50%-40px)] text-gray-200 text-5xl;

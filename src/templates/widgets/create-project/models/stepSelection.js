@@ -31,8 +31,6 @@ export function stepSelection() {
         alert(
           "Lütfen metrik alanındaki alanların eksik olmadığından emin olunuz!"
         );
-      } else if (fileUploadInput.files.length == 0) {
-        alert("Lütfen Teknik Çizim dosyanızı ekleyiniz!");
       } else {
         stepSelectionBtns.forEach((btn) => {
           if (btn.classList.contains("active")) {

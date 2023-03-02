@@ -40,7 +40,6 @@ class AuthUserLogin {
               } else if (res.data.error.sifre) {
                 alert("Lütfen şifrenizi giriniz!");
               }
-              console.log(res);
             } else {
               localStorage.setItem("login_hash", JSON.stringify(res.data));
               window.location.href = "/";
