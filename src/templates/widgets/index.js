@@ -7,9 +7,9 @@ import CreateProject from "./create-project";
 class Widgets {
   constructor() {
     new CreateProject();
-    quadrapleBanner();
     new BenefitsBrandBanner();
     new Blog();
+    quadrapleBanner();
     Thermoplastics();
   }
 }

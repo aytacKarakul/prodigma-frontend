@@ -18,6 +18,7 @@ class PieceModel {
 
       let tempDivInput = document.createElement("input");
       tempDivInput.setAttribute("type", "number");
+      tempDivInput.setAttribute("id", "js-create_project_piece");
       tempDivInput.setAttribute("min", "1");
       tempDivInput.setAttribute("max", "30");
 
@@ -60,10 +61,15 @@ class PieceModel {
       let pieceVal = document.querySelector(
         ".create-project-right-piece input[type='number']"
       );
+      const btnss = document.querySelector(
+        ".create-project-right-nextbtn .btn-next-bid"
+      );
       pieceVal.value = 1;
 
-      increaseBtn.onclick = function () {
+      increaseBtn.onclick = function (e) {
         pieceVal.value++;
+
+        btnss.setAttribute("piece", pieceVal.value);
       };
       decreaseBtn.onclick = function (e) {
         if (pieceVal.value <= 1) {

@@ -1,7 +1,6 @@
 import { getLanguage } from "../../../utils/localStorage";
 class TecnicGraphUpload {
-  constructor(file) {
-    this.file = file;
+  constructor() {
     this.elementWrapper = document.querySelector(
       ".create-project-right-append-elements"
     );
@@ -66,7 +65,10 @@ class TecnicGraphUpload {
     }
   }
   onClickHandler() {
-    console.log("Tecnic file module");
+    const btnClick = document.querySelector(".tecnical-file-upload");
+    btnClick.addEventListener("click", function () {
+      document.querySelector("#create_project_tecnic_file_upload").click();
+    });
   }
 }
 export default TecnicGraphUpload;

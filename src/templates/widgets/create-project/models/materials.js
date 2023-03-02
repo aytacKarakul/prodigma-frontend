@@ -9,10 +9,11 @@ class Materials {
     this.sira = sira;
 
     this.documentElement = document.querySelector(
-      ".create-project-right-materials"
+      "ul.create-project-right-materials"
     );
 
     this.init();
+    this.onChange();
   }
   init() {
     //template li create
@@ -25,10 +26,11 @@ class Materials {
     //template li > div > input create
     let tempInput = document.createElement("input");
     tempInput.setAttribute("type", "radio");
-    tempInput.setAttribute("kategori_id", this.kategori_id);
+    tempInput.setAttribute("id", this.id);
     tempInput.setAttribute("price", this.fiyat);
+    tempInput.setAttribute("name", this.kategori_id);
 
-    //template li > div > abel create
+    //template li > div > label create
     let tempLabel = document.createElement("label");
     tempLabel.setAttribute("for", "js-material-keys");
     tempLabel.textContent = this.isim;
@@ -39,7 +41,41 @@ class Materials {
     tempDiv.append(tempInput);
     tempDiv.append(tempLabel);
 
-    this.documentElement.append(tempLi);
+    this.documentElement.appendChild(tempLi);
+  }
+  onChange() {
+    const inputElement = document.querySelectorAll(
+      "ul.create-project-right-materials li input"
+    );
+    const btnLast = document.querySelector(
+      ".create-project-right-nextbtn .btn-next-bid"
+    );
+
+    inputElement.forEach((itm) => {
+      itm.addEventListener("click", function (event) {
+        const id = event.target.id;
+        const categoryId = event.target.name;
+
+        const parentEl = event.target.parentElement.parentElement;
+        const lbl = event.target.nextSibling.textContent;
+
+        if (parentEl.classList.contains("active")) {
+          parentEl.classList.remove("active");
+        } else {
+          const selectedItems = document.querySelectorAll(
+            ".create-project-right-materials li.active"
+          );
+          selectedItems.forEach((selectedBtns) => {
+            selectedBtns.classList.remove("active");
+          });
+        }
+        parentEl.classList.add("active");
+
+        btnLast.setAttribute("id", id);
+        btnLast.setAttribute("isim", lbl);
+        btnLast.setAttribute("cat", categoryId);
+      });
+    });
   }
 }
 

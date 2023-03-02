@@ -1,22 +1,26 @@
 function modalPopup() {
-  const modals = document.querySelectorAll("[data-modal]");
+  const modalOpenTrigger = document.querySelectorAll("[data-modal]");
+  const modals = document.querySelectorAll(".modal");
+  const modalExit = document.querySelectorAll(".modal .modal-exit");
 
-  modals.forEach(function (trigger) {
+  modalOpenTrigger.forEach(function (trigger) {
     trigger.addEventListener("click", function (event) {
       event.preventDefault();
-      const modal = document.getElementById(trigger.dataset.modal);
-      modal.classList.add("open");
-      const exits = modal.querySelectorAll(".modal-exit");
-      exits.forEach(function (exit) {
-        exit.addEventListener("click", function (event) {
-          event.preventDefault();
-          modal.classList.remove("open");
-        });
+
+      modals.forEach((modal) => {
+        modal.classList.add("open");
       });
     });
   });
-
-  return modals;
+  modalExit.forEach(function (e) {
+    e.addEventListener("click", function () {
+      modals.forEach((modal) => {
+        if (modal.classList.contains("open")) {
+          modal.classList.remove("open");
+        }
+      });
+    });
+  });
 }
 
 export default modalPopup;

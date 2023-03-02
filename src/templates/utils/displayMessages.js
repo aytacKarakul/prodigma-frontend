@@ -1,17 +1,15 @@
-const displayMessages = (type, message) => {
-  //const targetWrapper = document.querySelector(`${target}`);
+function displayMessages(type, message, target) {
   const wrapper = document.createElement("div");
-
   wrapper.className = `alert alert-${type}`;
   wrapper.textContent = message;
 
-  //targetWrapper.appendChild(wrapper);
+  document.querySelector(`.${target}`).append();
 
   setTimeout(() => {
-    wrapper.remove();
+    //document.querySelector(target).remove();
   }, 2500);
 
   return wrapper;
-};
+}
 
 export default displayMessages;

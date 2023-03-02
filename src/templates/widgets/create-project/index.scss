@@ -83,17 +83,23 @@
   }
   &-scales {
     @apply mt-10;
+    @apply lg:w-3/5;
     &-inner {
       @apply flex items-center justify-center flex-wrap gap-9;
       @apply lg:flex-nowrap;
     }
-    &-lft,
-    &-rgh {
-      @apply flex items-center gap-4;
-      > div {
-        @apply min-w-[3.125rem] flex-auto rounded-[0.625rem] bg-white font-heading font-semibold text-blue-100 px-2 py-4 cursor-pointer;
+    &-lft {
+      @apply flex flex-auto items-center gap-4;
+      input {
+        @apply w-14 rounded-[0.625rem] bg-white font-heading font-medium text-blue-100 text-center px-2 py-4 cursor-pointer;
         @apply transition-colors ease-in delay-200 duration-200;
-        &:hover,
+      }
+    }
+    &-rgh {
+      @apply flex flex-auto items-center gap-4;
+      button {
+        @apply w-3/12 flex-auto rounded-[0.625rem] bg-white font-heading font-semibold text-blue-100 px-4 py-4 cursor-pointer;
+        @apply transition-colors ease-in delay-200 duration-200;
         &.active {
           @apply bg-green-300 text-white;
         }
@@ -112,9 +118,6 @@
   &-left {
     @apply text-white justify-center items-center mt-[3.438rem];
     @apply lg:mt-10 lg:pl-5;
-    > div {
-      @apply lg:w-1/2 lg:text-center;
-    }
     .drag-area {
       @apply w-full relative;
       @apply lg:w-3/5;
@@ -126,7 +129,7 @@
         @apply absolute left-0 right-0 top-[calc(50%-40px)] text-gray-200 text-5xl;
       }
       &-contents {
-        @apply w-full;
+        @apply w-full text-center;
         @apply lg:max-w-[65%] lg:mx-auto;
       }
     }

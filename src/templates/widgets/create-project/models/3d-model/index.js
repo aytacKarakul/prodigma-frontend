@@ -4,7 +4,7 @@ import { apitoken } from "../../../../auth/authentication";
 class Model3D {
   constructor() {
     this.printingWrapper = document.querySelector(".create-project-printing");
-    this.getCategoriesFromId();
+    //this.getCategoriesFromId();
   }
 
   getCategoriesFromId() {
