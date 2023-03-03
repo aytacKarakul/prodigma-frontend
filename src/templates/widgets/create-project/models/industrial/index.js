@@ -49,6 +49,7 @@ class Industrial {
         })
         .then(function (res) {
           if (res.data.message) {
+            console.log(res.data);
             modalPopup.classList.add("open");
           }
         })
