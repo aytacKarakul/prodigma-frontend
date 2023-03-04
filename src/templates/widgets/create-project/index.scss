@@ -82,21 +82,19 @@
     }
   }
   &-scales {
-    @apply mt-10;
-    @apply lg:w-3/5;
+    @apply w-full mt-5 mb-5;
     &-inner {
       @apply flex items-center justify-center flex-wrap gap-9;
-      @apply lg:flex-nowrap;
     }
     &-lft {
-      @apply flex flex-auto items-center gap-4;
+      @apply flex flex-auto items-center gap-4 justify-center;
       input {
         @apply w-14 rounded-[0.625rem] bg-white font-heading font-medium text-blue-100 text-center px-2 py-4 cursor-pointer;
         @apply transition-colors ease-in delay-200 duration-200;
       }
     }
     &-rgh {
-      @apply flex flex-auto items-center gap-4;
+      @apply flex flex-auto items-center justify-center gap-4;
       button {
         @apply w-3/12 flex-auto rounded-[0.625rem] bg-white font-heading font-semibold text-blue-100 px-4 py-4 cursor-pointer;
         @apply transition-colors ease-in delay-200 duration-200;
@@ -107,7 +105,7 @@
     }
   }
   &-sets {
-    @apply w-full flex flex-col justify-center;
+    @apply w-full h-screen flex flex-col justify-center;
     @apply lg:flex-row lg:gap-x-8;
   }
   &-left,
@@ -116,14 +114,14 @@
     @apply lg:w-1/2;
   }
   &-left {
-    @apply text-white justify-center items-center mt-[3.438rem];
-    @apply lg:mt-10 lg:pl-5;
+    @apply text-white justify-center items-center mt-[55px] px-3;
+    @apply lg:mt-10 lg:px-5;
     .drag-area {
-      @apply w-full relative;
-      @apply lg:w-3/5;
+      @apply flex items-center w-full relative min-h-[300px];
+      @apply lg:w-9/12;
 
       img {
-        @apply w-auto max-w-[600px] object-fill mx-auto;
+        @apply w-full max-w-[600px] object-fill mx-auto;
       }
       .icon-file-empty {
         @apply absolute left-0 right-0 top-[calc(50%-40px)] text-gray-200 text-5xl;
@@ -176,7 +174,7 @@
       }
     }
     &-inner {
-      @apply flex flex-col relative;
+      @apply flex flex-col relative p-5;
       @apply lg:w-full lg:h-full lg:p-8;
     }
     &-name {
@@ -188,7 +186,7 @@
       @apply lg:pl-0 lg:pt-5 lg:pr-0;
     }
     &-piece {
-      @apply max-w-[6.875rem] relative bg-gray-200 rounded ml-5 mt-5;
+      @apply max-w-[6.875rem] relative bg-gray-200 rounded ml-5 mt-8;
       @apply lg:ml-0;
 
       .increase,
@@ -215,7 +213,17 @@
         -moz-appearance: textfield;
       }
     }
+    &-cnc-cases {
+      @apply mt-5;
+      &-title {
+        @apply font-heading font-semibold text-base mb-4;
+      }
+    }
     &-materials {
+      @apply mb-5;
+    }
+    &-materials,
+    &-plastic-type {
       @apply flex flex-wrap items-center gap-5;
       &-title {
         @apply w-full mb-5;
@@ -242,8 +250,13 @@
         }
       }
     }
+    &-plastic-type-wrapper {
+      > div:first-child {
+        @apply w-full mb-5;
+      }
+    }
     &-nextbtn {
-      @apply bg-custom-200 flex justify-end items-center w-full min-h-[110px] mt-10;
+      @apply bg-custom-200 flex justify-end items-center w-full min-h-[110px] mt-10 px-5;
       @apply lg:px-7 lg:mt-auto;
       .btn {
         @apply w-auto transition-all ease-in duration-200 delay-200;
@@ -365,7 +378,6 @@
       }
     }
   }
-  &-printing,
   &-industrial,
   &-successive-processes {
     .create-project-left {

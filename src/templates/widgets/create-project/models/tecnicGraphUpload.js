@@ -66,9 +66,11 @@ class TecnicGraphUpload {
   }
   onClickHandler() {
     const btnClick = document.querySelector(".tecnical-file-upload");
-    btnClick.addEventListener("click", function () {
-      document.querySelector("#create_project_tecnic_file_upload").click();
-    });
+    if (btnClick) {
+      btnClick.addEventListener("click", function () {
+        document.querySelector("#create_project_tecnic_file_upload").click();
+      });
+    }
   }
 }
 export default TecnicGraphUpload;

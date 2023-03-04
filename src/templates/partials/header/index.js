@@ -40,7 +40,6 @@ class Header {
         localStorage.setItem("lang", btnId);
 
         // html lang change
-        document.documentElement.lang = btnId;
         window.location.reload();
       });
     });
@@ -50,10 +49,12 @@ class Header {
     if (localStorage.getItem("lang") == "en") {
       const firstBtn =
         document.querySelector(".site-header-lang").firstElementChild;
+      document.documentElement.lang = "en";
       firstBtn.classList.add("selected");
     } else if (localStorage.getItem("lang") == "tr") {
       const lastBtn =
         document.querySelector(".site-header-lang").lastElementChild;
+      document.documentElement.lang = "tr";
       lastBtn.classList.add("selected");
     }
   }

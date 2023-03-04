@@ -19,8 +19,9 @@ class Metal {
       new OfferModal("Sac Metal İşleme");
       //firts init
       new Metrics();
+      new PieceModel();
+      new TecnicGraphUpload();
       this.initFunc();
-      this.createProject();
 
       //function detected
       Viewer();
@@ -29,6 +30,7 @@ class Metal {
       //last init
       this.onLoadMaterials();
       this.onLoadTolerans();
+      this.createProject();
     }
   }
 
@@ -95,10 +97,6 @@ class Metal {
   }
 
   initFunc() {
-    // piece input get val
-    new PieceModel();
-    new TecnicGraphUpload();
-
     //Selectors
     const tecnicGraphFile = document.querySelector(
       "#create_project_tecnic_file_upload"
@@ -130,48 +128,57 @@ class Metal {
       const user_login_hash = localStorage.getItem("login_hash");
       const user_login_id = JSON.parse(user_login_hash);
 
-      //Offer Button
-      const user_uyeId = user_login_id.id;
-      const user_kategoriId = btnPriceOffer.getAttribute("cat");
-      const user_metricId = btnPriceOffer.getAttribute("metric");
-      const user_malzemeId = btnPriceOffer.getAttribute("id");
-      const user_toleransId = btnPriceOffer.getAttribute("tolerans");
-      const user_img = btnPriceOffer.getAttribute("img");
-      const userTecnicFile = btnPriceOffer.getAttribute("file");
-      const user_piece = pieceInput.value;
-      const user_genislik = btnPriceOffer.getAttribute("genislik");
-      const user_yukseklik = btnPriceOffer.getAttribute("yukseklik");
-      const user_derinlik = btnPriceOffer.getAttribute("derinlik");
-      const user_catname = btnPriceOffer.getAttribute("isim");
+      const rediosBtns = document.querySelectorAll(
+        ".create-project-right-materials li .radio input"
+      );
+      var selectedRadios = Array.from(rediosBtns).find(
+        (radio) => radio.checked
+      );
+      if (!selectedRadios) {
+        alert("Lütfen malmeze seçimi yapınız!");
+      } else {
+        const materialId = selectedRadios.getAttribute("id");
 
-      const createFormData = new FormData(createProjectFrom);
+        //Offer Button
+        const user_uyeId = user_login_id.id;
+        const user_kategoriId = btnPriceOffer.getAttribute("kategori_id");
+        const user_metricId = btnPriceOffer.getAttribute("metric");
+        const user_toleransId = btnPriceOffer.getAttribute("tolerans");
+        const user_img = btnPriceOffer.getAttribute("img");
+        const userTecnicFile = btnPriceOffer.getAttribute("file");
+        const user_piece = pieceInput.value;
+        const user_genislik = btnPriceOffer.getAttribute("genislik");
+        const user_yukseklik = btnPriceOffer.getAttribute("yukseklik");
+        const user_derinlik = btnPriceOffer.getAttribute("derinlik");
 
-      createFormData.append("uye_id", user_uyeId);
-      createFormData.append("kategori_id", user_kategoriId);
-      createFormData.append("metrik_id", user_metricId);
-      createFormData.append("malzeme_id", user_malzemeId);
-      createFormData.append("tolerans_id", user_toleransId);
-      createFormData.append("cad_dosyasi", user_img);
-      createFormData.append("teknik_cizim", userTecnicFile);
-      createFormData.append("adet", user_piece);
-      createFormData.append("genislik", user_genislik);
-      createFormData.append("yukseklik", user_yukseklik);
-      createFormData.append("derinlik", user_derinlik);
-      createFormData.append("olcek", null);
+        const createFormData = new FormData(createProjectFrom);
 
-      axios
-        .post(`${process.env.API_KEY}` + "/project/create", createFormData, {
-          auth: {
-            username: "prodigma3d",
-            password: `${apitoken}`,
-          },
-        })
-        .then((res) => {
-          console.log(res);
-          //alert(res.data.message);
-          modalPopup.classList.add("open");
-        })
-        .catch((err) => console.log(err));
+        createFormData.append("uye_id", user_uyeId);
+        createFormData.append("kategori_id", user_kategoriId);
+        createFormData.append("metrik_id", user_metricId);
+        createFormData.append("malzeme_id", materialId);
+        createFormData.append("tolerans_id", user_toleransId);
+        createFormData.append("cad_dosyasi", user_img);
+        createFormData.append("teknik_cizim", userTecnicFile);
+        createFormData.append("adet", user_piece);
+        createFormData.append("genislik", user_genislik);
+        createFormData.append("yukseklik", user_yukseklik);
+        createFormData.append("derinlik", user_derinlik);
+        createFormData.append("olcek", null);
+
+        axios
+          .post(`${process.env.API_KEY}` + "/project/create", createFormData, {
+            auth: {
+              username: "prodigma3d",
+              password: `${apitoken}`,
+            },
+          })
+          .then((res) => {
+            console.log(res);
+            modalPopup.classList.add("open");
+          })
+          .catch((err) => console.log(err));
+      }
     });
   }
 }

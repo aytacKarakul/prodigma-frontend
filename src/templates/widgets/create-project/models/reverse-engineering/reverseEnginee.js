@@ -86,40 +86,45 @@ class ReverseEngineer {
       const btnDate = document.querySelector("#js-reverse-engine-date-input");
       const inputHour = document.querySelector("#js-reverse-engine-time-input");
       const modalPopup = document.querySelector("#reverse-enginee-modal");
-      const rediosBtns = document.querySelectorAll(
+      const radiosBtns = document.querySelectorAll(
         "#reverse-engineer-question li .radio input"
       );
 
       const strDescription = inputDesc.value.trim();
       const strDate = btnDate.value;
       const strHour = inputHour.value;
-      var selectedRadios = Array.from(rediosBtns).find(
+      var selectedRadios = Array.from(radiosBtns).find(
         (radio) => radio.checked
       );
-      const questionId = selectedRadios.getAttribute("id");
 
-      //Form Data
-      const formData = new FormData(this.ReverseEngineeForm);
-      formData.append("uye_id", getUserId());
-      formData.append("kategori_id", categoryId());
-      formData.append("soru_id", questionId);
-      formData.append("aciklama", strDescription);
-      formData.append("tarih", strDate);
-      formData.append("saat", strHour);
+      if (!selectedRadios) {
+        alert("Lütfen malmeze seçimi yapınız!");
+      } else {
+        const questionId = selectedRadios.getAttribute("id");
 
-      axios
-        .post(`${process.env.API_KEY}` + "/project/create", formData, {
-          auth: {
-            username: "prodigma3d",
-            password: `${apitoken}`,
-          },
-        })
-        .then(function (res) {
-          if (res.data.message) {
-            modalPopup.classList.add("open");
-          }
-        })
-        .catch((err) => console.log(err));
+        //Form Data
+        const formData = new FormData(this.ReverseEngineeForm);
+        formData.append("uye_id", getUserId());
+        formData.append("kategori_id", categoryId());
+        formData.append("soru_id", questionId);
+        formData.append("aciklama", strDescription);
+        formData.append("tarih", strDate);
+        formData.append("saat", strHour);
+
+        axios
+          .post(`${process.env.API_KEY}` + "/project/create", formData, {
+            auth: {
+              username: "prodigma3d",
+              password: `${apitoken}`,
+            },
+          })
+          .then(function (res) {
+            if (res.data.message) {
+              modalPopup.classList.add("open");
+            }
+          })
+          .catch((err) => console.log(err));
+      }
     });
   }
 }

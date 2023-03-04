@@ -1,10 +1,10 @@
 .create-project-sets.create-project-cnc
     .create-project-left
         .drag-area
-            iframe(src="https://demo.amfg.ai/new/live/promakim.en.trl.html", frameborder="0")
-        .create-project-left-desc|Bir CAD dosyası yükleyin veya sürükleyip bırakın
-        .create-project-left-tt1|*Maxmum dosya yükleme boyutu 150 mb’dir.
-        .create-project-left-tt2|*Şu uzantıdaki dosyaları yükleyin; 3DM, IGES, IGS, STEP, STL
+             .drag-area-contents
+                .create-project-left-desc|Bir CAD dosyası yükleyin veya sürükleyip bırakın
+                .create-project-left-tt1|*Maxmum dosya yükleme boyutu 150 mb’dir.
+                .create-project-left-tt2|*Şu uzantıdaki dosyaları yükleyin; 3DM, IGES, IGS, STEP, STL
     .create-project-right
         .create-project-right-steps
             button(class="lnk active", data-selection="properties")|1
@@ -14,26 +14,30 @@
             .create-project-right-inner
                 .create-project-right-name|Siz tasarlayın, Prodigma CNC işlesin!
                 .create-project-right-sub-text|Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                .create-project-right-cnc-cases
+                    .create-project-right-cnc-cases-title|CNC İşleme yöntemi seçiniz
+                    ul(id="js-cnc-cases-wrapper")
+                .create-project-right-append-elements
         div(data-selection="materials", hidden)
             .create-project-right-inner
                 .create-project-right-materials-title|Malzeme Seçimi
                 ul.create-project-right-materials
                     li
                         .input.radio
-                            input(type="radio")
-                            label(for="js-material-keys")|CNC Makina
+                            input(type="radio", name="cnc",id="1")
+                            label(for="js-cnc-process-keys")|CNC Makina
                     li
                         .input.radio
-                            input(type="radio")
-                            label(for="js-material-keys")|CNC Torna
+                            input(type="radio", name="cnc",id="2")
+                            label(for="js-cnc-process-keys")|CNC Torna
                     li
                         .input.radio
-                            input(type="radio")
-                            label(for="js-material-keys")|CNC Fereze
+                            input(type="radio", name="cnc",id="3")
+                            label(for="js-cnc-process-keys")|CNC Fereze
             .create-project-right-cnc-other-note
                 .create-project-right-cnc-other-note-tt1|Diğer
                 .create-project-right-cnc-other-note-tt2|İstediğiniz malzeme yukarıda listelenmiyorsa aşağıdaki alanda belirtiniz.
-                .input.textbox
+                .input.textbox.borders
                     label(for="js-project-right-cnc-other-note")|Malzeme
                     span.wrp
                         input(type="text", id="js-project-right-cnc-other-note")
@@ -41,6 +45,7 @@
             button(class='btn btn-secondary btn-medium btn-next-to-bid', type='button', data-type='cnc' disabled)
                 span|Sonraki Adım
                 i.icon.icon-arrow-line
-            button(class='btn btn-secondary btn-medium btn-next-bid', type='button', disabled data-modal="modal-cnc")
-                span|Fiyat Teklifi Al
-                i.icon.icon-arrow-line
+            form(id="create-project-form")
+                button(class='btn btn-secondary btn-medium btn-next-bid', type='submit', disabled)
+                    span|Fiyat Teklifi Al
+                    i.icon.icon-arrow-line

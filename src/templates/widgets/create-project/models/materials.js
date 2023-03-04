@@ -1,3 +1,4 @@
+import { categoryId } from "../../../utils/getCategoryId";
 class Materials {
   constructor(id, kategori_id, isim, fiyat, resim, durum, sira) {
     this.id = id;
@@ -28,7 +29,8 @@ class Materials {
     tempInput.setAttribute("type", "radio");
     tempInput.setAttribute("id", this.id);
     tempInput.setAttribute("price", this.fiyat);
-    tempInput.setAttribute("name", this.kategori_id);
+    tempInput.setAttribute("kategori_id", categoryId());
+    tempInput.setAttribute("name", "material");
 
     //template li > div > label create
     let tempLabel = document.createElement("label");
@@ -54,7 +56,6 @@ class Materials {
     inputElement.forEach((itm) => {
       itm.addEventListener("click", function (event) {
         const id = event.target.id;
-        const categoryId = event.target.name;
 
         const parentEl = event.target.parentElement.parentElement;
         const lbl = event.target.nextSibling.textContent;
@@ -73,7 +74,7 @@ class Materials {
 
         btnLast.setAttribute("id", id);
         btnLast.setAttribute("isim", lbl);
-        btnLast.setAttribute("cat", categoryId);
+        btnLast.setAttribute("kategori_id", categoryId());
       });
     });
   }
