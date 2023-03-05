@@ -50,7 +50,7 @@
         @apply lg:text-base lg:text-white;
       }
       &-btn {
-        button {
+        .btn {
           @apply w-40 mt-8;
           @apply lg:mx-auto lg:mt-2.5;
         }
