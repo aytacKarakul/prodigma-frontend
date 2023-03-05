@@ -7,7 +7,7 @@ import PieceModel from "../pieceEnter";
 import { Viewer } from "../viewer";
 import { stepSelection } from "../stepSelection";
 import Metrics from "../metrics";
-
+import OfferModal from "../modalPopup";
 class CreateCncCases {
   constructor(id, categoryId, isim) {
     this.id = id;
@@ -69,8 +69,8 @@ class CncIsleme {
 
   initFunc() {
     if (this.pageCncProcess) {
-      console.log("Cnc Page");
       //firts init
+      new OfferModal("CNC İşleme", "cnc");
       new Metrics();
       new PieceModel();
       new TecnicGraphUpload();
@@ -105,12 +105,16 @@ class CncIsleme {
       }
     };
 
+    const pieceInput = document.querySelector("#js-create_project_piece");
+    const modalPopup = document.querySelector("#modal-cnc");
+
+    const cncOtherNote = document.querySelector(
+      "#js-project-right-cnc-other-note"
+    );
+
     createProjectFrom.addEventListener("submit", function (e) {
       e.preventDefault();
-      const pieceInput = document.querySelector("#js-create_project_piece");
-      const cncOtherNote = document.querySelector(
-        "#js-project-right-cnc-other-note"
-      );
+
       const rediosBtns = document.querySelectorAll(
         ".create-project-right-materials li .radio input"
       );

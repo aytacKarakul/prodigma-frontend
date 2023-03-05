@@ -29,10 +29,10 @@ class Metrics {
                 <input type="text" id="js-scales-input-depth" name="scales-depth"></input>
             </div>
             <div class='create-project-scales-rgh'>
-                <button type="button" name="mm">MM</button>
-                <button type="button" name="cm">CM</button>
-                <button type="button" name="m">M</button>
-                <button type="button" name="inch">INCH</button>
+                <button type="button" name="1">MM</button>
+                <button type="button" name="2">CM</button>
+                <button type="button" name="3">M</button>
+                <button type="button" name="4">INCH</button>
             </div>
         </div>
     `;

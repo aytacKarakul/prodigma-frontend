@@ -8,6 +8,8 @@ import { Viewer } from "../viewer";
 import { stepSelection } from "../stepSelection";
 import OfferModal from "../modalPopup";
 import Metrics from "../metrics";
+import { categoryId } from "../../../../utils/getCategoryId";
+import { getUserId } from "../../../../utils/localStorage";
 
 class Metal {
   constructor() {
@@ -16,7 +18,7 @@ class Metal {
   }
   init() {
     if (this.modelMetalWrapper) {
-      new OfferModal("Sac Metal İşleme");
+      new OfferModal("Sac Metal İşleme", "metal");
       //firts init
       new Metrics();
       new PieceModel();
@@ -35,18 +37,18 @@ class Metal {
   }
 
   async onLoadMaterials() {
-    const locationCatParams = window.location.search;
-    // Further parsing:
-    const params = new URLSearchParams(locationCatParams);
-    const cat = parseInt(params.get("cat")); // is the number
-
     await axios
-      .get(`${process.env.API_KEY}` + "/materials/get-category/" + `${cat}`, {
-        auth: {
-          username: "prodigma3d",
-          password: apitoken,
-        },
-      })
+      .get(
+        `${process.env.API_KEY}` +
+          "/materials/get-category/" +
+          `${categoryId()}`,
+        {
+          auth: {
+            username: "prodigma3d",
+            password: apitoken,
+          },
+        }
+      )
       .then(function (res) {
         res.data.forEach((data) => {
           new Materials(
@@ -65,18 +67,18 @@ class Metal {
   }
 
   async onLoadTolerans() {
-    const locationCatParams = window.location.search;
-    // Further parsing:
-    const params = new URLSearchParams(locationCatParams);
-    const cat = parseInt(params.get("cat")); // is the number
-
     await axios
-      .get(`${process.env.API_KEY}` + "/tolerance/get-category/" + `${cat}`, {
-        auth: {
-          username: "prodigma3d",
-          password: apitoken,
-        },
-      })
+      .get(
+        `${process.env.API_KEY}` +
+          "/tolerance/get-category/" +
+          `${categoryId()}`,
+        {
+          auth: {
+            username: "prodigma3d",
+            password: apitoken,
+          },
+        }
+      )
       .then(function (response) {
         if (response.data !== null) {
           response.data.map((tolerans) => {
@@ -119,14 +121,11 @@ class Metal {
     );
     const createProjectFrom = document.querySelector("#create-project-form");
 
+    const pieceInput = document.querySelector("#js-create_project_piece");
+    const modalPopup = document.querySelector("#modal-metal");
+
     createProjectFrom.addEventListener("submit", (e) => {
       e.preventDefault();
-
-      const pieceInput = document.querySelector("#js-create_project_piece");
-      const modalPopup = document.querySelector("#modal-metal");
-
-      const user_login_hash = localStorage.getItem("login_hash");
-      const user_login_id = JSON.parse(user_login_hash);
 
       const rediosBtns = document.querySelectorAll(
         ".create-project-right-materials li .radio input"
@@ -140,7 +139,6 @@ class Metal {
         const materialId = selectedRadios.getAttribute("id");
 
         //Offer Button
-        const user_uyeId = user_login_id.id;
         const user_kategoriId = btnPriceOffer.getAttribute("kategori_id");
         const user_metricId = btnPriceOffer.getAttribute("metric");
         const user_toleransId = btnPriceOffer.getAttribute("tolerans");
@@ -153,7 +151,7 @@ class Metal {
 
         const createFormData = new FormData(createProjectFrom);
 
-        createFormData.append("uye_id", user_uyeId);
+        createFormData.append("uye_id", getUserId());
         createFormData.append("kategori_id", user_kategoriId);
         createFormData.append("metrik_id", user_metricId);
         createFormData.append("malzeme_id", materialId);

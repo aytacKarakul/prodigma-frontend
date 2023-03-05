@@ -34,7 +34,7 @@ export function stepSelection() {
       ) {
         alert("Lütfen metrik alanını eksiksiz doldurunuz!");
         metricInputWidth.focus();
-      } else if (!selectedRadios) {
+      } else if (!selectedRadios && cncRadiosSelectBtns.length > 0) {
         alert("Lütfen Cnc işleme yöntemi seçiniz!");
       } else {
         stepSelectionBtns.forEach((btn) => {
@@ -56,7 +56,9 @@ export function stepSelection() {
 
         dataSelectionProporties.classList.add("hidden");
         dataSelectionMaterials.removeAttribute("hidden");
-        btnSelectionLast.setAttribute("cnc_isleme", selectedRadios.id);
+        if (selectedRadios) {
+          btnSelectionLast.setAttribute("cnc_isleme", selectedRadios.id);
+        }
         if (btnSelectionLast) {
           btnSelectionLast.style.display = "flex";
           btnSelectionLast.classList.add("btn-green");

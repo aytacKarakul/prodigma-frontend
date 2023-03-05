@@ -17,7 +17,7 @@ function modalPopup() {
       modals.forEach((modal) => {
         if (modal.classList.contains("open")) {
           modal.classList.remove("open");
-          window.location.reload();
+          window.location.href = "/";
         }
       });
     });

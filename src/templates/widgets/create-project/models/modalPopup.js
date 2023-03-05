@@ -1,8 +1,8 @@
 import modalPopup from "../../../components/web-component/modal";
-
 class OfferModal {
-  constructor(name) {
+  constructor(name, type) {
     this.name = name;
+    this.type = type;
 
     this.modalInit();
   }
@@ -11,7 +11,7 @@ class OfferModal {
     const user_eposta = JSON.parse(user);
 
     let modalTemplate = document.createElement("div");
-    modalTemplate.setAttribute("id", "modal-metal");
+    modalTemplate.setAttribute("id", `modal-${this.type}`);
     modalTemplate.className = "modal";
 
     modalTemplate.innerHTML = `
@@ -19,9 +19,7 @@ class OfferModal {
     <div class="modal-container">
         <button class="modal-close modal-exit"><i class="icon icon-close"></i></button>    
         <h1>${this.name} Fiyat Teklifi</h1>
-        <h2>Fiyat teklifi talebiniz alınmıştır. Mümkün olan en kısa sürede projenizi inceleyip <strong>${
-          user_eposta.eposta ? user_eposta.eposta : null
-        }</strong> e-posta adresine dönüş yapacağız.</h2>
+        <h2>Fiyat teklifi talebiniz alınmıştır. Mümkün olan en kısa sürede projenizi inceleyip <strong>${user_eposta.eposta}</strong> e-posta adresine dönüş yapacağız.</h2>
         <button class="btn btn-medium btn-green modal-exit">Tamam</button>
     </div>`;
 

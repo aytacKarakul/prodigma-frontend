@@ -6,19 +6,17 @@
                     h1 Özel parça tedarik etmenin en kolay yolu
                     p Yüzlerce uzman üreticiyle ortaklık kurarak karmaşık prototipler ve son kullanım parçaları için tutarlı kaliteyi garanti ediyoruz.
                     .main-slider-banner-buttons
-                        +button('Bize Ulaşın','primary','m',false)(href="#")
-                        +button('Proje Başlat','green','m',false)(href="/proje-baslat.html")
+                        +button('Bize Ulaşın','primary','m',false)(href="/iletisim.html")
+                        +button('Proje Başlat','green','m',false)(href="/login.html", id="main-slider-banner-start-project-btn")
             .swiper.swiper-main
                 .swiper-wrapper
                     .swiper-slide
                         .text-content
                             p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        //-img(src=require(''), alt="Test Img")
                         +picture({sm:require('Images/slider_1x2.1.jpg'), lg:require('Images/slider_1x2.jpg')})
                     .swiper-slide
                         .text-content
                             p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        //-img(src=require('Images/slider_2x2.jpg'), alt="Test Img")
                         +picture({sm:require('Images/slider_2x2.1.jpg'), lg:require('Images/slider_2x2.jpg')})
                 .swiper-button-next
                 .swiper-button-prev
