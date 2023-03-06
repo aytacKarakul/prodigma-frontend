@@ -11,43 +11,45 @@ async function getAllCategories() {
       },
     })
     .then((res) => {
-      res.data.map((items) => {
-        const wrapper = document.querySelector(
-          ".create-project-swiper .swiper-wrapper"
-        );
-        if (wrapper) {
-          let content = document.createElement("div");
-          content.className = "swiper-slide";
+      if (res.data) {
+        res.data.map((items) => {
+          const wrapper = document.querySelector(
+            ".create-project-swiper .swiper-wrapper"
+          );
+          if (wrapper) {
+            let content = document.createElement("div");
+            content.className = "swiper-slide";
 
-          content.innerHTML += `
-            <button data-url="/${items.url}.html?cat=${items.id}" id="${items.id}">
-                <img src='https://via.placeholder.com/380x380.png', alt='3D Baskı' />
-            </button>
-            <span>${items.isim}</span>
-        `;
-          wrapper.prepend(content);
+            content.innerHTML += `
+              <button data-url="/${items.url}.html?cat=${items.id}" id="${items.id}">
+                  <img src='https://via.placeholder.com/380x380.png', alt='3D Baskı' />
+              </button>
+              <span>${items.isim}</span>
+          `;
+            wrapper.prepend(content);
 
-          var swiperCoverFlow = new Swiper(".create-project-swiper", {
-            modules: [EffectCoverflow, Pagination],
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            loop: true,
-            coverflowEffect: {
-              rotate: 50,
-              stretch: 0,
-              depth: 160,
-              modifier: 1,
-              slideShadows: false,
-            },
-            pagination: {
-              el: ".swiper-pagination",
-            },
-          });
-          return swiperCoverFlow;
-        }
-      });
+            var swiperCoverFlow = new Swiper(".create-project-swiper", {
+              modules: [EffectCoverflow, Pagination],
+              effect: "coverflow",
+              grabCursor: true,
+              centeredSlides: true,
+              slidesPerView: "auto",
+              loop: true,
+              coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 160,
+                modifier: 1,
+                slideShadows: false,
+              },
+              pagination: {
+                el: ".swiper-pagination",
+              },
+            });
+            return swiperCoverFlow;
+          }
+        });
+      }
     })
     .catch((err) => console.log(err));
   //-Slider button

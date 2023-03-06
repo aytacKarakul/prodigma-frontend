@@ -89,7 +89,7 @@ class AuthUserLogin {
           .then((res) => {
             if (res.data.status === 1) {
               localStorage.removeItem("login_hash");
-              window.location.reload();
+              window.location.href = "/";
             }
           })
           .catch((err) => console.log(err));

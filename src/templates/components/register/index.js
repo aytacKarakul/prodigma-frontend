@@ -78,8 +78,14 @@ class LoginTabs {
 
     // Login Page Tab sekmesi
     this.tabInit();
+
     // Login Form
     this.loginUserFromUI();
+
+    //onLoadFunctions
+    this.onLoadProvince();
+    this.onLoadProvinceToDistrict();
+
     //Register a user
     this.registerUserFromUI();
   }
@@ -178,8 +184,63 @@ class LoginTabs {
       // });
     }
   };
+
+  async onLoadProvince() {
+    //province get list data
+    await axios
+      .get("https://prodigma3d.rengaver.com/Api/adress/iller", {
+        auth: {
+          username: "prodigma3d",
+          password: apitoken,
+        },
+      })
+      .then(function (response) {
+        if (response.data) {
+          response.data.forEach((data) => {
+            let option = document.createElement("option");
+            option.setAttribute("id", data.id);
+            option.textContent = data.il_adi;
+            document.querySelector("#js-corporate-province").append(option);
+          });
+        }
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+  }
+  onLoadProvinceToDistrict() {
+    const select = document.querySelector("#js-corporate-province");
+    select.addEventListener("change", function () {
+      const elemet = select.options[select.selectedIndex];
+
+      axios
+        .get(`${process.env.API_KEY}` + "/adress/ilceler/" + `${elemet.id}`, {
+          auth: {
+            username: "prodigma3d",
+            password: apitoken,
+          },
+        })
+        .then(function (response) {
+          if (response.data) {
+            response.data.forEach((data) => {
+              let option = document.createElement("option");
+              option.setAttribute("id", data.id);
+              option.setAttribute("il_id", data.il_id);
+              option.textContent = data.ilce_adi;
+              document.querySelector("#js-corporate-district").append(option);
+            });
+          }
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        });
+    });
+  }
+
   //Register Form
-  registerUserFromUI = () => {
+  async registerUserFromUI() {
     //function global this variable
     const _this = this;
 
@@ -218,6 +279,7 @@ class LoginTabs {
           this.registerPassTextUI.innerHTML = "";
         }
       });
+      //submit form
       _this.registerForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
@@ -261,6 +323,7 @@ class LoginTabs {
         formData.append("kurumsal", isKurumsalSelected);
         formData.append("sirket_tipi", sirket_tipi);
         formData.append("musteri_tipi", musteri_tipi);
+        formData.append("telefon", telefon);
         formData.append("sirket_tel", telefon);
         formData.append("fax", fax);
         formData.append("il", il);
@@ -302,7 +365,7 @@ class LoginTabs {
           .catch((response) => response);
       });
     }
-  };
+  }
 
   userLoginSuccess = (type) => {
     let temp = document.createElement("div");

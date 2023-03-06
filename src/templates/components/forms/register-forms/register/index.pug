@@ -24,12 +24,8 @@
             +inputs('textbox','Fax', 'js-register-user-fax')
         .hidden.corporate
             +select('İl','js-corporate-province')
-                each value in [{value: 0, text: 'İstanbul'}, {value: 1, text: 'Ankara'}, {value: 2, text: 'İzmir'}]
-                    option(value=value.value) #{value.text}
         .hidden.corporate
             +select('İlçe','js-corporate-district')
-                each value in [{value: 'a', text: 'İlçe A'}, {value: 'b', text: 'İlçe B'}, {value: 'c', text: 'İlçe C'}]
-                    option(value=value.value) #{value.text}
         .hidden.corporate
             +inputs('textarea','Fatura Adresi', 'js-corporate-billing-address')
         .input-privacy-policy 
