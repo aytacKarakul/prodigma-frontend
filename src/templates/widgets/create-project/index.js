@@ -4,6 +4,7 @@ import Model3D from "./models/3d-model";
 import Industrial from "./models/industrial";
 import ReverseEngineer from "./models/reverse-engineering/reverseEnginee";
 import CncIsleme from "./models/cnc";
+import PostProcess from "./models/successive-processes";
 
 class CreateProject {
   constructor() {
@@ -13,6 +14,7 @@ class CreateProject {
     new Industrial();
     new ReverseEngineer();
     new CncIsleme();
+    new PostProcess();
   }
 }
 

@@ -10,11 +10,12 @@ class OfferModal {
     const user = localStorage.getItem("login_hash");
     const user_eposta = JSON.parse(user);
 
-    let modalTemplate = document.createElement("div");
-    modalTemplate.setAttribute("id", `modal-${this.type}`);
-    modalTemplate.className = "modal";
+    if (user_eposta) {
+      let modalTemplate = document.createElement("div");
+      modalTemplate.setAttribute("id", `modal-${this.type}`);
+      modalTemplate.className = "modal";
 
-    modalTemplate.innerHTML = `
+      modalTemplate.innerHTML = `
     <div class="modal-bg modal-exit"></div>
     <div class="modal-container">
         <button class="modal-close modal-exit"><i class="icon icon-close"></i></button>    
@@ -23,8 +24,9 @@ class OfferModal {
         <button class="btn btn-medium btn-green modal-exit">Tamam</button>
     </div>`;
 
-    document.body.appendChild(modalTemplate);
-    modalPopup();
+      document.body.appendChild(modalTemplate);
+      modalPopup();
+    }
   }
 }
 

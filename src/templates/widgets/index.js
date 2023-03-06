@@ -1,4 +1,4 @@
-import { quadrapleBanner } from "./quadraple-banner";
+//import { quadrapleBanner } from "./quadraple-banner";
 import BenefitsBrandBanner from "./benefits-brands";
 import Blog from "./blog";
 import { Thermoplastics } from "./thermoplastics";
@@ -11,12 +11,12 @@ class Widgets {
     new CreateProjectBanner();
     new BenefitsBrandBanner();
     new Blog();
-    quadrapleBanner();
+    //quadrapleBanner();
     Thermoplastics();
   }
 }
 
 export default Widgets;
 
-import 'Images/hakkimizda_hero.jpg';
-import 'Images/hakkimizda_hero_sm.jpg';
+import "Images/hakkimizda_hero.jpg";
+import "Images/hakkimizda_hero_sm.jpg";
