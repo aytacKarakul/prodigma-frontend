@@ -8,8 +8,23 @@ class Header {
 
     this.initHeader();
     this.langChangeFunc();
+    this.siteLoginUserNameSurname();
   }
+  siteLoginUserNameSurname() {
+    const authUser = localStorage.getItem("login_hash");
+    const elemtAppend = document.querySelector(".site-header-login-user");
+    const mobileElementAppend = document.querySelector(
+      ".site-mobile-header-wrapper-top-member .mmbr"
+    );
 
+    if (authUser != null) {
+      const getUserParser = JSON.parse(authUser);
+      const name = getUserParser.ad.charAt(0);
+      const surName = getUserParser.soyad.charAt(0);
+      elemtAppend.innerHTML = name + surName;
+      mobileElementAppend.innerHTML = name + surName;
+    }
+  }
   initHeader() {
     this.header?.addEventListener("mouseenter", (event) => {
       event.target.classList.add("site-header-anim");

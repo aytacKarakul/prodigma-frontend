@@ -1,31 +1,23 @@
-- var authenticated = true
-
 .site-mobile-header
     .site-mobile-header-hamburger
         i.icon.icon-hamburger
     .site-mobile-header-logo 
         a(href="/")
-            img(src=require('Images/logo.svg') alt="Prodigma")
+            img(src=require('Images/logo.svg') alt="Prodigma 3D")
     .site-mobile-header-auth
-        case authenticated
-            when authenticated = true
-                a(href="/basket.html")
-                    i.icon.icon-cart
-            when authenticated= false
-                a(href="/login.html")
-                    i.icon.icon-member
+        a(href="javascript:void(0);")(id="js-mobile-basket-redirect-btn", hidden)
+            i.icon.icon-cart
+        a(href="/login.html")(id="js-mobile-login-redirect-btn")
+            i.icon.icon-member
     .site-mobile-header-wrapper
         .site-mobile-header-wrapper-top
             .site-mobile-header-wrapper-top-close 
                 i.icon.icon-close
             .site-mobile-header-wrapper-top-title MENÜ
             .site-mobile-header-wrapper-top-member
-                case authenticated
-                    when authenticated= true
-                        .mmbr TA
-                    when authenticated= false
-                        a(href="/login.html")
-                            i.icon.icon-member
+                .mmbr(id="js-mobile-mmbr-info", hidden)|TA
+                a(href="/login.html")(id="js-mobile-mmbr-login-redirect")
+                    i.icon.icon-member
         .site-mobile-header-nav
             ul
                 li 

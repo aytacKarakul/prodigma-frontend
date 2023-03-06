@@ -9,3 +9,11 @@ export const getUserId = function () {
     return userParser.id;
   }
 };
+
+export const getUser = function () {
+  const authUser = localStorage.getItem("login_hash") || null;
+  if (authUser) {
+    const userParser = JSON.parse(authUser);
+    return userParser;
+  }
+};

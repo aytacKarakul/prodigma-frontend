@@ -186,36 +186,11 @@ class LoginTabs {
   };
 
   async onLoadProvince() {
-    //province get list data
-    await axios
-      .get("https://prodigma3d.rengaver.com/Api/adress/iller", {
-        auth: {
-          username: "prodigma3d",
-          password: apitoken,
-        },
-      })
-      .then(function (response) {
-        if (response.data) {
-          response.data.forEach((data) => {
-            let option = document.createElement("option");
-            option.setAttribute("id", data.id);
-            option.textContent = data.il_adi;
-            document.querySelector("#js-corporate-province").append(option);
-          });
-        }
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
-  }
-  onLoadProvinceToDistrict() {
-    const select = document.querySelector("#js-corporate-province");
-    select.addEventListener("change", function () {
-      const elemet = select.options[select.selectedIndex];
-
-      axios
-        .get(`${process.env.API_KEY}` + "/adress/ilceler/" + `${elemet.id}`, {
+    const elemtWrapper = document.querySelector("#js-corporate-province");
+    if (elemtWrapper) {
+      //province get list data
+      await axios
+        .get("https://prodigma3d.rengaver.com/Api/adress/iller", {
           auth: {
             username: "prodigma3d",
             password: apitoken,
@@ -226,9 +201,8 @@ class LoginTabs {
             response.data.forEach((data) => {
               let option = document.createElement("option");
               option.setAttribute("id", data.id);
-              option.setAttribute("il_id", data.il_id);
-              option.textContent = data.ilce_adi;
-              document.querySelector("#js-corporate-district").append(option);
+              option.textContent = data.il_adi;
+              document.querySelector("#js-corporate-province").append(option);
             });
           }
         })
@@ -236,7 +210,38 @@ class LoginTabs {
           // handle error
           console.log(error);
         });
-    });
+    }
+  }
+  onLoadProvinceToDistrict() {
+    const selectWrapper = document.querySelector("#js-corporate-province");
+    if (selectWrapper) {
+      selectWrapper.addEventListener("change", function () {
+        const elemet = selectWrapper.options[selectWrapper.selectedIndex];
+
+        axios
+          .get(`${process.env.API_KEY}` + "/adress/ilceler/" + `${elemet.id}`, {
+            auth: {
+              username: "prodigma3d",
+              password: apitoken,
+            },
+          })
+          .then(function (response) {
+            if (response.data) {
+              response.data.forEach((data) => {
+                let option = document.createElement("option");
+                option.setAttribute("id", data.id);
+                option.setAttribute("il_id", data.il_id);
+                option.textContent = data.ilce_adi;
+                document.querySelector("#js-corporate-district").append(option);
+              });
+            }
+          })
+          .catch(function (error) {
+            // handle error
+            console.log(error);
+          });
+      });
+    }
   }
 
   //Register Form
