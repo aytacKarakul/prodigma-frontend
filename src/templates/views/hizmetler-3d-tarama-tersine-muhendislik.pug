@@ -1,0 +1,47 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "3D Tarama ve Tersine Mühendislik"
+    - pageDesc = "3D Tarama ve Tersine Mühendislik"
+    - pageClass = "services"
+
+block content
+    .pcnc
+        +hero-banner('3D Tarama ve Tersine Mühendislik', {sm:'img/hero_type_single_mb.jpg', lg:'img/hero_type_single.jpg'})
+        .pcnc-body
+            .pcnc-body-content
+                .pcnc-body-content-title|3D Tarama ve Tersine Mühendislik Nedir?
+                .pcnc-body-content-desc 
+                    p|3D tarama, elle tutulabilir bir objenin bilgisayar ortamı için 3 boyutlu bir temsilinin hızlı, tutarlı ve kolay bir şekilde oluşturulmasıdır. Bir başka deyişle 3D tarama; 3D CAD datası olmayan bir parçanın, CAD datasını oluşturmak için atılan ilk adımdır.
+                    p|3D datası mevcut olmayan parçanın 3D tarama ile elde edilen datasının 3 boyutlu modellenmesi işlemi ise tersine mühendisliktir.
+                
+                p.mt-5
+                    strong|Tersine Mühendislik Süreci
+                p.mt-5
+                    |3D Tarama CAD modelin son haline getirilmesi 3D baskı
+                p.mt-5.mb-5
+                    strong|Kullanım Alanları
+                ul
+                    li.mt-1|Yeniden üretmek istenilen ürünün 3D datasının olmaması
+                    li|Orijinal tasarımın yetersiz dokümantasyona sahip olması
+                    li|Müşterinin ihtiyaç duyduğu ürünün artık üretilmemesi
+                    li|Ürün tasarımında revizyon ihtiyacı
+                    li|Orijinal CAD datanın güncel imalat yöntemleri için yeterli olmaması
+                    li|Parçanın bozulması, kırılması
+            include ../widgets/photo-banner/index.pug
+            include ../widgets/cnc-gallery/index.pug
+        .pcnc-footer-info 
+            .pcnc-footer-info-wrapper
+                .pcnc-footer-info-title Üretim partnerimiz olmak ister misiniz?
+                .pcnc-footer-info-form 
+                    .pcnc-footer-info-form-top 
+                        +inputs('textbox','Ad')
+                        +inputs('textbox','Cep Telefonu', 'js-user-phone')
+                    .pcnc-footer-info-form-bottom
+                        +inputs('textbox','E-Posta Adresi')(type="email")
+                        +inputs('textbox','Kurum Adı')
+                    .pcnc-footer-info-form-checkbox     
+                        +inputs('checkbox','Kişisel Verilerin Korunması Kanunu (KVKK) Açık Rıza Metnini okudum ve onaylıyorum.')
+                        +inputs('checkbox','Girdiğim kişisel bilgilerimin tarafıma iletişime geçilebilmesi için işlenmesine ve kullanımına izin veriyorum.')
+                    .pcnc-footer-info-form-btn 
+                        +button('Gönder', 'green', 's')

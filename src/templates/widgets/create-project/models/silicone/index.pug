@@ -1,9 +1,12 @@
 .create-project-sets.create-project-silicone
     .create-project-left
-        .drag-area
-        .create-project-left-desc|Bir CAD dosyası yükleyin veya sürükleyip bırakın
-        .create-project-left-tt1|*Maxmum dosya yükleme boyutu 150 mb’dir.
-        .create-project-left-tt2|*Şu uzantıdaki dosyaları yükleyin; 3DM, IGES, IGS, STEP, STL
+        .create-project-iframe-service 
+            iframe(src="https://demo.amfg.ai/new/live/promakim.en.trl.html", frameborder="0")
+        //-.drag-area
+            .drag-area-contents
+                .create-project-left-desc|Bir CAD dosyası yükleyin veya sürükleyip bırakın
+                .create-project-left-tt1|*Maxmum dosya yükleme boyutu 150 mb’dir.
+                .create-project-left-tt2|*Şu uzantıdaki dosyaları yükleyin; 3DM, IGES, IGS, STEP, STL
     .create-project-right
         .create-project-right-steps
             button(class="lnk active", data-selection="properties")|1

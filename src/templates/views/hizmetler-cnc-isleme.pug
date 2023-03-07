@@ -1,0 +1,54 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "CNC İşleme"
+    - pageDesc = "CNC İşleme"
+    - pageClass = "services"
+
+block content
+    .pcnc
+        +hero-banner('CNC İşleme', {sm:'img/hero_type_single_mb.jpg', lg:'img/hero_type_single.jpg'})
+        .pcnc-body
+            .pcnc-body-content
+                .pcnc-body-content-title|CNC Nedir?
+                .pcnc-body-content-desc 
+                    p CNC (computer numerical control), bir işlemler bütünü olup bir ürün oluşumunda yapılması gereken işlemlerin tek bir makine üzerinde toparlanmasıdır. CNC tezgâhında, tezgâhın çalıştırılmasından durdurulmasına, takım hareketlerinden takımların değiştirilmesine, eksen hareketlerinden diğer detaylara kadar yapılan tüm işlemler otomatik bir şekilde, el müdahalesi bulunmadan kontrol ünitesi tarafından yapılır. Bu sayede operatör hataları minimuma indirilir ve üretimin hatasız yapılması sağlanır.
+                p.mt-5
+                    strong|CNC ile çalışan yaygın tezgâhlar:
+                ul.mt-5
+                    li Torna Tezgâhı
+                    li Freze Tezgâhı
+                    li Matkap Tezgâhı
+                    li Delik Büyütme Tezgâhı
+                    li Taşlama Tezgâhı
+                p.mt-5
+                    strong|CNC işleme merkezi, 3 konfigürasyondan oluşur:
+                p.mt-5 
+                    strong|Yatay CNC İşleme Merkezi
+                p|Yatay CNC işleme merkezleri birden fazla takımı saklayabilen ve 16 ila 100 takım kapasitesini tutabilen, değiştirilebilir bir sistemden oluşur. Adını şeklinden alır, yatay bir mile sahiptir.
+                p.mt-5 
+                    strong|İşleme Merkezi
+                p|Dikey işleme merkezlerinde tek bir kuruluma ihtiyaç vardır ve bu tek kurulumla birden fazla iş yapılabilir. Genellikle 3 ekseni vardır. Kalıp ve kalıp işleme sektörü için en sık kullanılan tezgâhtır.
+                p.mt-5
+                    strong|Evrensel İşleme Merkezi
+                p|Evrensel işleme merkezi, yatay bir işleme merkezine benzer. Ancak iş mili, bilgisayar kontrolü altında yatay bir konumdan dikey konuma sürekli olarak geçiş yapabilir.
+                p.mt-5 
+                    strong|Avantajları
+                p|Zaman tasarrufu, seri üretim, yüksek hassasiyet, uygun maliyet, depolama kolaylığı, enerji verimliliği
+            include ../widgets/photo-banner/index.pug
+            include ../widgets/cnc-gallery/index.pug
+        .pcnc-footer-info 
+            .pcnc-footer-info-wrapper
+                .pcnc-footer-info-title Üretim partnerimiz olmak ister misiniz?
+                .pcnc-footer-info-form 
+                    .pcnc-footer-info-form-top 
+                        +inputs('textbox','Ad')
+                        +inputs('textbox','Cep Telefonu', 'js-user-phone')
+                    .pcnc-footer-info-form-bottom
+                        +inputs('textbox','E-Posta Adresi')(type="email")
+                        +inputs('textbox','Kurum Adı')
+                    .pcnc-footer-info-form-checkbox     
+                        +inputs('checkbox','Kişisel Verilerin Korunması Kanunu (KVKK) Açık Rıza Metnini okudum ve onaylıyorum.')
+                        +inputs('checkbox','Girdiğim kişisel bilgilerimin tarafıma iletişime geçilebilmesi için işlenmesine ve kullanımına izin veriyorum.')
+                    .pcnc-footer-info-form-btn 
+                        +button('Gönder', 'green', 's')

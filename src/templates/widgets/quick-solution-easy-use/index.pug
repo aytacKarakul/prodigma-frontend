@@ -1,12 +1,12 @@
 .quick-solution-banner
     .quick-solution-banner-wrapper
         .quick-solution-banner-header
-            .quick-solution-banner-header-t1 Hızlı Çözüm Kolay Kullanım
-            .quick-solution-banner-header-t2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            .quick-solution-banner-header-t1|Tekliften Teslimata Kolay Kullanım
+            .quick-solution-banner-header-t2|Üretim, tasarım ve mühendislik hizmetleri gibi pek çok farklı ihtiyacınızı karşılayan platformumuz ile kolay ve sorunsuz bir şekilde iş akışınızı planlamanız mümkün.
         .quick-solution-banner-btns 
-            +button('Konfigürasyon','primary', 'm')
-            +button('Materyal','primary', 'm')
-            +button('Fiyatlandırma','primary', 'm')
+            +button('Projeyi başlat','primary', 'm')(data-id="project-video")
+            +button('Sipariş takibi','primary', 'm')(data-id="order-video")
         .quick-solution-banner-body
             .responsive-iframe-container
-                iframe(class="responsive-iframe-container-iframe" src="https://www.youtube.com/embed/B9I1naWx1Y4?controls=0", frameborder="0", allowfullscreen)
+                iframe(class="responsive-iframe-container-iframe active" src="https://www.youtube.com/embed/B9I1naWx1Y4?controls=0", frameborder="0", allowfullscreen, data-id="project-video")
+                iframe(class="responsive-iframe-container-iframe" src="https://www.youtube.com/embed/B9I1naWx1Y4?controls=0", frameborder="0", allowfullscreen, data-id="order-video")

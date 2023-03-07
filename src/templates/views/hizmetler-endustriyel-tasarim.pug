@@ -1,0 +1,58 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "Endüstriyel Tasarım"
+    - pageDesc = "Endüstriyel Tasarım"
+    - pageClass = "services"
+
+block content
+    .pcnc
+        +hero-banner('Endüstriyel Tasarım', {sm:'img/hero_type_single_mb.jpg', lg:'img/hero_type_single.jpg'})
+        .pcnc-body
+            .pcnc-body-content
+                .pcnc-body-content-title|Endüstriyel Tasarım Nedir?
+                .pcnc-body-content-desc 
+                    p|Endüstriyel tasarım, tüketicilerin ihtiyaç, talep ve sorunlarına yönelik, fikir aşamasından uygulamaya kadar olan tüm süreçtir.
+                p.mt-5
+                    strong|Prodigma’nın Endüstriyel Tasarım Hizmeti:
+                p.mt-5
+                    strong|Ürün Tasarım & Geliştirme
+                p.mt-5|Tasarım ekibimiz fikirlerinizi konseptten gerçeğe dönüştürmenize yardımcı olabilir.
+                p.mt-5 
+                    i.underline|Ürün Tasarım & Geliştirme Süreci
+                p.mt-5|Fikir, Pazar araştırması, Konsept tasarımı, Model görselleştirme, Prototip, Onay, İmalat
+                p.mt-5
+                    strong|Parça Dosyasının İncelenmesi
+                p.mt-5|Tasarım ekibimiz parçalarınızın katmanlı üretime hazır olduğundan emin olmak için sizinle birlikte çalışabilir ve baskı sürecinden önce her türlü sorununuzu gidermenize yardımcı olabilir.
+                p.mt-5
+                    strong|Parça Dosyanın Hazırlanması
+                p.mt-5|Tasarım ekibimiz farklı teknolojileri test etmeniz ve parça dosyalarınızı 3D baskıya hazırlanmanız için destek verebilir.
+                p.mt-5
+                    strong|Üretim Stratejileri
+                p.mt-5|Tasarım ekibimiz son kullanım parçaların tedarik etmek için katmanlı üretim sürecini keşfetmenize ve uygulamaya özel üretim stratejilerini yönetmenize yardımcı olabilir.
+                p.mt-5
+                    strong|Eklemeli imalat için tasarım (DfAM) nedir?
+                p.mt-5|Eklemeli imalat için tasarım, eklemeli imalat yönteminin özgürlüklerinden yararlanan bir tasarım yöntemidir. Tasarımcının imalat ve montaj aşamalarını kolaylaştırmak, imalat potansiyellerinden yararlanmak ve imalat maliyetlerini azaltmak için ürünlerin imalat süreci tarafından yönlendirildiği bir metodolojidir.
+                .border.border-red.p-5.mt-5
+                    ul 
+                        li|-Malzeme ve araç kullanımını optimize ederek üretim maliyetlerinin azaltır.
+                        li|-Fonksiyonelliğin korunmasıyla birlikte parça sayısını azaltarak montaj süresini azaltır.
+                        li|-Parçaların performansını arttırarak ve daha yüksek üretilebilirlik elde ederek operasyon maliyetlerini düşürür ve üretim operasyonlarına fayda sağlar.
+                        li|-Parçaları gerekli yerde ve zamanda üretip tedarik zincirini düzene sokarak stok maliyetlerini azaltır.
+            include ../widgets/photo-banner/index.pug
+            include ../widgets/cnc-gallery/index.pug
+        .pcnc-footer-info 
+            .pcnc-footer-info-wrapper
+                .pcnc-footer-info-title Üretim partnerimiz olmak ister misiniz?
+                .pcnc-footer-info-form 
+                    .pcnc-footer-info-form-top 
+                        +inputs('textbox','Ad')
+                        +inputs('textbox','Cep Telefonu', 'js-user-phone')
+                    .pcnc-footer-info-form-bottom
+                        +inputs('textbox','E-Posta Adresi')(type="email")
+                        +inputs('textbox','Kurum Adı')
+                    .pcnc-footer-info-form-checkbox     
+                        +inputs('checkbox','Kişisel Verilerin Korunması Kanunu (KVKK) Açık Rıza Metnini okudum ve onaylıyorum.')
+                        +inputs('checkbox','Girdiğim kişisel bilgilerimin tarafıma iletişime geçilebilmesi için işlenmesine ve kullanımına izin veriyorum.')
+                    .pcnc-footer-info-form-btn 
+                        +button('Gönder', 'green', 's')

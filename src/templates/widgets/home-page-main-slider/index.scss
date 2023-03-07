@@ -1,65 +1,78 @@
-@import 'swiper/scss/effect-fade';
+@import "swiper/scss/effect-fade";
 
-.main-slider{
-    &-banner{
-        @apply relative;
-        &-double-wrap{
-            @apply lg:grid lg:grid-cols-2;
-        }
-        &-text-content{
-            @apply bg-[url('../../../assets/img/main-slider-left-bg.svg')] bg-no-repeat bg-cover bg-center;
-            @apply relative flex flex-col justify-center items-start px-5 py-8;
-            @apply lg:px-10 lg:py-0;
-            &-text{
-                @apply lg:max-w-[23.125rem];
-            }
-            h1, p{
-                @apply text-blue-100;
-            }
-            h1{
-                @apply font-heading font-semibold text-3xl;
-                @apply lg:text-[2.75rem] lg:leading-[3rem];
-            }
-            p{
-                @apply mt-2.5 font-inter font-light text-sm;
-                @apply lg:text-base;
-            }
-        }
-        &-buttons{
-            @apply flex items-center w-full max-w-[23.125rem] mt-6;
-            .btn{
-                @apply first:mr-2.5;
-            }
-        }
+.main-slider {
+  &-banner {
+    @apply relative;
+    &-double-wrap {
+      @apply lg:grid lg:grid-cols-2;
     }
+    &-text-content {
+      @apply bg-[url('../../../assets/img/main-slider-left-bg.svg')] bg-no-repeat bg-cover bg-center;
+      @apply relative flex flex-col justify-center items-start px-5 py-8;
+      @apply lg:px-10 lg:py-0;
+      &-text {
+        @apply lg:max-w-[60%];
+      }
+      h1,
+      p {
+        @apply text-blue-100;
+      }
+      h1 {
+        @apply font-heading font-semibold text-3xl;
+        @apply lg:text-[2.75rem] lg:leading-[3rem];
+      }
+      p {
+        @apply mt-2.5 font-inter font-light text-sm;
+        @apply lg:text-base;
+      }
+    }
+    &-buttons {
+      @apply flex items-center w-full max-w-[23.125rem] mt-6;
+      .btn {
+        @apply first:mr-2.5;
+      }
+    }
+    &-desc {
+      @apply flex items-center mt-5;
+      img {
+        @apply max-w-[90px] mr-3;
+      }
+      p {
+        @apply mt-0 font-heading font-medium text-base;
+        a {
+          @apply font-semibold underline;
+        }
+      }
+    }
+  }
 }
 
-.swiper-main{
-    @apply w-full h-full;
-    .swiper-slide{
-        @apply bg-cover w-full h-full;
-        .text-content{
-            @apply w-11/12 absolute left-5 top-5 z-[1] font-inter font-normal text-sm text-white;
-            @apply lg:left-20 lg:top-[inherit] lg:bottom-16 lg:w-80;
-        }
-        img{
-            @apply object-fill w-full;
-        }
+.swiper-main {
+  @apply w-full h-full;
+  .swiper-slide {
+    @apply bg-cover w-full h-full;
+    .text-content {
+      @apply w-11/12 absolute left-5 top-5 z-[1] font-inter font-normal text-sm text-white;
+      @apply lg:left-20 lg:top-[inherit] lg:bottom-16 lg:w-80;
     }
-    .swiper-button-prev,
-    .swiper-button-next{
-        @apply flex bg-blue-100 w-[2.5rem] h-[2.5rem] rounded-full;
-        @apply lg:w-[3.125rem] lg:h-[3.125rem];
-        &::after{
-            @apply text-white text-xs;
-        }
+    img {
+      @apply object-fill w-full;
     }
-    .swiper-button-prev{
-        @apply left-5;
-        @apply lg:left-[1.875rem];
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    @apply flex bg-blue-100 w-[2.5rem] h-[2.5rem] rounded-full;
+    @apply lg:w-[3.125rem] lg:h-[3.125rem];
+    &::after {
+      @apply text-white text-xs;
     }
-    .swiper-button-next{
-        @apply right-5;
-        @apply lg:right-[1.875rem];
-    }
+  }
+  .swiper-button-prev {
+    @apply left-5;
+    @apply lg:left-[1.875rem];
+  }
+  .swiper-button-next {
+    @apply right-5;
+    @apply lg:right-[1.875rem];
+  }
 }

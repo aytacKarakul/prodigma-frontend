@@ -29,9 +29,13 @@ class MainSwiperSlider {
     const startProjectBtn = document.querySelector(
       "#main-slider-banner-start-project-btn"
     );
+    const sliderDescContent = document.querySelector(
+      "#js-main-slider-banner-desc"
+    );
     if (startProjectBtn) {
       if (getUserId()) {
         startProjectBtn.pathname = urls[0].tr;
+        sliderDescContent.remove();
       }
     }
   }

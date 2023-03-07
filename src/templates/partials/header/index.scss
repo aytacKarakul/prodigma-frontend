@@ -180,7 +180,7 @@
       }
     }
     &-bottom {
-      @apply bg-blue absolute top-[140px] left-0 z-[-1] w-full opacity-0 invisible pointer-events-none transition-all ease-in duration-200 delay-200;
+      @apply bg-blue absolute top-[120px] left-0 z-[-1] w-full opacity-0 invisible pointer-events-none transition-all ease-in duration-200 delay-200;
       &-inner {
         @apply container mx-auto px-8 py-8;
         > ul {

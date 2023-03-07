@@ -1,0 +1,40 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "Ardıl İşlemler"
+    - pageDesc = "Ardıl İşlemler"
+    - pageClass = "services"
+
+block content
+    .pcnc
+        +hero-banner('Ardıl İşlemler', {sm:'img/hero_type_single_mb.jpg', lg:'img/hero_type_single.jpg'})
+        .pcnc-body
+            .pcnc-body-content
+                .pcnc-body-content-desc 
+                    p|3D baskı ile üretilen parçaların yüzeylerini ardıl işlemler ile iyileştiriyoruz. 3D üretilen parçaların dış yüzeylerine zımpara, astar, macun ve boya işlemleri uygulayarak ürünlere son kullanıcı görünümü kazandırıyoruz.
+                p.mt-5
+                    strong|Astar: 
+                    |Boya yapılacak yüzeyi sağlamlaştırmak ve boyanın yüzeye tutunabilmesi için uygulanan işlemdir. Bu işlem sırasında parça üzerindeki kusurları görülmesi sağlanır. Mühendislik Süreci
+                p.mt-5.mb-5
+                    strong|Macun:
+                    |Astar işleminden sonra yapılan zımpara ile açıkta kalan kusurlu yüzeylerin düzeltilmesi için uygulanan bir nevi kapatma işlemidir.
+                p.mt-5.mb-5
+                    strong|Boya:
+                    |Parça istenilen pürüzsüz yüzeye ulaştığında, son kat talep edilen renge boyanma işlemidir.
+            include ../widgets/photo-banner/index.pug
+            include ../widgets/cnc-gallery/index.pug
+        .pcnc-footer-info 
+            .pcnc-footer-info-wrapper
+                .pcnc-footer-info-title Üretim partnerimiz olmak ister misiniz?
+                .pcnc-footer-info-form 
+                    .pcnc-footer-info-form-top 
+                        +inputs('textbox','Ad')
+                        +inputs('textbox','Cep Telefonu', 'js-user-phone')
+                    .pcnc-footer-info-form-bottom
+                        +inputs('textbox','E-Posta Adresi')(type="email")
+                        +inputs('textbox','Kurum Adı')
+                    .pcnc-footer-info-form-checkbox     
+                        +inputs('checkbox','Kişisel Verilerin Korunması Kanunu (KVKK) Açık Rıza Metnini okudum ve onaylıyorum.')
+                        +inputs('checkbox','Girdiğim kişisel bilgilerimin tarafıma iletişime geçilebilmesi için işlenmesine ve kullanımına izin veriyorum.')
+                    .pcnc-footer-info-form-btn 
+                        +button('Gönder', 'green', 's')

@@ -1,48 +1,88 @@
 export function Thermoplastics() {
-    const material = document.querySelectorAll(".pmaterials-thermoplastics-content-material-img");
+  const termoplastics = [
+    {
+      ppla: {
+        name: "ppla",
+        head1: "Test (ASTM)",
+        head2: "P-PLA",
+        title:
+          "Özellikle hızlı prototipleme için kullanılan, basılması kolay ve uygun maliyetli bir termoplastik çeşididir",
+        baskiKapasite: "Baskı kapasitesi: 320mm x132mm x154mm",
+        property: [
+          {
+            title: "Çekme Modülü (GPa)",
+            obj: { t1: "D638", t2: "2.3" },
+          },
+          {
+            title: "Eğilme Modülü (GPa)",
+            obj: { t1: "D790", t2: "2.3", t1sm: "1" },
+          },
+        ],
+      },
+      onyx: {
+        name: "onyx",
+      },
+    },
+  ];
+  const material = document.querySelectorAll(
+    ".pmaterials-thermoplastics-content li .pmaterials-thermoplastics-content-material-detail a"
+  );
+  const modalPopup = document.querySelector("#modal-cnc-process");
+  const modalPopupWrapper = document.querySelector(
+    "#modal-cnc-process .modal-container"
+  );
 
-    materialList();
+  material.forEach((items) => {
+    items.addEventListener("click", function () {
+      const attr = this.getAttribute("data-attr");
 
-    function materialList(materialImg, materialName) {
-        material.forEach((item) => {
-            item.addEventListener("click", (e) => {
-                const materialImg = e.target;
-                addToUI(materialImg);
-            });
-        });
-    }
+      termoplastics.forEach((item) => {
+        const dataname = item["ppla"];
 
+        if (attr === item["ppla"].name) {
+          let temp = document.createElement("ul");
+          let headerLi = document.createElement("li");
+          let headerLiFirstDiv = document.createElement("div");
+          let headerLiLastDiv = document.createElement("div");
+          let titleDiv = document.createElement("div");
+          let subTitleDiv = document.createElement("div");
 
-    function addToUI(materialImg) {
-        const popupWrapper = document.createElement("div");
+          temp.className = "border border-custom-100";
 
-        popupWrapper.setAttribute("id", "modal-thermoplastics-info");
-        popupWrapper.className = "modal modal-thermoplastics-info";
+          //-class add
+          headerLi.className =
+            "flex justify-end px-2 py-2 border-b border-custom-100 text-sm";
 
-        popupWrapper.innerHTML = `
-        <div class="modal-bg modal-exit"></div>
-        <div class="modal-container">
-            <a href="#" class="modal-link modal-exit"><i class="icon icon-close"></i></a>
-        </div>
-    `;
+          //-append
+          headerLi.appendChild(headerLiFirstDiv);
+          headerLi.appendChild(headerLiLastDiv);
 
-        document.body.appendChild(popupWrapper);
-        popupWrapper.classList.add("open");
+          headerLiFirstDiv.textContent = dataname.head1;
+          headerLiLastDiv.textContent = dataname.head2;
 
+          titleDiv.textContent = dataname.title;
+          titleDiv.className = "text-sm mb-5";
+          subTitleDiv.textContent = dataname.baskiKapasite;
+          subTitleDiv.className = "text-sm mt-5";
 
-        const closePopup = document.querySelector(
-            ".modal-thermoplastics-info.open .modal-bg.modal-exit"
-          );
-        const closePopupLink = document.querySelector(
-            ".modal-thermoplastics-info.open .modal-link.modal-exit"
-        );
+          dataname.property.forEach((items) => {
+            temp.innerHTML += `
+                <li class="flex items-center justify-between px-2 py-2 border-b border-custom-100 last:border-b-0 text-sm"><div>${items.title}</div><div>${items.obj.t1}</div><div>${items.obj.t2}</div></li>
+            `;
+          });
+          temp.prepend(headerLi);
 
-        closePopup?.addEventListener("click", () => {
-            popupWrapper.remove();
-        });
-    
-        closePopupLink?.addEventListener("click", () => {
-            popupWrapper.remove();
-        });  
-    }
+          modalPopupWrapper.appendChild(titleDiv);
+          modalPopupWrapper.appendChild(temp);
+          modalPopupWrapper.appendChild(subTitleDiv);
+
+          modalPopup.classList.add("open");
+        } else if (attr === item["onyx"].name) {
+          console.log("bu ONYX");
+        } else {
+          console.log("Bu nedir anlamadım");
+        }
+      });
+    });
+  });
 }

@@ -1,0 +1,43 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "Sac Metal Şekillendirme"
+    - pageDesc = "Sac Metal Şekillendirme"
+    - pageClass = "services"
+
+block content
+    .pcnc
+        +hero-banner('Sac Metal Şekillendirme', {sm:'img/hero_type_single_mb.jpg', lg:'img/hero_type_single.jpg'})
+        .pcnc-body
+            .pcnc-body-content
+                .pcnc-body-content-title|Sac Metal Şekillendirme Nedir?
+                .pcnc-body-content-desc 
+                    p Sac metal şekillendirme, çok çeşitli metal parçalar üretmek için çok yönlü bir imalat sürecidir. Yassı metal levhaların kesilerek ve bükülerek istenen şekle getirilir ve son kullanıma uygun, dayanıklı parçalar üretilmesini sağlar. İstenilen takdirde üretim sonrası yüzey işlemleri uygulanarak parçalara çeşitli özellikler kazandırılabilir.
+                p.mt-5
+                    strong|Sac Metal Şekillendirme Makineleri
+                p.mt-5
+                    strong|Lazer Kesim Makineler:
+                    |Sac metal hammaddeyi kesilerek istenen forma getirilmesini sağlar.
+                p.mt-5 
+                    strong|Abkant Pres Makineler:
+                    |Sac metal hammaddeyi bükerek istenen forma getirilmesini sağlar.
+                p.mt-5 
+                    strong|Avantajları
+                p|Yüksek hassasiyet, tutarlılık, ince detaylar, yüzey kalitesi, çekme ve ısıl dayanım, uygun maliyet
+            include ../widgets/photo-banner/index.pug
+            include ../widgets/cnc-gallery/index.pug
+        .pcnc-footer-info 
+            .pcnc-footer-info-wrapper
+                .pcnc-footer-info-title Üretim partnerimiz olmak ister misiniz?
+                .pcnc-footer-info-form 
+                    .pcnc-footer-info-form-top 
+                        +inputs('textbox','Ad')
+                        +inputs('textbox','Cep Telefonu', 'js-user-phone')
+                    .pcnc-footer-info-form-bottom
+                        +inputs('textbox','E-Posta Adresi')(type="email")
+                        +inputs('textbox','Kurum Adı')
+                    .pcnc-footer-info-form-checkbox     
+                        +inputs('checkbox','Kişisel Verilerin Korunması Kanunu (KVKK) Açık Rıza Metnini okudum ve onaylıyorum.')
+                        +inputs('checkbox','Girdiğim kişisel bilgilerimin tarafıma iletişime geçilebilmesi için işlenmesine ve kullanımına izin veriyorum.')
+                    .pcnc-footer-info-form-btn 
+                        +button('Gönder', 'green', 's')

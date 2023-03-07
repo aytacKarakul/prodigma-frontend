@@ -1,0 +1,25 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "CNC İşelem Malzemeleri"
+    - pageDesc = "CNC İşelem Malzemeleri"
+    - pageClass = "materials"
+
+block content
+    .pmaterials
+        +hero-banner('CNC İşleme Malzemeleri', {sm:'img/hero_type_single_mb.jpg', lg:'img/hero_type_single.jpg'})
+        .pmaterials-thermoplastics
+            .pmaterials-thermoplastics-wrapper
+                .pmaterials-thermoplastics-title 
+                    |Termoplastikler 
+                .pmaterials-thermoplastics-desc 
+                    |Termoplastiklerimiz, mühendislik sınıfı kompozit malzemelerdir. Tek başına veya sürekli fiber malzemelerimiz ile güçlendirerek parçalarınızı üretebilirsiniz.
+                include ../widgets/thermoplastics/index.pug
+        include ../widgets/continous-fiber/index.pug
+        include ../widgets/metals/index.pug
+        include ../widgets/polimers/index.pug
+    .modal(id="modal-cnc-process")
+        .modal-bg.modal-exit
+        .modal-container
+            button(class="modal-close modal-exit")
+                i.icon.icon-close

@@ -1,33 +1,39 @@
 .swiper-our-services
     .swiper-our-services-header 
-        .swiper-our-services-tt1 Hizmetlerimiz
+        .swiper-our-services-tt1|Hizmetlerimiz
         .swiper-our-services-tt2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
     .swiper.swiper-our-widget
         .swiper-wrapper
             .swiper-slide
-                .img
-                    img(src=require('Images/3d-tasarim.png'), alt='3D Tasarım')
-                .txt 3D Tasarım
+                a(href="/hizmetler-3d-baski.html") 
+                    .img
+                        img(src=require('Images/3d-tasarim.png'), alt='3D Baskı')
+                .txt|3D Baskı
             .swiper-slide
-                .img
-                    img(src=require('Images/cnc-isleme.png'), alt='CNC İşleme')
-                .txt CNC İşleme
+                a(href="/hizmetler-cnc-isleme.html") 
+                    .img
+                        img(src=require('Images/cnc-isleme.png'), alt='CNC İşleme')
+                .txt|CNC İşleme
             .swiper-slide
-                .img
-                    img(src=require('Images/silikon-kaplama.png'), alt='Silikon Kaplama')
-                .txt Silikon Kaplama
+                a(href="/hizmetler-sac-metal-sekillendirme.html") 
+                    .img
+                        img(src=require('Images/silikon-kaplama.png'), alt='Sac Metal Şekillendirme')
+                    .txt|Sac Metal Şekillendirme
             .swiper-slide
-                .img
-                    img(src=require('Images/enjeksiyon-kaliplama.png'), alt='Enjeksiyon Kalıplama')
-                .txt Enjeksiyon Kalıplama
+                a(href="/hizmetler-3d-tarama-tersine-muhendislik.html") 
+                    .img
+                        img(src=require('Images/enjeksiyon-kaliplama.png'), alt='3D Tarama ve Tersine Mühendislik')
+                    .txt|3D Tarama ve Tersine Mühendislik
             .swiper-slide
-                .img
-                    img(src=require('Images/enjeksiyon-kaliplama.png'), alt='Sac Metal İşleme')
-                .txt Sac Metal İşleme
+                a(href="/hizmetler-endustriyel-tasarim.html") 
+                    .img
+                        img(src=require('Images/enjeksiyon-kaliplama.png'), alt='Endüstriyel Tasarım')
+                    .txt|Endüstriyel Tasarım
             .swiper-slide
-                .img
-                    img(src=require('Images/enjeksiyon-kaliplama.png'), alt='Endüstriyel Tasarım')
-                .txt Endüstriyel Tasarım
+                a(href="/hizmetler-ardil-islemler.html") 
+                    .img
+                        img(src=require('Images/enjeksiyon-kaliplama.png'), alt='Ardıl İşlemler')
+                    .txt|Ardıl İşlemler
         .swiper-pagination.hidden
         .swiper-button-prev
         .swiper-button-next

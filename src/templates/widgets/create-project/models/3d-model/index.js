@@ -56,9 +56,10 @@ class Model3D {
   initModelFunc() {
     if (this.printingWrapper) {
       //firts init
+
       new Metrics();
       this.initFirstFunc();
-      this.createProject();
+      //this.createProject();
 
       //function detected
       Viewer();

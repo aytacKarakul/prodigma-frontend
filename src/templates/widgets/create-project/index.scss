@@ -1,5 +1,3 @@
-@import "./models/cnc/index.scss";
-
 @import "swiper/css/effect-coverflow";
 
 .page-create-project {
@@ -62,7 +60,19 @@
       @apply lg:max-w-[499px] lg:font-normal lg:text-base lg:mb-8;
     }
   }
-
+  &-iframe-service {
+    @apply relative overflow-hidden w-full;
+    padding-top: 56.25%;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
   &-body {
     @apply w-full;
     @apply lg:max-w-screen-2xl lg:mx-auto;
