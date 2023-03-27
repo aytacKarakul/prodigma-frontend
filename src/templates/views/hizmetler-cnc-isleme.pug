@@ -7,7 +7,16 @@ block prepend head
 
 block content
     .pcnc
-        +hero-banner('CNC İşleme', {sm:'img/hero_type_single_mb.jpg', lg:'img/hero_type_single.jpg'})
+        .hero-banner 
+            .hero-banner-img
+                h1= "CNC İşleme"
+                picture
+                    source(media="(max-width: 1024px)" srcset=require("Upload/hizmetler-hero-banner-mb.jpg"))
+                    source(media="(min-width: 1025px)" srcset=require("Upload/hizmetler-hero-banner.jpg"))
+                    img(src=require("Upload/hizmetler-hero-banner-mb.jpg") alt='CNC İşleme')
+                .hero-banner-btn
+                    a(class="btn btn-green btn-medium" href="/proje-baslat.html")
+                        span|CNC İşleme tasarımın hazır mı? Projeni Başlat
         .pcnc-body
             .pcnc-body-content
                 .pcnc-body-content-title|CNC Nedir?
@@ -36,8 +45,8 @@ block content
                     strong|Avantajları
                 p|Zaman tasarrufu, seri üretim, yüksek hassasiyet, uygun maliyet, depolama kolaylığı, enerji verimliliği
             include ../widgets/photo-banner/index.pug
-            include ../widgets/cnc-gallery/index.pug
-        .pcnc-footer-info 
+            //-include ../widgets/cnc-gallery/index.pug
+        //-.pcnc-footer-info 
             .pcnc-footer-info-wrapper
                 .pcnc-footer-info-title Üretim partnerimiz olmak ister misiniz?
                 .pcnc-footer-info-form 

@@ -5,7 +5,7 @@ import { apitoken } from "../../../../auth/authentication";
 class AuthUserLogin {
   constructor() {
     this.login();
-    this.userUIControl();
+    //this.userUIControl();
     this.logout();
   }
 

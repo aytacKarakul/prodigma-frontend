@@ -2,7 +2,7 @@ import Swiper, { Navigation, Pagination, EffectFade, Autoplay } from "swiper";
 import { getUserId } from "../../utils/localStorage";
 class MainSwiperSlider {
   constructor() {
-    this.initMainSliderFun();
+    //this.initMainSliderFun();
 
     const swiperMain = new Swiper(".swiper-main", {
       modules: [EffectFade, Navigation, Pagination, Autoplay],
@@ -47,3 +47,11 @@ import "Images/slider_1x2.1.jpg";
 import "Images/slider_1x2.jpg";
 import "Images/slider_2x2.1.jpg";
 import "Images/slider_2x2.jpg";
+import "Images/slider_3x3.1.jpg";
+import "Images/slider_3x3.jpg";
+import "Images/slider_4x4.1.jpg";
+import "Images/slider_4x4.jpg";
+import "Images/aselsan-dark.png";
+import "Images/roketsan-dark.png";
+import "Images/mercedes-benz-dark.png";
+import "Images/turkish-technic-dark.png";

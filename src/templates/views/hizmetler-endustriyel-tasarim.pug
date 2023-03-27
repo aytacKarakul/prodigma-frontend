@@ -7,7 +7,16 @@ block prepend head
 
 block content
     .pcnc
-        +hero-banner('Endüstriyel Tasarım', {sm:'img/hero_type_single_mb.jpg', lg:'img/hero_type_single.jpg'})
+        .hero-banner 
+            .hero-banner-img
+                h1= "Endüstriyel Tasarım"
+                picture
+                    source(media="(max-width: 1024px)" srcset=require("Upload/hizmetler-endustriyel-tasarim-cover-mb.jpg"))
+                    source(media="(min-width: 1025px)" srcset=require("Upload/hizmetler-endustriyel-tasarim-cover-lg.jpg"))
+                    img(src=require("Upload/hizmetler-endustriyel-tasarim-cover-mb.jpg") alt='Endüstriyel Tasarım')
+                .hero-banner-btn
+                    a(class="btn btn-green btn-medium" href="/proje-baslat.html")
+                        span|Endüstriyel tasarımın hazır mı? Projeni Başlat
         .pcnc-body
             .pcnc-body-content
                 .pcnc-body-content-title|Endüstriyel Tasarım Nedir?
@@ -39,9 +48,12 @@ block content
                         li|-Fonksiyonelliğin korunmasıyla birlikte parça sayısını azaltarak montaj süresini azaltır.
                         li|-Parçaların performansını arttırarak ve daha yüksek üretilebilirlik elde ederek operasyon maliyetlerini düşürür ve üretim operasyonlarına fayda sağlar.
                         li|-Parçaları gerekli yerde ve zamanda üretip tedarik zincirini düzene sokarak stok maliyetlerini azaltır.
-            include ../widgets/photo-banner/index.pug
-            include ../widgets/cnc-gallery/index.pug
-        .pcnc-footer-info 
+            //-include ../widgets/photo-banner/index.pug
+            .photo-banner
+                .photo-banner-img
+                    +picture({sm:require("Upload/hizmetler-endustriyel-tasarim-banner-mb.jpg"),lg:require("Upload/hizmetler-endustriyel-tasarim-banner.jpg")})(alt="Prodigma Endüstriyel Tasarım")
+            //-include ../widgets/cnc-gallery/index.pug
+        //-.pcnc-footer-info 
             .pcnc-footer-info-wrapper
                 .pcnc-footer-info-title Üretim partnerimiz olmak ister misiniz?
                 .pcnc-footer-info-form 

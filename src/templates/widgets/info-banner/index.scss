@@ -1,18 +1,18 @@
 .pservices-info-banner {
-    @apply bg-blue-200 text-white;
-    &-wrapper {
-        @apply mx-auto py-24 px-5;
-        @apply lg:container
+  @apply text-white bg-[url(../../../assets/img/benefits-single-cover.png)] bg-blue bg-contain;
+  &-wrapper {
+    @apply mx-auto py-24 px-5;
+    @apply lg:container;
+  }
+  &-content {
+    @apply flex flex-col items-center justify-center gap-5;
+    &-title {
+      @apply font-heading font-semibold text-center;
+      @apply lg:max-w-[842px] lg:text-3xl;
     }
-    &-content {
-        @apply flex flex-col items-center justify-center gap-5;
-        &-title {
-            @apply font-heading font-semibold text-center;
-            @apply lg:max-w-[842px] lg:text-3xl;
-        }
-        &-desc {
-            @apply font-inter font-bold text-xl leading-5 underline;
-            @apply lg:text-2xl;
-        }
+    &-desc {
+      @apply font-inter font-bold text-xl leading-5 underline;
+      @apply lg:text-2xl;
     }
+  }
 }

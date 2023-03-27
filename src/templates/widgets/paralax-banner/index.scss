@@ -1,44 +1,49 @@
-@import 'swiper/scss/parallax';
-@import 'swiper/scss/mousewheel';
+@import "swiper/scss/parallax";
+@import "swiper/scss/mousewheel";
 
-.swiper-paralax{
+.swiper-paralax {
   @apply lg:rounded-[20px];
 
-  &-container{
+  &-container {
     @apply bg-custom-200;
   }
-  &-wrapper{
-    @apply w-full max-w-screen-2xl mx-auto;
-    @apply lg:p-16;
+  &-wrapper {
+    @apply w-full py-6;
+    @apply lg:container lg:mx-auto lg:px-5 lg:py-20;
   }
 
-  .parallax-bg {
+  /*.parallax-bg {
     @apply absolute top-0 left-0 w-full h-[130%] bg-cover;
     background-position: center;
-  }
+  }*/
 
-  .swiper{
+  .swiper {
     @apply w-full h-full;
   }
-  .swiper-wrapper{
-      @apply h-[500px];
-      @apply lg:h-[770px];
+  .swiper-wrapper {
+    @apply max-h-[600px];
+    @apply lg:max-h-[700px];
   }
-  .swiper-slide{
-    @apply flex flex-col justify-center px-5 py-7;
-    @apply lg:px-24 lg:py-10;
-    width: 100% !important;
+  .swiper-slide {
+    @apply w-full h-full;
     > * {
       color: white;
     }
+    .txt-abs {
+      @apply w-full text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-2 py-2;
+      @apply lg:w-auto lg:text-left lg:left-[inherit] lg:right-8 lg:-translate-x-0 lg:px-3 lg:py-4;
+    }
+    img {
+      @apply block w-full h-full object-cover;
+    }
   }
 
-  .title{
+  .title {
     @apply font-heading font-medium text-2xl w-full;
     @apply lg:text-5xl lg:max-w-lg lg:ml-auto;
   }
-  .subtitle{
-    @apply font-inter font-normal text-sm w-full mt-2.5;
-    @apply lg:text-base lg:max-w-lg lg:ml-auto;
+  .subtitle {
+    @apply hidden font-inter font-normal text-sm w-full mt-5;
+    @apply lg:block lg:text-base lg:max-w-lg lg:ml-auto;
   }
 }

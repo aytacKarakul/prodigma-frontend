@@ -29,6 +29,10 @@ class MobileHeader {
       ".site-mobile-header-list-img-header a.back-to-history"
     );
 
+    const menuAllCloseBtn = document.querySelectorAll(
+      ".menu-all-back-to-close"
+    );
+
     //Menu First Link
     this.mobileNavLink?.forEach((event) => {
       event.addEventListener("click", (item) => {
@@ -89,10 +93,7 @@ class MobileHeader {
           selected.target.parentElement.parentElement.parentElement
             .parentElement;
 
-        if (
-          openedClass.classList.contains("opened") ||
-          firstElementLi.classList.contains("opened")
-        ) {
+        if (openedClass.classList.contains("opened")) {
           openedClass.classList.remove("opened");
         } else {
           this.subMenuSelectedItem.forEach((selectedClass) => {
@@ -102,7 +103,27 @@ class MobileHeader {
       });
     });
 
-    this.mobileHeaderAuth();
+    if (menuAllCloseBtn) {
+      menuAllCloseBtn.forEach((btns) => {
+        btns.addEventListener("click", function () {
+          const firstSelectedClass = document.querySelectorAll(
+            ".site-mobile-header-nav > ul > li.opened"
+          );
+          const secondSelectedClass = document.querySelectorAll(
+            ".site-mobile-header-list-img > ul > li.opened"
+          );
+          secondSelectedClass.forEach((selectedSecondItem) => {
+            selectedSecondItem.classList.remove("opened");
+          });
+          firstSelectedClass.forEach((selectedItem) => {
+            selectedItem.classList.remove("opened");
+          });
+          document.body.classList.remove("site-mobile-header-menu-open");
+        });
+      });
+    }
+
+    //this.mobileHeaderAuth();
     this.subMenuChilderen();
   }
 

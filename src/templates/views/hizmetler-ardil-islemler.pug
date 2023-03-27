@@ -7,7 +7,16 @@ block prepend head
 
 block content
     .pcnc
-        +hero-banner('Ardıl İşlemler', {sm:'img/hero_type_single_mb.jpg', lg:'img/hero_type_single.jpg'})
+        .hero-banner 
+            .hero-banner-img
+                h1= "Ardıl İşlemler"
+                picture
+                    source(media="(max-width: 1024px)" srcset=require("Upload/hizmetler-ardil-islemler-cover-mb.jpg"))
+                    source(media="(min-width: 1025px)" srcset=require("Upload/hizmetler-ardil-islemler-cover-lg.jpg"))
+                    img(src=require("Upload/hizmetler-ardil-islemler-cover-mb.jpg") alt='Ardıl İşlemler')
+                .hero-banner-btn
+                    a(class="btn btn-green btn-medium" href="/proje-baslat.html")
+                        span|Ardıl İşleme tasarımın hazır mı? Projeni Başlat
         .pcnc-body
             .pcnc-body-content
                 .pcnc-body-content-desc 
@@ -21,9 +30,12 @@ block content
                 p.mt-5.mb-5
                     strong|Boya:
                     |Parça istenilen pürüzsüz yüzeye ulaştığında, son kat talep edilen renge boyanma işlemidir.
-            include ../widgets/photo-banner/index.pug
-            include ../widgets/cnc-gallery/index.pug
-        .pcnc-footer-info 
+            //-include ../widgets/photo-banner/index.pug
+            .photo-banner
+                .photo-banner-img
+                    +picture({sm:require("Upload/hizmetler-ardil-islemler-banner-mb.jpg"),lg:require("Upload/hizmetler-ardil-islemler-banner.jpg")})(alt="Prodigma Ardıl İşlemler")
+            //-include ../widgets/cnc-gallery/index.pug
+        //-.pcnc-footer-info 
             .pcnc-footer-info-wrapper
                 .pcnc-footer-info-title Üretim partnerimiz olmak ister misiniz?
                 .pcnc-footer-info-form 

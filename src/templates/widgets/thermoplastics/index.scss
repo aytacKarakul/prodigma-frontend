@@ -1,31 +1,80 @@
-.pmaterials-thermoplastics {
-  &-wrapper {
-    @apply mx-auto py-16 px-5;
-    @apply lg:container lg:py-10;
+.pmaterials {
+  &-page-title {
+    @apply font-heading font-medium px-5 pt-10 text-3xl text-blue-100;
+    @apply lg:container lg:mx-auto lg:pt-14 lg:text-4xl;
+    &-other {
+      @apply text-white;
+    }
   }
-  &-title {
-    @apply font-inter font-semibold text-2xl;
-  }
-  &-desc {
-    @apply font-inter font-normal text-base mt-5 mb-7;
-  }
-  &-content {
-    @apply flex flex-col flex-wrap items-center gap-5;
-    @apply lg:flex-row;
-    &-material {
-      @apply lg:w-[calc(25%-4.453rem)];
-      &-title {
-        @apply font-inter font-medium text-2xl my-2;
-      }
-      &-detail {
-        @apply font-inter font-medium text-sm;
-      }
-      a {
-        @apply flex items-center;
-        i {
-          @apply ml-1;
+  &-thermoplastics {
+    &-wrapper {
+      @apply mx-auto py-10 px-5;
+      @apply lg:container lg:py-14;
+    }
+    &-title {
+      @apply font-inter font-semibold text-2xl;
+    }
+    &-desc {
+      @apply font-inter font-normal text-base mt-5 mb-7;
+    }
+    &-content {
+      @apply flex flex-wrap gap-5;
+      &-material {
+        @apply w-full;
+        @apply lg:w-[calc(25%-15px)];
+        &-title {
+          @apply font-inter font-medium text-2xl mt-2 min-h-[60px];
+        }
+        &-img {
+          img {
+            @apply w-full rounded-2xl;
+          }
+        }
+        &-detail {
+          @apply font-inter font-medium text-sm;
+        }
+        a {
+          @apply flex items-center;
+          i {
+            @apply ml-1;
+          }
         }
       }
+    }
+  }
+  &-tables {
+    @apply text-blue-100 text-opacity-80;
+    li.col-head {
+      @apply flex justify-end;
+      > div {
+        @apply w-1/4 font-inter text-xs;
+      }
+    }
+    li.col-body {
+      @apply flex border-b border-custom-100 last:border-0;
+      > div {
+        @apply w-1/4 first:w-1/2 font-inter text-xs border-r border-custom-100 last:border-0;
+      }
+    }
+  }
+  &-tables-other {
+    @apply text-blue-100 text-opacity-80;
+    li.col-head {
+      @apply flex justify-center items-center;
+      > div {
+        @apply w-1/3 font-inter text-xs;
+      }
+    }
+    li.col-body {
+      @apply flex border-b border-custom-100 last:border-0;
+      > div {
+        @apply w-1/3 first:w-1/3 font-inter text-xs border-r border-custom-100 last:border-0;
+      }
+    }
+  }
+  .modal {
+    .modal-close {
+      @apply top-4 right-4;
     }
   }
 }

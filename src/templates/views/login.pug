@@ -8,7 +8,7 @@ block prepend head
 block content
     .plog
         .plog-img 
-            +picture({sm:"img/loginCover.jpg", lg:"img/loginCover.jpg"})(alt="Prodigmd 3D")
+            +picture({sm:require("Images/loginCover.jpg"), lg:require("Images/loginCover.jpg")})(alt="Prodigmd 3D Üye Giriş")
         .plog-enters
             include ../components/register/index.pug
 block foot

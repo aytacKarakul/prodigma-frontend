@@ -25,11 +25,11 @@ function generateHtmlPlugins(templateDir) {
 const htmlPlugins = generateHtmlPlugins("./src/templates/views");
 
 module.exports = {
-  entry: "./src/app.js",
+  entry: ["./src/app.js"],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "js/[name].js",
-    //publicPath: "/",
+    assetModuleFilename: "[path][name][ext]",
     clean: true,
   },
   module: {
@@ -55,16 +55,16 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|svg|ico)/,
         type: "asset/resource",
-        generator: {
-          filename: "img/[name][ext]",
-        },
+        /* generator: {
+          filename: "[name][ext]",
+        },*/
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: "asset/resource",
-        generator: {
+        /*generator: {
           filename: "fonts/[name][ext]",
-        },
+        },*/
       },
       {
         test: /\.pug$/,
@@ -98,6 +98,7 @@ module.exports = {
       Theme: path.resolve(__dirname, "./src/assets/scss"),
       Fonts: path.resolve(__dirname, "./src/assets/fonts"),
       Images: path.resolve(__dirname, "./src/assets/img"),
+      Upload: path.resolve(__dirname, "./src/assets/upload"),
       Partials: path.resolve(__dirname, "./src/templates/partials"),
       Components: path.resolve(__dirname, "./src/templates/components"),
       Widgets: path.resolve(__dirname, "./src/templates/widgets"),

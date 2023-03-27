@@ -1,27 +1,54 @@
 .main-slider-banner
     .main-slider-banner-wrapper
         .main-slider-banner-double-wrap
-            .main-slider-banner-text-content
-                .main-slider-banner-text-content-text 
-                    h1 Talebe özel, dilediğiniz adette, yüksek kalite üretim.
-                    p Hızlı ve şeffaf fiyatlandırma, güvenilir proje yönetimi, geniş malzeme ve teknik seçenekler ile üretim çözümü sunan dijital bir platform.
-                    .main-slider-banner-buttons
-                        +button('Bize Ulaşın','primary','m',false)(href="/iletisim.html")
-                        +button('Proje Başlat','green','m',false)(href="/login.html", id="main-slider-banner-start-project-btn")
-                    .main-slider-banner-desc(id="js-main-slider-banner-desc")
-                        img(src="img/logo.svg", alt="Prodigma 3D")
-                        p|kullanan binlerce şirkete 
-                            a(href="/login.html")| katılın.
             .swiper.swiper-main
                 .swiper-wrapper
                     .swiper-slide
                         .text-content
-                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            p
+                                |proBlack Yüksek yüzey kalitesi, sert, darbeye dayanıklı
                         +picture({sm:require('Images/slider_1x2.1.jpg'), lg:require('Images/slider_1x2.jpg')})
                     .swiper-slide
                         .text-content
-                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            p
+                                |proto45 - Karbon Fiber - proFLEX - Beyaz Naylon
                         +picture({sm:require('Images/slider_2x2.1.jpg'), lg:require('Images/slider_2x2.jpg')})
+                    .swiper-slide
+                        .text-content
+                            p
+                                |Paslanmaz Çelik - Inconel 625 - Saf Bakır - H13 Takım Çeliği
+                        +picture({sm:require('Images/slider_3x3.1.jpg'), lg:require('Images/slider_3x3.jpg')})
+                    .swiper-slide
+                        .text-content
+                            p
+                                |proABS - ABS like White - performax - proto410
+                        +picture({sm:require('Images/slider_4x4.1.jpg'), lg:require('Images/slider_4x4.jpg')})
                 .swiper-button-next
                 .swiper-button-prev
                 .swiper-pagination.hidden
+            .main-slider-banner-text-content
+                .main-slider-banner-text-content-text 
+                    h1
+                        |Talebe özel,
+                        br
+                        |dilediğiniz adette,
+                        br
+                        |yüksek kalite üretim.
+                    p Hızlı ve şeffaf fiyatlandırma, güvenilir proje yönetimi, geniş malzeme ve teknik seçenekler ile üretim çözümü sunan dijital bir platform.
+                    .main-slider-banner-buttons
+                        //-+button('Bize Ulaşın','primary','m',false)(href="/iletisim.html")
+                        +button('Proje Başlat','green','m',false)(href="/proje-baslat.html", id="main-slider-banner-start-project-btn")
+                .main-slider-banner-bottoms
+                    .main-slider-banner-desc(id="js-main-slider-banner-desc")
+                        img(src=require("Images/logo.svg"), alt="Prodigma 3D")
+                        p|kullanan binlerce şirkete 
+                            a(href="/proje-baslat.html")| katılın.
+                    .main-slider-banner-partners
+                        div
+                            img(src=require('Images/aselsan-dark.png') alt="Aselsan")
+                        div
+                            img(src=require('Images/roketsan-dark.png'), alt="Roketsan")
+                        div
+                            img(src=require('Images/turkish-technic-dark.png'), alt="Turkhish Technic")
+                        div
+                            img(src=require('Images/mercedes-benz-dark.png'), alt="Mercedes Benz")

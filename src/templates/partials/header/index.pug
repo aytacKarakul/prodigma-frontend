@@ -17,23 +17,23 @@ header.site-header
                             .site-header-submenu-nav
                                 ul 
                                     li 
-                                        a(href="#")
+                                        a(href="/manifesto.html")
                                             .nav-t1|Manifesto
                                             .nav-t2|Müşterilerimize talepleri doğrultusunda yaptıklarımız.
                                     li 
-                                        a(href="#")
+                                        a(href="/surdurelebilirlik.html")
                                             .nav-t1|Sürdürülebilirlik
                                             .nav-t2|Dönüştürülebilir kaynaklar kullanılmasına olanak sağlayan teknolojiler ile üretim imkanı.
                                     li 
-                                        a(href="#")
+                                        a(href="/kariyer.html")
                                             .nav-t1|Kariyer
                                             .nav-t2|Ekibimizin bir parçası olmak için mevcut kariyer fırsatları.
                                     li 
-                                        a(href="#")
+                                        a(href="/iletisim.html")
                                             .nav-t1|İletişim
                                             .nav-t2|İletişime geçmek istediğiniz her konu için ihtiyacınız olan bilgiler
-                            .site-header-submenu-banner
-                                img(src="img/header-menu-about-img.jpg", alt="Prodigma 3D")
+                            .site-header-submenu-banner(style=`background-image:url(${require("Images/header-menu-about-img.jpg")}); background-size:cover; background-repeat:no-repeat; background-position:center;`)
+                                //-img(src=require('Images/header-menu-about-img.jpg'), alt="Prodigma 3D")
                 li 
                     a(href="/hizmetler.html")
                         |Hizmetler
@@ -44,23 +44,23 @@ header.site-header
                                     a(href="/hizmetler-3d-baski.html")
                                         .mnwrp 
                                             .img
-                                                img(src="https://via.placeholder.com/75x75/FF0000/FFFFFF", alt="3D Baskı")
+                                                img(src=require('Images/3d-tasarim.png'), alt="3D Baskı")
                                             .txt
                                                 .t1|3D Baskı
                                                 .t2|CAD ortamında tasarlanmış veya 3D taranmış modelin baskı işlemleri.
-                                li
+                                //-li
                                     a(href="/hizmetler-cnc-isleme.html")
                                         .mnwrp 
                                             .img
-                                                img(src="https://via.placeholder.com/75x75/FF0000/FFFFFF", alt="CNC İşleme")
+                                                img(src=require('Images/cnc-isleme.png'), alt="CNC İşleme")
                                             .txt
                                                 .t1|CNC İşleme
                                                 .t2|Plastik veya metal endüstriyel parçaların hızlı ve ultra hassasiyetli üretim işlemleri.
-                                li
+                                //-li
                                     a(href="/hizmetler-sac-metal-sekillendirme.html")
                                         .mnwrp 
                                             .img
-                                                img(src="https://via.placeholder.com/75x75/FF0000/FFFFFF", alt="Sac Metal Şekillendirme")
+                                                img(src=require('Images/sac-metal-isleme.png'), alt="Sac Metal Şekillendirme")
                                             .txt
                                                 .t1|Sac Metal Şekillendirme
                                                 .t2|Yüksek hassasiyetli metal kesim ve büküm işlemleri.
@@ -68,7 +68,7 @@ header.site-header
                                     a(href="/hizmetler-3d-tarama-tersine-muhendislik.html")
                                         .mnwrp 
                                             .img
-                                                img(src="https://via.placeholder.com/75x75/FF0000/FFFFFF", alt="3D Tarama Tersine Mühendislik")
+                                                img(src=require('Images/3d-tarama-tersine-muhendislik.png'), alt="3D Tarama Tersine Mühendislik")
                                             .txt
                                                 .t1|3D Tarama & Tersine Mühendislik
                                                 .t2|3D datası mevcut olmayan parçanın 3D tarama ile elde edilmesi ve elde edilen datanın 3 boyutlu modellenmesi işlemleri.
@@ -76,7 +76,7 @@ header.site-header
                                     a(href="/hizmetler-endustriyel-tasarim.html")
                                         .mnwrp 
                                             .img
-                                                img(src="https://via.placeholder.com/75x75/FF0000/FFFFFF", alt="Endüstriyel Tasarım")
+                                                img(src=require('Images/endustriyel-tasarim.png'), alt="Endüstriyel Tasarım")
                                             .txt
                                                 .t1|Endüstriyel Tasarım
                                                 .t2|Yeni fikirlerin konseptten uygulamaya kadar olan tüm süreci
@@ -84,21 +84,21 @@ header.site-header
                                     a(href="/hizmetler-ardil-islemler.html")
                                         .mnwrp 
                                             .img
-                                                img(src="https://via.placeholder.com/75x75/FF0000/FFFFFF", alt="Ardıl İşlemler")
+                                                img(src=require('Images/ardil-islemler.png'), alt="Ardıl İşlemler")
                                             .txt
                                                 .t1|Ardıl İşlemler
                                                 .t2|3D baskı ile üretilen parçaların yüzey iyileştirme işlemleri
                 li 
-                    a(href="/malzemeler.html")
+                    a(href="javascript:void(0);")
                         |Malzemeler
                     .site-header-submenu
                         .site-header-submenu-full.site-header-submenu-double
                             ul
                                 li
-                                    a(href="#")
+                                    a(href="/malzemeler-3d-baski-malzemeleri.html")
                                         .mnwrp 
                                             .img
-                                                img(src="https://via.placeholder.com/75x75/FF0000/FFFFFF", alt="3D Baskı")
+                                                img(src=require('Images/3d-tasarim.png'), alt="3D Baskı Malzemeleri")
                                             .txt
                                                 .t1|3D Baskı Malzemeleri
                                                 .t2|Plastik ve metal 3D baskı malzeme detayı
@@ -109,111 +109,178 @@ header.site-header
                                                     .title Termoplastikler
                                                     ul 
                                                         li 
-                                                            a(href="")|P-PLA
+                                                            a(href="javascript:void(0);")|P-PLA
                                                         li
-                                                            a(href="")|Onyx
+                                                            a(href="javascript:void(0);")|Onyx
                                                         li 
-                                                            a(href="")|Onyx FR
+                                                            a(href="javascript:void(0);")|Onyx FR
                                                         li
-                                                            a(href="")|Onyx FR-A
+                                                            a(href="javascript:void(0);")|Onyx FR-A
+                                                        li
+                                                            a(href="javascript:void(0);")|Onyx ESD
+                                                        li
+                                                            a(href="javascript:void(0);")|Beyaz Naylon
                                                 li 
-                                                    .title Sürekli Fiberler
+                                                    .title Sürekli Fiber
                                                     ul 
                                                         li 
-                                                            a(href="")|Kevlar
+                                                            a(href="javascript:void(0);")|Kevlar
                                                         li
-                                                            a(href="")|Fiberglas
+                                                            a(href="javascript:void(0);")|Fiberglas
                                                         li 
-                                                            a(href="")|HSHT Fiberglas
+                                                            a(href="javascript:void(0);")|HSHT Fiberglas
                                                         li
-                                                            a(href="")|Karbon Fiber
+                                                            a(href="javascript:void(0);")|Karbon Fiber
                                                         li
-                                                            a(href="")|Karbon Fiber FR
+                                                            a(href="javascript:void(0);")|Karbon Fiber FR
                                                         li
-                                                            a(href="")|Karbon Fiber FR-A
+                                                            a(href="javascript:void(0);")|Karbon Fiber FR-A
                                                 li 
                                                     .title Fotopolimerler
                                                     ul 
                                                         li 
-                                                            a(href="")|ABS like White
+                                                            a(href="javascript:void(0);")|ABS like White
                                                         li
-                                                            a(href="")|ABS Like Brown
+                                                            a(href="javascript:void(0);")|ABS Like Brown
                                                         li 
-                                                            a(href="")|Proto45
+                                                            a(href="javascript:void(0);")|Proto45
                                                         li
-                                                            a(href="")|Flexible
+                                                            a(href="javascript:void(0);")|Flexible
                                                         li
-                                                            a(href="")|Proflex
+                                                            a(href="javascript:void(0);")|ProFLEX
                                                         li
-                                                            a(href="")|Clear
+                                                            a(href="javascript:void(0);")|Clear
+                                                        li
+                                                            a(href="javascript:void(0);")|ProCLEAR
+                                                        li
+                                                            a(href="javascript:void(0);")|proABS
+                                                        li
+                                                            a(href="javascript:void(0);")|performax 
+                                                        li
+                                                            a(href="javascript:void(0);")|proPEEK
+                                                        li
+                                                            a(href="javascript:void(0);")|proBlack
+                                                        li
+                                                            a(href="javascript:void(0);")|proto410
                                                 li 
                                                     .title Metaller
                                                     ul 
                                                         li 
-                                                            a(href="")|17-4 Paslanmaz Çelik
+                                                            a(href="javascript:void(0);")|17-4 Paslanmaz Çelik
                                                         li
-                                                            a(href="")|Alüminyum
-                                                        li 
-                                                            a(href="")|Titanyum
+                                                            a(href="javascript:void(0);")|Saf Bakır
                                                         li
-                                                            a(href="")|Inconel 625
+                                                            a(href="javascript:void(0);")|Inconel 625
                                                         li
-                                                            a(href="")|H13 Takım Çeliği
+                                                            a(href="javascript:void(0);")|H13 Takım Çeliği
                                                         li
-                                                            a(href="")|A2 ve D2 Takım Çelikleri
-                                li
-                                    a(href="#")
+                                                            a(href="javascript:void(0);")|A2 ve D2 Takım Çeliği
+                                //-li
+                                    a(href="/malzemeler-cnc-isleme.html")
                                         .mnwrp 
                                             .img
-                                                img(src="https://via.placeholder.com/75x75/FF0000/FFFFFF", alt="CNC İşleme Malzemeleri")
+                                                img(src=require('Images/cnc-isleme.png'), alt="CNC İşleme")
                                             .txt
                                                 .t1|CNC İşleme Malzemeleri
                                                 .t2|CNC işleme malzeme detayı
+                                    .site-header-submenu-bottom
+                                        .site-header-submenu-bottom-inner
+                                            ul
+                                                li 
+                                                    .title Plastik 
+                                                    ul 
+                                                        li 
+                                                            a(href="javascript:void(0);")|PE (Polietilen)
+                                                        li 
+                                                            a(href="javascript:void(0);")|PVC
+                                                        li 
+                                                            a(href="javascript:void(0);")|PP
+                                                        li 
+                                                            a(href="javascript:void(0);")|PC (Polikarbonat)
+                                                        li 
+                                                            a(href="javascript:void(0);")|PEI (Polieterimid)
+                                                        li 
+                                                            a(href="javascript:void(0);")|PTFE (Teflon)
+                                                        li 
+                                                            a(href="javascript:void(0);")|PVDF
+                                                        li 
+                                                            a(href="javascript:void(0);")|POM (Delrin)
+                                                        li 
+                                                            a(href="javascript:void(0);")|PA6 (Poliamid)
+                                                        li 
+                                                            a(href="javascript:void(0);")|PA6G (Kestamid)
+                                                        li 
+                                                            a(href="javascript:void(0);")|PEEK
+                                                        li 
+                                                            a(href="javascript:void(0);")|ABS
+                                                        li 
+                                                            a(href="javascript:void(0);")|PMMA
+                                                        li 
+                                                            a(href="javascript:void(0);")|PPS
+                                                li 
+                                                    .title Metal 
+                                                    ul 
+                                                        li 
+                                                            a(href="javascript:void(0);")|Takım Çelikleri (A2, D2, H13)
+                                                        li 
+                                                            a(href="javascript:void(0);")|Alüminyum
+                                                        li 
+                                                            a(href="javascript:void(0);")|Paslanmaz Çelik
+                                                        li 
+                                                            a(href="javascript:void(0);")|Çelik
+                                                        li 
+                                                            a(href="javascript:void(0);")|Bakır
+                                                        li 
+                                                            a(href="javascript:void(0);")|Pirinç
+                                                        li 
+                                                            a(href="javascript:void(0);")|Titanyum
+                                                        li 
+                                                            a(href="javascript:void(0);")|Çinko
                 li 
                     a(href="/prodigma-plus.html")
                         |Prodigma +  
         .site-header-login
-            div(hidden)
-                .site-header-login-success
-                    .site-header-login-success-project
-                        +button('Proje Başlat','green','m',false)(href="/proje-baslat.html")
-                    .site-header-login-user
-                        span TA
-                    .site-header-login-success-left
-                        span.site-header-login-hello
-                            |Hoşgeldiniz
-                        span.site-header-login-member
-                            |Test Account
-                        .site-header-member-menu
-                            .site-header-member-menu-header
-                                .tt1|Hoş geldiniz,
-                                .bttm
-                                    .tt2|Test Account
-                                    .tt3(id="logout-btn")
-                                        button()|Çıkış Yap
-                            //-.site-header-member-menu-content
-                                ul
-                                    li 
-                                        a(href="/siparislerim.html")|Siparişlerim
-                                    li 
-                                        a(href="/bildirimlerim.html")|Bildirimlerim
-                                    li 
-                                        a(href="/adreslerim.html")|Adreslerim
-                                    li 
-                                        a(href="/uyelik-bilgilerim.html")|Üyelik Bilgilerim
-                                    li 
-                                        a(href="/iletisim-izinlerim.html")|İletişim İzinlerim
-                                    li 
-                                        a(href="/sife-degistirme.html")|Şifre Değiştirme
-                                    li 
-                                        a(href="/iletisim.html")
-                                            |Destek
-                                            i.icon.icon-arrow-line
-                    .site-header-login-success-cart
-                        a(href="javascript:void(0);")
-                            i.icon.icon-cart
-            .site-header-logoff
+            //-div(hidden)
+            .site-header-login-success
+                .site-header-login-success-project
+                    +button('Proje Başlat','green','m',false)(href="/proje-baslat.html")
+                //-.site-header-login-user
+                    span TA
+                //-.site-header-login-success-left
+                    span.site-header-login-hello
+                        |Hoşgeldiniz
+                    span.site-header-login-member
+                        |Test Account
+                    .site-header-member-menu
+                        .site-header-member-menu-header
+                            .tt1|Hoş geldiniz,
+                            .bttm
+                                .tt2|Test Account
+                                .tt3(id="logout-btn")
+                                    button()|Çıkış Yap
+                        //-.site-header-member-menu-content
+                            ul
+                                li 
+                                    a(href="/siparislerim.html")|Siparişlerim
+                                li 
+                                    a(href="/bildirimlerim.html")|Bildirimlerim
+                                li 
+                                    a(href="/adreslerim.html")|Adreslerim
+                                li 
+                                    a(href="/uyelik-bilgilerim.html")|Üyelik Bilgilerim
+                                li 
+                                    a(href="/iletisim-izinlerim.html")|İletişim İzinlerim
+                                li 
+                                    a(href="/sife-degistirme.html")|Şifre Değiştirme
+                                li 
+                                    a(href="/iletisim.html")
+                                        |Destek
+                                        i.icon.icon-arrow-line
+                //-.site-header-login-success-cart
+                    a(href="javascript:void(0);")
+                        i.icon.icon-cart
+            //-.site-header-logoff
                 a(href="/login.html") Giriş Yap
-            .site-header-lang
+            //-.site-header-lang
                 button(id="en")|ENG 
                 button(id="tr")|TR 

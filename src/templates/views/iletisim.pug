@@ -7,11 +7,11 @@ block prepend head
 
 block content
     .pcontact
-        +hero-banner('İletişim', {sm:'https://via.placeholder.com/375', lg:'https://via.placeholder.com/1440x500'})
+        +hero-banner('İletişim', {sm:require("Upload/iletisim-hero-banner-mb.jpg"), lg:require("Upload/iletisim-hero-banner.jpg")})
         .pcontact-wrapper 
             .pcontact-body
                 include ../widgets/contact-banner/index.pug
-                .pcontact-body-form
+                //-.pcontact-body-form
                     .pcontact-body-form-title İletişim Formunu Doldurun
                     .pcontact-body-form-content
                         .pcontact-body-form-content-left

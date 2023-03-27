@@ -1,15 +1,247 @@
 .pmaterials-fibers
     .pmaterials-fibers-wrapper
-        .pmaterials-fibers-title 
-            |Termoplastikler 
+        .pmaterials-fibers-title
+            |Sürekli Fiber
         .pmaterials-fibers-desc 
-            |3D baskı teknolojisi ise sıfırdan üretim yaparak sadece istenilen ürünü ürettiği için çok daha çevre dostu sonuçlar verir. 3D baskı elektronikler gibi çok malzemeli 3D baskı söz konusu olduğunda elektriksel ve mekanik işlevsellik birleştirilirken parça sayıları azaltılarak daha akıcı, verimli ve sürdürülebilir bir üretim süreci oluşturulabilir.    
+            |Sürekli fiber malzemelerimizi, Onyx gibi bir kompozit taban malzemesine yerleştirerek, alüminyum mukavemetine varan parçalar üretebilirsiniz. 
         .pmaterials-fibers-content
             .pmaterials-fibers-content-material
                 .pmaterials-fibers-content-material-img
-                    +picture({sm:"https://via.placeholder.com/300", lg:"https://via.placeholder.com/285x285"})(alt="img alt")
+                    +picture({sm:require("Upload/kevlar.jpg"), lg:require("Upload/kevlar.jpg")})(alt="Kevlar")
                 .pmaterials-fibers-content-material-title
-                    |P-PLA
+                    |Kevlar
                 .pmaterials-fibers-content-material-detail
-                    a(href="#") Malzeme Detayı
+                    a(href="javascript:void(0);", data-attr="kevlar")|Malzeme Detayı
                         i.icon.icon-arrow-right
+                    .modal(id="modal-cnc-kevlar", data-attr="kevlar")
+                        .modal-bg
+                        .modal-container
+                            button(class="modal-close modal-exit")
+                                i.icon.icon-close
+                            .modal-container-append-html
+                                .text-xs.mb-5|Yüksek etkili uygulamalar için kullanılan sağlam ve sertliği ile bilinen bir sürekli fiberdir. Vücut zırhı ve kurşun geçirmezlik dahil olmak üzere zorlu ortamlarda kullanılmaya uygundur. Kırılmaya neredeyse tamamen bağışık, darbeye dayanıklı parçalar üretmek için kullanılır.
+                                ul.pmaterials-tables.border.border-custom-100 
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|Test (ASTM)
+                                        .px-1.py-1.text-center|Kevlar
+                                    li.col-body
+                                        .px-1.py-1.text-center|Çekme Modülü (GPa)
+                                        .px-1.py-1.text-center|D3039
+                                        .px-1.py-1.text-center|27
+                                    li.col-body
+                                        .px-1.py-1.text-center|Kopmada Gerilme Gerinimi (%)
+                                        .px-1.py-1.text-center
+                                            |D3039
+                                        .px-1.py-1.text-center|2.7
+                                    li.col-body
+                                        .px-1.py-1.text-center|Eğilme Modülü (GPa)
+                                        .px-1.py-1.text-center
+                                            |D790
+                                            sup|1
+                                        .px-1.py-1.text-center|26
+                                    li.col-body
+                                        .px-1.py-1.text-center|Isı Sapma Sıcaklığı(ºC)
+                                        .px-1.py-1.text-center
+                                            |D648 B
+                                        .px-1.py-1.text-center|105
+                                .text-sm.mt-5|Baskı kapasitesi: 330mm x 270mm x200mm
+            .pmaterials-fibers-content-material
+                .pmaterials-fibers-content-material-img
+                    +picture({sm:require("Upload/fiberglas.jpg"), lg:require("Upload/fiberglas.jpg")})(alt="Fiberglas")
+                .pmaterials-fibers-content-material-title
+                    |Fiberglas
+                .pmaterials-fibers-content-material-detail
+                    a(href="javascript:void(0);", data-attr="fiberglas")|Malzeme Detayı
+                        i.icon.icon-arrow-right
+                    .modal(id="modal-cnc-fiberglas", data-attr="fiberglas")
+                        .modal-bg
+                        .modal-container
+                            button(class="modal-close modal-exit")
+                                i.icon.icon-close
+                            .modal-container-append-html
+                                .text-xs.mb-5|Endüstriyel uygulamalar için kullanılan sağlam, enerji emilimi ve sertliği ile bilinen bir sürekli fiberdir. ABS’den 10 kat daha güçlü parçalar üretilmesini sağlar.
+                                ul.pmaterials-tables.border.border-custom-100 
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|Test (ASTM)
+                                        .px-1.py-1.text-center|Fiberglas
+                                    li.col-body
+                                        .px-1.py-1.text-center|Çekme Modülü (GPa)
+                                        .px-1.py-1.text-center|D3039
+                                        .px-1.py-1.text-center|21
+                                    li.col-body
+                                        .px-1.py-1.text-center|Kopmada Gerilme Gerinimi (%)
+                                        .px-1.py-1.text-center
+                                            |D3039
+                                        .px-1.py-1.text-center|3.8
+                                    li.col-body
+                                        .px-1.py-1.text-center|Eğilme Modülü (GPa)
+                                        .px-1.py-1.text-center
+                                            |D790
+                                            sup|1
+                                        .px-1.py-1.text-center|22
+                                    li.col-body
+                                        .px-1.py-1.text-center|Isı Sapma Sıcaklığı(ºC)
+                                        .px-1.py-1.text-center
+                                            |D648 B
+                                        .px-1.py-1.text-center|105
+                                .text-sm.mt-5|Baskı kapasitesi: 330mm x 270mm x 200mm
+            .pmaterials-fibers-content-material
+                .pmaterials-fibers-content-material-img
+                    +picture({sm:require("Upload/hsht-fiberglas.jpg"), lg:require("Upload/hsht-fiberglas.jpg")})(alt="HSHT Fiberglas")
+                .pmaterials-fibers-content-material-title
+                    |HSHT Fiberglas
+                .pmaterials-fibers-content-material-detail
+                    a(href="javascript:void(0);", data-attr="hshtfiberglas")|Malzeme Detayı
+                        i.icon.icon-arrow-right
+                    .modal(id="modal-cnc-hshtfiberglas", data-attr="hshtfiberglas")
+                        .modal-bg
+                        .modal-container
+                            button(class="modal-close modal-exit")
+                                i.icon.icon-close
+                            .modal-container-append-html
+                                .text-xs.mb-5|Yüksek sıcaklıklı ortamlarda güçlü parçalar için kullanılan, termal olarak dayanıklı bir fiberglastır.
+                                ul.pmaterials-tables.border.border-custom-100 
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|Test (ASTM)
+                                        .px-1.py-1.text-center|HSHT Fiberglas
+                                    li.col-body
+                                        .px-1.py-1.text-center|Çekme Modülü (GPa)
+                                        .px-1.py-1.text-center|D3039
+                                        .px-1.py-1.text-center|21
+                                    li.col-body
+                                        .px-1.py-1.text-center|Kopmada Gerilme Gerinimi (%)
+                                        .px-1.py-1.text-center
+                                            |D3039
+                                        .px-1.py-1.text-center|3.9
+                                    li.col-body
+                                        .px-1.py-1.text-center|Eğilme Modülü (GPa)
+                                        .px-1.py-1.text-center
+                                            |D790
+                                            sup|1
+                                        .px-1.py-1.text-center|21
+                                    li.col-body
+                                        .px-1.py-1.text-center|Isı Sapma Sıcaklığı(ºC)
+                                        .px-1.py-1.text-center
+                                            |D648 B
+                                        .px-1.py-1.text-center|150
+                                .text-sm.mt-5|Baskı kapasitesi: 330mm x 270mm x 200mm
+            .pmaterials-fibers-content-material
+                .pmaterials-fibers-content-material-img
+                    +picture({sm:require("Upload/karbon-fiber.jpg"), lg:require("Upload/karbon-fiber.jpg")})(alt="Karbon Fiber")
+                .pmaterials-fibers-content-material-title
+                    |Karbon Fiber
+                .pmaterials-fibers-content-material-detail
+                    a(href="javascript:void(0);", data-attr="karbonfiber")|Malzeme Detayı
+                        i.icon.icon-arrow-right
+                    .modal(id="modal-cnc-karbonfiber", data-attr="karbonfiber")
+                        .modal-bg
+                        .modal-container
+                            button(class="modal-close modal-exit")
+                                i.icon.icon-close
+                            .modal-container-append-html
+                                .text-xs.mb-5|Ultra yüksek mukavemetli bir sürekli fiberdir. Alüminyum mukavemeti sağlayan son derece sert ve güçlü parçalar üretmek için kullanılır.
+                                ul.pmaterials-tables.border.border-custom-100 
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|Test (ASTM)
+                                        .px-1.py-1.text-center|Karbon Fiber
+                                    li.col-body
+                                        .px-1.py-1.text-center|Çekme Modülü (GPa)
+                                        .px-1.py-1.text-center|D3039
+                                        .px-1.py-1.text-center|60
+                                    li.col-body
+                                        .px-1.py-1.text-center|Kopmada Gerilme Gerinimi (%)
+                                        .px-1.py-1.text-center
+                                            |D3039
+                                        .px-1.py-1.text-center|1.5
+                                    li.col-body
+                                        .px-1.py-1.text-center|Eğilme Modülü (GPa)
+                                        .px-1.py-1.text-center
+                                            |D790
+                                            sup|1
+                                        .px-1.py-1.text-center|51
+                                    li.col-body
+                                        .px-1.py-1.text-center|Isı Sapma Sıcaklığı(ºC)
+                                        .px-1.py-1.text-center
+                                            |D648 B
+                                        .px-1.py-1.text-center|105
+                                .text-sm.mt-5|Baskı kapasitesi: 330mm x 270mm x 200mm
+            .pmaterials-fibers-content-material
+                .pmaterials-fibers-content-material-img
+                    +picture({sm:require("Upload/karbon-fiber-fr.jpg"), lg:require("Upload/karbon-fiber-fr.jpg")})(alt="Karbon Fiber FR")
+                .pmaterials-fibers-content-material-title
+                    |Karbon Fiber FR
+                .pmaterials-fibers-content-material-detail
+                    a(href="javascript:void(0);", data-attr="karbonfiberfr")|Malzeme Detayı
+                        i.icon.icon-arrow-right
+                    .modal(id="modal-cnc-karbonfiberfr", data-attr="karbonfiberfr")
+                        .modal-bg
+                        .modal-container
+                            button(class="modal-close modal-exit")
+                                i.icon.icon-close
+                            .modal-container-append-html
+                                .text-xs.mb-5|Karbon fiberin tutuşmayan, yani yanmazlık özelliği olan çeşididir.
+                                ul.pmaterials-tables.border.border-custom-100 
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|Test (ASTM)
+                                        .px-1.py-1.text-center|Karbon Fiber FR
+                                    li.col-body
+                                        .px-1.py-1.text-center|Çekme Modülü (GPa)
+                                        .px-1.py-1.text-center|D3039
+                                        .px-1.py-1.text-center|57
+                                    li.col-body
+                                        .px-1.py-1.text-center|Kopmada Gerilme Gerinimi (%)
+                                        .px-1.py-1.text-center
+                                            |D3039
+                                        .px-1.py-1.text-center|1.6
+                                    li.col-body
+                                        .px-1.py-1.text-center|Eğilme Modülü (GPa)
+                                        .px-1.py-1.text-center
+                                            |D790
+                                            sup|1
+                                        .px-1.py-1.text-center|50
+                                    li.col-body
+                                        .px-1.py-1.text-center|Isı Sapma Sıcaklığı(ºC)
+                                        .px-1.py-1.text-center
+                                            |D648 B
+                                        .px-1.py-1.text-center|105
+                                .text-sm.mt-5|Baskı kapasitesi: 330mm x 270mm x 200mm
+            .pmaterials-fibers-content-material
+                .pmaterials-fibers-content-material-img
+                    +picture({sm:require("Upload/karbon-fiber-fra.jpg"), lg:require("Upload/karbon-fiber-fra.jpg")})(alt="Karbon Fiber FR-A")
+                .pmaterials-fibers-content-material-title
+                    |Karbon Fiber FR-A
+                .pmaterials-fibers-content-material-detail
+                    a(href="javascript:void(0);", data-attr="karbonfiberfra")|Malzeme Detayı
+                        i.icon.icon-arrow-right
+                    .modal(id="modal-cnc-karbonfiberfra", data-attr="karbonfiberfra")
+                        .modal-bg
+                        .modal-container
+                            button(class="modal-close modal-exit")
+                                i.icon.icon-close
+                            .modal-container-append-html
+                                .text-xs.mb-5|Yanmazlık özelliği olan Karbon Fiber FR’ın, havacılık ve otomotiv gibi ulaşım endüstrilerinin gereksinimleri için özel olarak üretilmiş halidir. Bu endüstrilerde kullanılabilmek üzere sertifikaya sahiptir.
+                                ul.pmaterials-tables.border.border-custom-100 
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|Test (ASTM)
+                                        .px-1.py-1.text-center|Karbon Fiber FR-A
+                                    li.col-body
+                                        .px-1.py-1.text-center|Çekme Modülü (GPa)
+                                        .px-1.py-1.text-center|D3039
+                                        .px-1.py-1.text-center|57
+                                    li.col-body
+                                        .px-1.py-1.text-center|Kopmada Gerilme Gerinimi (%)
+                                        .px-1.py-1.text-center
+                                            |D3039
+                                        .px-1.py-1.text-center|1.6
+                                    li.col-body
+                                        .px-1.py-1.text-center|Eğilme Modülü (GPa)
+                                        .px-1.py-1.text-center
+                                            |D790
+                                            sup|1
+                                        .px-1.py-1.text-center|50
+                                    li.col-body
+                                        .px-1.py-1.text-center|Isı Sapma Sıcaklığı(ºC)
+                                        .px-1.py-1.text-center
+                                            |D648 B
+                                        .px-1.py-1.text-center|105
+                                .text-sm.mt-5|Baskı kapasitesi: 330mm x 270mm x 200mm

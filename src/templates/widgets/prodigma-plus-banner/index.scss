@@ -1,72 +1,78 @@
-.blog-banner{
-    @apply bg-custom-200 px-5 pt-9 pb-9;
-    @apply lg:px-0 lg:pt-32 lg:pb-14;
-    &-wrapper{
-        @apply lg:container lg:mx-auto;
+.blog-banner {
+  @apply bg-custom-200 px-5 pt-9 pb-9;
+  @apply lg:px-0 lg:pt-32 lg:pb-14;
+  &-wrapper {
+    @apply lg:container lg:mx-auto;
+  }
+  &-title {
+    @apply flex items-center justify-center font-heading font-medium text-center text-5xl text-blue-200 mb-6 px-5;
+    @apply lg:mb-11;
+    img {
+      @apply mr-1;
     }
-    &-title{
-        @apply flex items-center justify-center font-heading font-medium text-center text-5xl text-blue-200 mb-6 px-5;
-        @apply lg:mb-11;
-        img{
-            @apply mr-1
+  }
+  &-lists {
+    > ul {
+      @apply grid grid-cols-2 gap-x-2 gap-y-2;
+      @apply lg:grid-cols-3 lg:gap-x-5 lg:gap-y-5;
+      @media only screen and (max-width: 1024px) {
+        grid-template-areas:
+          "AA BB"
+          "DD DD";
+      }
+      @media only screen and (min-width: 1025px) {
+        grid-template-areas:
+          "AA BB CC"
+          "DD DD EE";
+      }
+      > li {
+        &:nth-child(1) {
+          grid-area: AA;
+          @apply flex flex-col gap-y-2;
+          @apply lg:gap-y-5;
         }
+        &:nth-child(2) {
+          grid-area: BB;
+          @apply flex flex-col gap-y-2;
+          @apply lg:gap-y-5;
+        }
+        &:nth-child(3) {
+          grid-area: CC;
+          @apply hidden;
+          @apply lg:flex lg:flex-col lg:gap-y-5;
+        }
+        &:nth-child(4) {
+          grid-area: DD;
+        }
+        &:nth-child(5) {
+          grid-area: EE;
+          @apply hidden;
+          @apply lg:flex lg:flex-col lg:gap-y-5;
+        }
+        > a {
+          @apply relative;
+          &:hover {
+            .blog-banner-lists-texts {
+              @apply opacity-100 scale-90;
+            }
+          }
+        }
+        img {
+          @apply w-full rounded-[1.25rem];
+        }
+        .ttile1 {
+          @apply font-heading font-medium text-3xl px-4;
+        }
+        .ttile2 {
+          @apply font-inter font-normal text-base mt-5 px-4;
+        }
+      }
     }
-    &-lists{
-        > ul{
-            @apply grid grid-cols-2 gap-x-2 gap-y-2;
-            @apply lg:grid-cols-3 lg:px-5 lg:gap-x-5 lg:gap-y-5;
-            @media only screen and (max-width: 1024px) {
-                grid-template-areas: 
-                "AA BB"
-                "DD DD";
-            }
-            @media only screen and (min-width: 1025px) {
-                grid-template-areas: 
-                "AA BB CC"
-                "DD DD EE";
-            }
-            > li{
-                &:nth-child(1){
-                    grid-area: AA;
-                    @apply flex flex-col gap-y-2;
-                    @apply lg:gap-y-5;
-                }
-                &:nth-child(2){
-                    grid-area: BB;
-                    @apply flex flex-col gap-y-2;
-                    @apply lg:gap-y-5;
-                }
-                &:nth-child(3){
-                    grid-area: CC;
-                    @apply hidden;
-                    @apply lg:flex lg:flex-col lg:gap-y-5;
-                }
-                &:nth-child(4){
-                    grid-area: DD;
-                }
-                &:nth-child(5){
-                    grid-area: EE;
-                    @apply hidden;
-                    @apply lg:flex lg:flex-col lg:gap-y-5;
-                }
-                > a{
-                    @apply relative;
-                    &:hover{
-                        .blog-banner-lists-texts{
-                            @apply opacity-100 scale-90;
-                        }
-                    }
-                }
-                img{
-                    @apply w-full rounded-[1.25rem];
-                }
-            }
-        }
-        &-texts{
-            @apply hidden;
-            @apply lg:flex lg:flex-col lg:items-center lg:justify-center;
-            @apply absolute top-0 left-0 z-[1] w-full h-full bg-blue text-center text-white rounded-[1.25rem] p-2;
-            @apply opacity-0 scale-0 transition-all ease-in delay-300 duration-300;
-        }
+    &-texts {
+      @apply hidden;
+      @apply lg:flex lg:flex-col lg:items-center lg:justify-center;
+      @apply absolute top-0 left-0 z-[1] w-full h-full bg-blue text-center text-white rounded-[1.25rem] p-2;
+      @apply opacity-0 scale-0 transition-all ease-in delay-300 duration-300;
     }
+  }
 }

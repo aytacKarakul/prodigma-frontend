@@ -42,7 +42,8 @@
   @apply lg:h-[calc(100vh-70px)] bg-[url(../../../assets/img/create-project-bg.png)] bg-no-repeat bg-cover bg-center;
 
   &-wrapper {
-    @apply w-full mx-auto px-5 py-10;
+    @apply w-full mx-auto;
+    //py-10 px-5
     @apply lg:max-w-[95%];
   }
 
@@ -62,8 +63,11 @@
   }
   &-iframe-service {
     @apply relative overflow-hidden w-full;
-    padding-top: 56.25%;
     iframe {
+      @apply w-full h-screen;
+    }
+    //padding-top: 56.25%;
+    /*iframe {
       position: absolute;
       top: 0;
       left: 0;
@@ -71,7 +75,7 @@
       right: 0;
       width: 100%;
       height: 100%;
-    }
+    }*/
   }
   &-body {
     @apply w-full;

@@ -1,8 +1,10 @@
 .pwebinar-body-double-banner {
   ul {
-    @apply flex gap-x-5 mt-10;
+    @apply flex flex-col mt-10;
+    @apply lg:flex-row lg:gap-x-5 lg:items-center;
     li {
-      @apply w-1/2;
+      @apply w-full last:mt-5;
+      @apply lg:w-1/2 lg:last:mt-0;
       img {
         @apply w-full rounded-[20px];
       }

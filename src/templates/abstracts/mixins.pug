@@ -8,7 +8,7 @@ mixin font-icon(iconName)
 //- Call svg icon
     +img-icon('url')(title="Google")
 mixin img-icon(iconUrl)
-    img(src=iconUrl + '.svg')&attributes(attributes)
+    img(src=iconUrl)&attributes(attributes)
 
 //- Picture
 mixin picture(src1x, src2x = false)
@@ -119,6 +119,5 @@ mixin hero-banner(title='', src1x, src2x= false, alt='')
                     source(media="(max-width: 1024px)" srcset=src1x['sm'])
                     source(media="(min-width: 1025px)" srcset=src1x['lg'])
                 img(src=src1x['sm'] alt=(attributes.alt) ? attributes.alt : 'alt text here')&attributes(attributes)
-
 mixin content-html(paragraphy='')
     p= paragraphy

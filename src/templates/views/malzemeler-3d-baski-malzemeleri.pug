@@ -7,8 +7,9 @@ block prepend head
 
 block content
     .pmaterials
-        +hero-banner('3D Baskı Malzemeleri', {sm:'img/hero_type_single_mb.jpg', lg:'img/hero_type_single.jpg'})
+        +hero-banner('3D Baskı Malzemeleri', {sm:require("Upload/malzemeler-hero-banner-mb.jpg"), lg:require("Upload/malzemeler-hero-banner.jpg")})
+        .pmaterials-page-title|Plastik
         include ../widgets/thermoplastics/index.pug
         include ../widgets/continous-fiber/index.pug
-        include ../widgets/metals/index.pug
+        include ../widgets/fotopolimers/index.pug
         include ../widgets/polimers/index.pug

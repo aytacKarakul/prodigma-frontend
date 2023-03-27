@@ -5,7 +5,7 @@
     .pprodigma-plus-wrapper 
         .pprodigma-plus-head
             .pprodigma-plus-head-title
-                img(src="img/logo.svg", alt="Prodigma")
+                img(src=require("Images/logo.svg"), alt="Prodigma 3D")
                 span +
             .pprodigma-plus-head-desc Markalara ve insanlara dünyayı etkilemeleri için ilham veriyor.
         if alternative == false
@@ -13,30 +13,57 @@
                 ul
                     li
                         .lg
-                            a(href="/blog-detay.html")
-                                +picture({sm:require=('img/pplus1.png'), lg:require=('img/pplus1.png')})
+                            a(href="/blog-3d-baski-teknolojileri-dogru-bilinen-on-yanlis.html")
+                                +picture({sm:require('Upload/baski-teknolojileri-bilinen-on-yanlis-liste.jpg')})
+                                .btxt
+                                    .bt1|3D Baskı Teknolojileri ile ilgili Bilinen 10 Yanlış
+                                    .bt2|Devamını Oku
+                        .sm        
+                            a(href="/blog-tasariminizi-3d-uretime-hazir-hale-getirmek.html")
+                                +picture({sm:require('Upload/tasariminizi-3d-uretime-hazir-hale-getirmek-liste.jpg'), lg:require('Upload/tasariminizi-3d-uretime-hazir-hale-getirmek-liste.jpg')})
+                                .btxt
+                                    .bt1|Tasarımınızı 3D Üretime Hazır Hale Getirmek
+                                    .bt2|Devamını Oku
+                            a(href="/blog-dunyanin-en-buyuk-metal-yazicisi.html")
+                                +picture({sm:require('Upload/dunyanin-en-buyuk-metal-3d-yazicisi-gallery-liste.jpg'), lg:require('Upload/dunyanin-en-buyuk-metal-3d-yazicisi-gallery-liste.jpg')})
+                                .btxt
+                                    .bt1|Dünyanın En Büyük Metal 3D Yazıcısı
+                                    .bt2|Devamını Oku
+                        .md        
+                            a(href="/blog-3d-baski-ve-yedek-parca.html")
+                                +picture({sm:require('Upload/3d-baski-ve-yedek-parca-liste.jpg'), lg:require('Upload/3d-baski-ve-yedek-parca-liste.jpg')})
+                                .btxt
+                                    .bt1|3D Baskı ve Yedek Parça
+                                    .bt2|Devamını Oku
+                            a(href="/blog-sla-3d-baski.html")
+                                +picture({sm:require('Images/pplus2.png'), lg:require('Images/pplus2.png')})
+                                .btxt
+                                    .bt1|SLA 3D Baskı
+                                    .bt2|Devamını Oku
+                            a(href="/blog-hobi-ve-endustriyel-3d-yazicilar-arasindaki-farklar.html")
+                                +picture({sm:require('Upload/hobi-ve-endustriyel-3d-yazicilar-arasindaki-farklar.jpg'), lg:require('Upload/hobi-ve-endustriyel-3d-yazicilar-arasindaki-farklar.jpg')})
+                                .btxt
+                                    .bt1|Hobi ve Endüstriyel 3D Yazıcılar Arasındaki Farklar
+                                    .bt2|Devamını Oku
+                    li.type2
                         .sm        
                             a(href=`/blog-detay-activite.html${urlType}`)
-                                +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
+                                +picture({sm:require('Images/pplus7.png'), lg:require('Images/pplus7.png')})
                             a(href=`/blog-detay-activite.html${urlType}`)
-                                +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
-                        .md        
+                                +picture({sm:require('Images/pplus8.png'), lg:require('Images/pplus8.png')})
+                        .lg
                             a(href="/blog-detay.html")
-                                +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
-                            a(href=`/blog-detay-activite.html${urlType}`)
-                                +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
-                            a(href="/blog-detay.html")
-                                +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
-        else if alternative == true
+                                +picture({sm:require('Images/pplus10.png'), lg:require('Images/pplus10.png')})
+        //-else if alternative == true
             .pprodigma-plus-body-alternative
                 ul
                     li
                         .lg
                             a(href="/blog-detay.html")
-                                +picture({sm:require=('img/pplus1.png'), lg:require=('img/pplus1.png')})
+                                +picture({sm:require('Images/pplus1.png'), lg:require('Images/pplus1.png')})
                         .sm        
                             a(href=`/blog-detay-activite.html${urlType}`)
-                                +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
+                                +picture({sm:require('Images/pplus2.png'), lg:require('Images/pplus2.png')})
                         .md        
                             a(href="/blog-detay.html")
-                                +picture({sm:require=('img/pplus2.png'), lg:require=('img/pplus2.png')})
+                                +picture({sm:require('Images/pplus2.png'), lg:require('Images/pplus2.png')})

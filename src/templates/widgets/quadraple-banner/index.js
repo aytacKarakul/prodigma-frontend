@@ -1,28 +1,58 @@
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-
 import "Images/how-the-works-prodigma.png";
 import "Images/animation-vectorel.svg";
 
-export const quadrapleBanner = () => {
-  gsap.registerPlugin(ScrollTrigger);
-  const gsapElement = document.querySelectorAll(
-    ".quadruple-banner-body-right ul li"
+export function QuadrapleBanner() {
+  const pageWrapper = document.querySelector(".page-home");
+  var scrollW = document.querySelector(".quadruple-banner-body-right-wrapper");
+  var scrollUl = document.querySelector(
+    ".quadruple-banner-body-right-wrapper ul"
   );
 
-  if (gsapElement) {
-    gsapElement.forEach((el) => {
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: el,
-          start: "bottom 70%",
-          end: "bottom center",
-          markers: true,
-          toggleActions: "play none reverse none",
-          scrub: 1,
-        },
+  if (pageWrapper) {
+    var itemsScrolled,
+      itemsMax,
+      cloned = false;
+
+    var listOpts = {
+      itemCount: null,
+      itemHeight: null,
+      items: [],
+    };
+    function scrollWrap() {
+      itemsScrolled = Math.ceil(
+        (this.scrollTop + listOpts.itemHeight / 3) / listOpts.itemHeight
+      );
+
+      if (this.scrollTop < 1) {
+        itemsScrolled = 0;
+      }
+
+      listOpts.items.forEach(function (ele) {
+        ele.classList.remove("active");
       });
-      tl.to(el, { opacity: 0, yPercent: -10 });
+
+      if (itemsScrolled < listOpts.items.length) {
+        listOpts.items[itemsScrolled].classList.add("active");
+      }
+    }
+    function initItems(scrollSmooth) {
+      listOpts.items = [].slice.call(scrollUl.querySelectorAll("li"));
+      listOpts.itemHeight = listOpts.items[0].clientHeight;
+      listOpts.itemCount = listOpts.items.length;
+
+      if (!itemsMax) {
+        itemsMax = listOpts.itemCount;
+      }
+
+      if (scrollSmooth) {
+        var seamLessScrollPoint = (itemsMax - 4) * listOpts.itemHeight;
+        scrollW.scrollTop = seamLessScrollPoint;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+      initItems();
+      scrollW.onscroll = scrollWrap;
     });
   }
-};
+}

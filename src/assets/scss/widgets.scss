@@ -1,5 +1,12 @@
+.page {
+  &-materials,
+  &-services {
+    .benefits-banner-brands {
+      @apply hidden;
+    }
+  }
+}
 //Supply Banner
-
 .supply-banner {
   @apply flex flex-col justify-center bg-[url(../../assets/img/benefits-brands-cover.png)] bg-blue bg-no-repeat bg-cover bg-center min-h-[21.25rem];
   &-wrapper {
@@ -27,7 +34,7 @@
   @apply bg-gray-500;
   &-wrapper {
     @apply container mx-auto;
-    @apply lg:py-12;
+    @apply lg:py-20 lg:px-5;
   }
   &-body {
     @apply relative text-center;
@@ -57,4 +64,8 @@
       }
     }
   }
+}
+
+.modal-container-append-html {
+  @apply text-blue-100 text-opacity-80;
 }

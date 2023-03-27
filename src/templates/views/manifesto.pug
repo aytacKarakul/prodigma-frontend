@@ -1,12 +1,12 @@
 extends ../blocks/layout.pug
 
 block prepend head
-    - pageTitle = "Manifesto"
-    - pageDesc = "Manifesto"
+    - pageTitle = "Prodigma Manifesto"
+    - pageDesc = "Manifestomuz"
     - pageClass = "manifest"
 
 block content
     .pmanifesto
-        +hero-banner('Manifesto', {sm:'https://via.placeholder.com/375', lg:'https://via.placeholder.com/1440x500'})
+        +hero-banner('Manifesto', {sm:require("Upload/manifesto-hero-cover-mb.jpg"), lg:require("Upload/manifesto-hero-cover.jpg")})
         include ../widgets/trio-info-banner/index.pug 
         include ../widgets/manifesto-banner/index.pug

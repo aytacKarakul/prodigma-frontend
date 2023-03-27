@@ -1,0 +1,61 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "Prodigma | 3D Baskı Teknolojileri ile İlgili Bilinen 10 Yanlış"
+    - pageDesc = "3D Baskı Teknolojileri ile İlgili Bilinen 10 Yanlış"
+    - pageClass = "blog-detail-single"
+    - var activity = false
+    - var activityStart = false
+
+block content
+    .pwebinar
+        //-include ./blog-header-timer-banner/index.pug
+        .pwebinar-body
+            .pwebinar-body-wrapper 
+                .pwebinar-body-wrapper-html
+                    p 
+                        strong|1- 3D baskı sadece prototip yapmak için kullanılabilir.
+                    +content-html("3D baskı teknolojileri hayatımızda hızlı prototipleme ve kolay revizyon avantajları ile yer almaya başlasa da artık sadece prototip üretiminden çok daha fazlası. Gelişen teknoloji ile beraber bambaşka üretim yöntemlerine sahip farklı boyutlarda yazıcılar üretildi ve her geçen gün bir yenisi eklenmekte. Günümüzde, gittikçe yaygınlaşan 3D yazıcılar ve 3 boyutlu baskı teknolojileri, üretim sektörü için sürekli artan bu talepleri en hızlı şekilde karşılamanın yepyeni bir çıkış yolu olma yolunda hızla ilerliyor. Aynı zamanda üreticilerin yeni ürünleri hızlıca piyasaya sürebilmesine de olanak sağlıyor. Büyük ölçekli 3D baskı, şirketlerin uygun maliyetli, hızlı ve esnek bir çözüm elde etmelerine olanak sağlıyor.")
+                    p 
+                        strong|2- Filament kullanılan FDM yöntemi dışında başka baskı metodu yoktur.
+                    +content-html("Bazılarının iddia edebileceğinin aksine, hiçbir teknolojinin diğerlerinden daha iyi olmadığını anlamak önemlidir. Her teknolojinin avantajları ve dezavantajları vardır ve bu, metal veya polimerden parçalar üreten makineler için geçerlidir. Bu makine tiplerini anlamak, bir teknolojinin ne zaman diğerine göre kullanılacağını ve onlar için en iyi tasarımın nasıl yapılacağını bilmek için çok önemlidir.")
+                    p 
+                        strong|3- 3D baskı ile küçük detaylar elde etmek mümkün değildir.
+                    +content-html("Bu noktada önceliğimizi belirleyip seçeneklerimiz yani farklı baskı yöntemleri arasında eleme yapmak gerekiyor. Örneğin eğer bizim için baskı detayları önemli olup mukavemet ikinci planda ise SLA ve DLP baskıyı bir seçenek olarak düşünebiliriz. Detaylardaki başarısı sayesinde kalıp endüstrisinde sıkça başvurulan yöntemler arasında gelmektedirler.")
+                    p 
+                        strong|4- 3D yazıcılar sağlık için zararlıdır.
+                    +content-html("Araştırmacılar, Akrilonitril bütadien stiren (ABS) filamentleri kullanan yazıcıların, işçilerin sağlığı için polilaktik asit (PLA) filamanlarından daha tehlikeli olduğunu bulmuşlardır. Örneğin, çok ince bir metal tozu ile yapılan metal baskılar ayrıca bir solunum tehlikesi oluşturabilir. Bu toz havadan yayılabilir ve işçilerin bu metalik partiküllerin teneffüs etmesi riski bulunmaktadır. Fakat her alanda olduğu gibi uygun prosedürler uygulanır ve gerekli önlemler alınırsa sağlığımız olumsuz etkilenmez.")
+                    p 
+                        strong|5- Yazdır tuşuna bastıktan sonrasını makine halleder.
+                    +content-html("Özellikle yüksek hassasiyet gerektiren parçalarda ön ve ardıl işlemlere ihtiyaç duyulur. Bir yapı hazırlarken operatör, parçaları en iyi nasıl yönlendireceğine ve nerede, ne tür destek yapıları ve ankrajların kullanılacağına karar vermelidir. Tüm bunlara ek olarak en iyi sonuca ulaşmak için makine parametrelerinin baskıya uygun olarak ayarlanması gerekmektedir. Buna örnek olarak üç farklı operatörün, aynı makine ve malzemeyi kullanırken bile genellikle üç farklı parça kalitesi elde etmesi örnek olarak verilebilir.")
+                    p 
+                        strong|6- Geleneksel üretim yöntemlerine göre malzeme çeşidi azdır.
+                    +content-html("Her geçen gün katmanlı imalat teknolojilerinde kullanılmak üzere yeni malzemeler üretilmektedir. Dünyanın dört bir yanındaki sayısız kuruluş, şu anda uçaklarda, uydularda, otomobillerde ve endüstriyel makinelerde hizmette olan parçaları üretmek için 3D baskıyı kullanıyor. Örneğin; Bakır, PEEK, Ultem, Onyx FR, Onyx ESD ve sürekli fiber takviyelerinden Kevlar gibi malzemeler. Bu yöntem ile üretilen ürünler geleneksel üretim yöntemleri ile üretilen ürünlerin gereksinimlerini karşılayıp daha iyi sonuçlar verebilir")
+                    p 
+                        strong|7- 3D baskı sistemleri çok pahalıdır.
+                    +content-html("Bu noktada önemli olan ihtiyaçları belirlemektir. Her 3D baskı sistemi çok pahalıdır gibi bir algıya sahip olmak yanlıştır. Masaüstü yazıcılardan endüstriyel yazıcılara kadar fiyat aralığı 200$’dan 1.5 milyon $’a kadar değişkenlik gösteren pek çok farklı seçenek bulunur. İhtiyaçlarınız belliyse bu ihtiyaçlarınızı karşılayan yazıcılar ile listeyi daraltabilir eğer 3D baskıya yeni başlıyorsanız başlangıç seviye yazıcılar ile kendinizi geliştirip daha sonra yazıcı ve teknoloji özellikleri daha gelişmiş yazıcılara geçiş yapabilirsiniz.")
+                    p 
+                        strong|8- 3D baskı herkesin yapabileceği bir şey değildir.
+                    +content-html("3D baskı teknolojilerini kullanıp üretim yapmak için bazı konularda bilgi ve deneyim gerektiği konusunda sanırım hepimiz hemfikirizdir. Fakat gelişen teknoloji ile beraber artık destek alabileceğimiz pek çok platform ve yazılım bulunmaktadır. Örneğin hazır tasarımlar bulabileceğimiz model kütüphaneleri ve baskı ayarlarını kolaylıkla değiştirebileceğimiz makine yazılımları gibi.")
+                    p 
+                        strong|9- 3D baskıda yüzey kalitesi her zaman kötü olur.
+                    +content-html("Bunu etkileyen pek çok farklı etken vardır. Örneğin; üretim teknolojisi, kullanılan malzeme, rezolüsyon ayarları, nozül çapı gibi. Burada önemli olan bu ve bunun gibi pek çok farklı seçenekten sizin için en efektif konfigürasyonu belirlemenizdir. Baskı konusunda pek çok farklı müdahale alanına sahip olmanız bu ve bunun gibi durumlarda size avantaj sağlamaktadır.")
+                    p 
+                        strong|10- Gelecekte her evde bir 3D yazıcı bulunacak.
+                    +content-html("En temel seviyedeki 3D yazıcıyı kullanmak için bile belirli bir tasarım becerisi ve yazılım aracına ihtiyaç duyulur. Gelecek, çocuklara ve hobilere yönelik basit ve düşük maliyetli 3D yazıcılar getirebilir, ancak bunlar yalnızca sınırlı sayıda malzeme ve ürün için uygun olacaktır. Evet, 3D yazıcılar ile pek çok ihtiyacımızı isteklerimize göre özelleştirerek kısa sürede elde edebiliriz fakat hibrit parçalar elde etmek pek kolay olmayacaktır. Diyelim ki beceriye, yeteneğe ve yazılıma sahipsiniz, ancak 3D yazıcınız ürün için gereken doğru malzemeyi veya boyutu sunuyor mu? Evde 3D baskı fikri, birçok kişinin dikiş makinesine sahip olmasına benzer, ancak çok az insan ev yapımı giysiler giyiyor.")
+                //-include ../photo-banner/index.pug
+                //-.pwebinar-body-wrapper-html
+                    +content-html("After more than a dozen trades at the deadline, there are still many moves to be made, with lingering free agents, buyouts and executive contracts in the balance. All the trades have been made. This season’s roster shuffling, barring a free-agent signing or three coming soon, is complete. It’s time, then, to take a tour around the league for some post-trade deadline fallout, rumbles, analysis and storytelling; don’t be surprised that the Los Angeles")
+                    +content-html("Like Lowry, Ujiri has been regarded by fans and the organization as Raptors royalty since the team’s championship run in 2018-19. It is widely presumed in league circles that only an overwhelming offer in a highly desirable market could lure him away from the influence and affection he has amassed in Toronto. Yet these many months without a deal and Webster’s rising profile as a natural successor have raised the question: How much longer will Ujiri be running the Raptors? ")
+                    +content-html("After more than a dozen trades at the deadline, there are still many moves to be made, with lingering free agents, buyouts and executive contracts in the balance. All the trades have been made. This season’s roster shuffling, barring a free-agent signing or three coming soon, is complete. It’s time, then, to take a tour around the league for some post-trade deadline fallout, rumbles, analysis and storytelling; don’t be surprised that the Los Angeles")
+                    +content-html("Like Lowry, Ujiri has been regarded by fans and the organization as Raptors royalty since the team’s championship run in 2018-19. It is widely presumed in league circles that only an overwhelming offer in a highly desirable market could lure him away from the influence and affection he has amassed in Toronto. Yet these many months without a deal and Webster’s rising profile as a natural successor have raised the question: How much longer will Ujiri be running the Raptors? ")
+                //-include ./double-banner/index.pug
+                .pwebinar-body-double-banner
+                    ul 
+                        li
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/baski-teknolojileri-bilinen-on-yanlis-gallery-1-mb.jpg"),lg:require("Upload/baski-teknolojileri-bilinen-on-yanlis-gallery-1.jpg")})(alt="Prodigma webinar") 
+                        li
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/baski-teknolojileri-bilinen-on-yanlis-gallery-2-mb.jpg"),lg:require("Upload/baski-teknolojileri-bilinen-on-yanlis-gallery-2.jpg")})(alt="Prodigma webinar") 
+                //-include ./blog-other-contents/index.pug

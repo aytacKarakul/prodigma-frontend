@@ -1,0 +1,37 @@
+.pmaterials-metals {
+  &-wrapper {
+    @apply mx-auto py-16 px-5;
+    @apply lg:container lg:py-10;
+  }
+  &-title {
+    @apply font-inter font-semibold text-2xl;
+  }
+  &-desc {
+    @apply font-inter font-normal text-base mt-5 mb-7;
+  }
+  &-content {
+    @apply flex flex-col flex-wrap items-center gap-5;
+    @apply lg:flex-row;
+    &-material {
+      @apply w-full;
+      @apply lg:w-[calc(25%-15px)];
+      &-title {
+        @apply font-inter font-medium text-2xl my-2 min-h-[70px];
+      }
+      &-detail {
+        @apply font-inter font-medium text-sm;
+      }
+      &-img {
+        img {
+          @apply w-full rounded-2xl;
+        }
+      }
+      a {
+        @apply flex items-center;
+        i {
+          @apply ml-1;
+        }
+      }
+    }
+  }
+}

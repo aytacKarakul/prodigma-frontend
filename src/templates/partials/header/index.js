@@ -7,8 +7,8 @@ class Header {
     this.headerLangBtns = document.querySelectorAll(".site-header-lang button");
 
     this.initHeader();
-    this.langChangeFunc();
-    this.siteLoginUserNameSurname();
+    //this.langChangeFunc();
+    //this.siteLoginUserNameSurname();
   }
   siteLoginUserNameSurname() {
     const authUser = localStorage.getItem("login_hash");

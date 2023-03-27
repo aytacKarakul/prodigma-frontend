@@ -7,11 +7,25 @@ block prepend head
 
 block content
     .pabout
-        +hero-banner('Hakkımızda', {sm:'img/hakkimizda_hero_sm.jpg', lg:'img/hakkimizda_hero.jpg'})
+        +hero-banner('Hakkımızda', {sm:require("Upload/hakkimizda-hero-cover-mb.jpg"), lg:require("Upload/hakkimizda-hero-cover.jpg")})
         .pabout-body
             .pabout-body-content
-                +title("Dijital Üretime, Prodigma Vizyonu")
-                +desc("Pek çok farklı üretici ve üretim teknolojisi ile birlikte ikincil işlemleri birleştirerek kullanıcı dostu bir ürün hizmetleri ağı oluşturan Prodigma, müşterileri için tekrar edilebilir ve kolay erişilebilir ürünler ortaya koymaktadır.Çevrimiçi üretim platformu ile kullanıcıların projeleri için en uygun malzeme seçeneğine sahip özel üretim parçalara ulaşmalarına olanak sağlamaktadır. Misyonumuz, müşterilerimizin taleplerine göre en uygun hizmetleri sunarak; erişilebilir, tekrarlanabilir ve ölçeklenebilir üretim teknolojileriyle yeniliği optimize eden üretim çözümleri sunmaktır.")
-            include ../widgets/counter-banner/index.pug
-            include ../widgets/photo-banner/index.pug
+                .pabout-body-content-title
+                    |Dijital Üretime,
+                    br
+                    |Prodigma Vizyonu
+                .pabout-body-content-desc
+                    p|Prodigma, talebe yönelik ve belirlenen adetlerde final ürün ya da prototiplerin gelişmiş malzemeler kullanarak endüstriyel eklemeli (3D) imalat yöntemleri ile birlikte farklı geleneksel üretim metodlarından da yararlanıp en kısa sürede fiyatlandırma yapan ve projelerinizi üreten hızlı bir dijital üretim merkezidir.
+                    br
+                    p|Alanında başarılı ve yetenekli mühendislerin, tasarımcıların, kalite kontrol ve özel işlem prosesleri uzmanlarının oluşturduğu; erişilebilir, ölçeklenebilir ve sürdürülebilir üretim teknolojilerini kullanarak talebe yönelik çözümler üretmeyi hedefleyen özel bir ekip tarafından kurulmuştur.
+                    br
+                    p|Prodigma; yüksek doğruluğa sahip prototiplerden, pazara girmeye hazır ürünlerin seri üretimine kadar olan tüm periyotlarda ve Endüstriyel Makine & Ekipman, Tüketici Ürünleri & Elektroniği, Uzay & Havacılık, Otomotiv, Savunma ve Medikal başta olmak üzere pek çok sektörde tedarik zincirini geliştirerek üretim öncesi ve üretim esnasındaki süreçlerde aktif rol oynamaktadır.
+                    br
+                    p|Prodigma’nın vizyonu; ulaşabildiği tüm ürün tasarımcılarına, mühendislere ya da üretimin/tasarımın herhangi bir aşamasından sorumlu olan herkese ihtiyaç duydukları üretim çözümünü hızlı ve güvenilir şekilde ulaştırmak ve güçlü altyapısı sayesinde istenilen adette kritik parçaların kolaylıkla teminini sağlamaktır.
+            //-include ../widgets/counter-banner/index.pug
+        include ../widgets/benefits-brands/index.pug
+        //-include ../widgets/photo-banner/index.pug
+        .photo-banner
+            .photo-banner-img
+                +picture({sm:require("Upload/hakkimizda-detail-cover-mb.jpg"),lg:require("Upload/hakkimizda-detail-cover-lg.jpg")})(alt="Prodigma 3D")
         include ../widgets/double-listed-banner/index.pug

@@ -22,7 +22,7 @@
   &-nav {
     @apply flex-auto mr-3;
     ul {
-      @apply flex flex-row gap-10;
+      @apply flex flex-row;
       li {
         a {
           @apply flex relative py-[1.563rem] font-heading font-normal text-sm;
@@ -30,6 +30,7 @@
           @apply after:content-[""] after:absolute after:bottom-[-3px] after:left-0 after:w-full after:h-[3px] after:bg-green-200 after:transition-all after:ease-in after:duration-200 after:delay-200;
           @apply hover:text-green-200 #{!important};
           @apply hover:after:bottom-0;
+          @apply lg:px-5;
         }
       }
     }
@@ -43,7 +44,7 @@
   &-login {
     @apply lg:flex lg:items-center;
     &-user {
-      @apply w-8 h-8 bg-blue font-heading font-medium text-white text-xs rounded-full flex items-center justify-center mr-2.5;
+      @apply w-8 h-8 bg-blue font-heading font-medium text-white text-xs rounded-full flex items-center justify-center ml-5 mr-2.5;
       @apply transition-colors ease-in duration-200 delay-200;
     }
     &-hello {
@@ -57,7 +58,6 @@
     &-success {
       @apply flex flex-row items-center relative min-h-[4.375rem] pl-5 pr-5 transition-all ease-in duration-200 delay-200;
       &-project {
-        @apply mr-5;
         .btn {
           @apply pl-6 pr-6;
           @apply lg:hover:bg-blue-100;
@@ -123,7 +123,7 @@
   &-submenu {
     @apply bg-blue-100 absolute top-[4.375rem] left-0 w-full opacity-0 invisible pointer-events-none transition-all ease-in duration-200 delay-200;
     &-inner {
-      @apply container flex mx-auto;
+      @apply flex;
     }
     &-nav {
       @apply flex-1;
@@ -168,10 +168,10 @@
               .txt {
                 @apply basis-4/5 pl-4;
                 .t1 {
-                  @apply font-heading font-normal text-base;
+                  @apply font-heading font-normal text-sm;
                 }
                 .t2 {
-                  @apply font-inter font-normal text-sm mt-1.5;
+                  @apply font-inter font-normal text-xs mt-1.5;
                 }
               }
             }
@@ -180,7 +180,7 @@
       }
     }
     &-bottom {
-      @apply bg-blue absolute top-[120px] left-0 z-[-1] w-full opacity-0 invisible pointer-events-none transition-all ease-in duration-200 delay-200;
+      @apply bg-blue absolute left-0 z-[-1] w-full opacity-0 invisible pointer-events-none transition-all ease-in duration-200 delay-200;
       &-inner {
         @apply container mx-auto px-8 py-8;
         > ul {
@@ -195,8 +195,11 @@
               > li {
                 @apply w-1/2;
                 a {
-                  @apply font-inter py-1 opacity-70;
+                  @apply font-inter py-1 opacity-70 px-4;
                   @apply after:hidden;
+                  &:hover {
+                    color: white !important;
+                  }
                 }
               }
             }

@@ -1,0 +1,32 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "Prodigma | SLA 3D BASKI"
+    - pageDesc = "SLA 3D BASKI"
+    - pageClass = "blog-detail-single"
+    - var activity = false
+    - var activityStart = false
+
+block content
+    .pwebinar
+        //-include ./blog-header-timer-banner/index.pug
+        .pwebinar-body
+            .pwebinar-body-wrapper 
+                .pwebinar-body-wrapper-html
+                    p 
+                        strong|SLA 3D BASKI (Üretim & Tüm Detaylar)
+                    +content-html("Dünyada bilinen ilk 3D baskı teknolojisi olan SLA (Stereolithography) baskı, yüksek doğrulukta karmaşık ayrıntılara sahip parçalar üretmek için sıkça başvurulan yöntemlerden bir tanesidir. Biz de fotopolimerizasyondan yararlanılan bu eklemeli imalat teknolojisi hakkındaki tüm detayları uygulamalı olarak sizler için derledik.")
+                    +content-html("SLA baskının kullanım alanlarını, malzeme çeşitlerini ve baskı sürecini hep birlikte yakından inceleyelim!")
+                //-photo-banner/index.pug
+                .responsive-iframe-container.mt-5.lg.mt-10
+                    iframe(class="responsive-iframe-container-iframe responsive-iframe-container-iframe-other" src="https://www.youtube.com/embed/JJgoFI3ERhQ?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1&version=3&loop=1&playlist=JJgoFI3ERhQ", frameborder="0", 
+                    allowfullscreen)
+                //-.pwebinar-body-double-banner
+                    ul 
+                        li
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/3d-baski-ve-yedek-parca-gallery-1-mb.jpg"),lg:require("Upload/3d-baski-ve-yedek-parca-gallery-1.jpg")})(alt="Prodigma Blog")
+                        li
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/3d-baski-ve-yedek-parca-gallery-2-mb.jpg"),lg:require("Upload/3d-baski-ve-yedek-parca-gallery-2.jpg")})(alt="Prodigma Blog") 
+                //-include ./blog-other-contents/index.pug

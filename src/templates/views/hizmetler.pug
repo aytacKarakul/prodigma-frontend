@@ -7,6 +7,6 @@ block prepend head
 
 block content
     .pservices
-        +hero-banner('Hizmetler',  {sm:'img/hero_type_single_mb.jpg', lg:'img/hero_type_single.jpg'})
+        +hero-banner('Hizmetler',  {sm:require("Upload/hizmetler-hero-banner-mb.jpg"), lg:require("Upload/hizmetler-hero-banner.jpg")})
         include ../widgets/services-banner/index.pug
         include ../widgets/info-banner/index.pug

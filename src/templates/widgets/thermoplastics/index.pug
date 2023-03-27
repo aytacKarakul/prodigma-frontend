@@ -1,25 +1,263 @@
-ul.pmaterials-thermoplastics-content
-    li.pmaterials-thermoplastics-content-material
-        .pmaterials-thermoplastics-content-material-img
-            +picture({sm:"https://via.placeholder.com/300", lg:"https://via.placeholder.com/285x285"})(alt="img alt")
-        .pmaterials-thermoplastics-content-material-title
-            |P-PLA
-        .pmaterials-thermoplastics-content-material-detail
-            a(href="javascript:void(0);", data-attr="ppla")|Malzeme Detayı
-                i.icon.icon-arrow-right
-    li.pmaterials-thermoplastics-content-material
-        .pmaterials-thermoplastics-content-material-img
-            +picture({sm:"https://via.placeholder.com/300", lg:"https://via.placeholder.com/285x285"})(alt="img alt")
-        .pmaterials-thermoplastics-content-material-title
-            |Onyx
-        .pmaterials-thermoplastics-content-material-detail
-            a(href="javascript:void(0);", data-attr="onyx")|Malzeme Detayı
-                i.icon.icon-arrow-right
-    li.pmaterials-thermoplastics-content-material
-        .pmaterials-thermoplastics-content-material-img
-            +picture({sm:"https://via.placeholder.com/300", lg:"https://via.placeholder.com/285x285"})(alt="img alt")
-        .pmaterials-thermoplastics-content-material-title
-            |P-PLA
-        .pmaterials-thermoplastics-content-material-detail
-            a(href="javascript:void(0);", data-attr="onyxfr")|Malzeme Detayı
-                i.icon.icon-arrow-right
+.pmaterials-thermoplastics
+    .pmaterials-thermoplastics-wrapper
+        .pmaterials-thermoplastics-title 
+            |Termoplastikler 
+        .pmaterials-thermoplastics-desc 
+            |Termoplastiklerimiz, mühendislik sınıfı kompozit malzemelerdir. Tek başına veya sürekli fiber malzemelerimiz ile güçlendirerek parçalarınızı üretebilirsiniz.
+        ul.pmaterials-thermoplastics-content
+            li.pmaterials-thermoplastics-content-material
+                .pmaterials-thermoplastics-content-material-img
+                    +picture({sm:require("Upload/ppla-beyaz.jpg"), lg:require("Upload/ppla-beyaz.jpg")})(alt="P-PLA")
+                .pmaterials-thermoplastics-content-material-title
+                    |P-PLA
+                .pmaterials-thermoplastics-content-material-detail
+                    a(href="javascript:void(0);", data-attr="ppla")|Malzeme Detayı
+                        i.icon.icon-arrow-right
+                    .modal(id="modal-cnc-ppla", data-attr="ppla")
+                        .modal-bg
+                        .modal-container
+                            button(class="modal-close modal-exit")
+                                i.icon.icon-close
+                            .modal-container-append-html
+                                .text-xs.mb-5|Özellikle hızlı prototipleme için kullanılan, basılması kolay ve uygun maliyetli bir termoplastik çeşididir
+                                ul.pmaterials-tables.border.border-custom-100 
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|Test (ASTM)
+                                        .px-1.py-1.text-center|P-PLA
+                                    li.col-body
+                                        .px-1.py-1.text-center|Çekme Modülü (GPa)
+                                        .px-1.py-1.text-center|D638
+                                        .px-1.py-1.text-center|2.3
+                                    li.col-body
+                                        .px-1.py-1.text-center|Eğilme Modülü (GPa)
+                                        .px-1.py-1.text-center
+                                            |D790
+                                            sup|1
+                                        .px-1.py-1.text-center|2.3
+                                .text-sm.mt-5|Baskı kapasitesi: 320mm x132mm x154mm
+            li.pmaterials-thermoplastics-content-material
+                .pmaterials-thermoplastics-content-material-img
+                    +picture({sm:require("Upload/onyx.jpg"), lg:require("Upload/onyx.jpg")})(alt="Onyx")
+                .pmaterials-thermoplastics-content-material-title
+                    |Onyx
+                .pmaterials-thermoplastics-content-material-detail
+                    a(href="javascript:void(0);", data-attr="onyx")|Malzeme Detayı
+                        i.icon.icon-arrow-right
+                    .modal(id="modal-cnc-onyx", data-attr="onyx")
+                        .modal-bg
+                        .modal-container
+                            button(class="modal-close modal-exit")
+                                i.icon.icon-close
+                            .modal-container-append-html
+                                .text-xs.mb-5|Kompozit parçaların temelini oluşturan, kıyılmış karbon fiber dolgulu naylondur. Tek başına basıldığında yüksek mukavemet, tokluk ve kimyasal direnç sunar. Alüminyum mukavemetli parçalar elde etmek için sürekli fiberlerle takviye edilebilir.
+                                ul.pmaterials-tables.border.border-custom-100 
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|Test (ASTM)
+                                        .px-1.py-1.text-center|Onyx
+                                    li.col-body
+                                        .px-1.py-1.text-center|Çekme Modülü(GPa)
+                                        .px-1.py-1.text-center|D638
+                                        .px-1.py-1.text-center|2.4
+                                    li.col-body
+                                        .px-1.py-1.text-center|Kopmada Gerilme Gerinimi(%)
+                                        .px-1.py-1.text-center
+                                            |D638
+                                        .px-1.py-1.text-center|25
+                                    li.col-body
+                                        .px-1.py-1.text-center|Eğilme Modülü (GPa)
+                                        .px-1.py-1.text-center
+                                            |D790
+                                            sup|1
+                                        .px-1.py-1.text-center|3.0
+                                    li.col-body
+                                        .px-1.py-1.text-center|Isı Sapma Sıcaklığı (ºC)
+                                        .px-1.py-1.text-center
+                                            |D648 B
+                                        .px-1.py-1.text-center|145
+                                .text-sm.mt-5|Baskı kapasitesi: 330mm x 270mm x 200mm
+            li.pmaterials-thermoplastics-content-material
+                .pmaterials-thermoplastics-content-material-img
+                    +picture({sm:require("Upload/onyx-fr-onyx-fra.jpg"), lg:require("Upload/onyx-fr-onyx-fra.jpg")})(alt="Onyx FR")
+                .pmaterials-thermoplastics-content-material-title
+                    |Onyx FR
+                .pmaterials-thermoplastics-content-material-detail
+                    a(href="javascript:void(0);", data-attr="onyxfr")|Malzeme Detayı
+                        i.icon.icon-arrow-right
+                    .modal(id="modal-cnc-onyxfr", data-attr="onyxfr")
+                        .modal-bg
+                        .modal-container
+                            button(class="modal-close modal-exit")
+                                i.icon.icon-close
+                            .modal-container-append-html
+                                .text-xs.mb-5|Yanmazlık özelliği olan kıyılmış karbon fiber dolgulu naylondur. Parçaların yanıcı olmaması gereken uygulamalarda kullanılmak üzere tasarlanmış bir Onyx çeşididir. 3mm ve ya daha büyük kalınlıklarda V-0 yani kendi kendine sönen olarak kabul edilir.
+                                ul.pmaterials-tables.border.border-custom-100 
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|Test (ASTM)
+                                        .px-1.py-1.text-center|Onyx FR
+                                    li.col-body
+                                        .px-1.py-1.text-center|Çekme Modülü(GPa)
+                                        .px-1.py-1.text-center|D638
+                                        .px-1.py-1.text-center|3.0
+                                    li.col-body
+                                        .px-1.py-1.text-center|Kopmada Gerilme Gerinimi(%)
+                                        .px-1.py-1.text-center
+                                            |D638
+                                        .px-1.py-1.text-center|18
+                                    li.col-body
+                                        .px-1.py-1.text-center|Eğilme Modülü (GPa)
+                                        .px-1.py-1.text-center
+                                            |D790
+                                            sup|1
+                                        .px-1.py-1.text-center|3.6
+                                    li.col-body
+                                        .px-1.py-1.text-center|Isı Sapma Sıcaklığı (ºC)
+                                        .px-1.py-1.text-center
+                                            |D648 B
+                                        .px-1.py-1.text-center|145
+                                    li.col-body
+                                        .px-1.py-1.text-center|Alev Direnci
+                                        .px-1.py-1.text-center
+                                            |UL 94
+                                        .px-1.py-1.text-center
+                                            |V-0
+                                            sup|2
+                                .text-sm.mt-5|Baskı kapasitesi: 330mm x 270mm x 200mm
+            li.pmaterials-thermoplastics-content-material
+                .pmaterials-thermoplastics-content-material-img
+                    +picture({sm:require("Upload/onyx-fr-onyx-fra.jpg"), lg:require("Upload/onyx-fr-onyx-fra.jpg")})(alt="Onyx FR-A")
+                .pmaterials-thermoplastics-content-material-title
+                    |Onyx FR-A
+                .pmaterials-thermoplastics-content-material-detail
+                    a(href="javascript:void(0);", data-attr="onyxfra")|Malzeme Detayı
+                        i.icon.icon-arrow-right
+                    .modal(id="modal-cnc-onyxfra", data-attr="onyxfra")
+                        .modal-bg
+                        .modal-container
+                            button(class="modal-close modal-exit")
+                                i.icon.icon-close
+                            .modal-container-append-html
+                                .text-xs.mb-5|Yanmazlık özelliği olan Onyx FR’ın, havacılık ve otomotiv gibi ulaşım endüstrilerinin gereksinimleri için özel olarak üretilmiş halidir. Bu endüstrilerde kullanılabilmek üzere sertifikaya sahiptir.
+                                ul.pmaterials-tables.border.border-custom-100 
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|Test (ASTM)
+                                        .px-1.py-1.text-center|Onyx FR
+                                    li.col-body
+                                        .px-1.py-1.text-center|Çekme Modülü(GPa)
+                                        .px-1.py-1.text-center|D638
+                                        .px-1.py-1.text-center|3.0
+                                    li.col-body
+                                        .px-1.py-1.text-center|Kopmada Gerilme Gerinimi(%)
+                                        .px-1.py-1.text-center
+                                            |D638
+                                        .px-1.py-1.text-center|18
+                                    li.col-body
+                                        .px-1.py-1.text-center|Eğilme Modülü (GPa)
+                                        .px-1.py-1.text-center
+                                            |D790
+                                            sup|1
+                                        .px-1.py-1.text-center|3.6
+                                    li.col-body
+                                        .px-1.py-1.text-center|Isı Sapma Sıcaklığı (ºC)
+                                        .px-1.py-1.text-center
+                                            |D648 B
+                                        .px-1.py-1.text-center|145
+                                    li.col-body
+                                        .px-1.py-1.text-center|Alev Direnci
+                                        .px-1.py-1.text-center
+                                            |UL 94
+                                        .px-1.py-1.text-center
+                                            |V-0
+                                            sup|2
+                                .text-sm.mt-5|Baskı kapasitesi: 330mm x 270mm x 200mm
+            li.pmaterials-thermoplastics-content-material
+                .pmaterials-thermoplastics-content-material-img
+                    +picture({sm:require("Upload/onyx-esd.jpg"), lg:require("Upload/onyx-esd.jpg")})(alt="Onyx ESD")
+                .pmaterials-thermoplastics-content-material-title
+                    |Onyx ESD
+                .pmaterials-thermoplastics-content-material-detail
+                    a(href="javascript:void(0);", data-attr="onyxesd")|Malzeme Detayı
+                        i.icon.icon-arrow-right
+                    .modal(id="modal-cnc-onyxesd", data-attr="onyxesd")
+                        .modal-bg
+                        .modal-container
+                            button(class="modal-close modal-exit")
+                                i.icon.icon-close
+                            .modal-container-append-html
+                                .text-xs.mb-5|Endüstriyel uygulamalar için kullanılan; daha güçlü, daha sert ve ESD özellikli bir Onyx çeşididir. Elektrostatik deşarj özelliğine sahiptir.
+                                ul.pmaterials-tables.border.border-custom-100 
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|Test (ASTM)
+                                        .px-1.py-1.text-center|Onyx ESD
+                                    li.col-body
+                                        .px-1.py-1.text-center|Çekme Modülü(GPa)
+                                        .px-1.py-1.text-center|D638
+                                        .px-1.py-1.text-center|4.2
+                                    li.col-body
+                                        .px-1.py-1.text-center|Kopmada Gerilme Gerinimi(%)
+                                        .px-1.py-1.text-center
+                                            |D638
+                                        .px-1.py-1.text-center|25
+                                    li.col-body
+                                        .px-1.py-1.text-center|Eğilme Modülü (GPa)
+                                        .px-1.py-1.text-center
+                                            |D790
+                                            sup|1
+                                        .px-1.py-1.text-center|3.7
+                                    li.col-body
+                                        .px-1.py-1.text-center|Isı Sapma Sıcaklığı (ºC)
+                                        .px-1.py-1.text-center
+                                            |D648 B
+                                        .px-1.py-1.text-center|138
+                                    li.col-body
+                                        .px-1.py-1.text-center|Yüzey Direnci (Ω)
+                                        .px-1.py-1.text-center
+                                            |ANSI/ESD
+                                            br
+                                            |STM11.11
+                                            sup|3
+                                        .px-1.py-1.text-center
+                                            |10
+                                            sup|5
+                                            |10
+                                            sup|7
+                                .text-sm.mt-5|Baskı kapasitesi: 330mm x 270mm x 200mm
+            li.pmaterials-thermoplastics-content-material
+                .pmaterials-thermoplastics-content-material-img
+                    +picture({sm:require("Upload/beyaz-naylon.jpg"), lg:require("Upload/beyaz-naylon.jpg")})(alt="Beyaz Naylon")
+                .pmaterials-thermoplastics-content-material-title
+                    |Beyaz Naylon
+                .pmaterials-thermoplastics-content-material-detail
+                    a(href="javascript:void(0);", data-attr="beyaznaylon")|Malzeme Detayı
+                        i.icon.icon-arrow-right
+                    .modal(id="modal-cnc-beyaznaylon", data-attr="beyaznaylon")
+                        .modal-bg
+                        .modal-container
+                            button(class="modal-close modal-exit")
+                                i.icon.icon-close
+                            .modal-container-append-html
+                                .text-xs.mb-5|Pürüzsüz yüzey kalitesine sahip, dolgusuz ve aşındırıcı olmayan bir termoplastik çeşididir. Ergonomik yüzeyler ve kolayca bozulan parçalar için kullanılmaktadır. Boyanabilir.
+                                ul.pmaterials-tables.border.border-custom-100 
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|Test (ASTM)
+                                        .px-1.py-1.text-center|Naylon
+                                    li.col-body
+                                        .px-1.py-1.text-center|Çekme Modülü(GPa)
+                                        .px-1.py-1.text-center|D638
+                                        .px-1.py-1.text-center|1.7
+                                    li.col-body
+                                        .px-1.py-1.text-center|Kopmada Gerilme Gerinimi(%)
+                                        .px-1.py-1.text-center
+                                            |D638
+                                        .px-1.py-1.text-center|150
+                                    li.col-body
+                                        .px-1.py-1.text-center|Eğilme Modülü (GPa)
+                                        .px-1.py-1.text-center
+                                            |D790
+                                            sup|1
+                                        .px-1.py-1.text-center|1.4
+                                    li.col-body
+                                        .px-1.py-1.text-center|Isı Sapma Sıcaklığı (ºC)
+                                        .px-1.py-1.text-center
+                                            |D648 B
+                                        .px-1.py-1.text-center|41
+                                .text-sm.mt-5|Baskı kapasitesi: 330mm x 270mm x 200mm

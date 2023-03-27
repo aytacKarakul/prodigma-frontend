@@ -1,7 +1,22 @@
 .pabout {
   &-body {
     @apply mx-auto py-20;
-    @apply lg:container lg:py-44;
+    @apply lg:container lg:py-40;
+    &-content {
+      @apply flex flex-col gap-5 px-5;
+      @apply lg:flex-row lg:gap-20 lg:px-0;
+      &-title {
+        @apply font-heading font-medium text-2xl;
+        @apply lg:text-4xl lg:flex-1;
+      }
+      &-desc {
+        @apply font-inter font-normal text-xl;
+        @apply lg:max-w-[700px] lg:text-base lg:flex-1;
+      }
+    }
+  }
+  .photo-banner {
+    @apply lg:container lg:mx-auto lg:py-40;
   }
 }
 

@@ -1,15 +1,220 @@
 .pmaterials-polimers
+    .pmaterials-page-title.pmaterials-page-title-other|Metal
     .pmaterials-polimers-wrapper
-        .pmaterials-polimers-title 
+        //-.pmaterials-polimers-title 
             |Polimers 
         .pmaterials-polimers-desc 
-            |3D baskı teknolojisi ise sıfırdan üretim yaparak sadece istenilen ürünü ürettiği için çok daha çevre dostu sonuçlar verir. 3D baskı elektronikler gibi çok malzemeli 3D baskı söz konusu olduğunda elektriksel ve mekanik işlevsellik birleştirilirken parça sayıları azaltılarak daha akıcı, verimli ve sürdürülebilir bir üretim süreci oluşturulabilir.    
+            |Metal 3D baskı malzemelerimiz, FFF baskının basitliğini ve güvenliğini, gelişmiş metal malzemelerin üstün özellikleriyle birleştirerek metal 3D baskıyı masaüstünüze getiriyor.
         ul.pmaterials-polimers-content
             li.pmaterials-polimers-content-material
                 .pmaterials-polimers-content-material-img
-                    +picture({sm:"https://via.placeholder.com/300", lg:"https://via.placeholder.com/285x285"})(alt="img alt")
+                    +picture({sm:require("Upload/paslanmaz-celik.jpg"), lg:require("Upload/paslanmaz-celik.jpg")})(alt="17-4 PH Paslanmaz Çelik")
                 .pmaterials-polimers-content-material-title
-                    |P-PLA
+                    |17-4 PH Paslanmaz Çelik
                 .pmaterials-polimers-content-material-detail
-                    a(href="#") Malzeme Detayı
+                    a(href="javascript:void(0);", data-attr="ph-paslanmaz-celik") Malzeme Detayı
                         i.icon.icon-arrow-right
+                    .modal(id="modal-cnc-ph-paslanmaz-celik", data-attr="ph-paslanmaz-celik")
+                        .modal-bg
+                        .modal-container
+                            button(class="modal-close modal-exit")
+                                i.icon.icon-close
+                            .modal-container-append-html
+                                .text-xs.mb-5|Özellikle hızlı prototipleme için kullanılan, basılması kolay ve uygun maliyetli bir termoplastik çeşididir
+                                ul.pmaterials-tables-other.border.border-custom-100 
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|17-4 PH Paslanmaz Çelik
+                                        .px-1.py-1.text-center|Standart
+                                        .px-1.py-1.text-center|Markforged H900
+                                    li.col-body
+                                        .px-1.py-1.text-center|Nihai Çekme Dayanımı
+                                        .px-1.py-1.text-center|ASTM E8
+                                        .px-1.py-1.text-center|1250 MPa
+                                    li.col-body
+                                        .px-1.py-1.text-center|Gerilim Modüllü
+                                        .px-1.py-1.text-center|ASTM E8
+                                        .px-1.py-1.text-center|170 GPa
+                                    li.col-body
+                                        .px-1.py-1.text-center|Sertlik
+                                        .px-1.py-1.text-center|ASTM E18
+                                        .px-1.py-1.text-center|36 HRC
+                                    li.col-body
+                                        .px-1.py-1.text-center|Korozyon
+                                        .px-1.py-1.text-center|ASTM F1089
+                                        .px-1.py-1.text-center|Pass
+                                    li.col-body
+                                        .px-1.py-1.text-center|Bağıl Yoğunluk
+                                        .px-1.py-1.text-center|ASTM B923
+                                        .px-1.py-1.text-center|96%
+                                .text-sm.mt-5|Maksimum parça boyutu: 250mm x 183mm x 150mm
+            li.pmaterials-polimers-content-material
+                .pmaterials-polimers-content-material-img
+                    +picture({sm:require("Upload/bakir.jpg"), lg:require("Upload/bakir.jpg")})(alt="Saf Bakır")
+                .pmaterials-polimers-content-material-title
+                    |Saf Bakır
+                .pmaterials-polimers-content-material-detail
+                    a(href="javascript:void(0);", data-attr="saf-bakir") Malzeme Detayı
+                        i.icon.icon-arrow-right
+                    .modal(id="modal-cnc-saf-bakir", data-attr="saf-bakir")
+                        .modal-bg
+                        .modal-container
+                            button(class="modal-close modal-exit")
+                                i.icon.icon-close
+                            .modal-container-append-html
+                                .text-xs.mb-5|Termal ve elektriksel işlemler için optimize edilmiş iletken, sünek metaldir.
+                                ul.pmaterials-tables-other.border.border-custom-100
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|Bakır
+                                        .px-1.py-1.text-center|Standart
+                                        .px-1.py-1.text-center|Sıcaklık
+                                    li.col-body
+                                        .px-1.py-1.text-center|Nihai Çekme Dayanımı
+                                        .px-1.py-1.text-center|ASTM E8
+                                        .px-1.py-1.text-center|Oda Sıcaklığı
+                                    li.col-body
+                                        .px-1.py-1.text-center|Kopma Uzaması
+                                        .px-1.py-1.text-center|ASTM E8
+                                        .px-1.py-1.text-center|Oda Sıcaklığı
+                                    li.col-body
+                                        .px-1.py-1.text-center|Bağıl Yoğunluk
+                                        .px-1.py-1.text-center|ASTM B923
+                                        .px-1.py-1.text-center|Oda Sıcaklığı
+                                    li.col-body
+                                        .px-1.py-1.text-center|Elektiriksel İletkenlik
+                                        .px-1.py-1.text-center|ASTM E1004
+                                        .px-1.py-1.text-center|Oda Sıcaklığı
+                                    li.col-body
+                                        .px-1.py-1.text-center|Termal İletkenlik
+                                        .px-1.py-1.text-center|ASTM E1461
+                                        .px-1.py-1.text-center|Oda Sıcaklığı
+                                    li.col-body
+                                        .px-1.py-1.text-center|Termal Genleşme Katsayısı
+                                        .px-1.py-1.text-center
+                                            |ASTM E831-19
+                                            sup|5
+                                        .px-1.py-1.text-center|68-100°F
+                                .text-sm.mt-5|Maksimum parça boyutu: 250mm x 183mm x 150mm
+            li.pmaterials-polimers-content-material
+                .pmaterials-polimers-content-material-img
+                    +picture({sm:require("Upload/inconel-625.jpg"), lg:require("Upload/inconel-625.jpg")})(alt="Inconel 625")
+                .pmaterials-polimers-content-material-title
+                    |Inconel 625
+                .pmaterials-polimers-content-material-detail
+                    a(href="javascript:void(0);", data-attr="inocel625") Malzeme Detayı
+                        i.icon.icon-arrow-right
+                    .modal(id="modal-cnc-inocel625", data-attr="inocel625")
+                        .modal-bg
+                        .modal-container
+                            button(class="modal-close modal-exit")
+                                i.icon.icon-close
+                            .modal-container-append-html
+                                .text-xs.mb-5|Korozyona karşı son derece dirençli ve yüksek sıcaklıklarda güçlü olan nikel-krom bazlı bir alaşımdır.
+                                ul.pmaterials-tables-other.border.border-custom-100
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|Inconel 625
+                                        .px-1.py-1.text-center|Standart
+                                        .px-1.py-1.text-center|Markforged (Sinterlenmiş)
+                                    li.col-body
+                                        .px-1.py-1.text-center|Nihai Çekme Dayanımı
+                                        .px-1.py-1.text-center|ASTM E8
+                                        .px-1.py-1.text-center|765 MPa
+                                    li.col-body
+                                        .px-1.py-1.text-center|Kopma Uzaması
+                                        .px-1.py-1.text-center|ASTM E8
+                                        .px-1.py-1.text-center|42%
+                                    li.col-body
+                                        .px-1.py-1.text-center|Sertlik
+                                        .px-1.py-1.text-center|ASTM E18
+                                        .px-1.py-1.text-center|7 HRC
+                                    li.col-body
+                                        .px-1.py-1.text-center|Bağıl Yoğunluk
+                                        .px-1.py-1.text-center|ASTM B923
+                                        .px-1.py-1.text-center|96.5%
+                                .text-sm.mt-5|Maksimum parça boyutu: 250mm x 183mm x 150mm
+            li.pmaterials-polimers-content-material
+                .pmaterials-polimers-content-material-img
+                    +picture({sm:require("Upload/h13-takim-celigi.jpg"), lg:require("Upload/h13-takim-celigi.jpg")})(alt="H13 Takım Çeliği")
+                .pmaterials-polimers-content-material-title
+                    |H13 Takım Çeliği
+                .pmaterials-polimers-content-material-detail
+                    a(href="javascript:void(0);", data-attr="h13-takim-celigi") Malzeme Detayı
+                        i.icon.icon-arrow-right
+                    .modal(id="modal-cnc-h13-takim-celigi", data-attr="h13-takim-celigi")
+                        .modal-bg
+                        .modal-container
+                            button(class="modal-close modal-exit")
+                                i.icon.icon-close
+                            .modal-container-append-html
+                                .text-xs.mb-5|Sert ve yüksek sıcaklıklarda malzeme özelliğini koruyabilen, çok yönlü metaldir.
+                                ul.pmaterials-tables-other.border.border-custom-100
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|H13 Takım Çeliği
+                                        .px-1.py-1.text-center|Standart
+                                        .px-1.py-1.text-center|Markforged (Sinterlenmiş)
+                                    li.col-body
+                                        .px-1.py-1.text-center|Nihai Çekme Dayanımı
+                                        .px-1.py-1.text-center|ASTM E8
+                                        .px-1.py-1.text-center|1420 MPa
+                                    li.col-body
+                                        .px-1.py-1.text-center|Kopma Uzaması
+                                        .px-1.py-1.text-center|ASTM E8
+                                        .px-1.py-1.text-center|5%
+                                    li.col-body
+                                        .px-1.py-1.text-center|Sertlik
+                                        .px-1.py-1.text-center|ASTM E18
+                                        .px-1.py-1.text-center|40 HRC
+                                    li.col-body
+                                        .px-1.py-1.text-center|Bağıl Yoğunluk
+                                        .px-1.py-1.text-center|ASTM B923
+                                        .px-1.py-1.text-center|94.5%
+                                .text-sm.mt-5|Maksimum parça boyutu: 250mm x 183mm x 150mm
+            li.pmaterials-polimers-content-material
+                .pmaterials-polimers-content-material-img
+                    +picture({sm:require("Upload/a2-d2-takim-celigi.jpg"), lg:require("Upload/a2-d2-takim-celigi.jpg")})(alt="A2 ve D2 Takım Çeliği")
+                .pmaterials-polimers-content-material-title
+                    |A2 ve D2 Takım Çeliği
+                .pmaterials-polimers-content-material-detail
+                    a(href="javascript:void(0);", data-attr="a2-d2-takim-celigi") Malzeme Detayı
+                        i.icon.icon-arrow-right
+                    .modal(id="modal-cnc-a2-d2-takim-celigi", data-attr="a2-d2-takim-celigi")
+                        .modal-bg
+                        .modal-container
+                            button(class="modal-close modal-exit")
+                                i.icon.icon-close
+                            .modal-container-append-html
+                                .text-xs.mb-5|Çok çeşitli imalat uygulamaları için kullanılan soğuk takım çelikleridir.
+                                ul.pmaterials-tables-other.border.border-custom-100
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|A2 Takım Çeliği
+                                        .px-1.py-1.text-center|Standart
+                                        .px-1.py-1.text-center|Markforged (Isıl İşlem Görmüş)
+                                    li.col-body
+                                        .px-1.py-1.text-center|Elastik Modül
+                                        .px-1.py-1.text-center|ASTM E9
+                                        .px-1.py-1.text-center|160 GPa
+                                    li.col-body
+                                        .px-1.py-1.text-center|Sertlik
+                                        .px-1.py-1.text-center|ASTM E18
+                                        .px-1.py-1.text-center|50 HRC
+                                    li.col-body
+                                        .px-1.py-1.text-center|Bağıl Yoğunluk
+                                        .px-1.py-1.text-center|ASTM B923
+                                        .px-1.py-1.text-center|94.5%
+                                ul.pmaterials-tables-other.border.border-custom-100.mt-5
+                                    li.col-head.border-b.border-custom-100
+                                        .px-1.py-1.text-center|D2 Takım Çeliği
+                                        .px-1.py-1.text-center|Standart
+                                        .px-1.py-1.text-center|Markforged (Isıl İşlem Görmüş)
+                                    li.col-body
+                                        .px-1.py-1.text-center|Elastik Modül
+                                        .px-1.py-1.text-center|ASTM E9
+                                        .px-1.py-1.text-center|187 GPa
+                                    li.col-body
+                                        .px-1.py-1.text-center|Sertlik
+                                        .px-1.py-1.text-center|ASTM E18
+                                        .px-1.py-1.text-center|55 HRC
+                                    li.col-body
+                                        .px-1.py-1.text-center|Bağıl Yoğunluk
+                                        .px-1.py-1.text-center|ASTM B923
+                                        .px-1.py-1.text-center|97%
+                                .text-sm.mt-5|Maksimum parça boyutu: 250mm x 183mm x 150mm

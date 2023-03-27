@@ -1,8 +1,8 @@
 .pcnc {
   @apply bg-gray-500;
   &-body {
-    @apply mx-auto pb-16 pt-6;
-    @apply lg:container lg:pt-20 lg:pb-32;
+    @apply mx-auto pb-10 pt-5;
+    @apply lg:container lg:pt-10 lg:pb-10;
     &-content {
       @apply px-5 pb-8;
       @apply lg:pb-16 lg:max-w-3xl;
