@@ -1,0 +1,70 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "Prodigma | Çerez Politikası"
+    - pageDesc = "Çerez Politikası"
+    - pageClass = "operation-guide"
+
+block content
+    .pmember.pmember-flatpages
+        .pmember-wrapper
+            .pmember-left
+                .pmember-left-title Yasal Bilgilendirme
+                include ../flatpages/menu-information/index.pug
+            .pmember-right.pmember-flatpages-bg
+                .pmember-right-content
+                    .pmember-right-content-title
+                        |ÇEREZ POLİTİKASI
+                    +content-html("İşbu Çerez Politikası Prodigma Teknoloji A.Ş.(“Şirket”) tarafından yürütülen internet siteleri ve mobil platformlar, üçüncü parti programlar veya internet siteleri üzerinden erişilen, kullanılan platformların hepsi için geçerlidir.")
+                    p 
+                        strong|Çerezlerin Kullanım Amacı
+                    +content-html("Çerezler, internet siteleri tarafından bilgisayar, akıllı telefon, tablet vb. iletişim araçlarına bırakılan tanımlama dosyalarıdır. İnternet siteleri tekrar ziyaret edildiğinde gelişmiş kullanıcı deneyimi sağlamak amacıyla erişilen cihazların tanınmalarını sağlar.")
+                    +content-html("Çerezler, herhangi bir internet sitesini ziyaretinizle ilgili bilgilerin ilgili internet sitesi tarafından hatırlanmasına yardımcı olur. Bir sonraki ziyaretinizde kolaylık sağlayabilir ve siteyi daha kullanışlı hale getirebilir.")
+                    +content-html("Şirkete ait https://www.prodigma.co adresine bırakılan çerezlerin kullanımı 6698 sayılı Kişisel Verilerin Korunması Kanunu ve uymakla yükümlü olduğumuz mevzuata uygun şekilde gerçekleştirilmektedir.")
+                    p 
+                        strong|Çerez Kullanımı
+                    +content-html("https://www.prodigma.co internet sitesini ziyaret ettiğinizde şirketin web sitesinin kullanımı için gerekli olan çerezlerin cihazınıza yerleştirmesini kabul edersiniz.")
+                    +content-html("Şirketin cihazınıza ilişkin çerezleri kullanmasını istemiyorsanız tarayıcınızın çerez ayarlarına ilişkin bölümünden çerezlerin kullanımını reddedebilirsiniz. Çerez kullanımını reddettiğiniz takdirde https://www.prodigma.co internet sitesinin bazı bölümlerini gerektiği şekliyle kullanamayabilirsiniz.")
+                    +content-html("Şirket gerekli gördüğü durumlarda, kullandığı çerezleri kullanmaktan vazgeçebilir, bunların türlerini veya fonksiyonlarını değiştirebilir veya internet sitesine yeni çerezler ekleyebilir. Çerez Politikasının değiştirildiği hallerde değiştirilmiş politika değişiklik tarihinden itibaren geçerli olacaktır.")
+                    p 
+                        strong|Kullanılan Çerez Türleri ve Kullanım Amaçları
+                    p
+                        strong|Oturum çerezleri: 
+                        |İnternet sitesinden ayrılana dek cihazlarınızda tutulan geçici çerezleri ifade eder.
+                    p
+                        strong|Zorunlu çerezler:
+                        |İnternet sitesinin düzgün bir şekilde çalışabilmesi ve kullanıcıların sitede gezinme ve özelliklerinden yararlanmasını sağlar. Zorunlu çerezler anonim niteliktedirler.
+                    p
+                        strong|İşlevsel ve Analitik çerezler:
+                        |Tercihlerinizi hatırlamak, internet sitesinin etkin şekilde kullanılması, sitenin kullanıcı isteklerine cevap verecek şekilde optimize edilmesi ve ziyaretçilerin siteyi nasıl kullandığı hakkında verileri içerir. Niteliği gereği bu türdeki çerezler kullanıcı adı vb. kişisel bilgilerinizi içerebilir.
+                    p
+                        |Yukarıda açıklanan oturum, kalıcı, işlevsel ve analitik çerezlerin tutulma süresi yaklaşık altı aydır ancak sitemize erişilen internet tarayıcısının ayarlarından bu süreye ilişkin gerekli ayarlamalar yapılabilir.
+                    p 
+                        |Yukarıda belirtilen Şirketin kullandığı çerezlerden elde edilen bilgiler 6698 sayılı Kanun’un 5. ve 8. maddeleri uyarınca gerekli olan hallerde rızanız doğrultusunda, aksi hallerde ise rızanız alınmaksızın Kanun’un 5. ve 8. maddelerinde belirtilen istisnalar kapsamında yukarıdaki amaçlar doğrultusunda işlenebilecektir. Şirket olarak, Çerez Politikası kapsamındaki kişisel verilerinizi yukarıda belirtilen amaçlar ile sınırlı olarak, mevzuata uygun şekilde Şirket ile ilişki içinde olan üçüncü kişilerle ve iş ortaklarımızla paylaşabileceğimizi ve verilerinizin aktarıldığı tarafların kişisel verilerinizi kendilerine ait sunucularda saklayabileceklerini belirtiriz.
+                    p 
+                        strong|Çerez Kullanımını Kontrol Etme Yolları
+                    p 
+                        |Tarayıcınızın ayarlarını değiştirerek çerezlere ilişkin tercihlerinizi kişiselleştirme imkanına sahipsiniz.
+                    p 
+                        strong|Tarafınızdan Elde Edilen Çerezlere İlişkin KVKK Kapsamındaki Haklarınız
+                    p
+                        |KVKK’nın 11. Maddesi uyarınca herkes, veri sorumlusuna başvurarak kendisiyle ilgili;
+                    ul(style="list-style:disc; padding-left:20px")
+                        li|Kişisel veri işlenip işlenmediğini öğrenme,
+                        li|Kişisel verileri işlenmişse buna ilişkin bilgi talep etme,
+                        li|Kişisel verilerin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,
+                        li|Yurt içinde veya yurt dışında kişisel verilerin aktarıldığı üçüncü kişileri bilme,
+                        li|Kişisel verilerin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme,
+                        li|Kanun ve ilgili diğer kanun hükümlerine uygun olarak işlenmiş olmasına rağmen, işlenmesini gerektiren sebeplerin ortadan kalkması hâlinde kişisel verilerin silinmesini veya yok edilmesini isteme,
+                        li|Eksik veya yanlış verilerin düzeltilmesi ile kişisel verilerin silinmesi veya yok edilmesinin talep edilmesi halinde, bu durumunun kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,
+                        li|İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle kişinin kendisi aleyhine bir sonucun ortaya çıkmasına itiraz etme,
+                        li|Kişisel verilerin kanuna aykırı olarak işlenmesi sebebiyle zarara uğraması hâlinde zararın giderilmesini talep etme, haklarına sahiptir.
+                    br
+                    p
+                        |Yukarıda sayılan haklarınızı kullanmak için https://www.prodigma.co internet sitesinden edineceğiniz 
+                        strong|Veri Sahibi Başvuru Formu’ 
+                        |nu eksiksiz doldurarak ıslak imzalı bir şekilde elden, postayla veya noter kanalıyla  
+                        strong|İkitelli OSB Mah. Mutfakçılar M12 Blok Sk. Mutfakçılar San. Sit. M12 Blok No:50 Başakşehir/İSTANBUL 
+                        |adresine ulaştırmanız gerekmektedir.
+                    p
+                        |Yukarıda belirtilen şekilde yapılan başvurulara en kısa sürede ve en geç 30 (otuz) gün içerisinde Şirket tarafından ücretsiz olarak yanıt verilecektir. Ancak talebinize konu işlemin ayrıca bir maliyet doğurması halinde, Kişisel Verileri Koruma Kurulu’nca belirlenen tarifedeki ücret alınacaktır.

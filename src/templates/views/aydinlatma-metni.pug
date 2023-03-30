@@ -1,0 +1,85 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "Prodigma | Aydınlatma Metni"
+    - pageDesc = "Ahydınlatma Metni"
+    - pageClass = "operation-guide"
+
+block content
+    .pmember.pmember-flatpages
+        .pmember-wrapper
+            .pmember-left
+                .pmember-left-title Yasal Bilgilendirme
+                include ../flatpages/menu-information/index.pug
+            .pmember-right.pmember-flatpages-bg
+                .pmember-right-content
+                    .pmember-right-content-title.mb-2
+                        |AYDINLATMA METNİ
+                    p 
+                        |İşbu Aydınlatma Metni 
+                        strong|Prodigma Teknoloji A.Ş.(“Şirket”) 
+                        |tarafından ziyaretçilerden, tedarikçilerden elde edilen kişisel verilerin 6698 sayılı Kişisel Verilerin Korunması Kanunu (“Kanun”), ilgili mevzuat ve yasal düzenlemelerden kaynaklanan faaliyetler çerçevesinde işlenmesi ve aktarılmasına ilişkin aydınlatma yükümlülüğünün yerine getirilmesi amacıyla hazırlanmıştır.
+                    p 
+                        strong|Veri Sorumlusu
+                    p 
+                        |Kişisel verileriniz; veri sorumlusu olarak 
+                        strong|Prodigma Teknoloji A.Ş.(“Şirket”) 
+                        |(https://www.prodigma.co İkitelli OSB Mah. Mutfakçılar M12 Blok Sk. Mutfakçılar San. Sit. M12 Blok No:50 Başakşehir/İSTANBUL) 
+                        a(href="mailto:info@prodigma.co")|info@prodigma.co 
+                        |tarafından aşağıda açıklanan kapsamda toplanacak ve işlenebilecektir.
+                    p 
+                        strong|Kişisel Verilerin İşlenme Amacı
+                    p
+                        |Kişisel veriler, Kişisel Verilerin Korunması Kanunu’nun 4. maddesinde belirtilen; hukuka ve dürüstlük kurallarına uygun olma, doğru ve gerektiğinde güncel olma, belirli, açık ve meşru amaçlar için işlenme, işlendikleri amaçla bağlantılı, sınırlı ve ölçülü olma ve ilgili mevzuatta öngörülen veya işlendikleri amaç için gerekli olan süre kadar muhafaza edilme ilkelerine uygun olarak aşağıda belirtilen amaçlar için işlenmektedir.
+                    br
+                    ul(style="list-style:disc; padding-left:20px")
+                        li|Ürün satış süreçlerinin yürütülmesi
+                        li|Hukuki işlerin takibi ve yürütülmesi
+                        li|Müşteri memnuniyetine yönelik aktivitelerin yürütülmesi
+                        li|Mal / Hizmet Satış Süreçlerinin Yürütülmesi
+                        li|Gerektiğinde yetkili kişi, kurum ve kuruluşlara bilgi verilmesi
+                        li|Finans ve muhasebe işlerinin yürütülmesi
+                        li|Pazarlama ve analiz çalışmalarının yürütülmesi
+                        li|Şirket ile ilgili kişiler arasında yapılan sözleşme süreçlerinin yürütülmesi
+                        li|İlgili kişilerin talep ve şikayetlerinin takibi
+                        li|Veri Sorumlusu Operasyonlarının Güvenliğinin Temini
+                        li|Yönetim Faaliyetlerinin Yürütülmesi
+                    br
+                    p 
+                        strong|Kişisel Verilerin Aktarımı
+                    p|Yukarıda sayılan amaçlar için işlenen kişisel veriler yine aynı amaçlarla sınırlı olarak aşağıda belirtilen 3. kişilere aktarılabilecektir:
+                    br
+                    ul(style="list-style:disc; padding-left:20px")
+                        li|Yetkili Kamu Kurum ve Kuruluşları
+                        li|Danışmanlık Alınan Avukatlık Bürosu
+                        li|Serbest Muhasebeci ve Mali Müşavir
+                    br
+                    p 
+                        strong|Kişisel Verilerin Toplanma Yöntemi ve Hukuki Sebebi
+                    p 
+                        |Kişisel veriler, ziyaretçilerden, https://prodigma.co internet sitesi üzerinden, şikayet ve öneri formları, log kayıtları, kapalı devre kamera kayıt sistemleri ve https://prodigma.co internet sitesinde bulunan iletişim formu yöntemleri kullanılarak, tedarikçilerden hizmet ve satış sözleşmesi, alış ve satış faturası, kambiyo senedi ve kapalı devre kamera kayıt sistemleri yöntemleri kullanılarak elde edilmektedir.
+                    p 
+                        |Kişisel veriler, kanunda açıkça öngörülmesi, sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması kaydıyla sözleşmenin taraflarına ait kişisel verilerin işlenmesinin gerekli olması, veri sorumlusunun hukuki yükümlülüğünü yerine getirebilmesi için zorunlu olması, bir hakkın tesisi, kullanılması veya korunması için veri işlemenin zorunlu olması hukuki sebeplerine bağlı olarak işlenmektedir.
+                    p 
+                        strong|Kişisel Veri Sahibinin Hakları
+                    p
+                        |Kanun’un 11. Maddesi uyarınca herkes, veri sorumlusuna başvurarak kendisiyle ilgili;
+                    ul(style="list-style:disc; padding-left:20px")
+                        li|Kişisel veri işlenip işlenmediğini öğrenme,
+                        li|Kişisel verileri işlenmişse buna ilişkin bilgi talep etme,
+                        li|Kişisel verilerin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,
+                        li|Yurt içinde veya yurt dışında kişisel verilerin aktarıldığı üçüncü kişileri bilme,
+                        li|Kişisel verilerin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme,
+                        li|Kanun ve ilgili diğer kanun hükümlerine uygun olarak işlenmiş olmasına rağmen, işlenmesini gerektiren sebeplerin ortadan kalkması hâlinde kişisel verilerin silinmesini veya yok edilmesini isteme,
+                        li|Eksik veya yanlış verilerin düzeltilmesi ile kişisel verilerin silinmesi veya yok edilmesinin talep edilmesi halinde, bu durumunun kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,
+                        li|İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle kişinin kendisi aleyhine bir sonucun ortaya çıkmasına itiraz etme,
+                        li|Kişisel verilerin kanuna aykırı olarak işlenmesi sebebiyle zarara uğraması hâlinde zararın giderilmesini talep etme, haklarına sahiptir.
+                    br
+                    p
+                        |Yukarıda sayılan haklarınızı kullanmak için https://www.prodigma.co internet sitesinden edineceğiniz 
+                        strong|Veri Sahibi Başvuru Formu’ 
+                        |nu eksiksiz doldurarak ıslak imzalı bir şekilde elden, postayla veya noter kanalıyla  
+                        strong|İkitelli OSB Mah. Mutfakçılar M12 Blok Sk. Mutfakçılar San. Sit. M12 Blok No:50 Başakşehir/İSTANBUL 
+                        |adresine ulaştırmanız gerekmektedir.
+                    p
+                        |Yukarıda belirtilen şekilde yapılan başvurulara en kısa sürede ve en geç 30 (otuz) gün içerisinde ücretsiz olarak yanıt verilecektir. Ancak talebinize konu işlemin ayrıca bir maliyet doğurması halinde, Şirket tarafından Kişisel Verileri Koruma Kurulu’nca belirlenen tarifedeki ücret alınacaktır.

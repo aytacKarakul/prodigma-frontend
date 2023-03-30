@@ -1,5 +1,11 @@
 .create-project-iframe-service 
-    iframe(src="https://demo.amfg.ai/new/live/promakim.en.trl.html", frameborder="0")
+    div(id="lang-detector")
+        button(data-lang="tr" id="lng-tr" class="selected")|TR
+        button(data-lang="en" id="lng-en")|EN
+    div(id="data-lang-tr" style="display: block;")
+        iframe(src="https://demo.amfg.ai/new/live/promakim.en.trl.html", frameborder="0")
+    div(id="data-lang-en" style="display: none;")
+        iframe(src="https://demo.amfg.ai/new/live/promakim_en_eur.html", frameborder="0")
 //-.swiper.create-project-swiper
     .swiper-wrapper
     .swiper-pagination.hidden
