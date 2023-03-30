@@ -1,3 +1,14 @@
+import modalPopup from "../../components/web-component/modal/index";
+class ProdigmaPlusPage {
+  constructor() {
+    const containerWrapper = document.querySelector(".pprodigma-plus");
+    if (containerWrapper) {
+      modalPopup();
+    }
+  }
+}
+export default ProdigmaPlusPage;
+
 import "Images/pplus1.png";
 import "Images/pplus2.png";
 import "Images/pplus3.png";
@@ -31,8 +42,8 @@ import "Upload/3d-baski-ve-yedek-parca-gallery-1.jpg";
 import "Upload/3d-baski-ve-yedek-parca-gallery-2-mb.jpg";
 import "Upload/3d-baski-ve-yedek-parca-gallery-2.jpg";
 import "Upload/hobi-ve-endustriyel-3d-yazicilar-arasindaki-farklar.jpg";
-
-class ProdigmaPlusPage {
-  constructor() {}
-}
-export default ProdigmaPlusPage;
+import "Upload/smooth-tpu-95a-liste.jpg";
+import "Upload/smooth-tpu-95a-gallery-1-mb.jpg";
+import "Upload/smooth-tpu-95a-gallery-1.jpg";
+import "Upload/smooth-tpu-95a-gallery-2-mb.jpg";
+import "Upload/smooth-tpu-95a-gallery-2.jpg";

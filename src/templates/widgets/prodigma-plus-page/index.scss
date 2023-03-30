@@ -113,3 +113,9 @@
     }
   }
 }
+
+.modal-youtube-frame {
+  .modal-container {
+    @apply lg:max-w-3xl;
+  }
+}

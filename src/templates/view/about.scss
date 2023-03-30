@@ -1,13 +1,16 @@
 .pabout {
   &-body {
     @apply mx-auto py-20;
-    @apply lg:container lg:py-40;
+    @apply lg:container lg:py-40 lg:px-5;
     &-content {
       @apply flex flex-col gap-5 px-5;
       @apply lg:flex-row lg:gap-20 lg:px-0;
       &-title {
         @apply font-heading font-medium text-2xl;
         @apply lg:text-4xl lg:flex-1;
+        .stcky {
+          @apply lg:sticky lg:top-[75px] lg:z-[1];
+        }
       }
       &-desc {
         @apply font-inter font-normal text-xl;

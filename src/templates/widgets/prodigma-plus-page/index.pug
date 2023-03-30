@@ -35,20 +35,51 @@
                                 .btxt
                                     .bt1|3D Baskı ve Yedek Parça
                                     .bt2|Devamını Oku
-                            a(href="/blog-sla-3d-baski.html")
+                            a(href="javascript:void(0);" data-modal="modal-sla-youtube-frame")
                                 +picture({sm:require('Images/pplus2.png'), lg:require('Images/pplus2.png')})
                                 .btxt
                                     .bt1|SLA 3D Baskı
                                     .bt2|Devamını Oku
-                            a(href="/blog-hobi-ve-endustriyel-3d-yazicilar-arasindaki-farklar.html")
+                            div(id="modal-sla-youtube-frame" class="modal modal-youtube-frame")
+                                div(class="modal-bg modal-exit")
+                                div(class="modal-container")
+                                    a(href="javascript:void(0);", class="modal-link modal-close modal-exit")
+                                        i(class="icon icon-close")
+                                    div(class="content-popup-video-frame")
+                                        p 
+                                            strong|SLA 3D BASKI (Üretim & Tüm Detaylar)
+                                        br
+                                        +content-html("Dünyada bilinen ilk 3D baskı teknolojisi olan SLA (Stereolithography) baskı, yüksek doğrulukta karmaşık ayrıntılara sahip parçalar üretmek için sıkça başvurulan yöntemlerden bir tanesidir. Biz de fotopolimerizasyondan yararlanılan bu eklemeli imalat teknolojisi hakkındaki tüm detayları uygulamalı olarak sizler için derledik.")
+                                        +content-html("SLA baskının kullanım alanlarını, malzeme çeşitlerini ve baskı sürecini hep birlikte yakından inceleyelim!")
+                                        .responsive-iframe-container.mt-5.lg.mt-10
+                                            iframe(class="responsive-iframe-container-iframe responsive-iframe-container-iframe-other" src="https://www.youtube.com/embed/JJgoFI3ERhQ?rel=0&modestbranding=1&autohide=1&mute=0&showinfo=0&controls=1&autoplay=0&version=3&loop=0&playlist=JJgoFI3ERhQ", frameborder="0", 
+                                                allowfullscreen)
+                            a(href="javascript:void(0);", data-modal="modal-hobi-youtube-frame")
                                 +picture({sm:require('Upload/hobi-ve-endustriyel-3d-yazicilar-arasindaki-farklar.jpg'), lg:require('Upload/hobi-ve-endustriyel-3d-yazicilar-arasindaki-farklar.jpg')})
                                 .btxt
                                     .bt1|Hobi ve Endüstriyel 3D Yazıcılar Arasındaki Farklar
                                     .bt2|Devamını Oku
+                            div(id="modal-hobi-youtube-frame" class="modal modal-youtube-frame")
+                                div(class="modal-bg modal-exit")
+                                div(class="modal-container")
+                                    a(href="javascript:void(0);", class="modal-link modal-close modal-exit")
+                                        i(class="icon icon-close")
+                                    div(class="content-popup-video-frame")
+                                        p 
+                                            strong|Hobi ve Endüstriyel 3D Yazıcılar Arasındaki Farklar
+                                        br
+                                        +content-html("Bu videomuzda hobi ve endüstriyel olarak ikiye ayrılan 3D yazıcıların, belirleyici özellikleri ile kullanım alanlarından bahsediyoruz.")
+                                        +content-html("Kullanıcıların, sürekli gelişen teknoloji sayesinde eklemeli imalat yöntemlerinden beklentilerinin artması sonucunda hızla gelişen yazıcı ve malzeme çeşitliliğini hep birlikte değerlendirelim. İyi seyirler!")
+                                        .responsive-iframe-container.mt-5.lg.mt-10
+                                            iframe(class="responsive-iframe-container-iframe responsive-iframe-container-iframe-other" src="https://www.youtube.com/embed/kykA1-uZ-NU?rel=0&modestbranding=1&autohide=1&mute=0&showinfo=0&controls=1&autoplay=0&version=3&loop=0&playlist=kykA1-uZ-NU", frameborder="0", 
+                                            allowfullscreen)
                     li.type2
                         .sm        
-                            a(href=`/blog-detay-activite.html${urlType}`)
-                                +picture({sm:require('Images/pplus7.png'), lg:require('Images/pplus7.png')})
+                            a(href="/blog-smooth-tpu-95a.html")
+                                +picture({sm:require('Upload/smooth-tpu-95a-liste.jpg'), lg:require('Upload/smooth-tpu-95a-liste.jpg')})
+                                .btxt
+                                    .bt1|Smooth TPU 95A
+                                    .bt2|Devamını Oku
                             a(href=`/blog-detay-activite.html${urlType}`)
                                 +picture({sm:require('Images/pplus8.png'), lg:require('Images/pplus8.png')})
                         .lg
