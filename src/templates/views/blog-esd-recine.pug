@@ -1,0 +1,29 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "Prodigma | ESD Güvenli Reçine"
+    - pageDesc = "ESD Güvenli Reçine"
+    - pageClass = "blog-detail-single"
+    - var activity = false
+    - var activityStart = false
+
+block content
+    .pwebinar
+        //-include ./blog-header-timer-banner/index.pug
+        .pwebinar-body
+            .pwebinar-body-wrapper 
+                .pwebinar-body-wrapper-html
+                    p 
+                        strong|ESD Güvenli Reçine
+                    +content-html("Yeni xESD reçinesi, çok sayıda elektronik uygulamasında ve kritik elektronik bileşenlerini işlerken fabrika zemininde gerekli olan yüksek çözünürlüklü, statik enerji tüketen parçaların üretilmesi için yenilikçi ve uygun maliyetli bir çözüm sunar. xESD reçinesi, elektronik üretim endüstrisinin ihtiyaç duyduğu optimum statik-dağıtıcı performans ve izotropik mekanik özellikler sağlayan kararlı bir karbon nanotüp dağılımına sahip sert bir fotopolimer")
+                    +content-html("xESD reçinesi, kullanıcıların yüksek değerli elektronik bileşenlerde ESD hasarı riski olmadan saatler içinde özel aparatlar, armatürler, kıskaçlar, montaj yardımcıları ve muhafazalar oluşturmasına olanak tanır. xESD'nin ayrık doğası ayrıca karbon izi bırakmayan parçalar üretir ve gerilme mukavemeti, modül ve darbe direnci gibi temel mekanik özellikleri geliştirir. Elektrostatik deşarj güvenli bu malzeme; izotropik mekanik özelliklere sahip statik enerji tüketen parçaların üretimi ve potansiyel elektronik kaplama uygulamaları için tasarlanmıştır.")
+                    p 
+                        |* Siyah renk mevcuttur.
+                .pwebinar-body-double-banner
+                    ul 
+                        li 
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/esd-guvenli-recine-gallery-1-mb.jpg"),lg:require("Upload/esd-guvenli-recine-gallery-1.jpg")})(alt="Prodigma ESD Güvenli Reçine") 
+                        li
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/esd-guvenli-recine-gallery-2-mb.jpg"),lg:require("Upload/esd-guvenli-recine-gallery-2.jpg")})(alt="Prodigma ESD Güvenli Reçine")

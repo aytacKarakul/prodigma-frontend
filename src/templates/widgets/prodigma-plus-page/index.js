@@ -47,3 +47,8 @@ import "Upload/smooth-tpu-95a-gallery-1-mb.jpg";
 import "Upload/smooth-tpu-95a-gallery-1.jpg";
 import "Upload/smooth-tpu-95a-gallery-2-mb.jpg";
 import "Upload/smooth-tpu-95a-gallery-2.jpg";
+import "Upload/esd-guvenli-recine-liste.jpg";
+import "Upload/esd-guvenli-recine-gallery-1-mb.jpg";
+import "Upload/esd-guvenli-recine-gallery-1.jpg";
+import "Upload/esd-guvenli-recine-gallery-2-mb.jpg";
+import "Upload/esd-guvenli-recine-gallery-2.jpg";

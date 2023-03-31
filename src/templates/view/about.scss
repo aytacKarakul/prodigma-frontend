@@ -81,14 +81,14 @@
 }
 
 .pabout-body-content-title .stcky {
-  @apply opacity-100 transition-all ease-in-out duration-500 translate-y-0;
+  @apply opacity-100 transition-all ease-in-out duration-1000 translate-y-0;
 }
 .pabout-body-content-anim-wrap {
   @apply lg:sticky lg:top-[160px];
 }
 .pabout-body-content-anim-title {
   @apply text-lg text-blue-100;
-  @apply transition-all translate-y-full opacity-0 ease-in-out duration-500;
+  @apply transition-all translate-y-full opacity-0 ease-in-out duration-1000;
   img {
     @apply max-w-[80px];
   }
