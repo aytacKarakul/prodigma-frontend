@@ -1,0 +1,21 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "Prodigma Tedarikçi Formu"
+    - pageDesc = "Tedarikçi Formu"
+    - pageClass = "faq"
+
+block content
+    .pmember.pmember-flatpages
+        .pmember-wrapper
+            .pmember-left
+                .pmember-left-title Destek
+                include ../flatpages/menu/index.pug
+            .pmember-right.pmember-flatpages-bg
+                .pmember-right-content
+                    .pmember-right-content-title.mb-2
+                        |TEDARİKÇİ OLUN
+                    p  
+                        |Tedarikçi Formunu indirmek için lütfen 
+                        a(href=require("Upload/prodigma-tedarikci-formu.docx") class="text-blue-200 underline")|linki 
+                        |tıklayınız.

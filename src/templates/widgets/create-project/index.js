@@ -11,39 +11,38 @@ class CreateProject {
     const container = document.querySelector(".create-project");
     const btnTR = document.getElementById("lng-tr");
     const btnEN = document.getElementById("lng-en");
-    const wrapperTR = document.getElementById("data-lang-tr");
-    const wrapperEN = document.getElementById("data-lang-en");
+    const iframeContent = document.getElementById("data-lang-iframe");
 
     if (container) {
+      if (localStorage.getItem("lng") === "tr") {
+        btnEN.classList.remove("selected");
+        btnTR.classList.add("selected");
+        iframeContent.src =
+          "https://demo.amfg.ai/new/live/promakim.en.trl.html";
+      }
+      if (localStorage.getItem("lng") === "en") {
+        btnTR.classList.remove("selected");
+        btnEN.classList.add("selected");
+        iframeContent.src =
+          "https://demo.amfg.ai/new/live/promakim_en_eur.html";
+      }
+
       btnTR.addEventListener("click", function () {
         btnEN.classList.remove("selected");
-        this.classList.add("selected");
+        btnTR.classList.add("selected");
         localStorage.setItem("lng", "tr");
 
-        wrapperEN.style.display = "none";
-        wrapperTR.style.display = "block";
+        iframeContent.src =
+          "https://demo.amfg.ai/new/live/promakim.en.trl.html";
       });
       btnEN.addEventListener("click", function () {
         btnTR.classList.remove("selected");
-        this.classList.add("selected");
+        btnEN.classList.add("selected");
         localStorage.setItem("lng", "en");
 
-        wrapperEN.style.display = "block";
-        wrapperTR.style.display = "none";
+        iframeContent.src =
+          "https://demo.amfg.ai/new/live/promakim_en_eur.html";
       });
-      if (localStorage.getItem("lng") == "tr") {
-        btnEN.classList.remove("selected");
-        btnTR.classList.add("selected");
-
-        wrapperEN.style.display = "none";
-        wrapperTR.style.display = "block";
-      } else if (localStorage.getItem("lng") === "en") {
-        btnTR.classList.remove("selected");
-        btnEN.classList.add("selected");
-
-        wrapperEN.style.display = "block";
-        wrapperTR.style.display = "none";
-      }
     }
     //getAllCategories();
     //new Metal();

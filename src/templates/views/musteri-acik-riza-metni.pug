@@ -1,0 +1,21 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "Prodigma | Müşteri Açık Rıza Metni"
+    - pageDesc = "Müşteri Açık Rıza Metni"
+    - pageClass = "operation-guide"
+
+block content
+    .pmember.pmember-flatpages
+        .pmember-wrapper
+            .pmember-left
+                .pmember-left-title Yasal Bilgilendirme
+                include ../flatpages/menu-information/index.pug
+            .pmember-right.pmember-flatpages-bg
+                .pmember-right-content
+                    .pmember-right-content-title.mb-2
+                        |MÜŞTERİ AÇIK RIZA METNİ
+                    p  
+                        |Müşteri açık rıza metninin detayını görüntüleyebilmek için lütfen 
+                        a(href=require("Upload/prodigma-musteri-acik-riza-metni.docx") class="text-blue-200 underline")|linki 
+                        |tıklayarak indiriniz. 

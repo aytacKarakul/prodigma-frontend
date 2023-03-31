@@ -20,6 +20,8 @@ import { AboutUsBanners } from "./double-listed-banner";
 
 class Widgets {
   constructor() {
+    const aboutPage = document.querySelector(".page-about-us");
+
     new MainSwiperSlider();
     new QuickSolutionBanner();
     new SwiperParalax();
@@ -40,6 +42,18 @@ class Widgets {
     CncPlastics();
     CncMetals();
     AboutUsBanners();
+
+    if (aboutPage) {
+      document.addEventListener("scroll", () => {
+        const body = document.body;
+        const ws = window.scrollY;
+        if (ws >= 100) {
+          body.classList.add("onScrollAnimate");
+        } else {
+          body.classList.remove("onScrollAnimate");
+        }
+      });
+    }
   }
 }
 
@@ -103,3 +117,6 @@ import "Upload/hizmetler-ardil-islemler-banner-mb.jpg";
 import "Upload/hizmetler-ardil-islemler-banner.jpg";
 import "Upload/hizmetler-endustriyel-tasarim-banner-mb.jpg";
 import "Upload/hizmetler-endustriyel-tasarim-banner.jpg";
+//DOC
+import "Upload/prodigma-musteri-acik-riza-metni.docx";
+import "Upload/prodigma-tedarikci-formu.docx";
