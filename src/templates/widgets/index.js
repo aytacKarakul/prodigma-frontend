@@ -117,6 +117,8 @@ import "Upload/hizmetler-ardil-islemler-banner-mb.jpg";
 import "Upload/hizmetler-ardil-islemler-banner.jpg";
 import "Upload/hizmetler-endustriyel-tasarim-banner-mb.jpg";
 import "Upload/hizmetler-endustriyel-tasarim-banner.jpg";
+import "Upload/etkinlik-ve-isbirlikleri-banner-mb.jpg";
+import "Upload/etkinlik-ve-isbirlikleri-banner.jpg";
 //DOC
 import "Upload/prodigma-musteri-acik-riza-metni.docx";
 import "Upload/prodigma-tedarikci-formu.docx";

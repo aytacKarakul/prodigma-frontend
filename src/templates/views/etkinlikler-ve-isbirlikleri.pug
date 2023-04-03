@@ -1,0 +1,43 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "Prodigma | Etkinlikler ve İş Birlikleri"
+    - pageDesc = "Etkinlikler ve İş Birlikleri"
+    - pageClass = "services"
+
+block content
+    .pcnc
+        .hero-banner 
+            .hero-banner-img
+                h1= "Etkinlik ve İşbirliği"
+                picture
+                    source(media="(max-width: 1024px)" srcset=require("Upload/etkinlik-ve-isbirlikleri-banner-mb.jpg"))
+                    source(media="(min-width: 1025px)" srcset=require("Upload/etkinlik-ve-isbirlikleri-banner.jpg"))
+                    img(src=require("Upload/etkinlik-ve-isbirlikleri-banner-mb.jpg") alt='Etkinlikler ve İş Birlikleri')
+        .pcnc-body
+            .pcnc-body-content
+                .pcnc-body-content-title|Etkinlik ve İşbirliği
+                .pcnc-body-content-desc 
+                    p Etkinlik takvimimiz kısa bir süre sonra sizlerle paylaşılacaktır. Öneri ve istekleriniz için mail 
+                        a(href="mailto:info@prodigma.co" class="text-blue-200 underline")|info@prodigma.co 
+                        |adresimizden bize ulaşabilirsiniz. En kısa zamanda görüşmek üzere!
+            //-include ../widgets/photo-banner/index.pug
+            //-.photo-banner
+                .photo-banner-img
+                    +picture({sm:require("Upload/hizmetler-3D-baski-banner-mb.jpg"),lg:require("Upload/hizmetler-3D-baski-banner.jpg")})(alt="Prodigma 3D Baskı Nedir")
+            //-include ../widgets/cnc-gallery/index.pug
+        //-.pcnc-footer-info 
+            .pcnc-footer-info-wrapper
+                .pcnc-footer-info-title Üretim partnerimiz olmak ister misiniz?
+                .pcnc-footer-info-form 
+                    .pcnc-footer-info-form-top 
+                        +inputs('textbox','Ad')
+                        +inputs('textbox','Cep Telefonu', 'js-user-phone')
+                    .pcnc-footer-info-form-bottom
+                        +inputs('textbox','E-Posta Adresi')(type="email")
+                        +inputs('textbox','Kurum Adı')
+                    .pcnc-footer-info-form-checkbox     
+                        +inputs('checkbox','Kişisel Verilerin Korunması Kanunu (KVKK) Açık Rıza Metnini okudum ve onaylıyorum.')
+                        +inputs('checkbox','Girdiğim kişisel bilgilerimin tarafıma iletişime geçilebilmesi için işlenmesine ve kullanımına izin veriyorum.')
+                    .pcnc-footer-info-form-btn 
+                        +button('Gönder', 'green', 's')
