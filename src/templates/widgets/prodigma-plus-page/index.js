@@ -52,3 +52,8 @@ import "Upload/esd-guvenli-recine-gallery-1-mb.jpg";
 import "Upload/esd-guvenli-recine-gallery-1.jpg";
 import "Upload/esd-guvenli-recine-gallery-2-mb.jpg";
 import "Upload/esd-guvenli-recine-gallery-2.jpg";
+import "Upload/3d-baski-ile-cevre-dostu-olmanin-yollari-gallery-liste.jpg";
+import "Upload/3d-baski-ile-cevre-dostu-olmanin-yollari-gallery-1-mb.jpg";
+import "Upload/3d-baski-ile-cevre-dostu-olmanin-yollari-gallery-1.jpg";
+import "Upload/3d-baski-ile-cevre-dostu-olmanin-yollari-gallery-2-mb.jpg";
+import "Upload/3d-baski-ile-cevre-dostu-olmanin-yollari-gallery-2.jpg";
