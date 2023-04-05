@@ -1,0 +1,26 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Prodigma | News and Coming For You"
+    - pageDesc = "News and Coming For You"
+    - pageClass = "blog-detail-single"
+
+block content
+    .pwebinar
+        //-include ./blog-header-timer-banner/index.pug
+        .pwebinar-body
+            .pwebinar-body-wrapper 
+                .pwebinar-body-wrapper-html.p-5.bg-white.text-center
+                    p 
+                        strong|News and Coming For You
+                    +content-html("From Prodigma, which gathers many different technologies and materials under a single platform; new news, examples from you and much more. You can also share your work with us and be a part of this community.")
+                //-photo-banner/index.pug
+                //-.pwebinar-body-double-banner
+                    ul 
+                        li
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/3d-baski-ve-yedek-parca-gallery-1-mb.jpg"),lg:require("Upload/3d-baski-ve-yedek-parca-gallery-1.jpg")})(alt="Prodigma Blog")
+                        li
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/3d-baski-ve-yedek-parca-gallery-2-mb.jpg"),lg:require("Upload/3d-baski-ve-yedek-parca-gallery-2.jpg")})(alt="Prodigma Blog") 
+                //-include ./blog-other-contents/index.pug

@@ -1,0 +1,15 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Prodigma 3D Printing Materials"
+    - pageDesc = "3D Printing Materials"
+    - pageClass = "materials"
+
+block content
+    .pmaterials
+        +hero-banner('3D Printing Materials', {sm:require("Upload/malzemeler-hero-banner-mb.jpg"), lg:require("Upload/malzemeler-hero-banner.jpg")})
+        .pmaterials-page-title|Plastic
+        include ../widgets/thermoplastics/index-en.pug
+        include ../widgets/continous-fiber/index-en.pug
+        include ../widgets/fotopolimers/index-en.pug
+        include ../widgets/polimers/index-en.pug

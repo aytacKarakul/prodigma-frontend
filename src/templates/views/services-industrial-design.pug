@@ -1,0 +1,70 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Prodigma Industrial Design"
+    - pageDesc = "Industrial Design"
+    - pageClass = "services"
+
+block content
+    .pcnc
+        .hero-banner 
+            .hero-banner-img
+                h1= "Industrial Design"
+                picture
+                    source(media="(max-width: 1024px)" srcset=require("Upload/hizmetler-endustriyel-tasarim-cover-mb.jpg"))
+                    source(media="(min-width: 1025px)" srcset=require("Upload/hizmetler-endustriyel-tasarim-cover-lg.jpg"))
+                    img(src=require("Upload/hizmetler-endustriyel-tasarim-cover-mb.jpg") alt='Industrial design')
+                .hero-banner-btn
+                    a(class="btn btn-green btn-medium" href="/create-project.html")
+                        span|Is your industrial design ready? Start Your Project
+        .pcnc-body
+            .pcnc-body-content
+                .pcnc-body-content-title|What is Industrial Design?
+                .pcnc-body-content-desc 
+                    p|Industrial design is the whole process from the idea stage to the application for the needs, demands and problems of consumers.
+                p.mt-5
+                    strong|Industrial Design Service of Prodigma:
+                p.mt-5
+                    strong|Product Design & Development
+                p.mt-5|Our design team can help you turn your ideas from concept to reality.
+                p.mt-5 
+                    i.underline|Product Design & Development Process
+                p.mt-5|Idea - Market research - Concept design - Model visualization - Prototype - Approval - Manufacturing
+                p.mt-5
+                    strong|Review of the Part File
+                p.mt-5|Our design team can work with you to make sure your parts are ready for additive manufacturing and help you troubleshoot any issues before the printing process.
+                p.mt-5
+                    strong|Part File Preparation
+                p.mt-5|Our design team can support you to test different technologies and prepare your part files for 3D printing.
+                p.mt-5
+                    strong|Production Strategies
+                p.mt-5|Our design team can help you explore the additive manufacturing process and manage application-specific production strategies to supply end-use parts.
+                p.mt-5
+                    strong|What is design for additive manufacturing (DfAM)?
+                p.mt-5|Design for additive manufacturing is a design methodology that takes advantage of the freedoms of additive manufacturing. It is a methodology in which the designer is guided by the manufacturing process of products to facilitate the manufacturing and assembly phases, exploit manufacturing potentials and reduce manufacturing costs.
+                .border.border-red.p-5.mt-5
+                    ul 
+                        li|-Reduces production costs by optimizing the use of materials and tools.
+                        li|-Reduces assembly time by reducing the number of parts while maintaining functionality.
+                        li|-By increasing the performance of parts and achieving higher manufacturability, it reduces operating costs and facilitates production operations.
+                        li|-Reduces inventory costs by producing parts at the required place and time and streamlining the supply chain.
+            //-include ../widgets/photo-banner/index.pug
+            .photo-banner
+                .photo-banner-img
+                    +picture({sm:require("Upload/hizmetler-endustriyel-tasarim-banner-mb.jpg"),lg:require("Upload/hizmetler-endustriyel-tasarim-banner.jpg")})(alt="Industrial Design")
+            //-include ../widgets/cnc-gallery/index.pug
+        //-.pcnc-footer-info 
+            .pcnc-footer-info-wrapper
+                .pcnc-footer-info-title Üretim partnerimiz olmak ister misiniz?
+                .pcnc-footer-info-form 
+                    .pcnc-footer-info-form-top 
+                        +inputs('textbox','Ad')
+                        +inputs('textbox','Cep Telefonu', 'js-user-phone')
+                    .pcnc-footer-info-form-bottom
+                        +inputs('textbox','E-Posta Adresi')(type="email")
+                        +inputs('textbox','Kurum Adı')
+                    .pcnc-footer-info-form-checkbox     
+                        +inputs('checkbox','Kişisel Verilerin Korunması Kanunu (KVKK) Açık Rıza Metnini okudum ve onaylıyorum.')
+                        +inputs('checkbox','Girdiğim kişisel bilgilerimin tarafıma iletişime geçilebilmesi için işlenmesine ve kullanımına izin veriyorum.')
+                    .pcnc-footer-info-form-btn 
+                        +button('Gönder', 'green', 's')

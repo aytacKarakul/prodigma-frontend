@@ -1,0 +1,24 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Prodigma Contact"
+    - pageDesc = "Contact"
+    - pageClass = "contact"
+
+block content
+    .pcontact
+        +hero-banner('Contact', {sm:require("Upload/iletisim-hero-banner-mb.jpg"), lg:require("Upload/iletisim-hero-banner.jpg")})
+        .pcontact-wrapper 
+            .pcontact-body
+                include ../widgets/contact-banner/index-en.pug
+                //-.pcontact-body-form
+                    .pcontact-body-form-title İletişim Formunu Doldurun
+                    .pcontact-body-form-content
+                        .pcontact-body-form-content-left
+                            +inputs('textbox','Ad Soyad')
+                            +inputs('textbox','E-Posta Adresi')
+                            +inputs('textbox','Cep Telefonu')
+                        .pcontact-body-form-content-right
+                            +inputs('textarea','Mesaj')
+                    .pcontact-body-form-btn
+                        +button('Etkinliğe Kaydol', 'green', 's')

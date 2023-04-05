@@ -1,0 +1,22 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Prodigma Become a Supplier "
+    - pageDesc = "Become a Supplier "
+    - pageClass = "faq"
+
+block content
+    .pmember.pmember-flatpages
+        .pmember-wrapper
+            .pmember-left
+                .pmember-left-title Support
+                include ../flatpages/menu/index-en.pug
+            .pmember-right.pmember-flatpages-bg
+                .pmember-right-content
+                    .pmember-right-content-title.mb-2
+                        |BECOME A SUPPLIER
+                    p|After you fill out the Supplier Form completely, please send it to 
+                        a(href="mailto:info@prodigma.co" class="text-blue-200 underline")|info@prodigma.co 
+                        |Please 
+                        a(href=require("Upload/prodigma-tedarikci-formu.docx") class="text-blue-200 underline")|click 
+                        | the link to download the Supplier Form.

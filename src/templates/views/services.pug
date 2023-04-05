@@ -1,0 +1,12 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Prodigma Services"
+    - pageDesc = "Services"
+    - pageClass = "services"
+
+block content
+    .pservices
+        +hero-banner('Services',  {sm:require("Upload/hizmetler-hero-banner-mb.jpg"), lg:require("Upload/hizmetler-hero-banner.jpg")})
+        include ../widgets/services-banner/index-en.pug
+        include ../widgets/info-banner/index-en.pug

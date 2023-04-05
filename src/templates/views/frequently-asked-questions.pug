@@ -1,0 +1,16 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Prodigma | Frequently Asked Questions"
+    - pageDesc = "Frequently Asked Questions"
+    - pageClass = "faq"
+
+block content
+    .pmember.pmember-flatpages
+        .pmember-wrapper
+            .pmember-left
+                .pmember-left-title Support
+                include ../flatpages/menu/index-en.pug
+            .pmember-right.pmember-flatpages-right
+                .pmember-right-content
+                    include ../flatpages/support/faq/index-en.pug

@@ -7,7 +7,7 @@ class Header {
     this.headerLangBtns = document.querySelectorAll(".site-header-lang a");
 
     this.initHeader();
-    //this.langChangeFunc();
+    this.langChangeFunc();
     //this.siteLoginUserNameSurname();
   }
   siteLoginUserNameSurname() {
@@ -45,7 +45,7 @@ class Header {
           e.target.classList.remove("selected");
         } else {
           const selectedBtn = document.querySelectorAll(
-            ".site-header-lang button.selected"
+            ".site-header-lang a.selected"
           );
           selectedBtn.forEach((btn) => {
             btn.classList.remove("selected");
@@ -55,21 +55,21 @@ class Header {
         localStorage.setItem("lang", btnId);
 
         // html lang change
-        window.location.reload();
+        //window.location.reload();
       });
     });
   }
 
   langChangeFunc() {
-    if (localStorage.getItem("lang") == "en") {
+    if (localStorage.getItem("lang") == "tr") {
       const firstBtn =
         document.querySelector(".site-header-lang").firstElementChild;
-      document.documentElement.lang = "en";
+      document.documentElement.lang = "tr";
       firstBtn.classList.add("selected");
-    } else if (localStorage.getItem("lang") == "tr") {
+    } else if (localStorage.getItem("lang") == "en") {
       const lastBtn =
         document.querySelector(".site-header-lang").lastElementChild;
-      document.documentElement.lang = "tr";
+      document.documentElement.lang = "en";
       lastBtn.classList.add("selected");
     }
   }

@@ -1,0 +1,50 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Prodigma 3D Printing"
+    - pageDesc = "3D Printing"
+    - pageClass = "services"
+
+block content
+    .pcnc
+        .hero-banner 
+            .hero-banner-img
+                h1= "3D Printing"
+                picture
+                    source(media="(max-width: 1024px)" srcset=require("Upload/hizmetler-3d-cover-mb.jpg"))
+                    source(media="(min-width: 1025px)" srcset=require("Upload/hizmetler-3d-cover-lg.jpg"))
+                    img(src=require("Upload/hizmetler-3d-cover-mb.jpg") alt='3D Baskı İşleme')
+                .hero-banner-btn
+                    a(class="btn btn-green btn-medium" href="/create-project.html")
+                        span|Is your 3D Printing Processing design ready? Start Project
+        .pcnc-body
+            .pcnc-body-content
+                .pcnc-body-content-title|What is 3D Printing?
+                .pcnc-body-content-desc 
+                    p|3D printing is the production of a model designed in CAD environment or 3D scanned model using various engineering materials in a fast, additive manufacturing technique.
+                .pcnc-body-content-title.mt-6|Usage areas
+                .pcnc-body-content-desc
+                    p|As 3D printing is used in the production of plastic and metal prototypes, it is also frequently used in the production of final products due to its advanced material diversity.
+                .pcnc-body-content-title.mt-6|Advantages
+                .pcnc-body-content-desc
+                    p|Rapid prototyping, cost-effective, complex geometries, environment friendly, material diversity, personalized products, freedom in design
+            //-include ../widgets/photo-banner/index.pug
+            .photo-banner
+                .photo-banner-img
+                    +picture({sm:require("Upload/hizmetler-3D-baski-banner-mb.jpg"),lg:require("Upload/hizmetler-3D-baski-banner.jpg")})(alt="What is 3D Printing")
+            //-include ../widgets/cnc-gallery/index.pug
+        //-.pcnc-footer-info 
+            .pcnc-footer-info-wrapper
+                .pcnc-footer-info-title Üretim partnerimiz olmak ister misiniz?
+                .pcnc-footer-info-form 
+                    .pcnc-footer-info-form-top 
+                        +inputs('textbox','Ad')
+                        +inputs('textbox','Cep Telefonu', 'js-user-phone')
+                    .pcnc-footer-info-form-bottom
+                        +inputs('textbox','E-Posta Adresi')(type="email")
+                        +inputs('textbox','Kurum Adı')
+                    .pcnc-footer-info-form-checkbox     
+                        +inputs('checkbox','Kişisel Verilerin Korunması Kanunu (KVKK) Açık Rıza Metnini okudum ve onaylıyorum.')
+                        +inputs('checkbox','Girdiğim kişisel bilgilerimin tarafıma iletişime geçilebilmesi için işlenmesine ve kullanımına izin veriyorum.')
+                    .pcnc-footer-info-form-btn 
+                        +button('Gönder', 'green', 's')

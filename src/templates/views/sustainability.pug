@@ -1,0 +1,11 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Prodigma Sustainability"
+    - pageDesc = "Sustainability"
+    - pageClass = "sustain"
+
+block content
+    .psustain
+        +hero-banner('Sustainability', {sm:require("Upload/surdurulebilirlik-hero-cover-mb.jpg"), lg:require("Upload/surdurulebilirlik-hero-cover.jpg")})
+        include ../widgets/sustain-banner/index-en.pug
