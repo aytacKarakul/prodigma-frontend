@@ -1,0 +1,47 @@
+.page-home-sss
+    .page-home-sss-left
+        +picture({sm:require('Upload/ana-sayfa-sikca-sorulan-sorular.jpg'), lg:require('Upload/ana-sayfa-sikca-sorulan-sorular.jpg')})(alt='Image Tag')
+    .page-home-sss-right
+        .page-home-sss-header
+            .page-home-sss-header-title
+                |Frequently Asked Questions
+            .page-home-sss-header-desc.hidden
+                |Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        ul(class='accordion page-home-sss-accordion', data-type='connected')
+            li(class='acc-item', id="item_1")
+                .acc-header
+                    button(type='button')|Can I order online only?
+                .acc-body
+                    .content
+                        |Prodigma is an online platform with customized price quotations. If you cannot create an online order due to your corporate structure, you may contact us at 
+                        a(href="mailto:info@prodigma.co" class="text-blue-200 underline")|info@prodigma.co
+            li(class='acc-item', id="item_2")
+                .acc-header
+                    button(type='button')|How can I register on the Prodigma website?
+                .acc-body
+                    .content
+                        p 
+                            a(href="/start-project.html", class="text-blue-200 underline")|Register
+                        br
+                        |You can create a user account in a few minutes using the link above. Complete a few requested data and wait for the confirmation email where you will find the link to activate your account permanently.
+                        br
+                        |If you do not receive the email within a few minutes, please check if it is in the SPAM folder or other company filters, if not, you can contact us using one of the available methods.
+                        |Registration is completely free and without any obligations or deadlines.
+                        |By registering you will be added directly to the newsletter to receive news and information on promotions, then you can unsubscribe at any time directly from your account or by contacting us.
+            li(class='acc-item', id="item_3")
+                .acc-header
+                    button(type='button')|How can I contact you directly?
+                .acc-body
+                    .content
+                        p 
+                            a(href="mailto:info@prodigma.co" class="text-blue-200 underline")|info@prodigma.co 
+                        p 
+                            a(href="tel:+902124854250" class="text-blue-200 underline")|+90 212 4854250
+            li(class='acc-item', id="item_4")
+                .acc-header
+                    button(type='button')|How do you protect uploaded designs?
+                .acc-body
+                    .content
+                        |Prodigma S.r.l: The Data Controller informs you as an interested party. 13 and 14 EU Regulation n. 2016/679 (hereinafter referred to as "GDPR") guarantees that your data will be processed in the following manner and for the following purposes.
+        .page-home-sss-footer 
+            +button('More Questions', 'primary', 'medium')(href="/frequently-asked-questions.html")

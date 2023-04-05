@@ -1,11 +1,12 @@
-include ../abstracts/variables
-include ../abstracts/site-settings
-include ../abstracts/mixins
+include ../abstracts/variables.pug
+include ../abstracts/settings.pug
+include ../abstracts/mixins.pug
 
 - var siteTitle = "Prodigma: 3D Çevrimiçi Baskı Hizmeti"
+- var siteLang = "tr"
 
 doctype html
-html(lang='tr')
+html(lang=siteLang)
     head
         block head
             meta(charset="UTF-8")

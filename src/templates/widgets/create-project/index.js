@@ -8,6 +8,8 @@
 
 class CreateProject {
   constructor() {
+
+    /*
     const container = document.querySelector(".create-project");
     const btnTR = document.getElementById("lng-tr");
     const btnEN = document.getElementById("lng-en");
@@ -44,6 +46,7 @@ class CreateProject {
           "https://demo.amfg.ai/new/live/promakim_en_eur.html";
       });
     }
+    */
     //getAllCategories();
     //new Metal();
     //new Model3D();

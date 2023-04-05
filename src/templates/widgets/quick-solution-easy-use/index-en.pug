@@ -1,0 +1,12 @@
+.quick-solution-banner
+    .quick-solution-banner-wrapper
+        .quick-solution-banner-header
+            .quick-solution-banner-header-t1|Easy Usage from Price Quotation to Delivery
+            .quick-solution-banner-header-t2|It is possible to plan your workflow easily and smoothly with our platform that meets many different needs such as production, design and engineering services.
+        .quick-solution-banner-btns 
+            +button('Start project','primary active', 'm')(data-id="project-video")
+            +button('Order tracking','primary', 'm')(data-id="order-video")
+        .quick-solution-banner-body
+            .responsive-iframe-container
+                iframe(class="responsive-iframe-container-iframe active" src="https://www.youtube.com/embed/B9I1naWx1Y4?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0&playlist=B9I1naWx1Y4", frameborder="0", allowfullscreen, data-id="project-video")
+                iframe(class="responsive-iframe-container-iframe" src="https://www.youtube.com/embed/B9I1naWx1Y4?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0&playlist=B9I1naWx1Y4", frameborder="0", allowfullscreen, data-id="order-video")

@@ -4,7 +4,7 @@ class Header {
   constructor() {
     this.header = document.querySelector(".site-header");
     this.memberMenuHover = document.querySelector(".site-header-login-success");
-    this.headerLangBtns = document.querySelectorAll(".site-header-lang button");
+    this.headerLangBtns = document.querySelectorAll(".site-header-lang a");
 
     this.initHeader();
     //this.langChangeFunc();

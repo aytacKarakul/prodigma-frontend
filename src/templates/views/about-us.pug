@@ -1,0 +1,34 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Prodigmd | About Us"
+    - pageDesc = "About Us"
+    - pageClass = "about-us"
+
+block content
+    .pabout
+        +hero-banner('About Us', {sm:require("Upload/hakkimizda-hero-cover-mb.jpg"), lg:require("Upload/hakkimizda-hero-cover.jpg")})
+        .pabout-body
+            .pabout-body-content
+                .pabout-body-content-title
+                    span.stcky
+                        |Prodigma Vision
+                    .pabout-body-content-anim-wrap
+                        .pabout-body-content-anim-title
+                            img(src=require("Images/logo.svg"), alt="Prodigma Professional Digital Manufacturing")
+                            div|Professional Digital Manufacturing
+                .pabout-body-content-desc
+                    p|Prodigma is a fast digital production center that makes use of industrial additive (3D) manufacturing methods using advanced materials, as well as different traditional production methods, pricing and producing your projects in the shortest time possible.
+                    br
+                    p|Consisting of successful and talented engineers, designers, quality control and special process process experts; was established by a special team that aims to produce demand-oriented solutions by using accessible, scalable and sustainable production technologies.
+                    br
+                    p|Prodigma; In all periods from high-accuracy prototypes to mass production of products ready to enter the market, and in pre-production and during production processes by developing the supply chain in many sectors, especially in Industrial Machinery & Equipment, Consumer Products & Electronics, Aerospace & Aviation, Automotive, Defense and Medical plays an active role.
+                    br
+                    p|Prodigma's vision; to deliver the production solution they need quickly and reliably to all product designers, engineers or anyone responsible for any stage of production/design, and to easily supply the desired number of critical parts thanks to its strong infrastructure.
+            //-include ../widgets/counter-banner/index.pug
+        include ../widgets/benefits-brands/index.pug
+        //-include ../widgets/photo-banner/index.pug
+        .photo-banner
+            .photo-banner-img
+                +picture({sm:require("Upload/hakkimizda-detail-cover-mb.jpg"),lg:require("Upload/hakkimizda-detail-cover-lg.jpg")})(alt="Prodigma 3D")
+        include ../widgets/double-listed-banner/index-en.pug

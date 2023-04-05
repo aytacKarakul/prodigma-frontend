@@ -3,10 +3,10 @@ include ../abstracts/settings.pug
 include ../abstracts/mixins.pug
 
 - var siteTitle = "Prodigma: 3D Çevrimiçi Baskı Hizmeti"
-- var siteLang = "tr"
+- var siteLang = "en"
 
 doctype html
-html(lang='tr')
+html(lang=siteLang)
     head
         block head
             meta(charset="UTF-8")
@@ -17,9 +17,9 @@ html(lang='tr')
     body(class="holding page-" + pageClass)
         #site-wrapper
             block header
-                include ../partials/header/index.pug
+                include ../partials/header/index-en.pug
             main(id="site-main")
                 block content
                     h1 Content
             block foot
-                include ../partials/footer/index.pug
+                include ../partials/footer/index-en.pug

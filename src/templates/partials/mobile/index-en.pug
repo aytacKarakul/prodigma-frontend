@@ -1,0 +1,275 @@
+.site-mobile-header
+    .site-mobile-header-hamburger
+        i.icon.icon-hamburger
+    .site-mobile-header-logo 
+        a(href="/home.html")
+            img(src=require('Images/logo.svg') alt="Prodigma 3D")
+    .site-mobile-header-auth
+        //-a(href="javascript:void(0);")(id="js-mobile-basket-redirect-btn", hidden)
+            i.icon.icon-cart
+        //-a(href="/login.html")(id="js-mobile-login-redirect-btn")
+            i.icon.icon-member
+    .site-mobile-header-wrapper
+        .site-mobile-header-wrapper-top
+            .site-mobile-header-wrapper-top-close 
+                i.icon.icon-close
+            .site-mobile-header-wrapper-top-title MENU
+            //-.site-mobile-header-wrapper-top-member
+                .mmbr(id="js-mobile-mmbr-info", hidden)|TA
+                a(href="/login.html")(id="js-mobile-mmbr-login-redirect")
+                    i.icon.icon-member
+        .site-mobile-header-nav
+            ul
+                li 
+                    a(href="javascript:void(0);")
+                        |About Us
+                    .site-mobile-header-list
+                        ul
+                            li
+                                a(href="/manifesto-en.html")
+                                    .title|Manifesto
+                                    .desc|What we serve to our customers in line with their demands
+                            li
+                                a(href="/sustainability.html")
+                                    .title|Sustainability
+                                    .desc|Production opportunity with technologies that allow the use of recyclable resources
+                            li
+                                a(href="/career.html")
+                                    .title|Career
+                                    .desc|Available career opportunities to be part of our team
+                            li
+                                a(href="/contact.html")
+                                    .title|Contact
+                                    .desc|The information you need for any subject you want to communicate with us
+                li
+                    a(href="javascript:void(0);")
+                        |Services
+                    .site-mobile-header-list.site-mobile-header-list-img
+                        ul
+                            li
+                                a(href="/services-3d-printing.html")
+                                    .img
+                                        img(src=require('Images/3d-tasarim.png'), alt="3D Printing")
+                                    .text
+                                        .title 3D Printing
+                                        .desc Printing processes of the model designed in the CAD environment or 3D scanned
+                            //-li
+                                a(href="/hizmetler-cnc-isleme.html")
+                                    .img
+                                        img(src=require('Images/cnc-isleme.png'), alt="CNC İşleme")
+                                    .text
+                                        .title CNC Machining
+                                        .desc Fast and ultra-precise manufacturing processes of plastic or metal industrial parts
+                            //-li
+                                a(href="/hizmetler-sac-metal-sekillendirme.html")
+                                    .img
+                                        img(src=require('Images/sac-metal-isleme.png'), alt="Sac Metal İşleme")
+                                    .text
+                                        .title Sheet Metal Forming
+                                        .desc High precision metal cutting and bending processes
+                            li
+                                a(href="/services-3d-scanning-and-reverse-engineering.html")
+                                    .img
+                                        img(src=require('Images/3d-tarama-tersine-muhendislik.png'), alt="3D Scanning & Reverse Engineering")
+                                    .text
+                                        .title 3D Scanning & Reverse Engineering
+                                        .desc Obtaining the part with no 3D data by 3D scanning and 3D modeling of the obtained data
+                            li
+                                a(href="/services-industrial-design.html")
+                                    .img
+                                        img(src=require('Images/endustriyel-tasarim.png'), alt="Industrial Design")
+                                    .text
+                                        .title Industrial Design
+                                        .desc The entire process for new ideas from concept to implementation
+                            li
+                                a(href="/services-post-processing.html")
+                                    .img
+                                        img(src=require('Images/ardil-islemler.png'), alt="Post-Processes")
+                                    .text
+                                        .title Post-Processes
+                                        .desc Surface improvement processes of parts produced with 3D printing
+                li
+                    a(href="javascript:void(0);")
+                        |Materials
+                    .site-mobile-header-list.site-mobile-header-list-img            
+                        ul 
+                            li
+                                a(href="javascript:void(0);")
+                                    .img
+                                        img(src=require('Images/3d-tasarim.png'), alt="3D Printing Materials")
+                                    .text
+                                        .title 3D Printing Materials
+                                        .desc|Plastic and metal 3D printing material details
+                                .site-mobile-header-list-img-submenu
+                                    .site-mobile-header-list-img-header
+                                        .site-mobile-header-list-img-header-history
+                                            a(href="javascript:void(0);")(class="back-to-history")
+                                                i.icon.icon-arrow-left
+                                                |Back
+                                        a(href="javascript:void(0);")(class="back-to-close menu-all-back-to-close")
+                                            i.icon.icon-close
+                                    ul
+                                        li 
+                                            a(href="javascript:void(0);")
+                                                |Thermoplastic
+                                            ul
+                                                li 
+                                                    a(href="javascript:void(0);")|P-PLA
+                                                li 
+                                                    a(href="javascript:void(0);")|Onyx
+                                                li 
+                                                    a(href="javascript:void(0);")|Onyx FR
+                                                li 
+                                                    a(href="javascript:void(0);")|Onyx FR-A
+                                                li 
+                                                    a(href="javascript:void(0);")|Onyx ESD
+                                                li 
+                                                    a(href="javascript:void(0);")|White Nylon
+                                        li 
+                                            a(href="javascript:void(0);")
+                                                |Continuous Fiber
+                                            ul 
+                                                li 
+                                                    a(href="javascript:void(0);")|Kevlar 
+                                                li 
+                                                    a(href="javascript:void(0);")|Fiberglass 
+                                                li 
+                                                    a(href="javascript:void(0);")|HSHT Fiberglass 
+                                                li 
+                                                    a(href="javascript:void(0);")|Carbon Fiber 
+                                                li 
+                                                    a(href="javascript:void(0);")|Carbon Fiber FR 
+                                                li 
+                                                    a(href="javascript:void(0);")|Carbon Fiber FR-A 
+                                        li 
+                                            a(href="javascript:void(0);")
+                                                |Photopolymer
+                                            ul 
+                                                li 
+                                                    a(href="javascript:void(0);")|ABS like White 
+                                                li 
+                                                    a(href="javascript:void(0);")|ABS Like Brown 
+                                                li 
+                                                    a(href="javascript:void(0);")|Proto45
+                                                li 
+                                                    a(href="javascript:void(0);")|Flexible
+                                                li 
+                                                    a(href="javascript:void(0);")|ProFLEX
+                                                li 
+                                                    a(href="javascript:void(0);")|Clear
+                                                li 
+                                                    a(href="javascript:void(0);")|proCLEAR
+                                                li 
+                                                    a(href="javascript:void(0);")|proABS
+                                                li 
+                                                    a(href="javascript:void(0);")|performax
+                                                li 
+                                                    a(href="javascript:void(0);")|proPEEK
+                                                li 
+                                                    a(href="javascript:void(0);")|proBlack
+                                                li 
+                                                    a(href="javascript:void(0);")|proto410
+                                        li 
+                                            a(href="javascript:void(0);")
+                                                |Metal
+                                            ul 
+                                                li 
+                                                    a(href="javascript:void(0);")|17-4 PH Stainless Steel
+                                                li 
+                                                    a(href="javascript:void(0);")|Pure Copper
+                                                li 
+                                                    a(href="javascript:void(0);")|Inconel 625
+                                                li 
+                                                    a(href="javascript:void(0);")|H13 Tool Steel
+                                                li 
+                                                    a(href="javascript:void(0);")|A2 and D2 Tool Steel
+                                        li 
+                                            a(href="/3d-printing-materials.html")|View All
+                            //-li
+                                a(href="javascript:void(0);")
+                                    .img
+                                        img(src=require('Images/cnc-isleme.png'), alt="CNC Baskı Malzemeleri")
+                                    .text
+                                        .title CNC Machining Materials
+                                        .desc|CNC machining material details
+                                .site-mobile-header-list-img-submenu
+                                    .site-mobile-header-list-img-header
+                                        .site-mobile-header-list-img-header-history
+                                            a(href="javascript:void(0);")(class="back-to-history")
+                                                i.icon.icon-arrow-left
+                                                |Geri Dön
+                                        a(href="javascript:void(0);")(class="back-to-close menu-all-back-to-close")
+                                            i.icon.icon-close
+                                    ul 
+                                        li 
+                                            a(href="javascript:void(0);")|Plastik
+                                            ul 
+                                                li 
+                                                    a(href="javascript:void(0);")|PE (Polietilen)
+                                                li 
+                                                    a(href="javascript:void(0);")|PVC
+                                                li 
+                                                    a(href="javascript:void(0);")|PP
+                                                li 
+                                                    a(href="javascript:void(0);")|PC (Polikarbonat)
+                                                li 
+                                                    a(href="javascript:void(0);")|PEI (Polieterimid)
+                                                li 
+                                                    a(href="javascript:void(0);")|PTFE (Teflon)
+                                                li 
+                                                    a(href="javascript:void(0);")|PVDF
+                                                li 
+                                                    a(href="javascript:void(0);")|POM (Delrin)
+                                                li 
+                                                    a(href="javascript:void(0);")|PA6 (Poliamid)
+                                                li 
+                                                    a(href="javascript:void(0);")|PA6G (Kestamid)
+                                                li 
+                                                    a(href="javascript:void(0);")|PEEK
+                                                li 
+                                                    a(href="javascript:void(0);")|ABS
+                                                li 
+                                                    a(href="javascript:void(0);")|PMMA
+                                                li 
+                                                    a(href="javascript:void(0);")|PPS
+                                        li 
+                                            a(href="javascript:void(0);")|Metal
+                                            ul 
+                                                li 
+                                                    a(href="javascript:void(0);")|Takım Çelikleri (A2, D2, H13)
+                                                li 
+                                                    a(href="javascript:void(0);")|Alüminyum
+                                                li 
+                                                    a(href="javascript:void(0);")|Paslanmaz Çelik
+                                                li 
+                                                    a(href="javascript:void(0);")|Çelik
+                                                li 
+                                                    a(href="javascript:void(0);")|Bakır
+                                                li 
+                                                    a(href="javascript:void(0);")|Pirinç
+                                                li 
+                                                    a(href="javascript:void(0);")|Titanyum
+                                                li 
+                                                    a(href="javascript:void(0);")|Çinko
+                                        li 
+                                            a(href="/malzemeler-cnc-isleme.html")|Tümünü Gör
+                li
+                    a(href="/prodigma-plus-en.html")
+                        |Prodigma +
+        .site-mobile-header-start-project
+            +button('Start Project', 'green', 'm', false)(href='/create-project.html')
+        .site-mobile-header-social 
+            .site-mobile-header-social-title Follow us
+            ul
+                li
+                    a(href="https://www.linkedin.com/company/prodigma-co", target="_blank")
+                        i.icon.icon-linkdn
+                //-li 
+                    a(href="")
+                        i.icon.icon-twitter
+                li 
+                    a(href="https://www.instagram.com/prodigma.co", target="_blank")
+                        i.icon.icon-instagram
+                li 
+                    a(href="https://www.youtube.com/@prodigma6319", target="_blank")
+                        i.icon.icon-youtube

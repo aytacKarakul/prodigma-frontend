@@ -1,0 +1,12 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Create Project"
+    - pageDesc = "Prodigma Create Project"
+    - pageClass = "create-project"
+
+block content
+    include ../widgets/create-project/index-en.pug
+
+block foot
+    block append footer

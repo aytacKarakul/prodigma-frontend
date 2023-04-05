@@ -1,112 +1,112 @@
-include ../mobile/index.pug
+include ../mobile/index-en.pug
 
 - var authenticated = false 
 
 header.site-header
     .site-header-wrapper
         .site-header-logo
-            a(href="/")
-                img(src=require('Images/logo.svg') alt="pug logo")
+            a(href="/home.html")
+                img(src=require('Images/logo.svg') alt="Prodigma 3D")
         .site-header-nav
             ul
                 li 
-                    a(href="/hakkimizda.html")
-                        |Hakkımızda
+                    a(href="/about-us.html")
+                        |About Us
                     .site-header-submenu
                         .site-header-submenu-inner
                             .site-header-submenu-nav
                                 ul 
                                     li 
-                                        a(href="/manifesto.html")
+                                        a(href="/manifesto-en.html")
                                             .nav-t1|Manifesto
-                                            .nav-t2|Müşterilerimize talepleri doğrultusunda yaptıklarımız.
+                                            .nav-t2|What we serve to our customers in line with their demands
                                     li 
-                                        a(href="/surdurelebilirlik.html")
-                                            .nav-t1|Sürdürülebilirlik
-                                            .nav-t2|Dönüştürülebilir kaynaklar kullanılmasına olanak sağlayan teknolojiler ile üretim imkanı.
+                                        a(href="/sustainability.html")
+                                            .nav-t1|Sustainability
+                                            .nav-t2|Production opportunity with technologies that allow the use of recyclable resources
                                     li 
-                                        a(href="/kariyer.html")
-                                            .nav-t1|Kariyer
-                                            .nav-t2|Ekibimizin bir parçası olmak için mevcut kariyer fırsatları.
+                                        a(href="/career.html")
+                                            .nav-t1|Career
+                                            .nav-t2|Available career opportunities to be part of our team
                                     li 
-                                        a(href="/iletisim.html")
-                                            .nav-t1|İletişim
-                                            .nav-t2|İletişime geçmek istediğiniz her konu için ihtiyacınız olan bilgiler
+                                        a(href="/contact.html")
+                                            .nav-t1|Contact
+                                            .nav-t2|The information you need for any subject you want to communicate with us
                             .site-header-submenu-banner(style=`background-image:url(${require("Images/header-menu-about-img.jpg")}); background-size:cover; background-repeat:no-repeat; background-position:center;`)
                                 //-img(src=require('Images/header-menu-about-img.jpg'), alt="Prodigma 3D")
                 li 
-                    a(href="/hizmetler.html")
-                        |Hizmetler
+                    a(href="/services.html")
+                        |Services
                     .site-header-submenu
                         .site-header-submenu-full
                             ul
                                 li
-                                    a(href="/hizmetler-3d-baski.html")
+                                    a(href="/services-3d-printing.html")
                                         .mnwrp 
                                             .img
-                                                img(src=require('Images/3d-tasarim.png'), alt="3D Baskı")
+                                                img(src=require('Images/3d-tasarim.png'), alt="3D Printing")
                                             .txt
-                                                .t1|3D Baskı
-                                                .t2|CAD ortamında tasarlanmış veya 3D taranmış modelin baskı işlemleri.
+                                                .t1|3D Printing
+                                                .t2|Printing processes of the model designed in the CAD environment or 3D scanned
                                 //-li
                                     a(href="/hizmetler-cnc-isleme.html")
                                         .mnwrp 
                                             .img
-                                                img(src=require('Images/cnc-isleme.png'), alt="CNC İşleme")
+                                                img(src=require('Images/cnc-isleme.png'), alt="CNC Machining")
                                             .txt
-                                                .t1|CNC İşleme
-                                                .t2|Plastik veya metal endüstriyel parçaların hızlı ve ultra hassasiyetli üretim işlemleri.
+                                                .t1|CNC Machining
+                                                .t2|Fast and ultra-precise manufacturing processes of plastic or metal industrial parts
                                 //-li
                                     a(href="/hizmetler-sac-metal-sekillendirme.html")
                                         .mnwrp 
                                             .img
-                                                img(src=require('Images/sac-metal-isleme.png'), alt="Sac Metal Şekillendirme")
+                                                img(src=require('Images/sac-metal-isleme.png'), alt="Sheet Metal Forming")
                                             .txt
-                                                .t1|Sac Metal Şekillendirme
-                                                .t2|Yüksek hassasiyetli metal kesim ve büküm işlemleri.
+                                                .t1|Sheet Metal Forming
+                                                .t2|High precision metal cutting and bending processes
                                 li
-                                    a(href="/hizmetler-3d-tarama-tersine-muhendislik.html")
+                                    a(href="/services-3d-scanning-and-reverse-engineering.html")
                                         .mnwrp 
                                             .img
-                                                img(src=require('Images/3d-tarama-tersine-muhendislik.png'), alt="3D Tarama Tersine Mühendislik")
+                                                img(src=require('Images/3d-tarama-tersine-muhendislik.png'), alt="3D Scanning & Reverse Engineering")
                                             .txt
-                                                .t1|3D Tarama & Tersine Mühendislik
-                                                .t2|3D datası mevcut olmayan parçanın 3D tarama ile elde edilmesi ve elde edilen datanın 3 boyutlu modellenmesi işlemleri.
+                                                .t1|3D Scanning & Reverse Engineering
+                                                .t2|Obtaining the part with no 3D data by 3D scanning and 3D modeling of the obtained data
                                 li
-                                    a(href="/hizmetler-endustriyel-tasarim.html")
+                                    a(href="/services-industrial-design.html")
                                         .mnwrp 
                                             .img
-                                                img(src=require('Images/endustriyel-tasarim.png'), alt="Endüstriyel Tasarım")
+                                                img(src=require('Images/endustriyel-tasarim.png'), alt="Industrial design")
                                             .txt
-                                                .t1|Endüstriyel Tasarım
-                                                .t2|Yeni fikirlerin konseptten uygulamaya kadar olan tüm süreci
+                                                .t1|Industrial Design
+                                                .t2|The entire process for new ideas from concept to implementation
                                 li
-                                    a(href="/hizmetler-ardil-islemler.html")
+                                    a(href="/services-post-processing.html")
                                         .mnwrp 
                                             .img
-                                                img(src=require('Images/ardil-islemler.png'), alt="Ardıl İşlemler")
+                                                img(src=require('Images/ardil-islemler.png'), alt="Post Processes")
                                             .txt
-                                                .t1|Ardıl İşlemler
-                                                .t2|3D baskı ile üretilen parçaların yüzey iyileştirme işlemleri
+                                                .t1|Post-Processes
+                                                .t2|Surface improvement processes of parts produced with 3D printing
                 li 
                     a(href="javascript:void(0);")
-                        |Malzemeler
+                        |Materials
                     .site-header-submenu
                         .site-header-submenu-full.site-header-submenu-double
                             ul
                                 li
-                                    a(href="/malzemeler-3d-baski-malzemeleri.html")
+                                    a(href="/3d-printing-materials.html")
                                         .mnwrp 
                                             .img
                                                 img(src=require('Images/3d-tasarim.png'), alt="3D Baskı Malzemeleri")
                                             .txt
-                                                .t1|3D Baskı Malzemeleri
-                                                .t2|Plastik ve metal 3D baskı malzeme detayı
+                                                .t1|3D Printing Materials
+                                                .t2|Plastic and metal 3D printing material details
                                     .site-header-submenu-bottom
                                         .site-header-submenu-bottom-inner
                                             ul 
                                                 li 
-                                                    .title Termoplastikler
+                                                    .title Thermoplastic
                                                     ul 
                                                         li 
                                                             a(href="javascript:void(0);")|P-PLA
@@ -119,24 +119,24 @@ header.site-header
                                                         li
                                                             a(href="javascript:void(0);")|Onyx ESD
                                                         li
-                                                            a(href="javascript:void(0);")|Beyaz Naylon
+                                                            a(href="javascript:void(0);")|White Nylon
                                                 li 
-                                                    .title Sürekli Fiber
+                                                    .title Continuous Fiber
                                                     ul 
                                                         li 
                                                             a(href="javascript:void(0);")|Kevlar
                                                         li
-                                                            a(href="javascript:void(0);")|Fiberglas
+                                                            a(href="javascript:void(0);")|Fiberglass
                                                         li 
-                                                            a(href="javascript:void(0);")|HSHT Fiberglas
+                                                            a(href="javascript:void(0);")|HSHT Fiberglass
                                                         li
-                                                            a(href="javascript:void(0);")|Karbon Fiber
+                                                            a(href="javascript:void(0);")|Carbon Fiber
                                                         li
-                                                            a(href="javascript:void(0);")|Karbon Fiber FR
+                                                            a(href="javascript:void(0);")|Carbon Fiber FR
                                                         li
-                                                            a(href="javascript:void(0);")|Karbon Fiber FR-A
+                                                            a(href="javascript:void(0);")|Carbon Fiber FR-A
                                                 li 
-                                                    .title Fotopolimerler
+                                                    .title Photopolymer
                                                     ul 
                                                         li 
                                                             a(href="javascript:void(0);")|ABS like White
@@ -163,26 +163,26 @@ header.site-header
                                                         li
                                                             a(href="javascript:void(0);")|proto410
                                                 li 
-                                                    .title Metaller
+                                                    .title Metal
                                                     ul 
                                                         li 
-                                                            a(href="javascript:void(0);")|17-4 Paslanmaz Çelik
+                                                            a(href="javascript:void(0);")|17-4 PH Stainless Steel
                                                         li
-                                                            a(href="javascript:void(0);")|Saf Bakır
+                                                            a(href="javascript:void(0);")|Pure Copper
                                                         li
                                                             a(href="javascript:void(0);")|Inconel 625
                                                         li
-                                                            a(href="javascript:void(0);")|H13 Takım Çeliği
+                                                            a(href="javascript:void(0);")|H13 Tool Steel
                                                         li
-                                                            a(href="javascript:void(0);")|A2 ve D2 Takım Çeliği
+                                                            a(href="javascript:void(0);")|A2 and D2 Tool Steel
                                 //-li
                                     a(href="/malzemeler-cnc-isleme.html")
                                         .mnwrp 
                                             .img
                                                 img(src=require('Images/cnc-isleme.png'), alt="CNC İşleme")
                                             .txt
-                                                .t1|CNC İşleme Malzemeleri
-                                                .t2|CNC işleme malzeme detayı
+                                                .t1|CNC Machining Materials
+                                                .t2|CNC machining material details
                                     .site-header-submenu-bottom
                                         .site-header-submenu-bottom-inner
                                             ul
@@ -237,13 +237,13 @@ header.site-header
                                                         li 
                                                             a(href="javascript:void(0);")|Çinko
                 li 
-                    a(href="/prodigma-plus.html")
+                    a(href="/prodigma-plus-en.html")
                         |Prodigma +  
         .site-header-login
             //-div(hidden)
             .site-header-login-success
                 .site-header-login-success-project
-                    +button('Proje Başlat','green','m',false)(href="/proje-baslat.html")
+                    +button('Start Project','green','m',false)(href="/create-project.html")
                 //-.site-header-login-user
                     span TA
                 //-.site-header-login-success-left

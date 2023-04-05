@@ -1,0 +1,18 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Prodigma | Home Page"
+    - pageDesc = "Home Page"
+    - pageClass = "home"
+
+block content
+    include ../widgets/home-page-main-slider/index-en.pug
+    include ../widgets/quadraple-banner/quadraple-banner-en.pug
+    include ../widgets/quick-solution-easy-use/index-en.pug
+    include ../widgets/paralax-banner/index-en.pug
+    include ../widgets/our-services/index-en.pug
+    include ../widgets/create-project-banner/index.pug
+    include ../widgets/supply-banner/index-en.pug
+    //-include ../widgets/prodigma-plus-banner/index.pug
+    include ../widgets/prodigma-plus-page/index.pug
+    include ../widgets/home-page-sss/index-en.pug
