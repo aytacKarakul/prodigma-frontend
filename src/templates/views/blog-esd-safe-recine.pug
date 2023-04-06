@@ -1,0 +1,27 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Prodigma | ESD Safe Resin"
+    - pageDesc = "ESD Safe Resin"
+    - pageClass = "blog-detail-single"
+
+block content
+    .pwebinar
+        //-include ./blog-header-timer-banner/index.pug
+        .pwebinar-body
+            .pwebinar-body-wrapper 
+                .pwebinar-body-wrapper-html
+                    p 
+                        strong|ESD Safe Resin
+                    +content-html("The new xESD resin offers an innovative and cost-effective solution for producing high-resolution, static dissipative parts required on the factory floor in numerous electronics applications and when machining critical electronic components. xESD resin is a rigid photopolymer material with a stable distribution of carbon nanotubes that provides optimum static-dispersive performance and isotropic mechanical properties required by the electronics manufacturing industry.")
+                    +content-html("xESD resin allows users to create custom jigs, fixtures, clamps, mounting aids and enclosures within hours without the risk of ESD damage to high-value electronic components. The discrete nature of xESD also produces carbon-free parts and improves key mechanical properties such as tensile strength, modulus and impact resistance. Electrostatic discharge safe this material; It is designed for the manufacture of static dissipative parts with isotropic mechanical properties and potential electronic coating applications.")
+                    p 
+                        |*Black color is available.
+                .pwebinar-body-double-banner
+                    ul 
+                        li 
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/esd-guvenli-recine-gallery-1-mb.jpg"),lg:require("Upload/esd-guvenli-recine-gallery-1.jpg")})(alt="Prodigma ESD Safe Resin") 
+                        li
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/esd-guvenli-recine-gallery-2-mb.jpg"),lg:require("Upload/esd-guvenli-recine-gallery-2.jpg")})(alt="Prodigma ESD Safe Resin")

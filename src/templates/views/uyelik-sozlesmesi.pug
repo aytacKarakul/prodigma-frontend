@@ -1,0 +1,104 @@
+extends ../blocks/layout.pug
+
+block prepend head
+    - pageTitle = "Prodigma | Üyelik Sözleşmesi"
+    - pageDesc = "Üyelik Sözleşmesi"
+    - pageClass = "operation-guide"
+
+block content
+    .pmember.pmember-flatpages
+        .pmember-wrapper
+            .pmember-left
+                .pmember-left-title Yasal Bilgilendirme
+                include ../flatpages/menu-information/index.pug
+            .pmember-right.pmember-flatpages-bg
+                .pmember-right-content
+                    .pmember-right-content-title
+                        |Üyelik Sözleşmesi
+                    +content-html("İşbu Çerez Politikası Prodigma Teknoloji A.Ş.(“Şirket”) tarafından yürütülen internet siteleri ve mobil platformlar, üçüncü parti programlar veya internet siteleri üzerinden erişilen, kullanılan platformların hepsi için geçerlidir.")
+                    p 
+                        |İş Ortakları için Genel Satış Hüküm ve Koşulları & Genel İş Hüküm ve Koşulları
+                    p 
+                        strong|TARAFLAR ve TANIMLAR
+                    +content-html("Ticaret Unvanı: Prodigma Teknoloji Anonim Şirketi")
+                    +content-html("İstanbul | Avrupa")
+                    +content-html("İkitelli Org. San. Böl. Mutsan San. M12 Blok No:50 İkitelli/Başakşehir - İstanbul")
+                    +content-html("Tel: +90 212 4854250")
+                    p 
+                        a(href="mailto:info@prodigma.co" class="text-blue-200 underline")|E-mail: info@prodigma.co 
+                    +content-html("İşbu üyelik Sözleşmesinde, aşağıda yer alan tanımlanmış ifadeler, yanlarında belirtilen anlamları haiz olacaktır.")
+                    +content-html("6698 Sayılı Kanun: Kişisel Verilerin Korunması Kanunu")
+                    +content-html("İnternet Sitesi: Prodigma’ya ait olan https://prodigma.co")
+                    +content-html("Sözleşme: Prodigma ve üye arasında akdedilen işbu üyelik sözleşmesi")
+                    p|Taraflar: Prodigma ve üye
+                    p 
+                        strong|AMAÇ VE KONU
+                    p
+                        |İşbu Sözleşmenin amacı, İnternet Sitesi üzerinde Prodigma tarafından sunulan hizmetlerden üyenin yararlanmasına ilişkin koşulların belirlenmesi ve bu doğrultuda tarafların hak ve yükümlülüklerinin tespitinin sağlanmasıdır.
+                    p
+                        |Prodigma, https://prodigma.co alan adlı elektronik ticaret platformunu işletmekte ve bu internet sitesi üzerinden ürün tedarik etmekte ve kullanıcılara ürün satmaktadır. İşbu Sözleşmesinin üye tarafından kabul edilmesi halinde üye, internet sitesinde yer alan veya daha sonra yer alacak olan, Prodigma tarafından sunulan hizmetlere, kullanıma, içeriklere, uygulamalara, üyelere veya üye olmayan kullanıcılara ilişkin her türlü koşul ve beyanın kendisi için geçerli olduğunu kabul etmekte ve bunlara uyacağını taahhüt etmektedir.
+                    p 
+                        strong|TALEP VE ŞİKÂYETLER
+                    p 
+                        a(href="mailto:info@prodigma.co" class="text-blue-200 underline")|E-mail: info@prodigma.co
+                    p
+                        strong|GENEL HÜKÜMLER
+                    +content-html("1-) Üye, üye olurken verdiği bilgilerin doğru olduğunu kabul, beyan ve taahhüt eder. Üye İnternet Sitesi’ni özelliklerini kullanırken ve internet sitesi üzerinden sipariş verirken verdiği bilgilerin doğru ve eksiksiz olduğunu kabul, beyan ve taahhüt eder.")
+                    +content-html("2-) Üyelik hak ve yükümlülüklerinin hangi kişiye ait olduğu konusunda ihtilafa düşülmesi ve bu hususta söz konusu kişilerin Prodigma’dan talepte bulunması halinde ilgili üyelik hesabı kullanılarak herhangi bir ürün veya hizmet için Xometry Türkiye’ye ödeme yapan son kişinin üyelik hesabının sahibi olduğunu kabul edecektir.")
+                    +content-html("3-) Üye olmak isteyen kullanıcının 18 (on sekiz) yaşını doldurmuş olması gerekmektedir.")
+                    +content-html("4-) Üye, İnternet Sitesi üzerinde gerçekleştirdiği tüm işlemlerde, işbu Sözleşmesinin hükümlerine, İnternet Sitesinde belirtilen tüm koşullara, yürürlükteki mevzuata ve ahlak kurallarına uygun olarak hareket edeceğini kabul ve beyan eder. üyenin İnternet Sitesi dâhilinde yaptığı işlem ve eylemlere ilişkin olarak hukuki ve cezai sorumluluğu kendisine aittir.")
+                    +content-html("5-) Üye, İnternet Sitesi üzerinden herhangi bir hukuki işlem veya satma ya da satın alma süreci başlatmak istemesi halinde, İnternet Sitesinde yer alanlar da dâhil olmak üzere tüm gerekli yasal yükümlülükleri ve yasal prosedürleri yerine getirmek zorunda olduğunu kabul ve beyan etmektedir.")
+                    +content-html("6-) Prodigma, yürürlükte bulunan mevzuat uyarınca yetkili makamların talebi halinde, üyenin kendisine sağladığı bilgilerini söz konusu makamlarla paylaşabilecektir.")
+                    +content-html("7-) Üyenin, İnternet Sitesi üzerinde işlem gerçekleştirebilmek ve İnternet Sitesinde kendi üyeliğine ilişkin hesap sayfasına erişmek için ihtiyaç duyduğu kullanıcı adı ve şifre bilgisi, üye tarafından oluşturulmakta olup, söz konusu bilgilerin güvenliği ve gizliliği tamamen üyenin sorumluluğundadır. Üye, kendisine ait kullanıcı adı ve şifre ile gerçekleştirilen işlemlerin kendisi tarafından gerçekleştirilmiş olduğunu, bu işlemlerden kaynaklanan sorumluluğunun kendisine ait olduğunu, bu şekilde gerçekleştirilen iş ve işlemleri kendisinin gerçekleştirmediği yolunda herhangi bir itiraz ileri sürmeyeceğini ve buna dayanarak yükümlülüklerini yerine getirmekten kaçınmayacağını kabul, beyan ve taahhüt eder.")
+                    +content-html("8-) Üye, İnternet Sitesini aşağıda sayılan haller başta olmak üzere, hukuka ve ahlaka aykırı hiç bir şekilde kullanmayacağını kabul, beyan ve taahhüt etmektedir:")
+                    br
+                    ul(style="list-style:disc; padding-left:20px")
+                        li|İnternet Sitesinin herhangi bir kişi adına veri tabanı, kayıt veya rehber yaratmak, kontrol etmek, güncellemek veya değiştirmek amacıyla kullanılması.
+                        li|İnternet Sitesinin bütününün veya bir bölümünün bozma, değiştirme veya ters mühendislik yapma amacıyla kullanılması.
+                        li|Yanlış bilgiler veya başka bir kişinin bilgileri kullanılarak işlem yapılması, yanlış veya yanıltıcı ikametgâh adresi, elektronik posta adresi, iletişim, ödeme veya hesap bilgileri de dâhil yanlış veya yanıltıcı kişisel veriler kullanmak suretiyle gerçek olmayan üyelik hesapları oluşturulması ve bu hesapların işbu Sözleşmeye veya yürürlükte mevzuata aykırı şekilde kullanılması.
+                        li|Başka bir üyenin hesabının izinsiz kullanılması.
+                        li|Virüs veya İnternet Sitesine, İnternet Sitesinin veri tabanına, İnternet Sitesi üzerinde yer alan herhangi bir içeriğe zarar verici herhangi başka bir teknoloji yayılması.
+                        li|İnternet Sitesi tarafından belirlenmiş olan iletişimler ve teknik sistemler üzerinde makul olmayan veya orantısız derecede büyük yüklemeler yaratacak ya da teknik işleyişe zarar verecek faaliyetlerde bulunulması.
+                        li|Prodigma’nın ön yazılı iznini alınmaksızın, İnternet Sitesi üzerinde otomatik program, robot, web crawler, örümcek, veri madenciliği (datamining) ve veri taraması (datacrawling) gibi “screen scraping” yazılımları veya sistemleri kullanılması ve bu şekilde İnternet Sitesinde yer alan herhangi bir içeriğin tamamının veya bir kısmının izinsiz kopyalanarak, yayınlanması veya kullanılması.
+                    br
+                    +content-html("9-) Üye, İnternet Sitesinde yaptığı işlemleri İnternet Sitesine teknik olarak hiçbir surette zarar vermeyecek şekilde yapmakla yükümlüdür. Üye, İnternet Sitesine sağlayacağı tüm bilgi, içerik, materyal ve sair içeriğin sisteme zarar verecek her türlü program, virüs, yazılım, lisansız ürün (truva atı ve benzeri) içermemesi için gerekli koruyucu yazılımları ve lisanslı ürünleri kullanmak da dâhil olmak üzere gerekli her türlü tedbiri aldığını kabul ve taahhüt eder.")
+                    +content-html("10-) Üye, İnternet Sitesinde kendi üyeliğine ilişkin hesap sayfasına robot veya otomatik giriş yöntemleriyle girmeyeceğini kabul ve taahhüt eder.")
+                    +content-html("11-) Şüpheye mahal vermemek üzere belirtilmelidir ki, İnternet Sitesinin veya İnternet Sitesi üzerindeki içeriğin işbu Sözleşme ile belirlenen kullanım şartlarına veya yürürlükteki mevzuat hükümlerine aykırı olarak kullanılması hukuka aykırı olup; Prodigma’nın ilgili talep, dava ve takip hakları saklıdır.")
+                    +content-html("12-) İnternet Sitesi’ne üye olmak siparişlerin Prodigma tarafından kabul edileceği anlamına gelmez. Prodigma, siparişleri reddetme hakkına sahiptir.")
+                    +content-html("13-) Üye, Prodigma’nın siparişi kendisi üretebileceği gibi üçüncü kişilere de ürettirebileceğini kabul eder.")
+                    +content-html("14-) Siparişe ilişkin ücretin ödenmemesi veya eksik ödenmesi durumunda Prodigma, işi yapmaktan ve teslim etmekten kaçınabilir. Bu durum Üye’ye ayrı bir talep hakkı doğurmaz.")
+                    +content-html("15-) Üyenin sağladığı 3D CAD çizim dosyaları, üretim için esas bilgi olarak kabul edilir. Aksi bir teknik resim ile belirtilmedikçe, 3D CAD çizim dosyası üzerinden işlemler gerçekleştirilecektir.")
+                    +content-html("16-) Prodigma’nın siparişe konu ürünleri, üye’nin üye olurken veya sipariş esnasında verdiği adrese taşıması işin teslimi sayılır.")
+                    +content-html("17-) Prodigma, üye ile üyenin üyelik kaydı oluştururken belirtmiş olduğu e-posta adresi vasıtasıyla veya telefon numarası aramak ya da mesaj göndermek suretiyle iletişim kuracaktır. Bu bağlamda üye, e-posta adresini ve telefon numarasını doğru ve güncel tutmakla yükümlüdür")
+                    p 
+                        strong|FİKRİ MÜLKİYET VE GİZLİLİK
+                    p 
+                        |Prodigma ve https://prodigma.co markası ve logosu ve bunlara ilişkin olarak Prodigma tarafından oluşturulan her türlü marka, tasarım, logo, ticari takdim şekli, slogan ve diğer tüm içeriğin her türlü fikri ve sınai mülkiyet hakkı Prodigma Teknoloji A.Ş.’ye aittir.
+                    p 
+                        |Üye, Prodigma’ya bağlı şirketlerin mülkiyetine tabi fikri ve sınai mülkiyet haklarını Prodigma’nın izni olmaksızın kullanamaz, paylaşamaz, dağıtamaz, sergileyemez, çoğaltamaz ve bunlardan türemiş çalışmalar yapamaz.
+                    p 
+                        |Üye, Prodigma’nın fikri ve sınai mülkiyet haklarını ihlal edecek şekilde davranması halinde, üye, Prodigma’nın tüm doğrudan ve dolaylı her tür zararlarını ve masraflarını tazmin etmekle yükümlü olacaktır.
+                    p 
+                        |Prodigma, üyenin İnternet Sitesinde yer alan hizmetlerden etkin bir şekilde yararlanabilmek için kendisine sağladığı kişisel verileri, 6698 Sayılı Kanun da dâhil ilgili tüm mevzuata uygun bir şekilde işleyebilmesine, güvenliğini sağlamasına ve korumasına önem vermektedir. Bu doğrultuda, üyenin sağladığı kişisel veriler, İnternet Sitesinde yer alan Kişisel Verilerin Korunması ve Gizlilik Politikasına uygun olarak toplanmakta, kullanılmakta, aktarılmakta ve diğer şekillerde işlenebilmektedir.
+                    p 
+                        |Kişisel Verilerin Korunması ve Gizlilik Politikası, işbu Sözleşmesinin bir ekidir. üye, hizmetlerden faydalanarak veya bir üyelik kaydı oluşturarak bahse konu politikada belirtilen şekilde kişisel verilerinin toplanmasına, kullanılmasına, aktarılmasına ve diğer şekillerde işlenmesine açık bir şekilde rıza göstermektedir.
+                    p 
+                        |üye tarafından İnternet Sitesinde sunulan ve paylaşılmasına rıza gösterilen kişisel veriler; işbu Sözleşme ile belirlenen yükümlülüklerin ifası, İnternet Sitesinin işletilmesi için gereken uygulamaların yürütülmesi, üye için çeşitli avantajların sağlanıp sunulması ve üyeye özel reklam, satış, pazarlama, anket, benzer amaçlı her türlü elektronik iletişim, profilleme, istatistiksel çalışmalar yapılması amacıyla Prodigma, iştirakleri ya da iş ortakları tarafından Kişisel Verilerin Korunması ve Gizlilik Politikasına uygun olarak toplanır, saklanır, işlenir, kullanılır ve akdi ilişkilerimize istinaden üçüncü kişiler ile paylaşılabilir.
+                    p 
+                        strong|MÜCBİR SEBEPLER
+                    p 
+                        |Prodigma, işbu Sözleşmede yer alan yükümlülüklerini, kendi kontrolü dışında gerçekleşen, kusurundan kaynaklanmayan ve makul olarak öngöremeyeceği olaylar (savaş, ayaklanma seferberlik, grev, lokavt, iş eylemleri veya boykotlar, işçi-işveren anlaşmazlıkları, siber saldırı, iletişim sorunları, altyapı ve internet arızaları, sisteme ilişkin iyileştirme veya yenileştirme çalışmaları ve bu sebeple meydana gelebilecek arızalar, elektrik kesintisi, yangın, patlama, fırtına, sel, deprem, göç, salgın veya diğer bir doğal felaket dâhil ancak bunlarla sınırlı olmaksızın tüm mücbir sebepler) nedeniyle ifa edememesinden veya yükümlülüklerinin ifasını geciktirmesinden sorumlu tutulmayacak ve işbu Sözleşmeyi ihlal ettiği ileri sürülmeyecektir.
+                    p 
+                        strong|DEVİR VE FERAGAT
+                    p
+                        |Üye, Prodigma’nın ön yazılı onayını almaksızın işbu Sözleşmede kendisine verilen haklarını veya işbu Sözleşmeden doğan yükümlülüklerini tümüyle veya kısmen, üçüncü bir kişiye devir edemeyecektir.
+                    p
+                        |Taraflardan birinin işbu Sözleşmede kendisine sağlanan herhangi bir hakkını kullanmaması ya da icra etmemesi, söz konusu haktan feragat ettiği anlamına gelmeyecek veya söz konusu hakkın daha sonra kullanılmasını ya da icra edilmesine engel olmayacaktır.
+                    p
+                        strong|DELİL SÖZLEŞMESİ VE DEĞİŞİKLİK
+                    p
+                        |İşbu Sözleşmeden veya uygulanmasından doğabilecek her türlü uyuşmazlığın çözümünde Prodigma’nın (bilgisayar kayıtları, ses kayıtları ve benzeri dijital ortamdaki kayıtları dâhil) her türlü kayıtları kesin delil oluşturur.
+                    p 
+                        |Prodigma yürürlükte bulunan ilgili mevzuat hükümlerini gözeterek ve tamamen kendi takdirinde olmak üzere, işbu Sözleşmeyi dilediği zaman tek taraflı olarak değiştirebilecektir. Bu doğrultuda yapılacak değişiklikler İnternet Sitesinde ilan edilecektir.
+                    p 
+                        |Prodigma tarafından yapılacak değişiklikler İnternet Sitesinde ilan edildikleri tarihte geçerlilik kazanmış olacaktır. İşbu Sözleşmenin değiştirilmeyen diğer hükümleri geçerliliğini korumaya devam edecektir. İşbu Sözleşme, üye tarafından tek taraflı olarak değiştirilemeyecektir.

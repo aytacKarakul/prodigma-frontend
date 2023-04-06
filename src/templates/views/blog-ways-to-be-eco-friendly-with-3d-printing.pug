@@ -1,0 +1,47 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Prodigma | Ways To Be Eco-Friendly With 3D Printing"
+    - pageDesc = "Ways To Be Eco-Friendly With 3D Printing"
+    - pageClass = "blog-detail-single"
+
+block content
+    .pwebinar
+        //-include ./blog-header-timer-banner/index.pug
+        .pwebinar-body
+            .pwebinar-body-wrapper 
+                .pwebinar-body-wrapper-html
+                    p 
+                        strong|Ways To Be Eco-Friendly With 3D Printing
+                    +content-html("The advantage of 3D printing when it comes to sustainability; model, prototype, tool, mold or final product is made by adding material instead of removing any part.")
+                    +content-html("For example, an engine part prototype requires much less material for 3D printing than machining from a block of metal. A plastic prototype of a functional door hinge can also be 3D printed as a single piece, rather than injection molded and then assembled from three separate molds.")
+                    +content-html("According to a European Commission study; By 2050, it can save up to 90% in raw materials required for additive manufacturing (AM). The U.S. Department of Energy estimates that additive manufacturing can reduce waste and materials costs by approximately 90% and halve production energy use compared to conventional manufacturing. This could be encouraging news for any company considering the economic and environmental advantages of 3D printing.")
+                    +content-html("More efforts are needed to tackle the problems of waste, pollution and the overconsumption of energy and raw materials so that all companies, from governments to trade groups to consumers, can become more sustainable and environmentally friendly as agreed. Even small companies have a role to play in recycling, making sustainable purchasing decisions, shortening supply chains and moving to greener office practices such as reducing energy use.")
+                    +content-html("In an aspirational circular economy, where everything made can be recycled, any 3D printing company can use recycled material as a raw material and then further recycle or reuse that material once the printed part becomes obsolete. While we haven't reached that goal yet, 3D printing today allows companies to save on raw materials, produce less waste and have other important eco-friendly benefits.")
+                    p 
+                        strong|Some of the alternative ways for eco-friendly approach with 3D printing;
+                    br
+                    p 
+                        |1. Efficient designs for less material.
+                    p 
+                        |2. Less raw material usage.
+                    p 
+                        |3. Repairable designs and use of spare parts.
+                    p 
+                        |4. Reduction of foreign dependency with local part production.
+                    p 
+                        |5. Elimination of the need for physical inventory.
+                    p 
+                        |6. Easier production with less labor and equipmen
+                    p 
+                        |7. Smaller and quieter production areas.
+                //-include ../photo-banner/index.pug
+                .pwebinar-body-double-banner
+                    ul 
+                        li
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/3d-baski-ile-cevre-dostu-olmanin-yollari-gallery-1-mb.jpg"),lg:require("Upload/3d-baski-ile-cevre-dostu-olmanin-yollari-gallery-1.jpg")})(alt="Prodigma 3D Ways To Be Eco-Friendly With 3D Printing")
+                        li
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/3d-baski-ile-cevre-dostu-olmanin-yollari-gallery-2-mb.jpg"),lg:require("Upload/3d-baski-ile-cevre-dostu-olmanin-yollari-gallery-2.jpg")})(alt="Prodigma 3D Ways To Be Eco-Friendly With 3D Printing") 
+                //-include ./blog-other-contents/index.pug

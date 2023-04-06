@@ -1,0 +1,30 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Prodigma | World's Largest Metal 3D Printer"
+    - pageDesc = "World's Largest Metal 3D Printer"
+    - pageClass = "blog-detail-single"
+
+block content
+    .pwebinar
+        //-include ./blog-header-timer-banner/index.pug
+        .pwebinar-body
+            .pwebinar-body-wrapper 
+                .pwebinar-body-wrapper-html
+                    p 
+                        strong|The future for automation and aerospace is in 3D printing!
+                    +content-html("Aviation production has been around for 60 years; It required large factories, stationary vehicles, complex supply chains, and manual labor to build costly rockets of more than 100,000 parts that could be produced in a very long time.")
+                    +content-html("Relativity established the Factory of the Future, the first aerospace platform to automate rocket production by integrating smart robotics, software and data-driven 3D printing technology to accelerate innovation in the industry. The Long Beach-based aerospace firm introduced its Stargate 4th Generation printer, which challenges traditional 3D printing methods by moving horizontally instead of vertically as it feeds multiple cables into a single printhead. Relativity broke its own record with this latest generation, as the company has long been home to the world's largest 3D printers.")
+                    +content-html("They found a solution to the workforce problem by using a single process to convert raw material into finished product and by using additive manufacturing to print complex components. This approach significantly reduced the number of parts. This allowed them to manage the process in a much more agile and free manner. They had the opportunity to make significant design changes with less cost compared to traditional production. In traditional aerospace manufacturing, a design change can require almost a year of refitting and adjustments.")
+                    p 
+                        |Relativity Space, which prints its rockets completely in 3D, produces rockets 100 times faster than traditional rocket construction. Relativity, which came to the fore with metal 3D printing, stated that the new printer offers "value creation potential" for other products in the aerospace, energy and defense sectors, which exceed 1 trillion dollars in the long term.
+                //-include ../photo-banner/index.pug
+                .pwebinar-body-double-banner
+                    ul 
+                        li
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/dunyanin-en-buyuk-metal-3d-yazicisi-gallery-1-mb.jpg"),lg:require("Upload/dunyanin-en-buyuk-metal-3d-yazicisi-gallery-1.jpg")})(alt="Prodigma World's Largest Metal 3D Printer")
+                        li
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/dunyanin-en-buyuk-metal-3d-yazicisi-gallery-2-mb.jpg"),lg:require("Upload/dunyanin-en-buyuk-metal-3d-yazicisi-gallery-2.jpg")})(alt="Prodigma World's Largest Metal 3D Printer") 
+                //-include ./blog-other-contents/index.pug

@@ -1,0 +1,36 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Prodigma | Smooth TPU 95A"
+    - pageDesc = "Smooth TPU 95A"
+    - pageClass = "blog-detail-single"
+
+block content
+    .pwebinar
+        //-include ./blog-header-timer-banner/index.pug
+        .pwebinar-body
+            .pwebinar-body-wrapper 
+                .pwebinar-body-wrapper-html
+                    p 
+                        strong|Smooth TPU 95A
+                    +content-html("Smooth TPU 95A is a rubber-like material that offers product developers and manufacturers the ability to create flexible, shock absorbing parts on demand. Manufacturers have long struggled to produce flexible parts in low volumes. Traditional methods for making custom geometries in these materials often require one-off tools, meaning high initial costs and long lead times. Few 3D printing systems can produce parts with the consistency and mechanical properties required for production.")
+                    br
+                    +content-html("Smooth TPU 95A offers manufacturers the ability to produce high-quality, flexible parts on demand. Manufacturers can now easily obtain their needs from prototype products to final product parts.")
+                    br
+                    ol(class="pl-5 list-disc")
+                        li Low volume flexible parts
+                        li Stunning geometric accuracy and surface quality
+                        li Low cost in functional flexible parts
+                    +content-html("With >500% elongation at break and a hardness of 95 ShoreA, Smooth TPU is suitable for:")
+                    +content-html("Replacing traditional production to produce high-value, flexible, impact-resistant end-use parts when volume is not required")
+                    +content-html("Keeping production lines running when old parts are no longer available")
+                    +content-html("Prototyping for design validation before committing to scale up production")
+                    +content-html("Uses: Gaskets, shock absorbers, belts, bands, wheels and protective coatings.")
+                .pwebinar-body-double-banner
+                    ul 
+                        li 
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/smooth-tpu-95a-gallery-1-mb.jpg"),lg:require("Upload/smooth-tpu-95a-gallery-1.jpg")})(alt="Prodigma Smooth TPU 95A") 
+                        li
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/smooth-tpu-95a-gallery-2-mb.jpg"),lg:require("Upload/smooth-tpu-95a-gallery-2.jpg")})(alt="Prodigma Smooth TPU 95A")

@@ -1,0 +1,43 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Prodigma | 3D Printing and Spare Parts"
+    - pageDesc = "3D Printing and Spare Parts"
+    - pageClass = "blog-detail-single"
+
+block content
+    .pwebinar
+        //-include ./blog-header-timer-banner/index.pug
+        .pwebinar-body
+            .pwebinar-body-wrapper 
+                .pwebinar-body-wrapper-html
+                    p 
+                        strong|3D Printing and Spare Parts
+                    +content-html("Spare parts costs today are often more than 60% of all operating maintenance costs in the industry. The use of professional 3D printers in many industries has already become a standard. Meeting the need for spare parts can be given as an example of these uses. 3D printing, which comes to the fore with the advantages of minimizing downtime and prior investment in spare parts; It helps companies solve problems related to operations maintenance, overloaded warehouses, and delays in the delivery of finished products to end customers. Time can be saved in processes such as keeping warehouse space and performing inventory checks.")
+                    +content-html("Also, having to use a production line to prototype can be a problem. In such cases, daily production is stopped and the line is occupied to create the first, test version of a new product. And while such interruptions usually don't last long, they do affect the entire process and delivery date to the customer.")
+                    +content-html("A production line outage can occur due to the failure of a key element. This kind of situation exposes companies to financial losses that can grow over time, lasting even a few weeks, while waiting for a replacement. Also, original parts for replacement elements can be very costly. 3D printouts perform well in replacing many parts used in finished products, speeding up production time and significantly reducing the costs of the entire process.")
+                    p 
+                        strong|4 Advantages of 3D Printed Spare Parts
+                    br
+                    p 
+                        strong|1. Cost Reduction
+                    +content-html("3D printing of spare parts significantly reduces spare part manufacturing costs. Not only production and transportation costs, but also spare parts storage costs can be reduced.")
+                    p 
+                        strong|2. Shorter Delivery Time
+                    +content-html("With 3D printing spare parts, you can produce in-house and manage the process without being dependent on external factors (shipping, deadline, etc.).")
+                    p 
+                        strong|3. Accuracy
+                    +content-html("3D printing spare parts, together with the developing technology, provide you with the opportunity to obtain parts with the highest precision, special designs and materials you want.")
+                    p 
+                        strong|4. Easy Storage
+                    +content-html("The CAD design can be stored in any format and the printing process can be repeated as needed.")
+                //-include ../photo-banner/index.pug
+                .pwebinar-body-double-banner
+                    ul 
+                        li
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/3d-baski-ve-yedek-parca-gallery-1-mb.jpg"),lg:require("Upload/3d-baski-ve-yedek-parca-gallery-1.jpg")})(alt="Prodigma 3D Printing and Spare Parts")
+                        li
+                            a(href="javascript:void(0);") 
+                                +picture({sm:require("Upload/3d-baski-ve-yedek-parca-gallery-2-mb.jpg"),lg:require("Upload/3d-baski-ve-yedek-parca-gallery-2.jpg")})(alt="Prodigma 3D Printing and Spare Parts") 
+                //-include ./blog-other-contents/index.pug
