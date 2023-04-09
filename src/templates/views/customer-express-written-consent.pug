@@ -1,0 +1,21 @@
+extends ../blocks/layout-en.pug
+
+block prepend head
+    - pageTitle = "Prodigma | Customer Express Written Consent"
+    - pageDesc = "Customer Express Written Consent"
+    - pageClass = "operation-guide"
+
+block content
+    .pmember.pmember-flatpages
+        .pmember-wrapper
+            .pmember-left
+                .pmember-left-title Legal Informations
+                include ../flatpages/menu-information/index-en.pug
+            .pmember-right.pmember-flatpages-bg
+                .pmember-right-content
+                    .pmember-right-content-title.mb-2
+                        |Customer Express Written Consent
+                    p  
+                        |To view the details of the customer express consent text, please click on the   
+                        a(href=require("Upload/customer-wxpress-written-consent.docx") class="text-blue-200 underline")|link  
+                        |to download it.

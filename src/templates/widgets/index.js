@@ -121,4 +121,5 @@ import "Upload/etkinlik-ve-isbirlikleri-banner-mb.jpg";
 import "Upload/etkinlik-ve-isbirlikleri-banner.jpg";
 //DOC
 import "Upload/prodigma-musteri-acik-riza-metni.docx";
+import "Upload/customer-wxpress-written-consent.docx";
 import "Upload/prodigma-tedarikci-formu.docx";
