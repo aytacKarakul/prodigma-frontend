@@ -1,19 +1,19 @@
 .site-footer {
-  @apply bg-blue-100;
+  //@apply bg-blue-100;
 
   &-wrapper {
     @apply lg:container lg:pt-14 lg:px-5 lg:mx-auto;
   }
   &-copyright {
-    @apply text-sm py-5 self-center text-white;
+    @apply text-sm font-inter font-semibold py-5 self-center text-blue-100;
     @apply lg:self-start lg:order-first lg:py-2;
   }
   &-top {
     @apply container mx-auto;
-    @apply lg:grid lg:pb-14;
+    @apply lg:grid lg:pb-14 lg:gap-x-10;
     grid-template-columns: 1fr 2fr;
     grid-template-areas:
-      "C B"
+      "A B"
       "C B";
     &-one {
       grid-area: A;
@@ -30,10 +30,10 @@
     }
     &-tree {
       @apply p-5;
-      @apply lg:p-0 lg:pr-2; //lg:mt-16
+      @apply lg:p-0 lg:pr-2 lg:mt-16;
       grid-area: C;
       &-col {
-        @apply relative py-1 mb-2 font-inter text-sm text-white;
+        @apply relative py-1 mb-2 font-inter text-sm text-blue-100;
         .icon {
           @apply hidden absolute top-[calc(50%-12px)] left-0 w-6 h-6 text-2xl leading-[normal] text-blue-100;
         }
@@ -41,11 +41,11 @@
     }
     &-menu {
       @apply p-5;
-      @apply lg:flex lg:justify-between lg:p-0;
+      @apply lg:flex lg:justify-between lg:gap-x-10 lg:p-0;
       > ul {
         > li {
           .site-footer-top-sub-title {
-            @apply cursor-pointer relative py-3 border-b border-solid border-white text-white;
+            @apply cursor-pointer relative py-3 border-b border-solid border-white text-blue-100;
             @apply lg:pointer-events-none lg:py-0 lg:border-0;
             &::after {
               content: "+";
@@ -76,13 +76,13 @@
       ul {
         li {
           a {
-            @apply block font-inter font-normal text-sm text-white py-2;
+            @apply block font-inter font-normal text-sm text-blue-100 py-2;
           }
         }
       }
     }
     &-sub-title {
-      @apply block font-heading font-medium text-lg text-white leading-[normal] mb-3;
+      @apply block font-heading font-medium text-lg text-blue-100 leading-[normal] mb-3;
       &-social {
         @apply hidden lg:block #{!important};
         @apply mt-14;
@@ -104,12 +104,12 @@
     }
   }
   &-bottom {
-    @apply bg-blue-100 pt-6;
+    @apply bg-gray-500 pt-6;
     @apply lg:py-4;
     &-wrap {
       @apply container mx-auto;
       @apply flex flex-col items-start;
-      @apply lg:flex-row lg:justify-between lg:items-center;
+      @apply lg:flex-row lg:justify-between lg:items-center lg:px-5;
     }
     &-menu {
       @apply lg:order-last;
@@ -121,11 +121,11 @@
           &:not(:first-child) {
             &::before {
               content: "";
-              @apply w-1 h-1 bg-white rounded-full mr-2;
+              @apply w-1 h-1 bg-blue-100 rounded-full mr-2;
             }
           }
           a {
-            @apply inline-flex text-xs text-white underline py-2;
+            @apply inline-flex text-xs text-blue-100 underline py-2;
           }
         }
       }

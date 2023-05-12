@@ -6,6 +6,7 @@ import { MemberDropdown } from "./member/navigation";
 import { OrderDetail } from "./member/order-detail-list";
 import { MemberAddressPopup } from "./member/address-list";
 import ModuleForgotPassword from "./forms/password-forgot";
+import { submitSubscribeOnClick } from "./subscribe";
 
 class Components {
   constructor() {
@@ -17,6 +18,7 @@ class Components {
     MemberDropdown();
     OrderDetail();
     MemberAddressPopup();
+    //submitSubscribeOnClick();
   }
 }
 

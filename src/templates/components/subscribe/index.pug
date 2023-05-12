@@ -11,7 +11,10 @@
                 a(href="/proje-baslat.html")|katılın
                 |. 
         .site-subscribe-body 
-            +inputs('textbox','Email', 'js-user-subscribe-email','arrow-line')
+            form(id="subscribetin-form")
+                +inputs('textbox','Email', 'js-user-subscribe-email',false)
+                button(type="submit", id="js-button-subscribe-save")
+                    i.icon.icon-arrow-line
             if errors = false 
                 .site-messages
                     .site-messages-success= messages.succes

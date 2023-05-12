@@ -22,6 +22,15 @@
       @apply w-8 h-8 flex items-center justify-center bg-gray-200 text-2xl text-blue-200 rounded-full;
     }
   }
+  &-lang{
+    @apply flex items-center;
+    > a{
+      @apply inline-flex font-inter text-xs text-blue-100 px-1 text-opacity-50;
+      &.selected{
+        @apply underline text-opacity-100;
+      }
+    }
+  }
   &-wrapper {
     @apply bg-white fixed top-0 -left-full z-20 w-full h-full invisible transition-all ease-in delay-200 duration-300;
     &-top {

@@ -1,0 +1,11 @@
+.become-supply-form-wrapper{
+    form{
+        @apply max-w-2xl;
+    }
+    .ttl1{
+        @apply mt-4 mb-4;
+    }
+    .group-selectbox-inner-set{
+        @apply flex items-center;
+    }   
+}

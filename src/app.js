@@ -1,5 +1,7 @@
+import "Images/favicon.ico";
 import "Theme/base.scss";
 import "./index.scss";
+
 
 import getApiToken from "./templates/auth/authentication";
 import Partials from "Partials";
@@ -10,7 +12,9 @@ import Basket from "./templates/basket";
 
 class AppJs {
   constructor() {
-    getApiToken();
+    if(localStorage.getItem("apitoken")){
+      getApiToken();
+    }
     new Partials();
     new Components();
     new Widgets();

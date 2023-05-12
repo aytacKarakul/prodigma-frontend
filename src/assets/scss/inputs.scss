@@ -11,7 +11,8 @@
     }
   }
 
-  &.textbox {
+  &.textbox,
+  &.textarea {
     label {
       @apply absolute top-[calc(50%-12px)] left-5 pointer-events-none flex items-center min-h-fit;
       @apply font-heading font-normal text-sm text-black-100 text-opacity-50;

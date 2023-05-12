@@ -3,12 +3,15 @@
         i.icon.icon-hamburger
     .site-mobile-header-logo 
         a(href="/home.html")
-            img(src=require('Images/logo.svg') alt="Prodigma 3D")
-    .site-mobile-header-auth
-        //-a(href="javascript:void(0);")(id="js-mobile-basket-redirect-btn", hidden)
+            img(src=require('Images/logo.svg') alt="Prodigma 3D Online Printing Service")
+    //-.site-mobile-header-auth.mr-1
+        a(href="javascript:void(0);")(id="js-mobile-basket-redirect-btn", hidden)
             i.icon.icon-cart
-        //-a(href="/login.html")(id="js-mobile-login-redirect-btn")
+        a(href="/login.html")(id="js-mobile-login-redirect-btn")
             i.icon.icon-member
+    .site-mobile-header-lang
+        a(href="/")|TR
+        a(href="/home.html", class="selected")|EN
     .site-mobile-header-wrapper
         .site-mobile-header-wrapper-top
             .site-mobile-header-wrapper-top-close 

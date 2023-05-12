@@ -11,17 +11,11 @@
     @apply w-full py-6;
     @apply lg:container lg:mx-auto lg:px-5 lg:py-20;
   }
-
-  /*.parallax-bg {
-    @apply absolute top-0 left-0 w-full h-[130%] bg-cover;
-    background-position: center;
-  }*/
-
   .swiper {
     @apply w-full h-full;
   }
   .swiper-wrapper {
-    @apply max-h-[600px];
+    @apply max-h-[500px];
     @apply lg:max-h-[700px];
   }
   .swiper-slide {

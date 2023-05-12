@@ -1,9 +1,12 @@
+import axios from "axios";
 import Swiper, { Navigation, Pagination, EffectFade, Autoplay } from "swiper";
-import { getUserId } from "../../utils/localStorage";
+import {apitoken} from "../../auth/authentication";
+
 class MainSwiperSlider {
   constructor() {
-    //this.initMainSliderFun();
-
+    this.onLoadMainSlider();
+    this.onSliderContentLoader();
+    
     const swiperMain = new Swiper(".swiper-main", {
       modules: [EffectFade, Navigation, Pagination, Autoplay],
       effect: "fade",
@@ -23,35 +26,78 @@ class MainSwiperSlider {
     });
     return swiperMain;
   }
-  initMainSliderFun() {
-    const urls = [{ tr: "/proje-baslat.html" }, { en: "/start-project.html" }];
 
-    const startProjectBtn = document.querySelector(
-      "#main-slider-banner-start-project-btn"
-    );
-    const sliderDescContent = document.querySelector(
-      "#js-main-slider-banner-desc"
-    );
-    if (startProjectBtn) {
-      if (getUserId()) {
-        startProjectBtn.pathname = urls[0].tr;
-        sliderDescContent.remove();
+  async onLoadMainSlider(){
+    await axios.get((`${process.env.API_KEY}` + "/sliders/get"), {
+      auth: {
+        username: "prodigma3d",
+        password: `${apitoken}`,
+      },
+    }).then(function (res){
+      if(res.status === 200){
+        const sliders = res.data.filter(item => item.dil === document.documentElement.lang);
+        //foreach
+        sliders.forEach((element) => {
+          const appendContainer = document.querySelector(".swiper-main .swiper-wrapper");
+          if(appendContainer){
+            let temp = document.createElement("div");
+            temp.className = "swiper-slide";
+
+            temp.innerHTML += `<div class="text-content"><p>${element.isim}</p></div><picture><source media="(max-width: 1024px)" srcset="${process.env.SITE_DOMAIN}${element.mobil_resim}"><source media="(min-width: 1025px)" srcset="${process.env.SITE_DOMAIN}${element.resim}"><img src="${process.env.SITE_DOMAIN}${element.mobil_resim}" alt="${element.isim}"></picture>`;
+            appendContainer.append(temp);
+          }
+        });
       }
-    }
+    }).catch((error) => console.log(error))
+  }
+  async onSliderContentLoader() {
+    await axios.get((`${process.env.API_KEY}` + "/widgets/get"), {
+      auth: {
+        username: "prodigma3d",
+        password: `${apitoken}`,
+      },
+    }).then(function (res){
+      if(res.status === 200 && res.data !== null){
+
+        const sliderTextWrapper = document.querySelector(".main-slider-banner-text-content-text");
+        const contents = res.data.filter(item => item.dil === document.documentElement.lang && item.url === "main-slider-static-text");
+        
+        //slidet texts
+        if(sliderTextWrapper){
+          contents.forEach((el) => {
+          
+            const title = document.createElement("h1");
+            const desc = document.createElement("p");
+  
+            const titleContent = el.isim;
+            title.innerHTML = titleContent;
+            const descContent = el.aciklama;
+            desc.innerHTML = descContent;
+
+            sliderTextWrapper.prepend(title, desc);
+          });
+        }
+
+        //partners logo
+        const partnersList = res.data.filter(item => item.dil === document.documentElement.lang && item.url === "partners-logo");
+        let partnerWrap = document.querySelector(".main-slider-banner-partners");
+
+        if(partnerWrap){
+          partnersList.forEach((partner) => {
+            const partnerJson = JSON.parse(partner.json_data);
+            partnerJson.forEach((itm) => {
+              let partnerTempDiv = document.createElement("div");
+              let partnerTempDivImg = document.createElement("img");
+  
+              partnerTempDivImg.src = process.env.SITE_DOMAIN + itm.yazi;
+              partnerTempDiv.appendChild(partnerTempDivImg);
+              partnerWrap.appendChild(partnerTempDiv);
+            });
+          });
+        }
+      }
+    }).catch((error) => console.log(error))
   }
 }
 
 export default MainSwiperSlider;
-
-import "Images/slider_1x2.1.jpg";
-import "Images/slider_1x2.jpg";
-import "Images/slider_2x2.1.jpg";
-import "Images/slider_2x2.jpg";
-import "Images/slider_3x3.1.jpg";
-import "Images/slider_3x3.jpg";
-import "Images/slider_4x4.1.jpg";
-import "Images/slider_4x4.jpg";
-import "Images/aselsan-dark.png";
-import "Images/roketsan-dark.png";
-import "Images/mercedes-benz-dark.png";
-import "Images/turkish-technic-dark.png";

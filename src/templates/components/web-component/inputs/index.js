@@ -1,6 +1,6 @@
 class Inputs {
   constructor() {
-    this.el = document.querySelectorAll(".input.textbox > .wrp input");
+    this.el = document.querySelectorAll(".input.textbox > .wrp input, .input.textarea > .wrp textarea");
     this.selectElement = document.querySelectorAll(
       ".input.select > .wrp select"
     );
@@ -55,7 +55,6 @@ class Inputs {
   onCheckBoxFunInit = () => {
     this.checkboxElement?.forEach((checkbox) => {
       checkbox.addEventListener("change", (e) => {
-        console.log(e.target);
         if (e.target.checked) {
           e.target.setAttribute("checked", true);
         } else {

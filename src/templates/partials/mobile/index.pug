@@ -3,12 +3,15 @@
         i.icon.icon-hamburger
     .site-mobile-header-logo 
         a(href="/")
-            img(src=require('Images/logo.svg') alt="Prodigma 3D")
-    .site-mobile-header-auth
-        //-a(href="javascript:void(0);")(id="js-mobile-basket-redirect-btn", hidden)
+            img(src=require('Images/logo.svg') alt="Prodigma 3D Çevrimiçi Baskı Hizmetleri")
+    //-.site-mobile-header-auth.mr-1
+        a(href="javascript:void(0);")(id="js-mobile-basket-redirect-btn")
             i.icon.icon-cart
-        //-a(href="/login.html")(id="js-mobile-login-redirect-btn")
+        a(href="/login.html")(id="js-mobile-login-redirect-btn")(class="ml-1")
             i.icon.icon-member
+    .site-mobile-header-lang 
+        a(href="/", class="selected")|TR
+        a(href="/home.html")|EN
     .site-mobile-header-wrapper
         .site-mobile-header-wrapper-top
             .site-mobile-header-wrapper-top-close 
@@ -264,9 +267,6 @@
                 li
                     a(href="https://www.linkedin.com/company/prodigma-co", target="_blank")
                         i.icon.icon-linkdn
-                //-li 
-                    a(href="")
-                        i.icon.icon-twitter
                 li 
                     a(href="https://www.instagram.com/prodigma.co", target="_blank")
                         i.icon.icon-instagram

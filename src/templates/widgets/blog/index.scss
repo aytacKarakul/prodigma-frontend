@@ -15,6 +15,10 @@
   }
   &-body {
     @apply w-full pt-12 pb-20 px-5;
+    &-header{
+      @apply px-5;
+      @apply lg:max-w-[1480px] lg:mx-auto;
+    }
     &-wrapper {
       @apply w-full;
       @apply lg:max-w-screen-2xl lg:mx-auto;

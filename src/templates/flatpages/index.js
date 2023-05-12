@@ -1,4 +1,8 @@
+import SupplyForm from "./support/forms";
+
 class FlatPages {
-  constructor() {}
+  constructor() {
+    new SupplyForm();
+  }
 }
 export default FlatPages;

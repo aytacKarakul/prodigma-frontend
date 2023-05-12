@@ -2,7 +2,7 @@
 
 .main-slider {
   &-banner {
-    @apply relative;
+    @apply relative min-h-[100px];
     &-double-wrap {
       @apply lg:grid lg:grid-cols-2;
     }

@@ -2,7 +2,7 @@
 .quadruple-banner {
   background: linear-gradient(270deg, #190049 0%, #4500c2 100%);
   &-wrapper {
-    @apply container mx-auto;
+    @apply container mx-auto min-h-[100px];
     @apply lg:px-5;
   }
   //- Desktop
@@ -17,23 +17,17 @@
     @apply lg:flex lg:pb-24;
     &-img {
       @apply relative;
-      @apply lg:w-[55%] lg:max-w-[55%];
-      /*&::after {
-        content: "";
-        @apply hidden absolute top-0 left-0 z-[1] w-full h-full bg-contain bg-[url('../../../assets/img/animation-vectorel.svg')] bg-no-repeat translate-y-[70px];
-      }*/
+      @apply lg:w-[50%] lg:max-w-[50%];
       img {
         @apply mx-auto;
       }
     }
     &-right {
       @apply text-right relative overflow-hidden h-[50vh] min-h-[640px];
-      @apply lg:w-[45%] max-w-[45%];
+      @apply lg:w-[50%] max-w-[50%];
       &-wrapper {
         @apply w-full max-w-full relative overflow-y-auto max-h-[640px] pr-5;
-        &::-webkit-scrollbar {
-          display: none;
-        }
+
         -webkit-mask-image: -webkit-gradient(
           linear,
           left bottom,
@@ -54,7 +48,7 @@
       }
       ul {
         position: relative;
-        top: 280px;
+        top: 250px;
         transition: transform 0.3s;
         overflow: hidden;
         li {
@@ -69,7 +63,7 @@
             @apply lg:text-4xl;
           }
           span {
-            @apply block font-inter font-normal text-base text-white pb-5;
+            @apply block font-inter font-normal text-base text-white;
           }
           a {
             @apply text-white underline font-inter font-medium text-base;
@@ -96,7 +90,7 @@
       &-content {
         @apply py-10;
         ul {
-          @apply overflow-x-auto whitespace-nowrap;
+          @apply overflow-x-auto overflow-y-hidden whitespace-nowrap;
           -webkit-overflow-scrolling: touch;
           -ms-overflow-style: -ms-autohiding-scrollbar;
           &::-webkit-scrollbar {

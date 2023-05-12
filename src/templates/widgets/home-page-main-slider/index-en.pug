@@ -3,52 +3,15 @@
         .main-slider-banner-double-wrap
             .swiper.swiper-main
                 .swiper-wrapper
-                    .swiper-slide
-                        .text-content
-                            p
-                                |proBlack High surface quality, tough, impact resistant
-                        +picture({sm:require('Images/slider_1x2.1.jpg'), lg:require('Images/slider_1x2.jpg')})
-                    .swiper-slide
-                        .text-content
-                            p
-                                |proto45 - Carbon Fiber - proFLEX - White Naylon
-                        +picture({sm:require('Images/slider_2x2.1.jpg'), lg:require('Images/slider_2x2.jpg')})
-                    .swiper-slide
-                        .text-content
-                            p
-                                |Stainless Steel - Inconel 625 - Saf Bakır - H13 Tool Steel
-                        +picture({sm:require('Images/slider_3x3.1.jpg'), lg:require('Images/slider_3x3.jpg')})
-                    .swiper-slide
-                        .text-content
-                            p
-                                |proABS - ABS like White - performax - proto410
-                        +picture({sm:require('Images/slider_4x4.1.jpg'), lg:require('Images/slider_4x4.jpg')})
                 .swiper-button-next
                 .swiper-button-prev
                 .swiper-pagination.hidden
             .main-slider-banner-text-content
-                .main-slider-banner-text-content-text 
-                    h1
-                        |High quality production,
-                        br
-                        |in any quantity you wish,
-                        br
-                        |on demand.
-                    p|A digital platform that offers a production solution with fast and transparent price quotations, reliable project management with wide range of material and technical options.
+                .main-slider-banner-text-content-text
                     .main-slider-banner-buttons
-                        //-+button('Bize Ulaşın','primary','m',false)(href="/iletisim.html")
                         +button('Start Project','green','m',false)(href="/create-project.html", id="main-slider-banner-start-project-btn")
                 .main-slider-banner-bottoms
                     .main-slider-banner-desc(id="js-main-slider-banner-desc")
                         img(src=require("Images/logo.svg"), alt="Prodigma 3D")
                         p|Join thousands of companies using Prodigma
-                            //-a(href="/proje-baslat.html")| katılın.
                     .main-slider-banner-partners
-                        div
-                            img(src=require('Images/aselsan-dark.png') alt="Aselsan")
-                        div
-                            img(src=require('Images/roketsan-dark.png'), alt="Roketsan")
-                        div
-                            img(src=require('Images/turkish-technic-dark.png'), alt="Turkhish Technic")
-                        div
-                            img(src=require('Images/mercedes-benz-dark.png'), alt="Mercedes Benz")

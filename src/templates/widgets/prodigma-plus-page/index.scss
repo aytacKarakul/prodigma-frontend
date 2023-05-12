@@ -18,55 +18,54 @@
   }
   &-body {
     > ul {
-      > li {
-        @apply grid gap-y-4;
-        @apply lg:gap-y-10 lg:gap-x-[1.6rem];
-        grid-template-areas:
+      @apply grid items-start gap-x-5 gap-y-5;
+      grid-template-areas:
           "AA AA"
-          "BB BB"
-          "CC CC";
-        @media only screen and (min-width: 1025px) {
-          grid-template-areas:
-            "AA AA BB"
-            "AA AA BB"
-            "CC CC CC";
-        }
-        .lg {
+          "BB CC"
+          "DD DD"
+          "EE FF"
+          "GG GG"
+          "HH KK";
+      @media only screen and (min-width: 1025px) {
+        grid-template-areas:
+          "AA AA BB"
+          "AA AA CC"
+          "DD EE FF"
+          "GG KK KK"
+          "HH KK KK";
+      }
+      > li {
+        &:nth-child(1){
           grid-area: AA;
         }
-        .sm {
-          @apply grid grid-cols-2 gap-x-2;
-          @apply lg:grid-cols-none lg:gap-x-0 lg:gap-y-10;
+        &:nth-child(2){
           grid-area: BB;
         }
-        .md {
-          @apply grid gap-y-4;
-          @apply lg:grid-cols-3 lg:gap-y-0 lg:gap-x-[1.6rem];
+        &:nth-child(3){
           grid-area: CC;
-          @media only screen and (max-width: 1024px) {
-            grid-template-areas:
-              "DD DD"
-              "EE FF";
-            @apply gap-x-2;
-            > a {
-              &:nth-child(1) {
-                grid-area: DD;
-                img {
-                  @apply w-full;
-                }
-              }
-              &:nth-child(2) {
-                grid-area: EE;
-              }
-              &:nth-child(3) {
-                grid-area: FF;
-              }
-            }
-          }
         }
+        &:nth-child(4){
+          grid-area: DD;
+        }
+        &:nth-child(5){
+          grid-area: EE;
+        }
+        &:nth-child(6){
+          grid-area: FF;
+        }
+        &:nth-child(7){
+          grid-area: GG;
+        }
+        &:nth-child(8){
+          grid-area: HH;
+        }
+        &:nth-child(9){
+          grid-area: KK;
+        }
+
         > div > a {
           @apply relative overflow-hidden;
-          @apply lg:after:content-[""] lg:after:w-full lg:after:h-full lg:after:absolute lg:after:top-0 lg:after:left-0 lg:after:rounded-3xl lg:after:z-[4] lg:after:bg-blue-100 lg:after:bg-opacity-0;
+          @apply lg:after:content-[""] lg:after:w-full lg:after:h-full lg:after:absolute lg:after:top-0 lg:after:left-0 lg:after:rounded-3xl lg:after:z-[4] lg:after:bg-blue-100 lg:after:bg-opacity-0 lg:after:pointer-events-none;
           @apply lg:after:transition-all lg:after:ease-in lg:after:delay-200 lg:after:duration-200;
           &:hover {
             @apply lg:after:bg-opacity-30 lg:after:backdrop-blur-md;
@@ -76,30 +75,18 @@
           }
         }
         img {
-          @apply rounded-3xl;
+          @apply w-full rounded-3xl;
         }
         .btxt {
-          @apply absolute bottom-5 left-0 px-5 py-5 text-white z-[5];
-          @apply lg:transition-all lg:ease-in lg:delay-200 lg:duration-200 lg:opacity-0;
+          @apply hidden absolute bottom-5 left-0 px-5 py-5 text-white z-[5];
+          @apply lg:block lg:transition-all lg:ease-in lg:delay-200 lg:duration-200 lg:opacity-0;
         }
         .bt1 {
           @apply font-heading text-base;
-          @apply lg:text-3xl;
+          @apply lg:text-xl;
         }
         .bt2 {
-          @apply font-heading mt-2 text-base underline;
-        }
-      }
-      li.type2 {
-        @apply mt-10;
-        @media only screen and (min-width: 1025px) {
-          grid-template-areas:
-            "BB AA AA"
-            "BB AA AA"
-            "CC CC CC";
-        }
-        .sm {
-          @apply lg:gap-y-[1.6rem];
+          @apply font-heading mt-2 text-sm underline;
         }
       }
     }

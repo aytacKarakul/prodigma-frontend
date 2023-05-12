@@ -3,7 +3,7 @@
     @apply lg:max-w-xs;
   }
   &-header {
-    @apply text-white text-left;
+    @apply text-blue-100 text-left;
   }
   &-title {
     @apply font-heading font-medium text-2xl leading-none hidden;
@@ -17,16 +17,19 @@
   }
   &-body {
     @apply mt-5;
+    form{
+      @apply relative;
+    }
     .input {
       @apply mb-0;
-      .icon {
-        @apply w-6 h-6 top-[calc(50%-0.75rem)] right-5 z-[1];
-        &::before {
-          @apply text-2xl leading-6;
-        }
-      }
       input {
-        @apply pr-14;
+        @apply pr-14 border border-blue-100 border-opacity-30;
+      }
+    }
+    button{
+      @apply w-8 h-8 absolute top-[calc(50%-1rem)] right-4 z-[1] bg-white;
+      .icon{
+        @apply text-2xl leading-8;
       }
     }
   }

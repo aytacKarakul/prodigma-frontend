@@ -48,7 +48,8 @@ mixin inputs(type, label='', id='', icon='', disabled=false, timer='', error='')
         - else if(type == 'textarea')
             - if(label != '')
                 label(for=id)=label
-            textarea(id=id)&attributes(attributes)
+                span.wrp
+                    textarea(id=id)&attributes(attributes)
             - if(error != '')
                 .form-error-msg=error
 
