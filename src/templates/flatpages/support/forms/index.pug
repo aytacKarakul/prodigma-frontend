@@ -1,10 +1,12 @@
 .become-supply-form-wrapper
     form(class="form-become-supply" id="become-supply-form")
-        +inputs('textbox','Ad', 'js-supply-user-name')
-        +inputs('textbox','Soyad', 'js-supply-user-surname')
+        .db-input
+            +inputs('textbox','Ad', 'js-supply-user-name-surname')
+            +inputs('textbox','Şirket', 'js-supply-user-name-company')
         .ttl1 İletişim Bilgileri
-        +inputs('textbox','Telefon', 'js-supply-user-email')(type="email")
-        +inputs('textbox','E-Posta Adresi', 'js-supply-user-email')
+        .db-input
+            +inputs('textbox','Telefon', 'js-supply-user-phone')
+            +inputs('textbox','E-Posta Adresi', 'js-supply-user-email')
         +inputs('textbox','Şirket Web Sayfası', 'js-supply-website')
         +inputs('textarea','Adres', 'js-supply-address')
         .ttl1 Üretim Teknolojisi
@@ -19,12 +21,14 @@
         +inputs('checkbox','Enjeksiyon Kalıplama', 'js-supply-checkbox-injection')
         +inputs('checkbox','Silikon Kalıplama', 'js-supply-checkbox-silicone')
         +inputs('checkbox','Diğer', 'js-supply-checkbox-others')
+        div.other-input-inner.hidden
+            +inputs('textbox','Diğer', 'js-supply-input-others')(readonly)
         .ttl1 Üretim Kapasitesi
         +inputs('textbox','Üretim Kapasitesi', 'js-supply-product-capacity')
         .ttl1 Makine ve Ekipmanlar
         +inputs('textbox','Makine ve Ekipmanlar', 'js-supply-machine-equipment')
         .ttl1 Kullanılan Yazılımlar
-        +inputs('textbox','Üretim Kapasitesi', 'js-supply-useing-software')
+        +inputs('textbox','Kullanılan Yazılımlar', 'js-supply-useing-software')
         .ttl1 Nitelikli Eleman Sayısı
         +inputs('textbox','Nitelikli Eleman Sayısı', 'js-supply-qualified-staff')
         +button('Kaydet', 'secondary btn-supply-save mt-6', 'm')(type="submit")

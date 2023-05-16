@@ -1,8 +1,7 @@
 .pwebinar {
   &-header {
-    //@apply flex flex-col bg-white;
-    //@apply lg:flex-row;
-    @apply hidden;
+    @apply flex flex-col bg-white;
+    @apply lg:flex-row;
     &-img {
       @apply lg:w-1/2;
     }

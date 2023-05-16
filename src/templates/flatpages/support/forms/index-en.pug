@@ -1,0 +1,34 @@
+.become-supply-form-wrapper
+    form(class="form-become-supply" id="become-supply-form")
+        .db-input
+            +inputs('textbox','Name & Surname', 'js-supply-user-name-surname')
+            +inputs('textbox','Company', 'js-supply-user-name-company')
+        .ttl1 Contact information
+        .db-input
+            +inputs('textbox','Phone', 'js-supply-user-phone')
+            +inputs('textbox','E-Mail', 'js-supply-user-email')
+        +inputs('textbox','Company Web Page', 'js-supply-website')
+        +inputs('textarea','Address', 'js-supply-address')
+        .ttl1 Production Technology
+        div.group-selectbox.mb-2
+            +inputs('checkbox','CNC Process', 'js-supply-checkbox-cnc-process')
+            div.group-selectbox-inner.hidden
+                div.group-selectbox-inner-set
+                    +inputs('checkbox','3 Axis', 'js-supply-checkbox-axis-3')
+                    +inputs('checkbox','4 Axis', 'js-supply-checkbox-axis-4')
+                    +inputs('checkbox','5 Axis', 'js-supply-checkbox-axis-5')
+        +inputs('checkbox','Sheet Metal Forming', 'js-supply-checkbox-sheet-metal')
+        +inputs('checkbox','Injection Molding', 'js-supply-checkbox-injection')
+        +inputs('checkbox','Silicone Molding', 'js-supply-checkbox-silicone')
+        +inputs('checkbox','Other', 'js-supply-checkbox-others')
+        div.other-input-inner.hidden
+            +inputs('textbox','Other', 'js-supply-input-others')(readonly)
+        .ttl1 Production Capacity
+        +inputs('textbox','Production Capacity', 'js-supply-product-capacity')
+        .ttl1 Machinery and Equipment
+        +inputs('textbox','Machinery and Equipment', 'js-supply-machine-equipment')
+        .ttl1 Software Used
+        +inputs('textbox','Software Used', 'js-supply-useing-software')
+        .ttl1 Number of Qualified Staff
+        +inputs('textbox','Number of Qualified Staff', 'js-supply-qualified-staff')
+        +button('Kaydet', 'secondary btn-supply-save mt-6', 'm')(type="submit")

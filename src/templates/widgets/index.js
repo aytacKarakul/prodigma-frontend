@@ -17,11 +17,10 @@ import { Polimers } from "./polimers";
 import CncPlastics from "./cnc-plastics-materials";
 import CncMetals from "./cnc-metal-materials";
 import { AboutUsBanners } from "./double-listed-banner";
+import HomePageFAQBanner from "./home-page-sss";
 
 class Widgets {
   constructor() {
-    const aboutPage = document.querySelector(".page-about-us");
-
     new MainSwiperSlider();
     new QuickSolutionBanner();
     new SwiperParalax();
@@ -32,6 +31,7 @@ class Widgets {
     new ProdigmaPlusPage();
     new CncGallerySwiper();
     new Blog();
+    new HomePageFAQBanner();
     new CreateProject();
     //- imports Function files
     QuadrapleBanner();
@@ -43,6 +43,7 @@ class Widgets {
     CncMetals();
     AboutUsBanners();
 
+    const aboutPage = document.querySelector(".page-about-us");
     if (aboutPage) {
       document.addEventListener("scroll", () => {
         const body = document.body;

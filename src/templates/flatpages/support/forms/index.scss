@@ -5,6 +5,14 @@
     .ttl1{
         @apply mt-4 mb-4;
     }
+    .db-input{
+        @apply flex flex-col items-start;
+        @apply lg:flex-row lg:gap-x-2;
+        .input{
+            @apply w-full;
+            @apply lg:w-1/2;
+        }
+    }
     .group-selectbox-inner-set{
         @apply flex items-center;
     }   

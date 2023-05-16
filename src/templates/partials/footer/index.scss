@@ -13,8 +13,8 @@
     @apply lg:grid lg:pb-14 lg:gap-x-10;
     grid-template-columns: 1fr 2fr;
     grid-template-areas:
-      "A B"
-      "C B";
+      "C B"
+      ". B";
     &-one {
       grid-area: A;
       @apply px-5 pt-10 pb-5;
@@ -30,7 +30,7 @@
     }
     &-tree {
       @apply p-5;
-      @apply lg:p-0 lg:pr-2 lg:mt-16;
+      @apply lg:p-0 lg:pr-2;
       grid-area: C;
       &-col {
         @apply relative py-1 mb-2 font-inter text-sm text-blue-100;
