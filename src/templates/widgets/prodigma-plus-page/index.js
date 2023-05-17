@@ -24,9 +24,8 @@ class ProdigmaPlusPage {
         const blogList = blogs.sort((a, b) => a.id - b.id);
 
         blogList.forEach((element) => {
-          console.log(element)
-          if(element.durum == 1){
-            const wrapper = document.querySelector(".pprodigma-plus-body > ul");
+          console.log(element);
+          const wrapper = document.querySelector(".pprodigma-plus-body > ul");
             const langList = [ {tr:"Devamını Oku", en:"Read More"} ];
             
             function getStaticLang(lng) {
@@ -39,23 +38,38 @@ class ProdigmaPlusPage {
 
             if(wrapper){
               let html = document.createElement("li");
-
-              html.innerHTML += `<div>
-              <a href="${process.env.SITE_DOMAIN}/blog/${element.url}">
-              <picture>
-                <source media="(max-width: 1024px)" srcset="${process.env.SITE_DOMAIN}${element.kapak_mobil_resim}">
-                <source media="(min-width: 1025px)" srcset="${process.env.SITE_DOMAIN}${element.kapak_resim}">
-                <img src="${process.env.SITE_DOMAIN}${element.kapak_mobil_resim}" alt="${element.title}">
-              </picture>
-              <div class="btxt">
-                <div class="bt1">${element.title}</div>
-                <div class="bt2">${getStaticLang()}</div>
-                </div>
-              </a>
-              </div>`;
-              wrapper.appendChild(html);
+              if(element.blog === "1"){
+                html.innerHTML += `<div>
+                <a href="${process.env.SITE_DOMAIN}/blog/${element.url}">
+                <picture>
+                  <source media="(max-width: 1024px)" srcset="${process.env.SITE_DOMAIN}${element.mobil_resim}">
+                  <source media="(min-width: 1025px)" srcset="${process.env.SITE_DOMAIN}${element.resim}">
+                  <img src="${process.env.SITE_DOMAIN}${element.mobil_resim}" alt="${element.title}">
+                </picture>
+                <div class="btxt">
+                  <div class="bt1">${element.title}</div>
+                  <div class="bt2">${getStaticLang()}</div>
+                  </div>
+                </a>
+                </div>`;
+                wrapper.appendChild(html);
+              }else if(element.blog === "0"){
+                html.innerHTML += `<div>
+                <a href="${process.env.SITE_DOMAIN}/webinar/${element.url}">
+                <picture>
+                  <source media="(max-width: 1024px)" srcset="${process.env.SITE_DOMAIN}${element.kapak_mobil_resim}">
+                  <source media="(min-width: 1025px)" srcset="${process.env.SITE_DOMAIN}${element.kapak_resim}">
+                  <img src="${process.env.SITE_DOMAIN}${element.kapak_mobil_resim}" alt="${element.title}">
+                </picture>
+                <div class="btxt">
+                  <div class="bt1">${element.title}</div>
+                  <div class="bt2">${getStaticLang()}</div>
+                  </div>
+                </a>
+                </div>`;
+                wrapper.appendChild(html);
+              }
             }
-          } 
         });
       }
     }).catch((error) => console.log(error))
