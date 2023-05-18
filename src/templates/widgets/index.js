@@ -18,6 +18,7 @@ import CncPlastics from "./cnc-plastics-materials";
 import CncMetals from "./cnc-metal-materials";
 import { AboutUsBanners } from "./double-listed-banner";
 import HomePageFAQBanner from "./home-page-sss";
+import ContactPageForm from "./contact-banner";
 
 class Widgets {
   constructor() {
@@ -33,6 +34,7 @@ class Widgets {
     new Blog();
     new HomePageFAQBanner();
     new CreateProject();
+    new ContactPageForm();
     //- imports Function files
     QuadrapleBanner();
     Thermoplastics();

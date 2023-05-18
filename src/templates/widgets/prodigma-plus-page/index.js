@@ -24,7 +24,6 @@ class ProdigmaPlusPage {
         const blogList = blogs.sort((a, b) => a.id - b.id);
 
         blogList.forEach((element) => {
-          console.log(element);
           const wrapper = document.querySelector(".pprodigma-plus-body > ul");
             const langList = [ {tr:"Devamını Oku", en:"Read More"} ];
             

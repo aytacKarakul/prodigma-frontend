@@ -5,18 +5,18 @@
     @apply lg:container lg:py-14;
   }
   &-title {
-    @apply font-inter font-semibold text-2xl text-white;
+    @apply font-inter font-medium text-2xl text-white;
   }
   &-desc {
     @apply font-inter font-normal text-base mt-5 mb-7 text-white;
   }
   &-content {
-    @apply flex flex-wrap gap-5;
+    @apply flex flex-wrap gap-x-5 gap-y-12;
     &-material {
       @apply w-full;
       @apply lg:w-[calc(25%-15px)];
       &-title {
-        @apply font-inter font-medium text-2xl mt-2 text-white min-h-[60px];
+        @apply font-inter font-medium text-xl mt-2 text-white min-h-[50px];
       }
       &-detail {
         @apply font-inter font-medium text-sm text-white;

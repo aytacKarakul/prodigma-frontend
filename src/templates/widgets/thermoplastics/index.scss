@@ -12,18 +12,18 @@
       @apply lg:container lg:py-14;
     }
     &-title {
-      @apply font-inter font-semibold text-2xl;
+      @apply font-inter font-medium text-2xl;
     }
     &-desc {
       @apply font-inter font-normal text-base mt-5 mb-7;
     }
     &-content {
-      @apply flex flex-wrap gap-5;
+      @apply flex flex-wrap gap-x-5 gap-y-12;
       &-material {
         @apply w-full;
         @apply lg:w-[calc(25%-15px)];
         &-title {
-          @apply font-inter font-medium text-2xl mt-2 min-h-[60px];
+          @apply font-inter font-medium text-xl mt-2 min-h-[50px];
         }
         &-img {
           img {

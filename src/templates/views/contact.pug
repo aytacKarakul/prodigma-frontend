@@ -7,18 +7,20 @@ block prepend head
 
 block content
     .pcontact
-        +hero-banner('Contact', {sm:require("Upload/iletisim-hero-banner-mb.jpg"), lg:require("Upload/iletisim-hero-banner.jpg")})
+        +hero-banner('Contact', {sm:require("Upload/iletisim-hero-banner-mb.jpg"), lg:require("Upload/iletisim-hero-banner.jpg")})(alt="Contact")
         .pcontact-wrapper 
             .pcontact-body
+                .pcontact-body-form
+                    .pcontact-body-form-title Contact Form
+                    form(id="contact-page-form-saved") 
+                        .pcontact-body-form-content
+                            .pcontact-body-form-content-left
+                                +inputs('textbox','Name','js-contact-form-name')(name="js-contact-form-name")
+                                +inputs('textbox','Surname','js-contact-form-surname')(name="js-contact-form-surname")
+                                +inputs('textbox','E-Mail','js-contact-form-email')
+                                +inputs('textbox','Phone','js-contact-form-phone')
+                            .pcontact-body-form-content-right
+                                +inputs('textarea','Message','js-contact-form-address')
+                        .pcontact-body-form-btn
+                            +button('Send', 'green', 's')(type="submit", id="contact-page-form-send-btn")
                 include ../widgets/contact-banner/index-en.pug
-                //-.pcontact-body-form
-                    .pcontact-body-form-title İletişim Formunu Doldurun
-                    .pcontact-body-form-content
-                        .pcontact-body-form-content-left
-                            +inputs('textbox','Ad Soyad')
-                            +inputs('textbox','E-Posta Adresi')
-                            +inputs('textbox','Cep Telefonu')
-                        .pcontact-body-form-content-right
-                            +inputs('textarea','Mesaj')
-                    .pcontact-body-form-btn
-                        +button('Etkinliğe Kaydol', 'green', 's')

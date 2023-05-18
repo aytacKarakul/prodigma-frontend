@@ -40,8 +40,9 @@ class SwiperParalax {
           const l1 = JSON.parse(lists[0].json_data);
           const l2 = JSON.parse(lists2[0].json_data);
           const l3 = JSON.parse(lists3[0].json_data);
+          
           const l3Url = l3.filter(t => t.tip === "text");
-
+          
           let temp1 = document.createElement("li");
           let temp2 = document.createElement("li");
           let temp3 = document.createElement("li");

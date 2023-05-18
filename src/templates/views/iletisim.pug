@@ -7,18 +7,20 @@ block prepend head
 
 block content
     .pcontact
-        +hero-banner('İletişim', {sm:require("Upload/iletisim-hero-banner-mb.jpg"), lg:require("Upload/iletisim-hero-banner.jpg")})
+        +hero-banner('İletişim', {sm:require("Upload/iletisim-hero-banner-mb.jpg"), lg:require("Upload/iletisim-hero-banner.jpg")})(alt="İletişim")
         .pcontact-wrapper 
             .pcontact-body
-                include ../widgets/contact-banner/index.pug
-                //-.pcontact-body-form
+                .pcontact-body-form
                     .pcontact-body-form-title İletişim Formunu Doldurun
-                    .pcontact-body-form-content
-                        .pcontact-body-form-content-left
-                            +inputs('textbox','Ad Soyad')
-                            +inputs('textbox','E-Posta Adresi')
-                            +inputs('textbox','Cep Telefonu')
-                        .pcontact-body-form-content-right
-                            +inputs('textarea','Mesaj')
-                    .pcontact-body-form-btn
-                        +button('Etkinliğe Kaydol', 'green', 's')
+                    form(id="contact-page-form-saved") 
+                        .pcontact-body-form-content
+                            .pcontact-body-form-content-left
+                                +inputs('textbox','Ad','js-contact-form-name')(name="js-contact-form-name")
+                                +inputs('textbox','Soyad','js-contact-form-surname')(name="js-contact-form-surname")
+                                +inputs('textbox','E-Posta','js-contact-form-email')
+                                +inputs('textbox','Telefon','js-contact-form-phone')
+                            .pcontact-body-form-content-right
+                                +inputs('textarea','Mesaj','js-contact-form-address')
+                        .pcontact-body-form-btn
+                            +button('Gönder', 'green', 's')(type="submit", id="contact-page-form-send-btn")
+                include ../widgets/contact-banner/index.pug
