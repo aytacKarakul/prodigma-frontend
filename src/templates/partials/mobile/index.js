@@ -52,10 +52,12 @@ class MobileHeader {
 
     this.mobileMenuOpenBtn?.addEventListener("click", () => {
       document.body.classList.add("site-mobile-header-menu-open");
+      document.body.style.overflow = "hidden";
     });
     this.mobileMenuCloseBtn?.addEventListener("click", () => {
       if (document.body.classList.contains("site-mobile-header-menu-open")) {
         document.body.classList.remove("site-mobile-header-menu-open");
+        document.body.removeAttribute("style");
 
         this.mobileNavLink.forEach((itms) => {
           setTimeout(() => {
