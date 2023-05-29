@@ -1,10 +1,10 @@
 .pprodigma-plus {
   &-wrapper {
     @apply px-5 py-10;
-    @apply lg:container lg:mx-auto;
+    @apply lg:container lg:mx-auto lg:py-20;
   }
   &-head {
-    @apply flex justify-center text-center flex-col mb-7;
+    @apply hidden justify-center text-center flex-col mb-7;
     @apply lg:mb-20;
     &-title {
       @apply flex items-center justify-center;

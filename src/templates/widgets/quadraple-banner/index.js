@@ -1,7 +1,7 @@
 import axios from "axios";
-import {apitoken} from "../../auth/authentication";
 
-export async function QuadrapleBanner() {
+export function QuadrapleBanner() {
+  
   var scrollW = document.querySelector(".quadruple-banner-body-right-wrapper .raw-html-embed");
   var scrollUl = document.querySelector(
     ".quadruple-banner-body-right-wrapper .raw-html-embed ul"
@@ -10,16 +10,14 @@ export async function QuadrapleBanner() {
   let appendWrapper = document.querySelector(".quadruple-banner");
   
   if (appendWrapper) {
-    await axios.get((`${process.env.API_KEY}` + "/widgets/get"), {
+    let apitoken = localStorage.getItem("apitoken");
+    axios.get((`${process.env.API_KEY}` + "/widgets/get"), {
       auth: {
         username: "prodigma3d",
         password: `${apitoken}`,
       },
     }).then(function (res){
-
-      if(res.status === 200 && res.data !== null){
-        const lists = res.data.filter(item => item.dil === document.documentElement.lang && item.url === "home-quadruple-banner");
-
+      const lists = res.data.filter(item => item.dil === document.documentElement.lang && item.url === "home-quadruple-banner");
         //foreach
         lists.forEach((el) => {
           let tempUlWrapper = document.createElement("div");
@@ -36,7 +34,6 @@ export async function QuadrapleBanner() {
           appendWrapper.appendChild(tempUlWrapper);
           appendWrapper.appendChild(tempUlWrapperMobile);
         });
-      }
     }).catch((error) => console.log(error));
 
     var itemsScrolled,

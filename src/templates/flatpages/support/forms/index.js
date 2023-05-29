@@ -1,5 +1,4 @@
 import axios from "axios";
-import { apitoken } from "../../../auth/authentication";
 
 class SupplyForm {
     constructor(){
@@ -43,34 +42,18 @@ class SupplyForm {
         });
     }
     onSubmit = () => {
+
         document.querySelector(".btn-supply-save").addEventListener("click", function(event){
             event.preventDefault();
+            const api = localStorage.getItem("apitoken");
             const document_lang = document.documentElement.lang;
 
             var trans = {
                 tr:{
-                    name:"Ad soyad alanı boş geçilemez!",
-                    company:"Şirket alanı boş geçilemez!",
-                    phone:"Telefon alanı boş geçilemez!",
-                    email:"E-posta alanı boş geçilemez!",
-                    website:"Şirket web sayfası boş geçilemez!",
-                    address:"Adres alanı boş geçilemez!",
-                    capacity:"üretim kapasitesi alanı boş geçilemez!",
-                    equipment:"Makine ve ekipmanlar alanı boş geçilemez!",
-                    software:"Kullanılan yazılımlar alanı boş geçilemez!",
-                    staff:"Nitelikli eleman sayısı alanı boş geçilemez!",
+                    name:"Tüm alanlar boş olamaz!",
                 },
                 en:{
-                    name:"Name Surname field cannot be empty!",
-                    company:"Company field cannot be empty!",
-                    phone:"Phone field cannot be empty!",
-                    email:"Email field cannot be empty!",
-                    website:"Company web page field cannot be empty!",
-                    address:"Address field cannot be empty!",
-                    capacity:"production capacity field cannot be left blank!",
-                    equipment:"Machinery and equipment field cannot be left empty!",
-                    software:"The software used field cannot be left blank!",
-                    staff:"Qualified Number of Elements field cannot be left blank!",
+                    name:"Not all fields can be empty!",
                 }
             }
 
@@ -101,28 +84,8 @@ class SupplyForm {
                 items.value = uiText;
             });
 
-            if(nameSurname.value === ""){
+            if(nameSurname.value === "" || company.value === "" || phone.value === "" || email.value === "" || website.value === "" || address.value === "" || capacity.value === "" || equipment.value === "" || software.value === "" || staff.value === ""){
                 alert(`${document_lang === "tr" ? trans.tr.name : trans.en.name}`);
-            }else if(company.value === ""){
-                alert(`${document_lang === "tr" ? trans.tr.name : trans.en.name}`);
-            }
-            else if(phone.value === ""){
-                alert(`${document_lang === "tr" ? trans.tr.phone : trans.en.phone}`);
-            }else if(email.value === ""){
-                alert(`${document_lang === "tr" ? trans.tr.email : trans.en.email}`);
-            }else if(website.value === "") {
-                alert(`${document_lang === "tr" ? trans.tr.website : trans.en.website}`);
-            }else if(address.value === ""){
-                alert(`${document_lang === "tr" ? trans.tr.address : trans.en.address}`);
-            }
-            else if(capacity.value === ""){
-                alert(`${document_lang === "tr" ? trans.tr.capacity : trans.en.capacity}`);
-            }else if(equipment.value === ""){
-                alert(`${document_lang === "tr" ? trans.tr.equipment : trans.en.equipment}`);
-            }else if(software.value === ""){
-                alert(`${document_lang === "tr" ? trans.tr.software : trans.en.software}`);
-            }else if(staff.value === ""){
-                alert(`${document_lang === "tr" ? trans.tr.staff : trans.en.staff}`);
             }else{
 
                 var formData = new FormData(this.FormWrapper);
@@ -167,11 +130,12 @@ class SupplyForm {
                     headers: { "Content-Type": "multipart/form-data" },
                     auth: {
                       username: "prodigma3d",
-                      password: apitoken,
+                      password: api,
                     },
                   }).then((response) => {
                     if(response.status === 200 && response.data.message){
                         alert(response.data.message);
+                        location.reload();
                     }
                 }).catch((response) => response);
             }

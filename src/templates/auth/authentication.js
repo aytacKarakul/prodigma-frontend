@@ -1,10 +1,23 @@
 import axios from "axios";
 
-function getApiToken() {
+const setApi = () => {
   axios
-    .get(`${process.env.API_KEY}` + "/token")
-    .then((res) => localStorage.setItem("apitoken", res.data))
-    .catch((err) => console.log(err));
+  .get(`${process.env.API_KEY}` + "/token")
+  .then((res) => {
+    let data = res.data;
+    localStorage.setItem("apitoken", data);
+    return data;
+  })
+  .catch((err) => console.log(err));
 }
-export let apitoken = localStorage.getItem("apitoken");
-export default getApiToken;
+
+const getApi = () => {
+  const token = localStorage.getItem("apitoken");
+  return this.token;
+}
+
+export default (getApi, setApi);
+
+export let apitoken = (data) => {
+  return data;
+};

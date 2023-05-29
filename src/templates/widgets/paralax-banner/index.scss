@@ -8,14 +8,23 @@
     @apply bg-custom-200;
   }
   &-wrapper {
-    @apply w-full py-6;
+    @apply w-full py-10;
     @apply lg:container lg:mx-auto lg:px-5 lg:py-20;
   }
   .swiper {
     @apply w-full h-full;
+    &-pagination{
+      @apply right-4;
+      &-bullet{
+        @apply bg-gray-500 opacity-100;
+        &-active{
+          @apply bg-green-300;
+        }
+      }
+    }
   }
   .swiper-wrapper {
-    @apply max-h-[500px];
+    @apply max-h-[400px];
     @apply lg:max-h-[700px];
   }
   .swiper-slide {
@@ -24,8 +33,8 @@
       color: white;
     }
     .txt-abs {
-      @apply w-full text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-2 py-2;
-      @apply lg:w-auto lg:text-left lg:left-[inherit] lg:right-8 lg:-translate-x-0 lg:px-3 lg:py-4;
+      @apply w-full text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-12 py-2;
+      @apply lg:w-auto lg:text-left lg:left-[inherit] lg:right-10 lg:-translate-x-0 lg:px-3 lg:py-4;
     }
     img {
       @apply block w-full h-full object-cover;

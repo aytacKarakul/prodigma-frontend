@@ -1,7 +1,7 @@
 import "Images/logo.svg";
 import "Images/header-menu-about-img.jpg";
 import axios from "axios";
-import { apitoken } from "../../auth/authentication";
+import getApiToken from "../../auth/authentication";
 
 class Header {
   constructor() {
@@ -11,23 +11,21 @@ class Header {
 
     this.initHeader();
     this.langChangeFunc();
-    this.headerCoverImage();
+    //this.headerCoverImage();
   }
   async headerCoverImage(){
     await axios.get((`${process.env.API_KEY}` + "/widgets/get"), {
       auth: {
         username: "prodigma3d",
-        password: `${apitoken}`,
+        password: `${getApiToken()}`,
       },
     }).then(function (res){
-      if(res.status === 200 && res.data !== null){
-        const img_cover = document.querySelector(".site-header-submenu-banner");
+      const img_cover = document.querySelector(".site-header-submenu-banner");
         const cover = res.data.filter(item => item.dil === document.documentElement.lang && item.url === "desktop-header-cover");
         if(cover.length > 0){
           const get_cover = JSON.parse(cover[0].json_data);
           img_cover.style.backgroundImage = `url(${process.env.SITE_DOMAIN}${get_cover[0].yazi})`;
         }
-      }
     }).catch((error) => console.log(error))
   }
   siteLoginUserNameSurname() {

@@ -1,7 +1,7 @@
 .pabout {
   &-body {
     @apply mx-auto py-20;
-    @apply lg:container lg:py-40 lg:px-5;
+    @apply lg:container lg:py-20 lg:px-5;
     &-content {
       @apply flex flex-col gap-5 px-5;
       @apply lg:flex-row lg:gap-20 lg:px-0;

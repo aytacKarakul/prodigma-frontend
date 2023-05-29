@@ -1,9 +1,9 @@
 import axios from "axios";
-import { apitoken } from "../../auth/authentication";
 import modalPopup from "../../components/web-component/modal/index";
 
 class ProdigmaPlusPage {
   constructor() {
+    this.api = localStorage.getItem("apitoken");
     this.onLoadBlogLists();
     const containerWrapper = document.querySelector(".pprodigma-plus");
     if (containerWrapper) {
@@ -14,7 +14,7 @@ class ProdigmaPlusPage {
     await axios.get((`${process.env.API_KEY}` + "/webinars/get"), {
       auth: {
         username: "prodigma3d",
-        password: `${apitoken}`,
+        password: `${this.api}`,
       },
     }).then(function (res){
       if(res.status === 200){

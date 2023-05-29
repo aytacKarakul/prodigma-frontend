@@ -3,6 +3,7 @@ import { apitoken } from "../../auth/authentication";
 
 class ContactPageForm {
     constructor(){
+        this.api = localStorage.getItem("apitoken");
         this.FormWrapper = document.getElementById("contact-page-form-saved");
         this.textBox = document.querySelectorAll("#contact-page-form-saved .textbox input");
         this.textArea = document.querySelector("#js-contact-form-address");
@@ -58,7 +59,7 @@ class ContactPageForm {
                     headers: { "Content-Type": "multipart/form-data" },
                     auth: {
                       username: "prodigma3d",
-                      password: apitoken,
+                      password: this.api,
                     },
                   }).then((response) => {
                     console.log(response);

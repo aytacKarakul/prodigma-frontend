@@ -19,7 +19,7 @@
           @apply flex items-start flex-wrap gap-5 mt-5;
           li{
             @apply w-[calc(50%-10px)] flex items-center justify-center min-h-[80px] border border-custom-400 rounded-lg p-5 text-sm;
-            @apply after:content-["\e903"] after:font-icon after:block after:ml-4 last:after:hidden;
+            //@apply after:content-["\e903"] after:font-icon after:block after:ml-4 last:after:hidden;
             @apply lg:w-auto;
           }
         }

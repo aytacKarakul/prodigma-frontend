@@ -1,4 +1,3 @@
-import { getUser } from "../../utils/localStorage";
 class MobileHeader {
   constructor() {
     this.mobileHamburgerBtn = document.querySelector(
@@ -155,6 +154,9 @@ class MobileHeader {
 
   subMenuChilderen() {
     const subMenuChildBtn = document.querySelectorAll(
+      ".site-mobile-header-list-img-submenu > ul > li > span"
+    );
+    const subMenuChildBtnLink = document.querySelectorAll(
       ".site-mobile-header-list-img-submenu > ul > li > a"
     );
     subMenuChildBtn?.forEach((childBtn) => {
@@ -173,6 +175,11 @@ class MobileHeader {
         }
       });
     });
+    subMenuChildBtnLink?.forEach((items) => {
+      items.addEventListener("click", (e) => {
+        location.reload();
+      });
+    })
   }
 }
 export default MobileHeader;

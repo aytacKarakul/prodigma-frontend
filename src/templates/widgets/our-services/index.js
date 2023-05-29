@@ -1,11 +1,10 @@
 import axios from "axios";
-import {apitoken} from "../../auth/authentication";
 import Swiper, { Navigation, Scrollbar } from "swiper";
 
 class OurSerivesSwiper {
   constructor() {
+    this.api = localStorage.getItem("apitoken");
     this.onLoadServicesList();
-
     const swiperOurWidget = new Swiper(".swiper-our-widget", {
       modules: [Navigation, Scrollbar],
       slidesPerView: 1.3,
@@ -37,16 +36,14 @@ class OurSerivesSwiper {
     });
     return swiperOurWidget;
   }
-  async onLoadServicesList(){
-    await axios.get((`${process.env.API_KEY}` + "/widgets/get"), {
+  onLoadServicesList(){
+    axios.get((`${process.env.API_KEY}` + "/widgets/get"), {
       auth: {
         username: "prodigma3d",
-        password: `${apitoken}`,
+        password: `${this.api}`,
       },
     }).then(function (res){
-
-      if(res.status === 200 && res.data !== null){
-        const appendContent = document.querySelector(".swiper-our-widget .swiper-wrapper");
+      const appendContent = document.querySelector(".swiper-our-widget .swiper-wrapper");
         if(appendContent){
           const services = res.data.filter(item => item.dil === document.documentElement.lang && item.url === "our-services-banner");
           const getData = JSON.parse(services[0].json_data);
@@ -95,7 +92,6 @@ class OurSerivesSwiper {
             appendContent.append(tmp);
           });
         }
-      }
     }).catch((error) => console.log(error))
   }
 }

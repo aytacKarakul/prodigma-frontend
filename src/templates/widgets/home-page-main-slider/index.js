@@ -1,12 +1,12 @@
 import axios from "axios";
 import Swiper, { Navigation, Pagination, EffectFade, Autoplay } from "swiper";
-import {apitoken} from "../../auth/authentication";
 
 class MainSwiperSlider {
   constructor() {
+    this.apitoken = localStorage.getItem("apitoken");
     this.onLoadMainSlider();
     this.onSliderContentLoader();
-    
+
     const swiperMain = new Swiper(".swiper-main", {
       modules: [EffectFade, Navigation, Pagination, Autoplay],
       effect: "fade",
@@ -27,14 +27,14 @@ class MainSwiperSlider {
     return swiperMain;
   }
 
-  async onLoadMainSlider(){
-    await axios.get((`${process.env.API_KEY}` + "/sliders/get"), {
+  onLoadMainSlider(){
+    axios.get((`${process.env.API_KEY}` + "/sliders/get"), {
       auth: {
         username: "prodigma3d",
-        password: `${apitoken}`,
-      },
+        password: this.apitoken,
+      }
     }).then(function (res){
-      if(res.status === 200){
+        //console.log(res);
         const sliders = res.data.filter(item => item.dil === document.documentElement.lang);
         //foreach
         sliders.forEach((element) => {
@@ -42,24 +42,20 @@ class MainSwiperSlider {
           if(appendContainer){
             let temp = document.createElement("div");
             temp.className = "swiper-slide";
-
+  
             temp.innerHTML += `<div class="text-content"><p>${element.isim}</p></div><picture><source media="(max-width: 1024px)" srcset="${process.env.SITE_DOMAIN}${element.mobil_resim}"><source media="(min-width: 1025px)" srcset="${process.env.SITE_DOMAIN}${element.resim}"><img src="${process.env.SITE_DOMAIN}${element.mobil_resim}" alt="${element.isim}"></picture>`;
             appendContainer.append(temp);
           }
         });
-      }
     }).catch((error) => console.log(error))
-  }
-  async onSliderContentLoader() {
-    await axios.get((`${process.env.API_KEY}` + "/widgets/get"), {
+
+    axios.get((`${process.env.API_KEY}` + "/widgets/get"), {
       auth: {
         username: "prodigma3d",
-        password: `${apitoken}`,
+        password: this.apitoken,
       },
     }).then(function (res){
-      if(res.status === 200 && res.data !== null){
-
-        const sliderTextWrapper = document.querySelector(".main-slider-banner-text-content-text");
+      const sliderTextWrapper = document.querySelector(".main-slider-banner-text-content-text");
         const contents = res.data.filter(item => item.dil === document.documentElement.lang && item.url === "main-slider-static-text");
         
         //slidet texts
@@ -95,8 +91,12 @@ class MainSwiperSlider {
             });
           });
         }
-      }
     }).catch((error) => console.log(error))
+
+  }
+
+  onSliderContentLoader() {
+    
   }
 }
 

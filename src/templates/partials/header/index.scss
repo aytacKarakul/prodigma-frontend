@@ -184,18 +184,20 @@
       &-inner {
         @apply container mx-auto px-8 py-8;
         > ul {
-          @apply flex-wrap gap-10;
+          @apply flex-wrap gap-x-7;
           > li {
             @apply w-[calc(25%-30px)];
             .title {
-              @apply font-heading font-semibold text-base text-white mb-3;
+             a{
+              @apply font-heading font-semibold text-base text-white p-0 mb-3 after:hidden;
+             }
             }
             > ul {
               @apply flex-wrap gap-0;
               > li {
                 @apply w-1/2;
                 a {
-                  @apply font-inter py-1 opacity-70 px-4;
+                  @apply font-inter pl-0 pr-3 py-1 opacity-70 cursor-default;
                   @apply after:hidden;
                   &:hover {
                     color: white !important;

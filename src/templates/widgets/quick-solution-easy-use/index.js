@@ -1,8 +1,8 @@
 import axios from "axios";
-import { apitoken } from "../../auth/authentication";
 
 class QuickSolutionBanner {
   constructor() {
+    this.api = localStorage.getItem("apitoken");
     const pageName = document.querySelector(".page-home");
     if (pageName) {
       this.initFunc();
@@ -49,31 +49,30 @@ class QuickSolutionBanner {
     await axios.get((`${process.env.API_KEY}` + "/widgets/get"), {
       auth: {
         username: "prodigma3d",
-        password: `${apitoken}`,
+        password: `${this.api}`,
       },
     }).then(function (res){
-      if(res.status === 200 && res.data !== null){
-        const getContent = res.data.filter(item => item.dil === document.documentElement.lang && item.url === "home-page-panel-video-frame");
-        const appendWrapper = document.querySelector(".quick-solution-banner-body");
-        const getJsonData = JSON.parse(getContent[0].json_data);
+      
+      const getContent = res.data.filter(item => item.dil === document.documentElement.lang && item.url === "home-page-panel-video-frame");
+      const appendWrapper = document.querySelector(".quick-solution-banner-body");
+      const getJsonData = JSON.parse(getContent[0].json_data);
 
-        getJsonData.forEach((item) => {
-          let temp = document.createElement("div");
-          temp.className = "responsive-iframe-container";
+      getJsonData.forEach((item) => {
+        let temp = document.createElement("div");
+        temp.className = "responsive-iframe-container";
 
-          let tempIframe = document.createElement("iframe");
-          tempIframe.className = "responsive-iframe-container-iframe";
+        let tempIframe = document.createElement("iframe");
+        tempIframe.className = "responsive-iframe-container-iframe";
 
-          tempIframe.setAttribute("id", item.id);
-          tempIframe.setAttribute("src",`https://www.youtube.com/embed/${item.yazi}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0&playlist=${item.yazi}`);
-          tempIframe.setAttribute("frameborder","0")
-          tempIframe.setAttribute("allowfullscreen", true);
-          
-          temp.append(tempIframe);
-          appendWrapper.append(temp);
-          
-        });
-      }
+        tempIframe.setAttribute("id", item.id);
+        tempIframe.setAttribute("src",`https://www.youtube.com/embed/${item.yazi}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0&playlist=${item.yazi}`);
+        tempIframe.setAttribute("frameborder","0")
+        tempIframe.setAttribute("allowfullscreen", true);
+        
+        temp.append(tempIframe);
+        appendWrapper.append(temp);
+        
+      });
     }).catch((error) => console.log(error))
   }
 }

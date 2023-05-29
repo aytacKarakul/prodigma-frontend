@@ -1,50 +1,51 @@
+import CreateProjectBanner from "./create-project-banner";
 import MainSwiperSlider from "./home-page-main-slider";
 import QuickSolutionBanner from "./quick-solution-easy-use";
 import SwiperParalax from "./paralax-banner";
 import OurSerivesSwiper from "./our-services";
-import CreateProjectBanner from "./create-project-banner";
-import HomePageBlogBanner from "./prodigma-plus-banner";
-import BenefitsBrandBanner from "./benefits-brands";
-import ProdigmaPlusPage from "./prodigma-plus-page";
-import CncGallerySwiper from "./cnc-gallery";
-import Blog from "./blog";
-import CreateProject from "./create-project";
 import { QuadrapleBanner } from "./quadraple-banner";
+import ProdigmaPlusPage from "./prodigma-plus-page";
+import HomePageFAQBanner from "./home-page-sss";
+import BenefitsBrandBanner from "./benefits-brands";
+import { AboutUsBanners } from "./double-listed-banner";
 import { Thermoplastics } from "./thermoplastics";
 import { ContinousFiber } from "./continous-fiber";
 import { Fotopolimers } from "./fotopolimers";
 import { Polimers } from "./polimers";
+import ContactPageForm from "./contact-banner";
+
+/*
+import CncGallerySwiper from "./cnc-gallery";
+import Blog from "./blog";
 import CncPlastics from "./cnc-plastics-materials";
 import CncMetals from "./cnc-metal-materials";
-import { AboutUsBanners } from "./double-listed-banner";
-import HomePageFAQBanner from "./home-page-sss";
-import ContactPageForm from "./contact-banner";
+*/
 
 class Widgets {
   constructor() {
+    new CreateProjectBanner();
     new MainSwiperSlider();
+    QuadrapleBanner();
     new QuickSolutionBanner();
     new SwiperParalax();
     new OurSerivesSwiper();
-    new CreateProjectBanner();
-    new HomePageBlogBanner();
-    new BenefitsBrandBanner();
     new ProdigmaPlusPage();
-    new CncGallerySwiper();
-    new Blog();
     new HomePageFAQBanner();
-    new CreateProject();
-    new ContactPageForm();
-    //- imports Function files
-    QuadrapleBanner();
+    new BenefitsBrandBanner();
+    AboutUsBanners();
     Thermoplastics();
     ContinousFiber();
     Fotopolimers();
     Polimers();
+    new ContactPageForm();
+
+    /*
+    new CncGallerySwiper();
+    new Blog();
+    //- imports Function files
     CncPlastics();
     CncMetals();
-    AboutUsBanners();
-
+    */
     const aboutPage = document.querySelector(".page-about-us");
     if (aboutPage) {
       document.addEventListener("scroll", () => {

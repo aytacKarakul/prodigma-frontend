@@ -32,9 +32,9 @@
     }
   }
   &-wrapper {
-    @apply bg-white fixed top-0 -left-full z-20 w-full h-full invisible transition-all ease-in delay-200 duration-300;
+    @apply bg-blue-100 fixed top-0 -left-full z-20 w-full h-full invisible transition-all ease-in delay-200 duration-300;
     &-top {
-      @apply flex items-center gap-3 p-5;
+      @apply bg-white flex items-center gap-3 p-5;
       @apply lg:hidden;
       &-close {
         @apply w-8 h-8 flex items-center justify-center;
@@ -56,7 +56,7 @@
     }
   }
   &-nav {
-    @apply bg-blue-100 w-full h-[calc(100vh-20rem)] overflow-y-scroll px-5 pt-4 pb-7;
+    @apply bg-blue-100 w-full h-[calc(100%-272px)] overflow-y-scroll px-5 pt-4 pb-7;
     > ul {
       > li {
         @apply border-b border-solid border-white border-opacity-20;
@@ -136,20 +136,23 @@
         }
       }
       &-submenu {
-        @apply bg-blue-100 absolute top-0 left-0 z-20 w-full h-[calc(100%-8.75rem)] invisible transition-all ease-in translate-x-full duration-300 delay-300;
+        @apply bg-blue-100 absolute top-0 left-0 z-20 w-full h-full invisible transition-all ease-in translate-x-full duration-300 delay-300;
         > ul {
           @apply px-5 py-7;
           > li {
-            @apply border-b border-solid border-white border-opacity-20;
+            @apply relative border-b border-solid border-white border-opacity-20;
             > a {
-              @apply flex relative py-4 pr-9 font-heading font-medium text-base text-white leading-none;
-              @apply after:content-["+"] after:w-6 after:h-6 after:flex after:items-center after:justify-center after:absolute after:top-[calc(50%-0.75rem)] after:right-0 after:bg-white after:rounded-full after:text-xl after:text-blue-200;
+              @apply flex w-[calc(100%-40px)] py-4 font-heading font-medium text-base text-white leading-none;
+            }
+            > span{
+              @apply absolute top-3 right-0 z-[1] w-6 h-6 flex items-center justify-center bg-white rounded-full;
+              @apply after:content-["+"] after:text-xl after:leading-none after:text-blue-200;
             }
             > ul {
               @apply hidden py-2.5 max-h-[200px] overflow-y-auto;
               > li {
                 > a {
-                  @apply flex font-inter font-normal text-base text-white py-2.5;
+                  @apply flex font-inter font-normal text-sm text-white py-2.5;
                 }
               }
             }
@@ -157,13 +160,8 @@
               > ul {
                 @apply block;
               }
-              > a {
+              > span {
                 @apply after:content-["-"];
-              }
-            }
-            &:last-child {
-              > a {
-                @apply after:hidden;
               }
             }
           }
@@ -172,10 +170,10 @@
     }
   }
   &-start-project {
-    @apply bg-blue-100 px-5 py-[1.875rem];
+    @apply bg-blue-100 px-5 py-5;
   }
   &-social {
-    @apply px-5 py-8 bg-blue-100;
+    @apply px-5 py-5 bg-blue-100;
     &-title {
       @apply mb-3.5 text-white;
     }
