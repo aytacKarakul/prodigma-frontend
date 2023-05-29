@@ -28,7 +28,7 @@ module.exports = {
   entry: ["./src/app.js"],
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "js/[name].js", //?v=<?= env('js_versiyon') ?>
+    filename: "js/[name].js?v=<?= env('js_versiyon') ?>", //?v=<?= env('js_versiyon') ?>
     assetModuleFilename: "[path][name][ext]",
     clean: true,
   },
@@ -55,16 +55,10 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|svg|ico|docx|mp4)/,
         type: "asset/resource",
-        /* generator: {
-          filename: "[name][ext]",
-        },*/
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: "asset/resource",
-        /*generator: {
-          filename: "fonts/[name][ext]",
-        },*/
       },
       {
         test: /\.pug$/,
@@ -89,7 +83,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
-      filename: "css/main.css", //?v=<?= env('css_versiyon') ?>
+      filename: "css/main.css?v=<?= env('css_versiyon') ?>", //?v=<?= env('css_versiyon') ?>
     }),
     new Dotenv(),
   ].concat(htmlPlugins),
