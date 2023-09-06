@@ -14,13 +14,6 @@ import { Fotopolimers } from "./fotopolimers";
 import { Polimers } from "./polimers";
 import ContactPageForm from "./contact-banner";
 
-/*
-import CncGallerySwiper from "./cnc-gallery";
-import Blog from "./blog";
-import CncPlastics from "./cnc-plastics-materials";
-import CncMetals from "./cnc-metal-materials";
-*/
-
 class Widgets {
   constructor() {
     new CreateProjectBanner();
@@ -39,13 +32,6 @@ class Widgets {
     Polimers();
     new ContactPageForm();
 
-    /*
-    new CncGallerySwiper();
-    new Blog();
-    //- imports Function files
-    CncPlastics();
-    CncMetals();
-    */
     const aboutPage = document.querySelector(".page-about-us");
     if (aboutPage) {
       document.addEventListener("scroll", () => {
